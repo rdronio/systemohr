@@ -1,0 +1,1823 @@
+/* SMARTPHONES PORTRAIT */
+@media only screen and (max-width: 479px) {
+  /* run this code if modal pop up */
+  /* html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  } */
+
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.9rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+  }
+  h6 {
+    font-size: 0.7rem;
+  }
+
+  /* ========[ Nav ]======== */
+  nav {
+    /* background: #fff; */
+    width: 75%;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .menu-btn {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    left: unset;
+  }
+
+  .menu-btn svg {
+    color: #333;
+    height: 30px;
+    width: 30px;
+  }
+
+  .close-menu {
+    display: inline-block;
+  }
+
+  .blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    pointer-events: none;
+  }
+
+  /* ========[ Utility ]======== */
+  .btn-xs {
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
+  .btn-md {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.7rem 1.75rem;
+  }
+
+  .btn-circle-container {
+    justify-content: flex-start;
+  }
+
+  .btn-circle-container i {
+    margin-right: 2rem;
+  }
+
+  .close-nav {
+    position: relative;
+    background: #333;
+    height: 2rem;
+    width: 2rem;
+    left: 0;
+  }
+
+  .modal-content .modal-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .modal-content .modal-btn-container a {
+    margin: 0.5rem 0;
+  }
+
+  .modal-time-alteration .modal-content,
+  .modal-overtime-application .modal-content {
+    padding: 1.25rem 2rem;
+    width: 90%;
+  }
+
+  .modal-time-alteration .modal-content > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .search {
+    display: none;
+  }
+  .icon {
+    display: none;
+  }
+
+  .label-0 {
+    font-weight: 800;
+    font-size: 1.9rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-2 {
+    font-weight: bold;
+    font-size: 1.35rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-3 {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-4 {
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-5 {
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.7rem 0;
+  }
+
+  .label-6 {
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 0.4rem 0;
+  }
+
+  .tab-list ul li {
+    padding: auto;
+  }
+
+  .tab-list ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .px-2 {
+    padding: 0 1rem;
+  }
+
+  /* ========[ Nav ]======== */
+  nav {
+    display: none;
+  }
+
+  /* ========[ Content ]======== */
+  .content {
+    left: 0;
+    width: 100%;
+  }
+
+  .container {
+    margin: 0.5rem 0.5rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+    padding: 1rem 1rem;
+  }
+
+  /* ========[ Table ]======== */
+  table.tableLayout {
+    display: block;
+    width: auto !important;
+    min-width: 0;
+  }
+
+  table.tableLayout > *,
+  table.tableLayout tr,
+  table.tableLayout td,
+  table.tableLayout th {
+    display: block;
+  }
+
+  table.tableLayout td,
+  table.tableLayout th {
+    text-align: left;
+    padding: 0.5rem 0;
+  }
+  table.tableLayout thead {
+    display: none;
+  }
+  table.tableLayout tbody tr:first-child {
+    display: none;
+  }
+
+  table.tableLayout tbody tr {
+    height: auto !important;
+    padding: 1rem 1rem;
+    border: solid 1px #797979 !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 9px 0px #797979;
+    margin: 1.25rem 0;
+  }
+  table.tableLayout tbody tr td {
+    padding-left: 50%;
+    /* margin-bottom: 1.5rem; */
+    /* margin-bottom: 0.5rem; */
+    border: none;
+  }
+  table.tableLayout tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table.tableLayout tbody tr td:before {
+    /* font-size: 0.875rem; */
+    color: #333;
+    line-height: 1.2;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    /* top: 0; */
+  }
+
+  /* table.tableLayout tbody tr {
+    font-size: 0.875rem;
+  } */
+
+  table.tableLayout .column1,
+  table.tableLayout .column2,
+  table.tableLayout .column3,
+  table.tableLayout .column4,
+  table.tableLayout .column5,
+  table.tableLayout .column6,
+  table.tableLayout .column7,
+  table.tableLayout .column8,
+  table.tableLayout .column9,
+  table.tableLayout .column10,
+  table.tableLayout .column11,
+  table.tableLayout .column12,
+  table.tableLayout .column13,
+  table.tableLayout .column14 {
+    width: auto !important;
+  }
+
+  /* ========[ Login ]======== */
+  #login {
+    top: 0 !important;
+    min-height: 100%;
+  }
+
+  #login .left-container {
+    background: rgba(255, 255, 255, 0.8);
+    min-width: 100%;
+    min-height: 30rem;
+    z-index: 1;
+    /* background: url("../Images/bg.jpg") no-repeat center center/cover; */
+  }
+
+  #login .overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    background: url("../Images/bg.jpg") no-repeat center center/cover;
+  }
+
+  #login .right-container {
+    display: none;
+  }
+
+  #login-footer {
+    width: 100%;
+  }
+
+  /* ========[ Home ]======== */
+
+  #home .container .card-1 div {
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #home .container .card-1 .btn {
+    font-size: 0.7rem;
+    margin: 0 0.5rem;
+  }
+
+  #home .container .card-2 .container-lg {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  #home .container .card-2 div div .container-sm {
+    padding-bottom: 1rem;
+  }
+
+  /* ========[ Time Records ]======== */
+  #time-records .container .card-1 input {
+    width: 100%;
+  }
+
+  #time-records .container .card-1 div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+  }
+
+  #time-records .container .card-1 div:nth-child(2),
+  #time-records .container .card-1 div:nth-child(2) input {
+    margin-right: 0;
+  }
+
+  #time-records .container .card-1 div:nth-child(3),
+  #time-records .container .card-1 div:nth-child(3) a {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* card-1 table */
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total (hour/s)";
+  }
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Overtime (hour/s)";
+  }
+
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Tardiness (min/s)";
+  }
+
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Time Alteration";
+  }
+
+  /* card-2 table */
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "New Time In";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "New Time Out";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Reason";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Status";
+  }
+  #time-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Action";
+  }
+
+  /* ========[ Overtime Records ]======== */
+
+  #overtime-records .container .card-1 input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #overtime-records .container .card-1 div:first-child a {
+    margin-left: 0rem;
+  }
+
+  #overtime-records .container .card-1 div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+  }
+
+  #overtime-records .container .card-1 div:nth-child(2),
+  #overtime-records .container .card-1 div:nth-child(2) input {
+    margin-right: 0;
+  }
+
+  #overtime-records .container .card-1 div:nth-child(3),
+  #overtime-records .container .card-1 div:nth-child(3) button {
+    width: 100%;
+  }
+
+  /* card-1 table */
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Start Time";
+  }
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "End Time";
+  }
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total";
+  }
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Overtime";
+  }
+
+  /* card-2 table */
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Start Time";
+  }
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "End Time";
+  }
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Overtime";
+  }
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Reason";
+  }
+  #overtime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Status";
+  }
+
+  /* ========[ Leave Records ]======== */
+
+  #leaverecords .container .card-1 .card-subhead-container {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: none;
+  }
+  #leaverecords .container .card-1 .card-subhead-container div:nth-child(2) {
+    order: -1;
+    text-align: left;
+  }
+
+  #leaverecords table.tableLayout tbody tr td {
+    padding-left: 35%;
+  }
+
+  /* table */
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Type";
+  }
+  #leaverecords .tableLayout tbody tr td:nth-child(3):before {
+    content: "From";
+  }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "To";
+  }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "No. of Days";
+  }
+
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "With Pay";
+  }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Reason";
+  }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Status";
+  }
+
+  /* table */
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Type";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "From";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "To";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "No. of Days";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "With pay";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Reason";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Status";
+  }
+  #leaverecords
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(9):before {
+    content: "Action";
+  }
+
+  /* ========[ Leave Modal ]======== */
+  #leaverecords .modal .modal-content {
+    padding: 1.25rem 1.75rem;
+    width: 90%;
+  }
+
+  /* ========[ Time Alteration Approval ]======== */
+  #time-alteration-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #time-alteration-approval .container .card-1 > div:first-child {
+    margin-right: 0;
+  }
+
+  #time-alteration-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #time-alteration-approval .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time In";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Time Out";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "New Time In";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "New Time Out";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Reason";
+  }
+  #time-alteration-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Action";
+  }
+
+  /* ========[ Overtime Approval ]======== */
+  #overtime-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #overtime-approval .container .card-1 > div:first-child {
+    margin-right: 0;
+  }
+
+  #overtime-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #overtime-approval .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee";
+  }
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time In";
+  }
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Time Out";
+  }
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Overtime";
+  }
+
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Reason";
+  }
+  #overtime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Action";
+  }
+
+  /* ========[ Leave Approval ]======== */
+  #leave-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #leave-approval .container .card-1 div:first-child {
+    margin-right: 0;
+  }
+
+  #leave-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #leave-approval .container .card-1 div:nth-child(2) a {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee";
+  }
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Type";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "From";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "To";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "No. of days";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "With Pay";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Reason";
+  }
+
+  #leave-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(9):before {
+    content: "Action";
+  }
+
+  /* ========[ Manage Employees ]======== */
+  #manage-employees .container .card-1 div:nth-child(2) {
+    margin-right: 0;
+  }
+  #manage-employees .container .card-1 div:nth-child(2) select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #manage-employees .container .card-1 div:nth-child(3) {
+    margin-right: 0;
+    display: block;
+  }
+
+  #manage-employees .container .card-1 div:nth-child(3) input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #manage-employees .container .card-1 div:nth-child(3) > div {
+    display: none;
+  }
+
+  /* #manage-employees.container .card-1 div:first-child {
+    margin-right: 0;
+  }
+  
+  #manage-employees.container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+  
+  #manage-employees.container .card-1 div:nth-child(2) a {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  } */
+
+  #manage-employees .container .card-1 .tableLayout {
+    white-space: unset;
+  }
+
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Action";
+  }
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "ID";
+  }
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Name";
+  }
+
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Birthday";
+  }
+
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Email";
+  }
+
+  #manage-employees
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Phone";
+  }
+
+  #manage-employees .modal-content {
+    padding: 0.75rem 1.2rem;
+    width: 90%;
+    /* height: 100%; */
+    max-height: calc(100vh - 25px);
+  }
+
+  #manage-employees .modal-content input,
+  #manage-employees .modal-content select {
+    width: 100%;
+  }
+
+  #manage-employees
+    .modal-add-employee
+    .modal-content
+    #primary-info
+    > div
+    > div:nth-child(1) {
+    margin-right: unset;
+  }
+
+  /* start here */
+
+  /* #manage-employees .modal-add-employee .modal-content > div .profile_pic img {
+      position: relative;
+      display: inline-block;
+      width: 80;
+      height: 80px;
+  z-index: 2;
+} */
+
+  /* #manage-employees .modal-add-employee .modal-content #primary-info {
+  display: flex;
+  flex-direction: column;
+} */
+
+  #manage-employees .modal-add-employee .modal-content #primary-info > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #manage-employees
+    .modal-add-employee
+    .modal-content
+    #primary-info
+    > div
+    > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #manage-employees
+    .modal-add-employee
+    .modal-content
+    #primary-info
+    > div
+    > div
+    .radio {
+    margin-right: 1rem;
+  }
+
+  #manage-employees .modal-add-employee .modal-content #hr-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #manage-employees .modal-add-employee .modal-content #hr-info > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #manage-employees .modal-add-employee .modal-content #leaves {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ========[ Generate DTR Report ]======== */
+  #dtr-report .container .card-1 div:nth-child(1) {
+    margin-right: 0;
+  }
+  #dtr-report .container .card-1 div:nth-child(1) input {
+    width: 100%;
+  }
+
+  #dtr-report .container .card-1 div:nth-child(2) {
+    margin-right: 0;
+    display: block;
+  }
+
+  #dtr-report .container .card-1 div:nth-child(2) select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #dtr-report .container .card-1 div:nth-child(2) > div {
+    display: none;
+  }
+
+  #dtr-report .container .card-1 div:nth-child(3) input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #dtr-report .container .card-1 .btn-container {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  #dtr-report .container .card-1 .btn-container button {
+    margin: 0.25rem 0;
+  }
+  /* ========[ Employee Masterlist ]======== */
+  #employee-masterlist .container .card-1 .tableLayout {
+    white-space: unset;
+  }
+
+  #employee-masterlist
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Employee ID";
+  }
+  #employee-masterlist
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee Name";
+  }
+  #employee-masterlist
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Date";
+  }
+  #employee-masterlist
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Timekeeping";
+  }
+  #employee-masterlist
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Type";
+  }
+
+  /* ========[ Payroll ]======== */
+
+  #payroll .container .card-1 div:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  #payroll .container .card-1 div:nth-child(2) a,
+  #payroll .container .card-1 div:nth-child(2) input {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #payroll .container .card-1 div:nth-child(3) {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #payroll .container .card-1 div:nth-child(3) select {
+    width: 100%;
+    margin: 0 0 0.5rem;
+  }
+
+  #payroll .container .card-1 div:nth-child(3) select:nth-child(2) {
+    margin-left: 0;
+  }
+
+  #payroll .container .card-1 div:nth-child(4) {
+    margin-bottom: 0.5rem;
+  }
+  #payroll .container .card-1 div:nth-child(4) input:nth-child(2) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #payroll .container .card-1 .tableLayout tbody tr td:nth-child(1):before {
+    content: "Pay Period";
+  }
+  #payroll .container .card-1 .tableLayout tbody tr td:nth-child(2):before {
+    content: "Employee";
+  }
+
+  #payroll .container .card-1 .tableLayout tbody tr td:nth-child(3):before {
+    content: "Position";
+  }
+
+  #payroll .container .card-1 .tableLayout tbody tr td:nth-child(4):before {
+    content: "Net Pay";
+  }
+
+  #payroll .container .card-1 .tableLayout tbody tr td:nth-child(5):before {
+    content: "Status";
+  }
+
+  #payroll .modal-content {
+    padding: 1.25rem 1.75rem;
+    width: 90%;
+  }
+
+  #payroll .modal-content div:nth-child(3) {
+    margin-right: 0;
+  }
+
+  #payroll .modal-content div:nth-child(3) button,
+  #payroll .modal-content div:nth-child(3) input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #payroll .modal-content div:nth-child(4) select {
+    width: 100%;
+    margin: 0 0 0.5rem;
+  }
+  #payroll .modal-content div:nth-child(4) select:nth-child(2) {
+    margin-left: 0;
+  }
+
+  #payroll .modal-content div:nth-child(5) {
+    margin-bottom: 0.5rem;
+  }
+  #payroll .modal-content > div:nth-child(5) select:nth-child(2) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #payroll .modal-content div:nth-child(6) {
+    margin-bottom: 1.25rem;
+  }
+
+  #payroll .modal-content > div:nth-child(10) {
+    width: 100%;
+  }
+
+  #payroll .modal-content > div:nth-child(11) {
+    width: 100%;
+  }
+
+  #payroll .modal-content > div:nth-child(11) p {
+    padding-right: 15%;
+  }
+
+  #payroll .modal-content > div:nth-child(13) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #payroll .modal-content > div:nth-child(13) > div:nth-child(1),
+  #payroll .modal-content > div:nth-child(13) > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  #payroll .modal-content > div:nth-child(13) > div:nth-child(1) p,
+  #payroll .modal-content > div:nth-child(13) > div:nth-child(2) p {
+    padding-right: 20%;
+  }
+
+  #payroll .modal-content > div:nth-child(15) p {
+    padding-right: 20%;
+  }
+
+  /* ========[ Payslip Approval ]======== */
+  #payslip-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #payslip-approval .container .card-1 div:first-child {
+    margin-right: 0;
+  }
+
+  #payslip-approval .container .card-1 div:first-child input {
+    margin-right: 0;
+  }
+
+  #payslip-approval .container .card-1 div:nth-child(2) {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  #payslip-approval .container .card-1 div:nth-child(2) button {
+    width: 100%;
+  }
+
+  #payslip-approval .container .card-1 > div:nth-child(3) select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #payslip-approval .container .card-1 > div:nth-child(3) select:nth-child(2) {
+    margin: 0 0 0.5rem;
+  }
+
+  #payslip-approval .container .card-1 div:nth-child(4) {
+    margin-bottom: 0.5rem;
+  }
+
+  #payslip-approval .container .card-1 div:nth-child(4) input {
+    margin-left: 0;
+  }
+
+  #payslip-approval .btn-circle-container i {
+    margin-right: 1.5rem;
+  }
+
+  #payslip-approval .container .card-1 table.tableLayout tbody tr td {
+    padding-left: 50%;
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Employee";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Position";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Basic Pay";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Absent";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Late";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Gross Pay";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "OT";
+  }
+
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Withholding Tax";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(9):before {
+    content: "SSS/GSIS";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(10):before {
+    content: "Philhealth";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(11):before {
+    content: "Pag-ibig";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(12):before {
+    content: "Other Deductions";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(13):before {
+    content: "Net Pay";
+  }
+  #payslip-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(14):before {
+    content: "Action";
+  }
+
+  /* ========[ Payslip Template ]======== */
+  #payslip-template .modal-content {
+    padding: 2rem 2rem;
+  }
+
+  /* ========[ Maintenance ]======== */
+  #maintenance .container {
+    margin: 0 2rem;
+  }
+
+  #maintenance .showcase img {
+    width: 100vw;
+  }
+
+  #maintenance .showcase h1 {
+    text-align: left;
+  }
+
+  #maintenance .showcase p {
+    letter-spacing: 0.5px;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    text-align: left;
+  }
+  #maintenance .showcase h1 {
+    font-size: 1.45rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #maintenance footer {
+    margin: 10vh auto 1rem;
+    text-align: center;
+  }
+
+  #maintenance footer h4 {
+    font-size: 1rem;
+  }
+
+  #maintenance footer a {
+    font-size: 2rem;
+    color: #00aedb;
+    margin: 0 0.5rem;
+  }
+
+  /* ========[ Under Construction ]======== */
+  #underconstruction .showcase img {
+    width: 80vw;
+    margin-top: 15vh;
+  }
+
+  #underconstruction .showcase h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  #underconstruction .showcase p {
+    letter-spacing: 1px;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+  #underconstruction .showcase h1 {
+    font-size: 1.2rem;
+    margin-bottom: 7rem;
+  }
+  /* ========[ Error ]======== */
+  #error header img {
+    height: 5vh;
+  }
+
+  #error .showcase img {
+    width: 80vw;
+  }
+
+  #error .showcase p {
+    line-height: 1rem;
+    font-size: 0.9rem;
+
+    font-style: italic;
+  }
+
+  #error .showcase .error-code {
+    margin: 1rem 0 2rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  #error .showcase .error-code span {
+    letter-spacing: 1px;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  #error .showcase h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #error .showcase .lead {
+    text-align: center;
+  }
+
+  #error footer {
+    margin: 10vh auto 1rem;
+    text-align: center;
+  }
+
+  #error footer h4 {
+    font-size: 1.1rem;
+  }
+
+  #error footer a {
+    font-size: 2rem;
+    color: #00aedb;
+    margin: 0 0.55rem;
+  }
+}
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* ========[ Nav ]======== */
+  nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    left: unset;
+  }
+
+  /* ========[ Content ]======== */
+  .content {
+    left: 0;
+    width: 100%;
+  }
+
+  .container {
+    margin: 0.75rem 1.25rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    color: #00aedb;
+  }
+
+  /* ========[ Payslip Template ]======== */
+  #payslip-template .modal-content {
+    padding: 2rem 2rem;
+  }
+
+  /* ========[ Under Construction ]======== */
+  #underconstruction .showcase img {
+    width: 80vw;
+    margin-top: 15vh;
+  }
+
+  #underconstruction .showcase h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  #underconstruction .showcase p {
+    letter-spacing: 1px;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+  #underconstruction .showcase h1 {
+    font-size: 1.25rem;
+    margin-bottom: 7rem;
+  }
+}
