@@ -37,10 +37,12 @@ function toggleMenu() {
   const menu = document.querySelector("#nav");
   const content = document.querySelector(".content");
   const menuBtn = document.querySelector(".menu-btn");
+  const body = document.querySelector("body");
 
   menu.classList.toggle("show");
   content.classList.toggle("blur");
   menuBtn.classList.toggle("hidden");
+  body.classList.toggle("noscroll");
 }
 
 // Birthday Picker
