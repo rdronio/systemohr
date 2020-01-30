@@ -570,7 +570,7 @@ iframe {
   color: #333;
   cursor: pointer;
   display: none;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   padding: 0.5rem 0.8rem;
   box-shadow: 3px 3px 7px rgba(83, 83, 83, 0.15);
 }
