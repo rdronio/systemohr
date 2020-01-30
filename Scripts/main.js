@@ -59,7 +59,7 @@ $(".datePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-20:+0"
+    yearRange: "-10:+10"
   });
 });
 
@@ -69,7 +69,7 @@ $(".leavePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-0:+1"
+    yearRange: "-10:+10"
   });
 });
 
@@ -79,7 +79,7 @@ $(".otPicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-1:0"
+    yearRange: "-10:+10"
   });
 });
 
@@ -89,7 +89,7 @@ $(".terminationDatePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-1:+1"
+    yearRange: "-10:+10"
   });
 });
 

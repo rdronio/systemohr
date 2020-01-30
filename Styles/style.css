@@ -694,6 +694,10 @@ iframe {
   display: inline-block;
 }
 
+.showmore-container {
+  display: none;
+}
+
 .pagination div {
   display: inline;
 }

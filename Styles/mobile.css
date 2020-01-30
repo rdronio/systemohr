@@ -161,6 +161,40 @@
     padding: 0.4rem 0;
   }
 
+  .pagination-container {
+    text-align: center;
+  }
+
+  .showmore-container {
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .btn-showmore {
+    font-family: inherit;
+    font-size: 0.6rem;
+    font-weight: 400;
+    padding: 0.6rem 1.5rem;
+    border-radius: 120px !important;
+    text-align: center;
+    cursor: pointer;
+    color: #000;
+    border: 1px solid #999;
+    display: block;
+    margin: 0 !important;
+  }
+
+  .btn-showmore i {
+    position: relative;
+    left: -40%;
+    top: 1px;
+  }
+
+  .pagination {
+    display: none !important;
+  }
+
   .tab-list ul li {
     padding: auto;
   }
