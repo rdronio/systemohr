@@ -565,13 +565,14 @@ iframe {
   text-align: center;
   justify-content: center;
   top: 0;
-  right: 15.5%;
+  /* right: 15.5%; */
+  left: 75%;
   color: #333;
   cursor: pointer;
   display: none;
   background: #fff;
   padding: 0.5rem 0.8rem;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 7px rgba(83, 83, 83, 0.15);
 }
 
 .close-menu a i {
