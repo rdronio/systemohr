@@ -33,6 +33,13 @@ function selectPage() {
   });
 }
 
+function selectTab() {
+  $(".tab-list").on("click", "li", function() {
+    $(".tab-list li.current-tab").removeClass("current-tab");
+    $(this).addClass("current-tab");
+  });
+}
+
 function toggleMenu() {
   const menu = document.querySelector("#nav");
   const content = document.querySelector(".content");
