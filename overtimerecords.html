@@ -122,6 +122,16 @@
             <h2>Overtime Records</h2>
             <div class="card card-1">
               <div>
+                <label class="label-6 block">Overtime request</label>
+                <a
+                  class="btn-sm btn-primary"
+                  id="btnTimeAlteration"
+                  onclick="openModal(`#btnOvertimeApplication`);"
+                >
+                  File an Overtime
+                </a>
+              </div>
+              <div>
                 <label class="label-6">Filter Date</label>
                 <br />
                 <label for="txtDateFrom" class="label-6">From: </label>
@@ -151,7 +161,8 @@
                     <td class="column2">Start Time</td>
                     <td class="column3">End Time</td>
                     <td class="column4">Overtime (hour/s)</td>
-                    <td class="column5">Overtime Application</td>
+                    <td class="column5">Reason</td>
+                    <td class="column6">Status</td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -159,63 +170,10 @@
                     <td class="column3">05:00 PM</td>
                     <td class="column4">8.00</td>
                     <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnOvertimeApplication`);"
-                        >File
-                      </a>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnOvertimeApplication`);"
-                        >File
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnOvertimeApplication`);"
-                        >File
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnOvertimeApplication`);"
-                        >File
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnOvertimeApplication`);"
-                        >File
-                      </a>
+                    <td class="column6">
+                      Approved
                     </td>
                   </tr>
                 </tbody>
@@ -259,68 +217,6 @@
           </div>
 
           <!-- Modal Section -->
-          <!-- btnTimeAlteration -->
-          <div class="modal modal-time-alteration">
-            <div class="modal-content">
-              <!-- <span class="modal-close-btn" onclick="closeModal();"
-                >&times;</span
-              > -->
-              <h5>Time Alteration Form</h5>
-              <hr />
-              <div class="">
-                <label for="txtDate" class="label-6">Date: </label>
-                <input
-                  name="txtDate"
-                  type="text"
-                  id="txtDate"
-                  class="datePicker"
-                />
-                <div class="">
-                  <div class="previous-container">
-                    <label class="label-6">Previous Record</label>
-                    <label class="label-6">Time In</label>
-                    <p class="text" id="txtTimeInPrevious">--:-- --</p>
-                    <label class="label-6">Time Out</label>
-                    <p class="text" id="txtTimeOutPrevious">--:-- --</p>
-                  </div>
-                  <div class="new-container">
-                    <label class="label-6">New Record</label>
-                    <label class="label-6">Time In</label>
-                    <input
-                      name="txtTimeIn"
-                      type="text"
-                      id="txtTimeInNew"
-                      class=""
-                    />
-                    <label class="label-6">Time Out</label>
-                    <input
-                      name="txtTimeOut"
-                      type="text"
-                      id="txtTimeOutNew"
-                      class=""
-                    />
-                  </div>
-                </div>
-
-                <label for="txtAreaReasonTA" class="label-6">Reason</label>
-                <textarea
-                  name="txtAreaReasonTA"
-                  id="txtAreaReasonTA"
-                ></textarea>
-              </div>
-              <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnAlterTime"
-                  >Alter Time</a
-                >
-                <a
-                  class="btn-sm btn-secondary mx-3"
-                  onclick="closeModal(`#btnCloseTimeAlteration`);"
-                  >Cancel</a
-                >
-              </div>
-            </div>
-          </div>
-
           <!-- btnOvertimeApplication -->
           <div class="modal modal-overtime-application">
             <div class="modal-content">
@@ -332,7 +228,7 @@
                   name="txtDateOT"
                   type="text"
                   id="txtDateOT"
-                  class="datePicker"
+                  class="otPicker"
                 />
                 <label for="txtOvertime" class="label-6">Overtime</label>
                 <p class="text" id="txtOvertime">0.00</p>

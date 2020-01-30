@@ -23,16 +23,16 @@
     <title>HRIS, Payroll & Time Keeping System</title>
   </head>
   <body>
-    <form action="#" autocomplete="off">
+    <form id="manage-employee" action="#" autocomplete="off">
       <!-- main -->
-      <div class="main">
+      <div class="main ">
         <!-- nav -->
         <nav id="nav">
           <div class="logo">
             <a href="home.html" class="logo-link">
               <h1>LOGO HERE</h1>
               <p>
-                HRIS, Payroll & Time Keeping System
+                HRIS & Payroll w/ Time Keeping System
               </p>
             </a>
           </div>
@@ -55,10 +55,15 @@
           </div>
 
           <!-- / menu -->
-          <ul class="nav-list">
+          <ul class="nav-list" onclick="selectNav();">
             <li>
               <a href="admindashboard.html"
                 ><i class="fas fa-tachometer-alt"></i>Admin Dashboard</a
+              >
+            </li>
+            <li class="current-page">
+              <a href="adminleaverecords.html"
+                ><i class="fas fa-plane-departure"></i>Employee Leave Records</a
               >
             </li>
             <li>
@@ -67,8 +72,8 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu ">
-                <li class="current-page">
+              <ul class="nav child_menu hidden">
+                <li>
                   <a href="leaveapproval.html">Leave Approval</a>
                 </li>
                 <li><a href="overtimeapproval.html">Overtime Approval</a></li>
@@ -91,7 +96,7 @@
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-tasks"> </i>Memo & Annountments<span
+                ><i class="fas fa-bell"></i>Memo & Annountments<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
@@ -116,10 +121,16 @@
               >
             </li>
           </ul>
+
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
         </nav>
 
-        <!-- Leave Approval -->
-        <section id="leave-approval" class="content">
+        <!-- Set Leave -->
+        <section id="employee-leave-records" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -134,110 +145,228 @@
           </div>
 
           <div class="container">
-            <h2>Leave Approval</h2>
+            <h2>Employee Leave Records</h2>
+
             <div class="card card-1">
               <div class="">
-                <label class="label-6 block">Filter Date</label>
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="datePicker"
-                />
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="datePicker"
-                />
+                <a
+                  class="btn-xs btn-alt"
+                  id="btnSetLeave"
+                  onclick="openModalSetLeave();"
+                >
+                  Set Leave
+                </a>
               </div>
 
               <div>
-                <a class="btn-sm btn-secondary">Clear</a>
+                <label for="showEmployeeBy" class="label-6 block"
+                  >Search Employee by</label
+                >
+                <select
+                  name="showEmployeeBy"
+                  id="showEmployeeBy"
+                  class="select"
+                  onchange="getEmployeeBy()"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="department">Department</option>
+                  <option value="position">Position</option>
+                </select>
+                <select
+                  name="showEmployeeByCategory"
+                  id="showEmployeeByCategory"
+                  class="select"
+                >
+                </select>
               </div>
 
-              <!-- Leave Approval -->
+              <div>
+                <label for="searchEmployee" class="label-6 block"
+                  >Search Employee ID/Name</label
+                >
+                <div style="display: block;">
+                  <input type="" value="" id="searchEmployee" />
+                  <a class="search"><i class="fa fa-search"></i></a>
+                </div>
+              </div>
+
+              <!-- Set Leave -->
               <table class="tableLayout">
                 <tbody>
                   <tr>
-                    <td class="column1">Date</td>
-                    <td class="column2">Employee</td>
-                    <td class="column3">Type</td>
-                    <td class="column4">From</td>
-                    <td class="column5">To</td>
-                    <td class="column6">No. of days</td>
-                    <td class="column7">With Pay</td>
-                    <td class="column8">Reason</td>
-                    <td class="column9 ">Action</td>
+                    <td class="column1">Employee Name</td>
+                    <td class="column2">Available Sick Leave</td>
+                    <td class="column3">Used Sick Leave</td>
+                    <td class="column4">Available Vacation/Emergency Leave</td>
+                    <td class="column5">Used Vacation/Emergency Leave</td>
                   </tr>
                   <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Vacation</td>
-                    <td class="column4">November 18, 2019</td>
-                    <td class="column5">November 21, 2019</td>
-                    <td class="column6">3</td>
-                    <td class="column7"></td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
+                    <td class="column1">
+                      John Doe
                     </td>
-                    <td class="column9">
-                      <i
-                        class="fas fa-check btn-circle btn-green"
-                        onclick="openModalWithPay()"
-                      ></i>
-                      <i class="fas fa-times btn-circle btn-red"></i>
-                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
                   </tr>
                   <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Vacation</td>
-                    <td class="column4">September 18, 2020</td>
-                    <td class="column5">September 21, 2020</td>
-                    <td class="column6">3</td>
-                    <td class="column7"></td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
+                    <td class="column1">
+                      John Doe
                     </td>
-                    <td class="column9">
-                      <i
-                        class="fas fa-check btn-circle btn-green"
-                        onclick="openModalWithPay()"
-                      ></i>
-                      <i class="fas fa-times btn-circle btn-red"></i>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
                     </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      John Doe
+                    </td>
+                    <td class="column2">0</td>
+                    <td class="column3">0</td>
+                    <td class="column4">0</td>
+                    <td class="column5">0</td>
                   </tr>
                 </tbody>
               </table>
+
+              <div class="pagination-container">
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Modal Section -->
-          <!-- WithPay -->
-          <div class="modal modal-with-pay">
+          <!-- btnFileLeave -->
+          <div class="modal modal-set-leave">
             <div class="modal-content">
-              <h4>Approval Confirmation</h4>
+              <h5>Set Leave</h5>
               <hr />
-              <input type="checkbox" id="chkWithPay" />
-              <label class="label-5" for="chkWithPay">With Pay</label>
-
-              <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3">Approve</a>
-                <a
-                  class="btn-sm btn-secondary mx-3"
-                  onclick="closeModalWithPay();"
-                  >Cancel</a
+              <div class="">
+                <label class="label-6 block">Employee</label>
+                <select
+                  name="showEmployee"
+                  id="showEmployee"
+                  class="select"
+                  onchange=""
                 >
+                </select>
+
+                <label for="txtVacationLeave" class="label-6">Sick Leave: </label>
+                <input
+                  name="txtVacationLeave"
+                  type="number"
+                  id="txtVacationLeave"
+                  min="0"
+                  max="10"
+                />
+
+                <label for="txtVELeave" class="label-6">Vacation/Emergency Leave: </label>
+                <input
+                  name="txtVELeave"
+                  type="number"
+                  id="txtVELeave"
+                  min="0"
+                  max="10"
+                />
+
+                <label for="txtYear" class="label-6">Year: </label>
+                <select
+                  name="txtYear"
+                  id="txtYear"
+                  class="select"
+                >
+                </select>
+
+                <div class="modal-btn-container">
+                  <a class="btn-sm btn-primary mx-3">Set Leave</a>
+                  <a
+                    class="btn-sm btn-secondary mx-3"
+                    onclick="closeModalSetLeave();"
+                    >Cancel</a
+                  >
+                </div>
               </div>
             </div>
           </div>
 
-          <section id="footer">
+          <footer id="footer">
             <a href="https://systemoph.com/">
               <svg
                 class="systemologo"
@@ -349,7 +478,7 @@
               </svg>
               <p>Copyright &copy; 2019 SysteMoPH - All Rights Reserved.</p>
             </a>
-          </section>
+          </footer>
         </section>
       </div>
     </form>

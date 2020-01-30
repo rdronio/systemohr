@@ -195,6 +195,11 @@
     margin: 0.5rem 0.5rem;
   }
 
+  .container .card-1 input {
+    width: 100%;
+    margin-right: 0;
+  }
+
   .card {
     margin: 1rem 0;
     padding: 1rem 1rem;
@@ -236,7 +241,7 @@
   }
   table.tableLayout tbody tr td {
     padding-left: 50%;
-    /* margin-bottom: 1.5rem; */
+    /* margin-bottom: 0.75rem; */
     /* margin-bottom: 0.5rem; */
     border: none;
   }
@@ -250,6 +255,7 @@
     font-weight: bold;
     position: absolute;
     left: 0;
+    max-width: 8rem;
     /* top: 0; */
   }
 
@@ -492,19 +498,8 @@
 
   /* ========[ Overtime Records ]======== */
 
-  #overtime-records .container .card-1 input {
-    width: 100%;
-    margin-right: 0;
-  }
-
   #overtime-records .container .card-1 div:first-child a {
     margin-left: 0rem;
-  }
-
-  #overtime-records .container .card-1 div:first-child {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
   }
 
   #overtime-records .container .card-1 div:nth-child(2),
@@ -515,6 +510,7 @@
   #overtime-records .container .card-1 div:nth-child(3),
   #overtime-records .container .card-1 div:nth-child(3) button {
     width: 100%;
+    margin-right: 0;
   }
 
   /* card-1 table */
@@ -561,7 +557,17 @@
     tbody
     tr
     td:nth-child(5):before {
-    content: "Overtime";
+    content: "Reason";
+  }
+
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Status";
   }
 
   /* card-2 table */
@@ -1253,6 +1259,79 @@
     flex-direction: column;
   }
 
+  /* ========[ Employee Leave Records ]======== */
+  #employee-leave-records .container .card-1 div:nth-child(2) {
+    margin-right: 0;
+  }
+  #employee-leave-records .container .card-1 div:nth-child(2) select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  #employee-leave-records .container .card-1 div:nth-child(3) {
+    margin-right: 0;
+    display: block;
+  }
+
+  #employee-leave-records .container .card-1 div:nth-child(3) input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #employee-leave-records .modal-content {
+    width: 90%;
+  }
+
+  #employee-leave-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Employee Name";
+  }
+  #employee-leave-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Available Sick Leave";
+  }
+  #employee-leave-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Used Sick Leave";
+  }
+
+  #employee-leave-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Available V/E Leave";
+  }
+
+  #employee-leave-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Used V/E Leave";
+  }
+
   /* ========[ Generate DTR Report ]======== */
   #dtr-report .container .card-1 div:nth-child(1) {
     margin-right: 0;
@@ -1792,7 +1871,6 @@
   .card {
     margin: 1rem 0;
     padding: 1rem 1.5rem;
-    color: #00aedb;
   }
 
   /* ========[ Payslip Template ]======== */

@@ -1,45 +1,3 @@
-const inputUsername = document.getElementById("txtUsername");
-const inputPass = document.getElementById("txtUsername");
-
-inputUsername.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    // event.preventDefault();
-
-    document.getElementById("btnSignIn").click();
-  }
-});
-
-inputPass.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    // event.preventDefault();
-
-    document.getElementById("btnSignIn").click();
-  }
-});
-
-function sampleSignIn() {
-  const lblInvalid = document.querySelector("#lblInvalid");
-  const username = document.querySelector("#txtUsername").value;
-
-  if (username === "hradmin") {
-    window.location.replace(
-      "https://stupefied-shaw-af00d3.netlify.com/admindashboard.html"
-    );
-  } else if (username === "hr") {
-    window.location.replace(
-      "https://stupefied-shaw-af00d3.netlify.com/payroll.html"
-    );
-  } else if (username === "employee") {
-    window.location.replace(
-      "https://stupefied-shaw-af00d3.netlify.com/dashboard.html"
-    );
-  } else {
-    lblInvalid.classList.remove("hidden");
-  }
-}
-
 function togglePassword() {
   var x = document.querySelector("#txtPass");
 
@@ -112,6 +70,16 @@ $(".leavePicker").each(function() {
     changeMonth: true,
     changeYear: true,
     yearRange: "-0:+1"
+  });
+});
+
+// OT Picker
+$(".otPicker").each(function() {
+  //Create jQueryUI datepicker
+  $(this).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "-1:0"
   });
 });
 
@@ -285,6 +253,16 @@ function closeModalConfirmation() {
 function loadModal() {
   document.querySelector(".modal").innerHTML = "confirmation.html";
   openModalConfirmation();
+}
+
+function openModalSetLeave() {
+  const modal = document.querySelector(".modal-set-leave");
+  modal.style.display = "flex";
+}
+
+function closeModalSetLeave() {
+  const modal = document.querySelector(".modal-set-leave");
+  modal.style.display = "none";
 }
 
 function openTab(tabName) {
