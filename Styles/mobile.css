@@ -186,9 +186,8 @@
   }
 
   .btn-showmore i {
-    position: absolute;
-    left: 17px;
-    top: 13px;
+    position: relative;
+    left: -39%;
   }
 
   .current-page > a {

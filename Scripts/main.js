@@ -26,18 +26,72 @@ $(document).ready(function() {
   });
 });
 
+// function selectNav() {
+//   $(".nav").on("click", "li", function() {
+//     $(".nav-list li.current-page").removeClass("current-page");
+//     $(this).addClass("current-page");
+//   });
+// }
+
 function selectPage() {
-  $(".pagination").on("click", "a", function() {
+  $(".pagination-container").on("click", "a", function() {
     $(".pagination a.active").removeClass("active");
     $(this).addClass("active");
   });
 }
 
 function selectTab() {
-  $(".tab-list").on("click", "li", function() {
+  $("#tab").on("click", "li", function() {
     $(".tab-list li.current-tab").removeClass("current-tab");
     $(this).addClass("current-tab");
   });
+}
+
+function showTR() {
+  const card1 = document.querySelector("#time-records .container .card-1");
+  const card2 = document.querySelector("#time-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+function showPTA() {
+  const card1 = document.querySelector("#time-records .container .card-1");
+  const card2 = document.querySelector("#time-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showLR() {
+  const card1 = document.querySelector("#leaverecords .container .card-1");
+  const card2 = document.querySelector("#leaverecords .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPLA() {
+  const card1 = document.querySelector("#leaverecords .container .card-1");
+  const card2 = document.querySelector("#leaverecords .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showOR() {
+  const card1 = document.querySelector("#overtime-records .container .card-1");
+  const card2 = document.querySelector("#overtime-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPOA() {
+  const card1 = document.querySelector("#overtime-records .container .card-1");
+  const card2 = document.querySelector("#overtime-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
 }
 
 function toggleMenu() {
@@ -68,7 +122,8 @@ $(".datePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-10:+10"
+    yearRange: "-10:+10",
+    beforeShowDay: $.datepicker.noWeekends
   });
 });
 
@@ -78,7 +133,8 @@ $(".leavePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-10:+10"
+    yearRange: "-10:+10",
+    beforeShowDay: $.datepicker.noWeekends
   });
 });
 
@@ -88,7 +144,8 @@ $(".otPicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-10:+10"
+    yearRange: "-10:+10",
+    beforeShowDay: $.datepicker.noWeekends
   });
 });
 
@@ -98,7 +155,8 @@ $(".terminationDatePicker").each(function() {
   $(this).datepicker({
     changeMonth: true,
     changeYear: true,
-    yearRange: "-10:+10"
+    yearRange: "-10:+10",
+    beforeShowDay: $.datepicker.noWeekends
   });
 });
 
@@ -155,81 +213,93 @@ function removeOptions(select_box) {
 }
 
 function openModal(btn_id) {
-  // List modal
-  const modalTimeAlteration = document.querySelector(".modal-time-alteration");
-  const modalOvertimeRecord = document.querySelector(
-    ".modal-overtime-application"
-  );
-  const modalFileLeave = document.querySelector(".modal-file-leave");
-  const modalCreatePayroll = document.querySelector(".modal-create-payroll");
-  const modalAddEmployee = document.querySelector(".modal-add-employee");
-  const modalViewEmployee = document.querySelector(".modal-view-employee");
-  const modalAddEmployeeHeader = document.querySelector("#add-employee-header");
-  const modalAddEmployeeBtn = document.querySelector("#btnModalAddEmployee");
-  const modalUpdateEmployeeBtn = document.querySelector(
-    "#btnModalUpdateEmployee"
-  );
+  try {
+    // List modal
+    const modalTimeAlteration = document.querySelector(
+      ".modal-time-alteration"
+    );
+    const modalOvertimeRecord = document.querySelector(
+      ".modal-overtime-application"
+    );
+    const modalFileLeave = document.querySelector(".modal-file-leave");
+    const modalCreatePayroll = document.querySelector(".modal-create-payroll");
+    const modalAddEmployee = document.querySelector(".modal-add-employee");
+    const modalViewEmployee = document.querySelector(".modal-view-employee");
+    const modalAddEmployeeHeader = document.querySelector(
+      "#add-employee-header"
+    );
+    const modalAddEmployeeBtn = document.querySelector("#btnModalAddEmployee");
+    const modalUpdateEmployeeBtn = document.querySelector(
+      "#btnModalUpdateEmployee"
+    );
 
-  // get open modal button
-  const modalBtn = btn_id;
+    // get open modal button
+    const modalBtn = btn_id;
 
-  if (modalBtn === "#btnTimeAlteration") {
-    modalTimeAlteration.style.display = "flex";
-  } else if (modalBtn === "#btnOvertimeApplication") {
-    modalOvertimeRecord.style.display = "flex";
-  } else if (modalBtn === "#btnFileLeave") {
-    modalFileLeave.style.display = "flex";
-  } else if (modalBtn === "#btnCreatePayroll") {
-    modalCreatePayroll.style.display = "flex";
-  } else if (modalBtn === "#btnAddEmployee") {
-    modalAddEmployee.style.display = "flex";
-    modalAddEmployeeHeader.innerHTML = "Add Employment Information";
-    modalAddEmployeeBtn.classList.remove("hidden");
-    modalUpdateEmployeeBtn.classList.add("hidden");
-  } else if (modalBtn === "#btnUpdateEmployee") {
-    modalAddEmployee.style.display = "flex";
-    modalAddEmployeeHeader.innerHTML = "Update Employment Information";
-    modalAddEmployeeBtn.classList.add("hidden");
-    modalUpdateEmployeeBtn.classList.remove("hidden");
-  } else if (modalBtn === "#btnViewEmployee") {
-    modalViewEmployee.style.display = "flex";
-  }
+    if (modalBtn === "#btnTimeAlteration") {
+      modalTimeAlteration.style.display = "flex";
+    } else if (modalBtn === "#btnOvertimeApplication") {
+      modalOvertimeRecord.style.display = "flex";
+    } else if (modalBtn === "#btnFileLeave") {
+      modalFileLeave.style.display = "flex";
+    } else if (modalBtn === "#btnCreatePayroll") {
+      modalCreatePayroll.style.display = "flex";
+    } else if (modalBtn === "#btnAddEmployee") {
+      modalAddEmployee.style.display = "flex";
+      modalAddEmployeeHeader.innerHTML = "Add Employment Information";
+      modalAddEmployeeBtn.classList.remove("hidden");
+      modalUpdateEmployeeBtn.classList.add("hidden");
+    } else if (modalBtn === "#btnUpdateEmployee") {
+      modalAddEmployee.style.display = "flex";
+      modalAddEmployeeHeader.innerHTML = "Update Employment Information";
+      modalAddEmployeeBtn.classList.add("hidden");
+      modalUpdateEmployeeBtn.classList.remove("hidden");
+    } else if (modalBtn === "#btnViewEmployee") {
+      modalViewEmployee.style.display = "flex";
+    }
 
-  //set tab back to primary-info
-  defaultTab("primary-info");
+    //set tab back to primary-info
+    defaultTab("primary-info");
+  } catch (ex) {}
 }
 
 function closeModal(btn_id) {
-  // List modal
-  const modalTimeAlteration = document.querySelector(".modal-time-alteration");
-  const modalOvertimeRecord = document.querySelector(
-    ".modal-overtime-application"
-  );
-  const modalFileLeave = document.querySelector(".modal-file-leave");
-  const modalCreatePayroll = document.querySelector(".modal-create-payroll");
-  const modalAddEmployee = document.querySelector(".modal-add-employee");
-  const modalViewEmployee = document.querySelector(".modal-view-employee");
-  const modalUpdateEmployee = document.querySelector(".modal-update-employee");
+  try {
+    // List modal
+    const modalTimeAlteration = document.querySelector(
+      ".modal-time-alteration"
+    );
+    const modalOvertimeRecord = document.querySelector(
+      ".modal-overtime-application"
+    );
+    const modalFileLeave = document.querySelector(".modal-file-leave");
+    const modalCreatePayroll = document.querySelector(".modal-create-payroll");
+    const modalAddEmployee = document.querySelector(".modal-add-employee");
+    const modalViewEmployee = document.querySelector(".modal-view-employee");
+    const modalUpdateEmployee = document.querySelector(
+      ".modal-update-employee"
+    );
 
-  // get open modal button
-  const modalBtn = btn_id;
+    // get open modal button
+    const modalBtn = btn_id;
 
-  if (modalBtn === "#btnCloseTimeAlteration") {
-    modalTimeAlteration.style.display = "none";
-  } else if (modalBtn === "#btnCloseOvertimeApplication") {
-    modalOvertimeRecord.style.display = "none";
-  } else if (modalBtn === "#btnCloseFileLeave") {
-    modalFileLeave.style.display = "none";
-  } else if (modalBtn === "#btnCloseCreatePayroll") {
-    modalCreatePayroll.style.display = "none";
-  } else if (modalBtn === "#btnCloseAddEmployee") {
-    modalAddEmployee.style.display = "none";
-  } else if (modalBtn === "#btnCloseViewEmployee") {
-    modalViewEmployee.style.display = "none";
-  }
+    if (modalBtn === "#btnCloseTimeAlteration") {
+      modalTimeAlteration.style.display = "none";
+    } else if (modalBtn === "#btnCloseOvertimeApplication") {
+      modalOvertimeRecord.style.display = "none";
+    } else if (modalBtn === "#btnCloseFileLeave") {
+      modalFileLeave.style.display = "none";
+    } else if (modalBtn === "#btnCloseCreatePayroll") {
+      modalCreatePayroll.style.display = "none";
+    } else if (modalBtn === "#btnCloseAddEmployee") {
+      modalAddEmployee.style.display = "none";
+    } else if (modalBtn === "#btnCloseViewEmployee") {
+      modalViewEmployee.style.display = "none";
+    }
 
-  //set tab back to primary-info
-  defaultTab("primary-info");
+    //set tab back to primary-info
+    defaultTab("primary-info");
+  } catch (ex) {}
 }
 
 function reset(frm_id) {
