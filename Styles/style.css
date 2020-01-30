@@ -571,7 +571,7 @@ iframe {
   display: none;
   background: #fff;
   padding: 0.5rem 0.8rem;
-  box-shadow: 3px 3px 7px rgba(83, 83, 83, 0.15);
+  box-shadow: 3px 1px 3px 0px rgba(83, 83, 83, 0.15);
 }
 
 .close-menu a i {
