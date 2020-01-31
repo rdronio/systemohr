@@ -106,6 +106,21 @@ function toggleMenu() {
   body.classList.toggle("noscroll");
 }
 
+// Time Picker
+$(".timepicker").each(function() {
+  $(this).timepicker({
+    timeFormat: "hh:mm p",
+    interval: 60,
+    minTime: "8",
+    maxTime: "5:00pm",
+    defaultTime: "8",
+    startTime: "8:00",
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true
+  });
+});
+
 // Birthday Picker
 $(".bdayPicker").each(function() {
   //Create jQueryUI datepicker
@@ -307,16 +322,23 @@ function reset(frm_id) {
 }
 
 function openModalWithPay() {
-  // List modal
   const modalWithPay = document.querySelector(".modal-with-pay");
   modalWithPay.style.display = "flex";
 }
 
 function closeModalWithPay() {
-  // List modal
   const modalWithPay = document.querySelector(".modal-with-pay");
-
   modalWithPay.style.display = "none";
+}
+
+function openModalLeaveRemarks() {
+  const modalLeaveRemarks = document.querySelector(".modal-leave-remarks");
+  modalLeaveRemarks.style.display = "flex";
+}
+
+function closeModalLeaveRemarks() {
+  const modalLeaveRemarks = document.querySelector(".modal-leave-remarks");
+  modalLeaveRemarks.style.display = "none";
 }
 
 function openModalConfirmation() {

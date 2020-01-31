@@ -6,6 +6,9 @@
     height: 100%;
     overflow: hidden;
   } */
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
 
   h1 {
     font-size: 1.75rem;
@@ -107,8 +110,6 @@
   }
 
   .modal-time-alteration .modal-content > div > div {
-    display: flex;
-    flex-direction: column;
     margin-top: 0.5rem;
   }
 
@@ -158,7 +159,7 @@
   .label-6 {
     font-weight: 500;
     font-size: 0.7rem;
-    padding: 0.4rem 0;
+    padding: 0.8rem 0 0.4rem 0;
   }
 
   .pagination-container {
@@ -200,7 +201,7 @@
     /* background: #00aedb; */
     /* color: #000 !important;
     font-weight: 600 !important; */
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
   }
 
   .pagination {
@@ -394,8 +395,9 @@
 
   #time-records .container .card-1 > div:first-child {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
+  }
+  #time-records .container .card-1 > div:first-child a {
+    margin-left: 0;
   }
 
   #time-records .container .card-1 div:nth-child(2),
@@ -466,16 +468,6 @@
     tr
     td:nth-child(6):before {
     content: "Tardiness (min/s)";
-  }
-
-  #time-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(7):before {
-    content: "Time Alteration";
   }
 
   /* card-2 table */
@@ -1137,6 +1129,34 @@
     content: "Action";
   }
 
+  #leave-approval .modal-content {
+    width: 90%;
+    text-align: center;
+    padding: 1rem 1.5rem 0 1.5rem;
+  }
+
+  /* ========[ Profile ]======== */
+  #profile .container .card-1 > div {
+    flex-direction: column;
+  }
+
+  #profile .container .card-1 > div:first-child .profile_pic img {
+    width: 6rem;
+  }
+
+  #profile .container .card-1 > div > div {
+    padding-right: 0;
+  }
+
+  #profile .container .card-1 > .btn-container {
+    flex-direction: column;
+  }
+  #profile .container .card-1 .btn-container button:first-child {
+    margin-right: 0;
+  }
+  #profile .container .card-1 .btn-container button {
+    margin-bottom: 1rem;
+  }
   /* ========[ Manage Employees ]======== */
   #manage-employees .container .card-1 div:nth-child(2) {
     margin-right: 0;

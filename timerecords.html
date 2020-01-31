@@ -15,10 +15,12 @@
       href="Styles/mobile.css"
     />
     <link rel="stylesheet" href="Styles/jquery/jquery-ui-custom.css" />
+    <link rel="stylesheet" href="Styles/jquery/jquery.timepicker.css" />
 
     <!-- JavaScript -->
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/jquery.timepicker.min.js"></script>
 
     <title>HRIS, Payroll & Time Keeping System.</title>
   </head>
@@ -59,7 +61,7 @@
                 ><i class="fas fa-tachometer-alt"></i>Dashboard</a
               >
             </li>
-            <li  class="current-page">
+            <li class="current-page">
               <a href="timerecords.html"
                 ><i class="fas fa-user-clock"></i>Time Records</a
               >
@@ -103,10 +105,16 @@
               </ul>
             </li>
             <li>
-              <a href="team.html"><i class="fas fa-users"></i>Team</a>
+              <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
+              <a href="underconstruction.html"><i class="fas fa-users"></i>Team</a>
             </li>
             <li>
-              <a href="team.html"><i class="fas fa-tasks"></i>Project/Task</a>
+              <!-- <a href="projecttask.html"
+                ><i class="fas fa-tasks"></i>Project/Task</a
+                > -->
+              <a href="underconstruction.html"
+                ><i class="fas fa-tasks"></i>Project/Task</a
+              >
             </li>
             <li>
               <a href="#"
@@ -116,12 +124,17 @@
               ></a>
               <ul class="nav child_menu hidden">
                 <li>
-                  <a href="dtrreport.html">DTR</a>
+                  <!-- <a href="dtrreport.html">DTR</a> -->
+                  <a href="underconstruction.html">DTR</a>
                 </li>
                 <li>
-                  <a href="birreport.html">BIR</a>
+                  <!-- <a href="birreport.html">BIR</a> -->
+                  <a href="underconstruction.html">BIR</a>
                 </li>
               </ul>
+            </li>
+            <li>
+              <a href="index.html"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
             </li>
             <li>
               <a href="index.html"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
@@ -163,7 +176,11 @@
             </ul>
           </div>
           <div class="card card-1">
-            <div></div>
+            <div>
+                  <a class="btn-sm btn-primary"
+                    onclick="openModal(`#btnTimeAlteration`);">Time Alteration
+                    </a>
+            </div>
             <div>
             <label class="label-6">Filter Date</label>
             <br>
@@ -189,7 +206,6 @@
                   <td class="column4">Total (hour/s)</td>
                   <td class="column5">Overtime (hour/s)</td>
                   <td class="column6">Tardiness (min/s)</td>
-                  <td class="column7">Time Alteration</td>
                 </tr>
                 <tr>
                   <td class="column1">November 20, 2019</td>
@@ -198,11 +214,6 @@
                   <td class="column4">8.00</td>
                   <td class="column5">0.00</td>
                   <td class="column6">0.00</td>
-                  <td class="column7">              
-                    <a class="btn-table btn-secondary" 
-                    onclick="openModal(`#btnTimeAlteration`);">File
-                    </a>
-                  </td>
                 </tr>
                 <tr>
                   <td class="column1">November 19, 2019</td>
@@ -211,11 +222,6 @@
                   <td class="column4">8.00</td>
                   <td class="column5">0.00</td>
                   <td class="column6">0.00</td>
-                  <td class="column7">              
-                    <a class="btn-table btn-secondary" 
-                    onclick="openModal(`#btnTimeAlteration`);">File
-                    </a>
-                  </td>
                 </tr>
                 <tr>
                   <td class="column1">November 18, 2019</td>
@@ -224,11 +230,6 @@
                   <td class="column4">8.00</td>
                   <td class="column5">0.00</td>
                   <td class="column6">0.00</td>
-                  <td class="column7">              
-                    <a class="btn-table btn-secondary" 
-                    onclick="openModal(`#btnTimeAlteration`);">File
-                    </a>
-                  </td>
                 </tr>
                 <tr>
                   <td class="column1">November 17, 2019</td>
@@ -237,11 +238,6 @@
                   <td class="column4">8.00</td>
                   <td class="column5">0.00</td>
                   <td class="column6">0.00</td>
-                  <td class="column7">              
-                    <a class="btn-table btn-secondary" 
-                    onclick="openModal(`#btnTimeAlteration`);">File
-                    </a>
-                  </td>
                 </tr>
                 <tr>
                   <td class="column1">November 16, 2019</td>
@@ -250,11 +246,6 @@
                   <td class="column4">8.00</td>
                   <td class="column5">0.00</td>
                   <td class="column6">0.00</td>
-                  <td class="column7">              
-                    <a class="btn-table btn-secondary" 
-                    onclick="openModal(`#btnTimeAlteration`);">File
-                    </a>
-                  </td>
                 </tr>
               </tbody>
             </table>
@@ -364,22 +355,25 @@
                 
                 <label for="txtDate" class="label-6">Date: </label>
                 <input name="txtDate" type="text" id="txtDate"  class="datePicker"/>
-                <div class="">
-                  <div class="previous-container">
-                    <label class="label-6">Previous Record</label>
-                    <label class="label-6">Time In</label>
-                    <p class="text"  id="txtTimeInPrevious">--:-- --</p>
-                    <label class="label-6">Time Out</label>
-                    <p class="text" id="txtTimeOutPrevious" >--:-- --</p>
-                  </div>
-                  <div class="new-container">
-                    <label class="label-6">New Record</label>
-                    <label class="label-6">Time In</label>
-                    <input name="txtTimeIn" type="text" id="txtTimeInNew"  class=""/>
-                    <label class="label-6">Time Out</label>
-                    <input name="txtTimeOut" type="text" id="txtTimeOutNew"  class=""/>
-                  </div>
+             
+                <div class="modal-chk-container">
+                  <label for="chkIn" class="label-6" >
+                    <input type="checkbox" name="chkInOut" id="chkIn" />In
+                  </label>
+
+                  <label for="chkOut" class="label-6">
+                    <input type="checkbox" name="chkInOut" id="chkOut" >Out
+                  </label>
                 </div>
+                <!-- <label class="label-6">Time In</label>
+                <input name="txtTimeIn" type="checkbox" id="txtTimeInNew"  class=""/>
+                <label class="label-6">Time Out</label>
+                <input name="txtTimeOut" type="checkbox" id="txtTimeOutNew"  class=""/> -->
+
+                <label for="txtTime" class="label-6">Time</label>
+                <!-- <input type="time" id="txtTime" name="txtTime" min="09:00" max="18:00" required> -->
+                <input type="text" id="txtTime" name="txtTime" class="timepicker">
+            
             
                 <label for="txtAreaReasonTA" class="label-6">Reason</label>
                 <textarea name="txtAreaReasonTA" id="txtAreaReasonTA"></textarea>

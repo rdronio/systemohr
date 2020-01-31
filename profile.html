@@ -60,7 +60,7 @@
                 ><i class="fas fa-user-clock"></i>Time Records</a
               >
             </li>
-            <li>
+            <li class="current-page">
               <a href="profile.html"
                 ><i class="fas fa-address-card"></i>Profile</a
               >
@@ -71,11 +71,11 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu">
+              <ul class="nav child_menu hidden">
                 <li>
                   <a href="leaverecords.html">Leave Records</a>
                 </li>
-                <li class="current-page">
+                <li>
                   <a href="overtimerecords.html">Overtime Records</a>
                 </li>
               </ul>
@@ -101,7 +101,9 @@
             </li>
             <li>
               <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
-              <a href="underconstruction.html"><i class="fas fa-users"></i>Team</a>
+              <a href="underconstruction.html"
+                ><i class="fas fa-users"></i>Team</a
+              >
             </li>
             <li>
               <!-- <a href="projecttask.html"
@@ -129,18 +131,20 @@
               </ul>
             </li>
             <li>
-              <a href="index.html"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
+              <a href="index.html"
+                ><i class="fas fa-sign-out-alt"></i>Sign Out</a
+              >
             </li>
           </ul>
-          <div class="close-menu" >
-            <a  onclick="toggleMenu()">
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
               <i class="fas fa-times"></i>
             </a>
           </div>
         </nav>
 
         <!-- Time Records -->
-        <section id="overtime-records" class="content">
+        <section id="profile" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -155,182 +159,146 @@
           </div>
 
           <div class="container">
-            <div id="tab">
-              <ul class="tab-list" onclick="selectTab();">
-                <li class="current-tab"> 
-                  <a onclick="showOR()">Overtime Records</a>
-                </li>
-                <li>
-                  <a onclick="showPOA()">Pending Overtime Alteration</a>
-                </li>
-              </ul>
-            </div>
+            <h2>Profile</h2>
             <div class="card card-1">
-              <div>               
-                 <a
-                  class="btn-sm btn-primary"
-                  id="btnTimeAlteration"
-                  onclick="openModal(`#btnOvertimeApplication`);"
-                >
-                  File an Overtime
-                </a>
+                <div>
+                    <label for="photo" class="label-6">Photo</label>
+                    <div class="profile_pic">
+                      <img
+                        src="/Images/user.png"
+                        alt="Employee Picture"
+                        class="img-circle profile_img"
+                      />
+                      <input type="file" name="photo" id="photo" accept="image/*" />
+                    </div>
+                </div>
+              <div>
+
+
+                <div>
+                <label for="txtLastName" class="label-6">Last Name: </label>
+                <input name="txtLastName" type="text" id="txtLastName" />
+
+                <label for="txtFirstName" class="label-6">First Name: </label>
+                <input name="txtFirstName" type="text" id="txtFirstName" />
+
+                <label for="txtMiddleName" class="label-6">Middle Name: </label>
+                <input name="txtMiddleName" type="text" id="txtMiddleName" />
+
+                <label for="dtPickerBirthday" class="label-6">Birthday: </label>
+                <input
+                  name="dtPickerBirthday"
+                  type="text"
+                  id="dtPickerBirthday"
+                  class="bdayPicker"
+                />
+
+                <label class="label-6">Gender</label>
+                <div class="modal-rd-container">
+                  <label for="optMale" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoGender"
+                      id="optMale"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Male
+                  </label>
+
+                  <label for="optFemale" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoGender"
+                      id="optFemale"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Female
+                  </label>
+                </div>
+
+                <label class="label-6">Civil Status</label>
+                <div class="modal-rd-container">
+                  <label for="optSingle" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoCivilStatus"
+                      id="optSingle"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Single
+                  </label>
+
+                  <label for="optMarried" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoCivilStatus"
+                      id="optMarried"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Married
+                  </label>
+
+                  <label for="optWidowed" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoCivilStatus"
+                      id="optWidowed"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Widowed
+                  </label>
+                </div>
               </div>
               <div>
-                <label class="label-6">Filter Date</label>
-                <br />
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="datePicker"
-                />
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="datePicker"
-                />
-              </div>
 
-              <div>
-                <button class="btn btn-secondary">Clear</button>
-              </div>
-              <!-- <label class="norecords">No Records Found</label> -->
-              <!-- Overtime Records -->
-              <table class="tableLayout">
-                <tbody>
-                  <tr>
-                    <td class="column1">Date</td>
-                    <td class="column2">Start Time</td>
-                    <td class="column3">End Time</td>
-                    <td class="column4">Overtime (hour/s)</td>
-                    <td class="column5">Reason</td>
-                    <td class="column6">Status</td>
-                  </tr>
-                  <!-- <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    </td>
-                    <td class="column6">
-                      Approved
-                    </td>
-                  </tr> -->
-                </tbody>
-              </table>
 
-              <div class="pagination-container">
-                <div class="showmore-container">
-                  <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
-                </div>
-                <div class="pagination" onclick="selectPage()">
-                  <a href="#">«</a>
-                  <a class="active" href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#">»</a>
-                </div>
+                <label class="label-6">Address: </label>
+                <label for="txtHouse" class="note"
+                  >House Number, Building and Street Name</label
+                >
+                <input name="txtHouse" type="text" id="txtHouse" />
+
+                <label for="selectProvince" class="note">Province</label>
+                <input name="selectProvince" type="text" id="selectProvince" />
+                <!-- <select name="selectProvince" id="selectProvince" class="select" onchange="getProvince()" > -->
+                <!-- </select> -->
+
+                <label for="selectCity" class="note">City/Municipality</label>
+                <input name="selectCity" type="text" id="selectCity" />
+                <!-- <select name="selectCity" id="selectCity" class="select" onchange="getCity()"> -->
+                <!-- </select> -->
+
+                <label for="txtState" class="note">State</label>
+                <input name="txtState" id="txtState" />
+
+                <label for="txtEmail" class="label-6">Email: </label>
+                <input name="txtEmail" type="text" id="txtEmail" />
+
+                <label for="txtPhone" class="label-6">Phone: </label>
+                <input name="txtPhone" type="text" id="txtPhone" />
+
+                <label for="txtEmergencyContact" class="label-6"
+                  >Emergency Contact Name:
+                </label>
+                <input
+                  name="txtEmergencyContact"
+                  type="text"
+                  id="txtEmergencyContact"
+                />
+
+                <label for="txtEmergencyContactNo" class="label-6"
+                  >Emergency Contact No.:
+                </label>
+                <input
+                  name="txtEmergencyContactNo"
+                  type="text"
+                  id="txtEmergencyContactNo"
+                />
               </div>
             </div>
-
-            <div class="card card-2 hidden">
-              <h3>Pending Overtime Alteration</h3>
-              <hr />
-              <div class="container-sm">
-                <!-- Pending Time Alteration -->
-                <table class="tableLayout">
-                  <tbody>
-                    <tr>
-                      <td class="column1">Date</td>
-                      <td class="column2">Start Time</td>
-                      <td class="column3">End Time</td>
-                      <td class="column4">Overtime (hour/s)</td>
-                      <td class="column5">Reason</td>
-                      <td class="column6">Status</td>
-                      <td class="column7">Action</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 20, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                      <td class="column4">8.00</td>
-                      <td class="column4">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit.
-                      </td>
-                      <td class="column4">Pending</td>
-                      <td class="column7">
-                        <a class="btn-table btn-secondary">Cancel</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="pagination-container">
-                  <div class="showmore-container">
-                    <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
-                  </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Modal Section -->
-          <!-- btnOvertimeApplication -->
-          <div class="modal modal-overtime-application">
-            <div class="modal-content">
-              <h5>Overtime Application Form</h5>
-              <hr />
-              <div class="">
-                <label for="txtDateOT" class="label-6">Date: </label>
-                <input
-                  name="txtDateOT"
-                  type="text"
-                  id="txtDateOT"
-                  class="otPicker"
-                />
-                <label for="txtOvertime" class="label-6">Overtime</label>
-                <p class="text" id="txtOvertime">0.00</p>
-                <label for="txtAreaReasonOT" class="label-6">Reason</label>
-                <textarea
-                  name="txtAreaReasonOT"
-                  id="txtAreaReasonOT"
-                ></textarea>
-              </div>
-              <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnRequestOvertime"
-                  >Request Overtime</a
-                >
-                <a
-                  class="btn-sm btn-secondary mx-3"
-                  onclick="closeModal(`#btnCloseOvertimeApplication`);"
-                  >Cancel</a
-                >
+              <div class="btn-container">
+                <button class="btn btn-primary">Update Profile</button>
+                <button class="btn btn-secondary">Discard Changes</button>
               </div>
             </div>
           </div>
