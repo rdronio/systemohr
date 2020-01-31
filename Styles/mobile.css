@@ -70,6 +70,10 @@
     font-weight: 600;
   }
 
+  .btn-sm {
+    font-weight: 500;
+  }
+
   .btn-md {
     font-size: 0.8rem;
     font-weight: 500;
@@ -201,7 +205,7 @@
     /* background: #00aedb; */
     /* color: #000 !important;
     font-weight: 600 !important; */
-    font-size: 1rem !important;
+    font-size: 0.8rem !important;
   }
 
   .pagination {
@@ -393,9 +397,6 @@
     width: 100%;
   }
 
-  #time-records .container .card-1 > div:first-child {
-    display: grid;
-  }
   #time-records .container .card-1 > div:first-child a {
     margin-left: 0;
   }
@@ -546,13 +547,14 @@
 
   /* ========[ Overtime Records ]======== */
 
-  #overtime-records .container .card-1 div:first-child a {
+  #overtime-records .container .card-1 > div:first-child a {
     margin-left: 0rem;
   }
 
   #overtime-records .container .card-1 div:nth-child(2),
   #overtime-records .container .card-1 div:nth-child(2) input {
     margin-right: 0;
+    display: block;
   }
 
   #overtime-records .container .card-1 div:nth-child(3),

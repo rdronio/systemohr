@@ -34,6 +34,16 @@ html {
   border-radius: 10px 10px !important;
 }
 
+::selection {
+  color: none;
+  background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
 form {
   height: 100%;
 }
@@ -53,6 +63,7 @@ a {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:focus {
@@ -91,11 +102,13 @@ span {
 ul,
 li {
   list-style-type: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 label {
   font-weight: 400;
   font-size: 0.8rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 hr {
@@ -131,6 +144,8 @@ input {
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 input[type="checkbox"] {
@@ -497,7 +512,7 @@ iframe {
 }
 
 .norecords {
-  margin-top: 1rem;
+  margin: 1rem 0;
   display: block;
   padding: 0.7rem;
   background: #f0f3f5;
@@ -518,6 +533,7 @@ iframe {
   font: inherit;
   font-size: 0.8rem;
   text-align: center !important;
+  margin: 0.5rem 0;
 }
 
 .notif-red {
@@ -935,7 +951,7 @@ iframe {
   height: 100%;
   font-weight: 500;
   font-size: 1rem;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem 0.3rem;
   margin: 0 !important;
   min-width: 4rem;
 }
@@ -1358,8 +1374,7 @@ nav ul li a span.fa {
   margin-bottom: 0.5rem;
 }
 
-#overtime-records .container .card-1 div:first-child a {
-  margin-left: 0.5rem;
+#overtime-records .container .card-1 > div:first-child a {
   display: inline-block;
 }
 
