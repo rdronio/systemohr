@@ -47,6 +47,43 @@ function selectTab() {
   });
 }
 
+function selectTabEI() {
+  $("#tabIE").on("click", "li", function() {
+    $(".modal-tab-list li.current-tab").removeClass("current-tab");
+    $(this).addClass("current-tab");
+  });
+}
+function selectTabViewEI() {
+  $("#tabViewIE").on("click", "li", function() {
+    $(".modal-tab-list li.current-tab").removeClass("current-tab");
+    $(this).addClass("current-tab");
+  });
+}
+
+function showEM() {
+  const card1 = document.querySelector(
+    "#employee-masterlist .container .card-1"
+  );
+  const card2 = document.querySelector(
+    "#employee-masterlist .container .card-2"
+  );
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showIM() {
+  const card1 = document.querySelector(
+    "#employee-masterlist .container .card-1"
+  );
+  const card2 = document.querySelector(
+    "#employee-masterlist .container .card-2"
+  );
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
 function showTR() {
   const card1 = document.querySelector("#time-records .container .card-1");
   const card2 = document.querySelector("#time-records .container .card-2");

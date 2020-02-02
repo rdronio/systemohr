@@ -88,6 +88,14 @@
     margin-right: 2rem;
   }
 
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .btn-container button {
+    margin: 0.5rem 0;
+  }
+
   .close-nav {
     position: relative;
     background: #333;
@@ -1445,12 +1453,16 @@
   #dtr-report .container .card-1 .btn-container button {
     margin: 0.25rem 0;
   }
-  /* ========[ Employee Masterlist ]======== */
-  #employee-masterlist .container .card-1 .tableLayout {
+  /* ========[ Import Time Record ]======== */
+  #import-time-records .container .card-1 a {
+    display: block;
+  }
+
+  #import-time-records .container .card-1 .tableLayout {
     white-space: unset;
   }
 
-  #employee-masterlist
+  #import-time-records
     .container
     .card-1
     .tableLayout
@@ -1459,7 +1471,7 @@
     td:nth-child(1):before {
     content: "Employee ID";
   }
-  #employee-masterlist
+  #import-time-records
     .container
     .card-1
     .tableLayout
@@ -1468,7 +1480,7 @@
     td:nth-child(2):before {
     content: "Employee Name";
   }
-  #employee-masterlist
+  #import-time-records
     .container
     .card-1
     .tableLayout
@@ -1477,7 +1489,7 @@
     td:nth-child(3):before {
     content: "Date";
   }
-  #employee-masterlist
+  #import-time-records
     .container
     .card-1
     .tableLayout
@@ -1486,7 +1498,7 @@
     td:nth-child(4):before {
     content: "Timekeeping";
   }
-  #employee-masterlist
+  #import-time-records
     .container
     .card-1
     .tableLayout

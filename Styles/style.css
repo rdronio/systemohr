@@ -499,7 +499,12 @@ iframe {
   /* background: #00aedb; */
   color: #000 !important;
   font-weight: 600 !important;
-  font-size: 1.15rem !important;
+  /* font-size: 1.15rem !important; */
+  border-bottom: 2px solid #000 !important;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .current-tab > ul {
@@ -706,9 +711,9 @@ iframe {
   margin-top: 0;
 }
 
-.modal-content label {
+/* .modal-content label {
   margin-top: 0.5rem;
-}
+} */
 
 .modal-content {
   width: 40%;
@@ -951,20 +956,24 @@ iframe {
   height: 100%;
   font-weight: 500;
   font-size: 1rem;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 1rem;
   margin: 0 !important;
   min-width: 4rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .tab-list li a:hover {
   /* background: #00aedb; */
   /* border: 1px solid rgba(0, 0, 0, 0.75); */
-  background: rgba(222, 224, 226, 0.8);
+  background: rgba(232, 232, 232, 0.8);
   /* color: #fff !important; */
   color: #000 !important;
-  border-radius: 3px;
+
   /* box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); */
 }
+
+
 
 /* .tab-list ul li a {
   color: #a9afbb;
@@ -978,6 +987,43 @@ iframe {
   display: block !important;
   background: #fff;
 } */
+
+
+/*  modal tab list*/
+.modal-tab-list {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #999;
+}
+
+.modal-tab-list li {
+  margin: 0;
+  display: inline;
+  /* background: #f1f1f1; */
+  cursor: pointer;
+}
+
+.modal-tab-list li a {
+  color: #777;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
+  font-size: .7rem;
+  padding: 0.5rem .3rem;
+  margin: 0 !important;
+  min-width: 4rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.modal-tab-list li a:hover {
+  background: rgba(232, 232, 232, 0.8);
+  color: #000 !important;
+}
+
 
 .warning {
   color: red;
@@ -1807,51 +1853,132 @@ nav ul li a span.fa {
   width: auto;
 } */
 
-/* ========[ Employee Masterlist]======== */
-/* #employee-masterlist .container .card-1 > div:first-child {
+/* ========[ Employee Masterlist ]======== */
+#employee-masterlist .container .card-1 > div:nth-child(2) {
   position: relative;
   text-align: right;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
-#employee-masterlist .container .card-1 div:first-child a {
+#employee-masterlist .container .card-1 div:nth-child(2) a {
   margin-left: 0.5rem;
 }
 
-#employee-masterlist .container .card-1 div:nth-child(2) {
+#employee-masterlist .container .card-1 div:nth-child(3) {
   display: block;
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 }
 
-#employee-masterlist .container .card-1 div:nth-child(2) select {
+#employee-masterlist .container .card-1 div:nth-child(3) select {
   margin-right: 0.5rem;
-  width: 12rem;
 }
 
-#employee-masterlist .container .card-1 div:nth-child(3) {
+#employee-masterlist .container .card-1 div:nth-child(4) {
   display: inline-block;
 }
 
-#employee-masterlist .container .card-1 div:nth-child(3) input {
+#employee-masterlist .container .card-1 div:nth-child(4) input {
   margin-right: 0.5rem;
-  width: 12rem;
-} */
+}
 
-/* 
 #employee-masterlist .tableLayout {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
-} */
+  width: auto;
+}
 
 /* #employee-masterlist .tableLayout .column1,
-#employee-masterlist .tableLayout .column2,
-#employee-masterlist .tableLayout .column3,
 #employee-masterlist .tableLayout .column4,
 #employee-masterlist .tableLayout .column5 {
+  width: 5%;
+}
+
+#employee-masterlist .tableLayout .column2,
+#employee-masterlist .tableLayout .column3 {
+  width: 12%;
+}
+
+#employee-masterlist .tableLayout .column6 {
   width: 20%;
+}
+#employee-masterlist .tableLayout .column7,
+#employee-masterlist .tableLayout .column8,
+#employee-masterlist .tableLayout .column9,
+#employee-masterlist .tableLayout .column10 {
+  width: 10%;
 } */
+
+#employee-masterlist .modal-content {
+  width: 65%;
+}
+
+#employee-masterlist .modal-add-employee .modal-content > div .profile_pic img {
+  position: relative;
+  display: inline-block;
+  width: 80;
+  height: 80px;
+  z-index: 2;
+}
+
+#employee-masterlist .modal-add-employee .modal-content #primary-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#employee-masterlist .modal-add-employee .modal-content #primary-info > div {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+#employee-masterlist
+  .modal-add-employee
+  .modal-content
+  #primary-info
+  > div
+  > div:nth-child(1) {
+  margin-right: 3rem;
+}
+
+#employee-masterlist
+  .modal-add-employee
+  .modal-content
+  #primary-info
+  > div
+  > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#employee-masterlist
+  .modal-add-employee
+  .modal-content
+  #primary-info
+  > div
+  > div
+  .radio {
+  margin-right: 1rem;
+}
+
+#employee-masterlist .modal-add-employee .modal-content #hr-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#employee-masterlist .modal-add-employee .modal-content #hr-info > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#employee-masterlist .modal-add-employee .modal-content #leaves {
+  display: flex;
+  flex-direction: column;
+}
 
 /* ========[ Payroll]======== */
 #payroll .container .card-1 > div:first-child {
