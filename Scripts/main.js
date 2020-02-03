@@ -416,6 +416,25 @@ function openTab(tabName) {
   });
 }
 
+function openViewEmpInfoTab(tabName) {
+  var x = document.getElementsByClassName("tabViewIEList");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "flex";
+
+  $(".tab-list").on("click", "li", function() {
+    $(".tab-list li.current-tab").removeClass("current-tab");
+    $(this).addClass("current-tab");
+  });
+}
+
+function redirectModalToUpdateEmployee() {
+  const modalViewEmployee = document.querySelector(".modal-view-employee");
+  modalViewEmployee.style.display = "none";
+  openModal(`#btnUpdateEmployee`);
+}
+
 function defaultTab(tabName) {
   var x = document.getElementsByClassName("tabNameHrModal");
   for (i = 0; i < x.length; i++) {
@@ -423,8 +442,8 @@ function defaultTab(tabName) {
   }
   document.getElementById(tabName).style.display = "flex";
 
-  $(".tab-list li.current-tab").removeClass("current-tab");
-  $(".tab-list li:first-child").addClass("current-tab");
+  $(".modal-tab-list li.current-tab").removeClass("current-tab");
+  $(".modal-tab-list li:first-child").addClass("current-tab");
 }
 
 function toggleEndo() {

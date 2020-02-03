@@ -213,14 +213,14 @@
     /* background: #00aedb; */
     /* color: #000 !important;
     font-weight: 600 !important; */
-    font-size: 0.8rem !important;
+    /* font-size: 0.8rem !important; */
   }
 
   .pagination {
     display: none !important;
   }
   .tab-list li {
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
   }
 
   .tab-list li a {
@@ -1167,48 +1167,52 @@
   #profile .container .card-1 .btn-container button {
     margin-bottom: 1rem;
   }
-  /* ========[ Manage Employees ]======== */
-  #manage-employees .container .card-1 div:nth-child(2) {
+
+  /* ========[ Employee Masterlist ]======== */
+  #employee-masterlist .container .card-1 div:nth-child(3) {
     margin-right: 0;
   }
-  #manage-employees .container .card-1 div:nth-child(2) select {
+  #employee-masterlist .container .card-1 div:nth-child(3) select {
     width: 100%;
     margin-bottom: 0.5rem;
   }
 
-  #manage-employees .container .card-1 div:nth-child(3) {
+  #employee-masterlist .container .card-1 div:nth-child(4) {
     margin-right: 0;
     display: block;
   }
 
-  #manage-employees .container .card-1 div:nth-child(3) input {
+  #employee-masterlist .container .card-1 div:nth-child(4) input {
     width: 100%;
-    margin-bottom: 0.5rem;
   }
 
-  #manage-employees .container .card-1 div:nth-child(3) > div {
+  #employee-masterlist .container .card-1 div:nth-child(4) > div {
     display: none;
   }
 
-  /* #manage-employees.container .card-1 div:first-child {
+  /* #employee-masterlist.container .card-1 div:first-child {
     margin-right: 0;
   }
   
-  #manage-employees.container .card-1 div:nth-child(2) {
+  #employee-masterlist.container .card-1 div:nth-child(2) {
     width: 100%;
   }
   
-  #manage-employees.container .card-1 div:nth-child(2) a {
+  #employee-masterlist.container .card-1 div:nth-child(2) a {
     width: 100%;
     display: block;
     margin-right: 0;
   } */
 
-  #manage-employees .container .card-1 .tableLayout {
+  #employee-masterlist .container .card-1 .tableLayout {
     white-space: unset;
   }
 
-  #manage-employees
+  #employee-masterlist .container .card-1 table.tableLayout tbody tr td {
+    padding-left: 45%;
+  }
+
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
@@ -1217,68 +1221,113 @@
     td:nth-child(1):before {
     content: "Action";
   }
-  #manage-employees
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(2):before {
-    content: "ID";
+    content: "Employee ID";
   }
-  #manage-employees
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(3):before {
-    content: "Name";
+    content: "Employee Name";
   }
 
-  #manage-employees
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(4):before {
-    content: "Birthday";
+    content: "Department";
   }
-
-  #manage-employees
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(5):before {
-    content: "Email";
+    content: "Position";
   }
-
-  #manage-employees
+  #employee-masterlist
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(6):before {
-    content: "Phone";
+    content: "Employment Status";
   }
 
-  #manage-employees .modal-content {
+  #employee-masterlist
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Employee ID";
+  }
+  #employee-masterlist
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee Name";
+  }
+
+  #employee-masterlist
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Department";
+  }
+  #employee-masterlist
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Position";
+  }
+  #employee-masterlist
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Employment Status";
+  }
+
+  #employee-masterlist .modal-content {
     padding: 0.75rem 1.2rem;
     width: 90%;
     /* height: 100%; */
     max-height: calc(100vh - 25px);
   }
 
-  #manage-employees .modal-content input,
-  #manage-employees .modal-content select {
+  #employee-masterlist .modal-content input,
+  #employee-masterlist .modal-content select {
     width: 100%;
   }
 
-  #manage-employees
+  #employee-masterlist
     .modal-add-employee
     .modal-content
     #primary-info
@@ -1289,7 +1338,7 @@
 
   /* start here */
 
-  /* #manage-employees .modal-add-employee .modal-content > div .profile_pic img {
+  /* #employee-masterlist .modal-add-employee .modal-content > div .profile_pic img {
       position: relative;
       display: inline-block;
       width: 80;
@@ -1297,18 +1346,18 @@
   z-index: 2;
 } */
 
-  /* #manage-employees .modal-add-employee .modal-content #primary-info {
+  /* #employee-masterlist .modal-add-employee .modal-content #primary-info {
   display: flex;
   flex-direction: column;
 } */
 
-  #manage-employees .modal-add-employee .modal-content #primary-info > div {
+  #employee-masterlist .modal-add-employee .modal-content #primary-info > div {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
-  #manage-employees
+  #employee-masterlist
     .modal-add-employee
     .modal-content
     #primary-info
@@ -1319,7 +1368,7 @@
     flex: 1;
   }
 
-  #manage-employees
+  #employee-masterlist
     .modal-add-employee
     .modal-content
     #primary-info
@@ -1329,18 +1378,18 @@
     margin-right: 1rem;
   }
 
-  #manage-employees .modal-add-employee .modal-content #hr-info {
+  #employee-masterlist .modal-add-employee .modal-content #hr-info {
     display: flex;
     flex-direction: column;
   }
 
-  #manage-employees .modal-add-employee .modal-content #hr-info > div {
+  #employee-masterlist .modal-add-employee .modal-content #hr-info > div {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
-  #manage-employees .modal-add-employee .modal-content #leaves {
+  #employee-masterlist .modal-add-employee .modal-content #leaves {
     display: flex;
     flex-direction: column;
   }
