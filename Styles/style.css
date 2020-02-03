@@ -1385,6 +1385,24 @@ nav ul li a span.fa {
   padding: 0;
 }
 
+/* ========[ Admin Dashboard ]======== */
+#admin-dashboard .container > div {
+  display: flex !important;
+  flex-direction: row !important;
+}
+#admin-dashboard .container > div .card-1 {
+  display: flex !important;
+  flex-direction: row !important;
+  margin-right: 1rem;
+  flex: 1;
+}
+#admin-dashboard .container > div .card-2 {
+  display: flex !important;
+  flex-direction: row !important;
+
+  flex: 3;
+}
+
 /* ========[ Time Records ]======== */
 #time-records .container .card-1 div:first-child {
   position: relative;
