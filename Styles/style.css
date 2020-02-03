@@ -439,11 +439,11 @@ iframe {
 }
 
 .btn-circle:nth-child(1) {
-  padding: 0.75rem;
+  padding: 0.6rem;
 }
 
 .btn-circle:nth-child(2) {
-  padding: 0.75rem 0.87rem;
+  padding: 0.59rem 0.709rem;
 }
 
 .btn-container {
@@ -1568,6 +1568,8 @@ nav ul li a span.fa {
   tr:not(:first-child)
   .column8 {
   display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 /* ========[ Overtime Approval ]======== */
@@ -1607,6 +1609,45 @@ nav ul li a span.fa {
 
 #overtime-approval table.tableLayout tbody tr:not(:first-child) .column7 {
   display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+/* ========[ Payroll Approval ]======== */
+#payroll-approval .container .card-1 > div:first-child {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#payroll-approval .container .card-1 div:first-child input {
+  margin-right: 0.5rem;
+}
+
+#payroll-approval .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#payroll-approval .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
+}
+
+#payroll-approval .tableLayout {
+  display: block;
+}
+
+#payroll-approval .tableLayout .column1,
+#payroll-approval .tableLayout .column2,
+#payroll-approval .tableLayout .column3,
+#payroll-approval .tableLayout .column4,
+#payroll-approval .tableLayout .column5 {
+  width: 20%;
+}
+
+#payroll-approval table.tableLayout tbody tr:not(:first-child) .column5 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 /* ========[ Leave Approval ]======== */
@@ -1651,6 +1692,8 @@ nav ul li a span.fa {
 
 #leave-approval table.tableLayout tbody tr:not(:first-child) .column9 {
   display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 #leave-approval .modal-content {

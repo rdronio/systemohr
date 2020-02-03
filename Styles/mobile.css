@@ -949,6 +949,14 @@
     content: "Action";
   }
 
+  #time-alteration-approval
+    table.tableLayout
+    tbody
+    tr:not(:first-child)
+    .column8 {
+    justify-content: start !important;
+  }
+
   /* ========[ Overtime Approval ]======== */
   #overtime-approval .container .card-1 input {
     width: 100%;
@@ -1030,6 +1038,81 @@
     tr
     td:nth-child(7):before {
     content: "Action";
+  }
+
+  #overtime-approval table.tableLayout tbody tr:not(:first-child) .column7 {
+    justify-content: start !important;
+  }
+
+  /* ========[ Payroll Approval ]======== */
+  #payroll-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #payroll-approval .container .card-1 div:first-child {
+    margin-right: 0;
+  }
+
+  #payroll-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #payroll-approval .container .card-1 div:nth-child(2) a {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  }
+
+  #payroll-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Pay Period";
+  }
+  #payroll-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee";
+  }
+  #payroll-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Position";
+  }
+
+  #payroll-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Net Pay";
+  }
+
+  #payroll-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Action";
+  }
+
+  #payroll-approval table.tableLayout tbody tr:not(:first-child) .column5 {
+    justify-content: start !important;
   }
 
   /* ========[ Leave Approval ]======== */
@@ -1137,6 +1220,10 @@
     tr
     td:nth-child(9):before {
     content: "Action";
+  }
+
+  #leave-approval table.tableLayout tbody tr:not(:first-child) .column9 {
+    justify-content: start !important;
   }
 
   #leave-approval .modal-content {

@@ -69,6 +69,9 @@
               ></a>
               <ul class="nav child_menu">
                 <li class="current-page">
+                  <a href="payrollapproval.html">Payroll Approval</a>
+                </li>
+                <li>
                   <a href="leaveapproval.html">Leave Approval</a>
                 </li>
                 <li><a href="overtimeapproval.html">Overtime Approval</a></li>
@@ -103,7 +106,20 @@
               </ul>
             </li>
             <li>
-              <a href="dtrreport.html"><i class="fas fa-print"></i>Report</a>
+              <a href="#"
+                ><i class="fas fa-tasks"></i>Reports<span
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu hidden">
+                <li>
+                  <a href="generatedtrreport.html">Generate DTR</a>
+                </li>
+                <li>
+                  <a href="leaveapproval.html">Payroll Report</a>
+                </li>
+                <li><a href="overtimeapproval.html">Government Report</a></li>
+              </ul>
             </li>
             <li>
               <a href="importtimerecords.html"
@@ -124,8 +140,8 @@
           </div>
         </nav>
 
-        <!-- Leave Approval -->
-        <section id="leave-approval" class="content">
+        <!-- Payroll Approval -->
+        <section id="payroll-approval" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -140,7 +156,7 @@
           </div>
 
           <div class="container">
-            <h2>Leave Approval</h2>
+            <h2>Payroll Approval</h2>
             <div class="card card-1">
               <div class="">
                 <label class="label-6 block">Filter Date</label>
@@ -164,33 +180,24 @@
                 <a class="btn-sm btn-secondary">Clear</a>
               </div>
 
-              <!-- Leave Approval -->
+              <!-- Payroll Approval -->
               <table class="tableLayout">
                 <tbody>
                   <tr>
-                    <td class="column1">Date</td>
+                    <td class="column1">Pay Period</td>
                     <td class="column2">Employee</td>
-                    <td class="column3">Type</td>
-                    <td class="column4">From</td>
-                    <td class="column5">To</td>
-                    <td class="column6">No. of days</td>
-                    <td class="column7">With Pay</td>
-                    <td class="column8">Reason</td>
-                    <td class="column9 ">Action</td>
+                    <td class="column3">Position</td>
+                    <td class="column4">Net Pay</td>
+                    <td class="column5">Action</td>
                   </tr>
                   <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Vacation</td>
-                    <td class="column4">November 18, 2019</td>
-                    <td class="column5">November 21, 2019</td>
-                    <td class="column6">3</td>
-                    <td class="column7"></td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
                     </td>
-                    <td class="column9">
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
                       <i
                         class="fas fa-check btn-circle btn-green"
                         onclick="openModalWithPay()"
@@ -199,18 +206,133 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Vacation</td>
-                    <td class="column4">September 18, 2020</td>
-                    <td class="column5">September 21, 2020</td>
-                    <td class="column6">3</td>
-                    <td class="column7"></td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
                     </td>
-                    <td class="column9">
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick="openModalWithPay()"
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
                       <i
                         class="fas fa-check btn-circle btn-green"
                         onclick="openModalWithPay()"
@@ -220,6 +342,7 @@
                   </tr>
                 </tbody>
               </table>
+
               <div class="pagination-container">
                 <div class="showmore-container">
                   <a class="btn-showmore" href="#"
