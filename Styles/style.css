@@ -1544,6 +1544,14 @@ nav ul li a span.fa {
   width: 13%;
 }
 
+#time-alteration-approval
+  table.tableLayout
+  tbody
+  tr:not(:first-child)
+  .column8 {
+  display: flex;
+}
+
 /* ========[ Overtime Approval ]======== */
 #overtime-approval .container .card-1 > div:first-child {
   display: inline-block;
@@ -1577,6 +1585,10 @@ nav ul li a span.fa {
 
 #overtime-approval .tableLayout .column6 {
   width: 13%;
+}
+
+#overtime-approval table.tableLayout tbody tr:not(:first-child) .column7 {
+  display: flex;
 }
 
 /* ========[ Leave Approval ]======== */

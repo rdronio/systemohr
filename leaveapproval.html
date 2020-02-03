@@ -55,7 +55,7 @@
           </div>
 
           <!-- / menu -->
-          <ul class="nav-list">
+          <ul class="nav-list" onclick="selectNav();">
             <li>
               <a href="admindashboard.html"
                 ><i class="fas fa-tachometer-alt"></i>Admin Dashboard</a
@@ -67,7 +67,7 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu ">
+              <ul class="nav child_menu">
                 <li class="current-page">
                   <a href="leaveapproval.html">Leave Approval</a>
                 </li>
@@ -116,6 +116,12 @@
               >
             </li>
           </ul>
+
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
         </nav>
 
         <!-- Leave Approval -->

@@ -53,24 +53,25 @@
           </div>
 
           <!-- / menu -->
-          <ul class="nav-list">
+          <ul class="nav-list" onclick="selectNav();">
             <li>
-              <a href="manageemployees.html"
-                ><i class="far fa-user-circle"></i>Manage Employees</a
+              <a href="admindashboard.html"
+                ><i class="fas fa-tachometer-alt"></i>Admin Dashboard</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-tasks"></i>Approvals<span
+                ><i class="fas fa-tasks"> </i>Approvals<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu hidden">
+              <ul class="nav child_menu">
                 <li>
                   <a href="leaveapproval.html">Leave Approval</a>
                 </li>
-                <li class="current-page"></li>
-                <li><a href="overtimeapproval.html">Overtime Approval</a></li>
+                <li class="current-page">
+                  <a href="overtimeapproval.html">Overtime Approval</a>
+                </li>
                 <li>
                   <a href="timealterationapproval.html"
                     >Time Alteration Approval</a
@@ -85,7 +86,28 @@
             </li>
             <li>
               <a href="dtrreport.html"
-                ><i class="fas fa-print"></i>Generate DTR Report</a
+                ><i class="fas fa-print"></i>Employee Assignment</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-tasks"> </i>Memo & Annountments<span
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu hidden">
+                <li>
+                  <a href="leaveapproval.html">Bulk Email</a>
+                </li>
+                <li><a href="overtimeapproval.html">File Cabinet</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="dtrreport.html"><i class="fas fa-print"></i>Report</a>
+            </li>
+            <li>
+              <a href="importtimerecords.html"
+                ><i class="fas fa-upload"></i>Import Time Records</a
               >
             </li>
             <li>
@@ -94,6 +116,12 @@
               >
             </li>
           </ul>
+
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
         </nav>
 
         <!-- Overtime Approval -->
@@ -159,61 +187,11 @@
                       Magni, ullam.
                     </td>
                     <td class="column7">
-                      <div class="btn-circle-container">
-                        <i class="fas fa-check btn-circle btn-green"></i>
-                        <i class="fas fa-times btn-circle btn-red"></i>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">09:00 AM</td>
-                    <td class="column4">07:00 PM</td>
-                    <td class="column5">2.00</td>
-                    <td class="column6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
-                    </td>
-                    <td class="column7">
-                      <div class="btn-circle-container">
-                        <i class="fas fa-check btn-circle btn-green"></i>
-                        <i class="fas fa-times btn-circle btn-red"></i>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">09:00 AM</td>
-                    <td class="column4">07:00 PM</td>
-                    <td class="column5">2.00</td>
-                    <td class="column6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
-                    </td>
-                    <td class="column7">
-                      <div class="btn-circle-container">
-                        <i class="fas fa-check btn-circle btn-green"></i>
-                        <i class="fas fa-times btn-circle btn-red"></i>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 18, 2019</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">09:00 AM</td>
-                    <td class="column4">07:00 PM</td>
-                    <td class="column5">2.00</td>
-                    <td class="column6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni, ullam.
-                    </td>
-                    <td class="column7">
-                      <div class="btn-circle-container">
-                        <i class="fas fa-check btn-circle btn-green"></i>
-                        <i class="fas fa-times btn-circle btn-red"></i>
-                      </div>
+                      <i
+                        class="fas fa-check btn-circle btn-green"
+                        onclick=""
+                      ></i>
+                      <i class="fas fa-times btn-circle btn-red"></i>
                     </td>
                   </tr>
                 </tbody>
