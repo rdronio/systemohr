@@ -400,6 +400,87 @@
     padding-bottom: 1rem;
   }
 
+  /* ========[ Admin Dashboard ]======== */
+  #admin-dashboard .container > div {
+    flex-direction: column;
+  }
+
+  #admin-dashboard .container > div > div:nth-child(1) {
+    width: 100%;
+  }
+
+  #admin-dashboard .container > div > div:nth-child(2) {
+    width: 100%;
+  }
+
+  #admin-dashboard .container > div > div .card-1 {
+    margin-right: 0;
+  }
+
+  #admin-dashboard
+  .container
+  > div
+  > div
+  .card-2
+  .label-6 {
+    padding-top: 0;
+  }
+
+  #admin-dashboard
+  .container
+  > div
+  > div
+  .card-2
+  .tableLayout {
+    margin-top: 0;
+  }
+
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Time In";
+  }
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time Out";
+  }
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Employee";
+  }
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Position";
+  }
+ 
+
   /* ========[ Time Records ]======== */
   #time-records .container .card-1 input {
     width: 100%;
