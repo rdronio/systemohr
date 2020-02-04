@@ -54,43 +54,50 @@
           </div>
 
           <!-- / menu -->
-          <ul class="nav-list" >
-            <li class="hidden">
-              <a href="manageemployees.html"
-                ><i class="far fa-user-circle"></i>Manage Employees</a>
-            </li>
-            <li  class="current-page">
-              <a href="payroll.html"><i class="fas fa-file-invoice"></i>Payroll</a>
+          <ul class="nav-list">
+            <li class="current-page">
+              <a href="payroll.html"
+                ><i class="fas fa-file-invoice"></i>Payroll</a
+              >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-tasks"></i>Reports<span
+                ><i class="fas fa-chart-area"></i>Reports<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
               <ul class="nav child_menu hidden">
                 <li>
-                  <a href="leaveapproval.html">Payroll Report</a>
+                  <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
-                <li><a href="overtimeapproval.html">Government Report</a></li>
+                <li>
+                  <a href="payrollunderconstruction.html">Payroll Report</a>
+                </li>
+                <li>
+                  <a href="payrollunderconstruction.html">Government Report</a>
+                </li>
               </ul>
             </li>
             <li>
-              <a href="memoannouncements.html"><i class="far fa-bell"></i>Memo & Announcements</a>
+              <!-- <a href="memoannouncements.html" -->
+              <a href="payrollunderconstruction.html"
+                ><i class="far fa-bell"></i>Memo & Announcements</a
+              >
             </li>
             <li>
-              <a href="importtimerecord.html"><i class="fas fa-file-import"></i>Import Time Record</a>
+              <a href="importtimerecords.html"
+                ><i class="fas fa-download"></i>Import Time Records</a
+              >
             </li>
             <li>
               <a href="index.html"
                 ><i class="fas fa-sign-out-alt"></i>Sign Out</a
               >
             </li>
-            
           </ul>
 
-          <div class="close-menu" >
-            <a  onclick="toggleMenu()">
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
               <i class="fas fa-times"></i>
             </a>
           </div>
@@ -138,14 +145,14 @@
                   name="txtDateFrom"
                   type="text"
                   id="txtDateFrom"
-                  class="datePicker"
+                  class="datePickerPayroll"
                 />
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
                   name="txtDateTo"
                   type="text"
                   id="txtDateTo"
-                  class="datePicker"
+                  class="datePickerPayroll"
                 />
                 <a class="btn-sm btn-secondary">Clear</a>
               </div>
@@ -267,14 +274,14 @@
                   name="txtDateFromModal"
                   type="text"
                   id="txtDateFromModal"
-                  class="datePicker"
+                  class="datePickerPayroll"
                 />
                 <label for="txtDateToModal" class="label-6">To: </label>
                 <input
                   name="txtDateToModal"
                   type="text"
                   id="txtDateToModal"
-                  class="datePicker"
+                  class="datePickerPayroll"
                 />
               </div>
 

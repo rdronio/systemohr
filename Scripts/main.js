@@ -168,6 +168,16 @@ $(".bdayPicker").each(function() {
   });
 });
 
+// datePicker Payroll
+$(".datePickerPayroll").each(function() {
+  //Create jQueryUI datepicker
+  $(this).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "-10:+10"
+  });
+});
+
 // Date Picker
 $(".datePicker").each(function() {
   //Create jQueryUI datepicker
@@ -211,6 +221,64 @@ $(".terminationDatePicker").each(function() {
     beforeShowDay: $.datepicker.noWeekends
   });
 });
+
+function calcBusinessDays(dDate1, dDate2) {
+  // input given as Date objects
+  var iWeeks,
+    iDateDiff,
+    iAdjust = 0;
+  if (dDate2 < dDate1) return -1; // error code if dates transposed
+  var iWeekday1 = dDate1.getDay(); // day of week
+  var iWeekday2 = dDate2.getDay();
+  iWeekday1 = iWeekday1 == 0 ? 7 : iWeekday1; // change Sunday from 0 to 7
+  iWeekday2 = iWeekday2 == 0 ? 7 : iWeekday2;
+  if (iWeekday1 > 5 && iWeekday2 > 5) iAdjust = 1; // adjustment if both days on weekend
+  iWeekday1 = iWeekday1 > 5 ? 5 : iWeekday1; // only count weekdays
+  iWeekday2 = iWeekday2 > 5 ? 5 : iWeekday2;
+
+  // calculate differnece in weeks (1000mS * 60sec * 60min * 24hrs * 7 days = 604800000)
+  iWeeks = Math.floor((dDate2.getTime() - dDate1.getTime()) / 604800000);
+
+  if (iWeekday1 < iWeekday2) {
+    //Equal to makes it reduce 5 days
+    iDateDiff = iWeeks * 5 + (iWeekday2 - iWeekday1);
+  } else {
+    iDateDiff = (iWeeks + 1) * 5 - (iWeekday1 - iWeekday2);
+  }
+
+  iDateDiff -= iAdjust; // take into account both days on weekend
+
+  return iDateDiff + 1; // add 1 because dates are inclusive
+}
+
+// leave records From To Counter
+function getBusinessDateCount(startDate, endDate) {
+  var elapsed, daysBeforeFirstSaturday, daysAfterLastSunday;
+  var ifThen = function(a, b, c) {
+    return a == b ? c : a;
+  };
+
+  elapsed = endDate - startDate;
+  elapsed /= 86400000;
+
+  daysBeforeFirstSunday = (7 - startDate.getDay()) % 7;
+  daysAfterLastSunday = endDate.getDay();
+
+  elapsed -= daysBeforeFirstSunday + daysAfterLastSunday;
+  elapsed = (elapsed / 7) * 5;
+  elapsed +=
+    ifThen(daysBeforeFirstSunday - 1, -1, 0) +
+    ifThen(daysAfterLastSunday, 6, 5);
+
+  return Math.ceil(elapsed);
+}
+
+function calc() {
+  let start = document.querySelector("#txtDateFrom").value,
+    end = document.querySelector("#txtDateTo").value,
+    result = getBusinessDateCount(new Date(start), new Date(end));
+  document.querySelector("#result").innerHTML = result;
+}
 
 // Show Employee based on selected option
 function getEmployeeBy() {
@@ -351,6 +419,7 @@ function closeModal(btn_id) {
 
     //set tab back to primary-info
     defaultTab("primary-info");
+    defaultTabViewIE("view-primary-info");
   } catch (ex) {}
 }
 
@@ -437,6 +506,17 @@ function redirectModalToUpdateEmployee() {
 
 function defaultTab(tabName) {
   var x = document.getElementsByClassName("tabNameHrModal");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "flex";
+
+  $(".modal-tab-list li.current-tab").removeClass("current-tab");
+  $(".modal-tab-list li:first-child").addClass("current-tab");
+}
+
+function defaultTabViewIE(tabName) {
+  var x = document.getElementsByClassName("tabViewIEList");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }

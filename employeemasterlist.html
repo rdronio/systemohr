@@ -691,7 +691,7 @@
                       />
                     </div>
 
-                    <label for="txtLastName" class="label-6">Last Name: </label>
+                    <label for="txtLastName" class="label-6">Last Name </label>
                     <input name="txtLastName" type="text" id="txtLastName" />
 
                     <label for="txtFirstName" class="label-6"
@@ -776,7 +776,7 @@
                       </label>
                     </div>
 
-                    <label class="label-6">Address: </label>
+                    <label class="label-6">Address </label>
                     <label for="txtHouse" class="note"
                       >House Number, Building and Street Name</label
                     >
@@ -804,10 +804,10 @@
                 </div>
                 <div>
                   <div>
-                    <label for="txtEmail" class="label-6">Email: </label>
+                    <label for="txtEmail" class="label-6">Email </label>
                     <input name="txtEmail" type="text" id="txtEmail" />
 
-                    <label for="txtPhone" class="label-6">Phone: </label>
+                    <label for="txtPhone" class="label-6">Phone </label>
                     <input name="txtPhone" type="text" id="txtPhone" />
                   </div>
 
@@ -1154,17 +1154,17 @@
                       >HR Information</a
                     >
                   </li>
-                  <li>
+                  <li class="hidden">
                     <a onclick="openViewEmpInfoTab('assignments')"
                       >Assignments</a
                     >
                   </li>
-                  <li>
+                  <li class="hidden">
                     <a onclick="openViewEmpInfoTab('perf-train')"
                       >Performance and Training</a
                     >
-                  </li>
-                  <li>
+                  </li >
+                  <li class="hidden">
                     <a onclick="openViewEmpInfoTab('view-access')">Access</a>
                   </li>
                   <li>
@@ -1175,10 +1175,57 @@
                       >Time Records</a
                     >
                   </li>
-                  <li>
+                  <li class="hidden">
+                    <a onclick="openViewEmpInfoTab('contribution-tax')">Contirbution Tax</a>
+                  </li>
+                  <li class="hidden">
                     <a onclick="openViewEmpInfoTab('files')">Files</a>
                   </li>
                 </ul>
+              </div>
+
+              
+              <div class="summary-employee-info-container hidden"> 
+                <div>
+                  <div class="summary-employee-info-header">
+                    <label class="label-5">Basic Employee Information </label>
+                  </div>
+                  <div class="summary-employee-info-content">
+                    <div>
+                      <label for="txtEmpName" class="label-6">Employee ID </label>
+                      <p name="txtEmpName" id="txtEmpName" >00001</p>
+                    </div>
+
+                    <div>
+                      <label for="txtEmpName" class="label-6">Employee Name </label>
+                      <p name="txtEmpName" id="txtEmpName" >John Doe</p>
+                    </div>
+
+                    <div>
+                      <label for="txtEmpName" class="label-6">Department </label>
+                      <p name="txtEmpName" id="txtEmpName" >IT Department</p>
+                    </div>
+
+                    <div>
+                      <label for="txtEmpName" class="label-6">Position </label>
+                      <p name="txtEmpName" id="txtEmpName" >Programmer</p>
+                    </div>
+
+                    <div>
+                      <label for="txtEmpName" class="label-6">Employment Status </label>
+                      <p name="txtEmpName" id="txtEmpName" >Regular</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="profile_pic">
+                    <img
+                      src="/Images/user.png"
+                      alt="Employee Picture"
+                      class="img-circle profile_img"
+                    />
+                  </div>
+                </div>
               </div>
 
               <!-- Primary Info Tab -->
@@ -1186,7 +1233,7 @@
                 <div>
                   <div>
 
-                      <label for="txtEmpName" class="label-6">Employee Name: </label>
+                      <label for="txtEmpName" class="label-6">Employee Name </label>
                       <p name="txtEmpName" id="txtEmpName" >John Doe</p>
 
 
@@ -1270,284 +1317,158 @@
               <!-- HR Info Tab -->
               <div id="view-hr-info" class="tabViewIEList" style="display:none">
                 <div>
-                  <label for="txtDateEmployed" class="label-6"
-                    >Date Employed</label
-                  >
-                  <input
-                    name="txtDateEmployed"
-                    type="text"
-                    id="txtDateEmployed"
-                    class="datePicker"
-                  />
+                  
+                  <label for="lblDateEmployed" class="label-6">Date Employed </label>
+                  <p name="lblDateEmployed" id="lblDateEmployed" >January 06, 2020</p>
 
-                  <label for="selectDepartment" class="label-6"
-                    >Department</label
-                  >
-                  <select
-                    name="selectDepartment"
-                    id="selectDepartment"
-                    class="select"
-                  >
-                  </select>
+                  <label for="lblDepartment" class="label-6">Department </label>
+                  <p name="lblDepartment" id="lblDepartment" >IT Department</p>
 
-                  <label for="selectPosition" class="label-6">Position</label>
-                  <select
-                    name="selectPosition"
-                    id="selectPosition"
-                    class="select"
-                  >
-                  </select>
+                  <label for="lblPosition" class="label-6">Position </label>
+                  <p name="lblPosition" id="lblPosition" >Programmer</p>
 
-                  <label for="selectManager" class="label-6"
-                    >Manager <span class="note">(Approver)</span></label
-                  >
-                  <select
-                    name="selectManager"
-                    id="selectManager"
-                    class="select"
-                  >
-                  </select>
+                  <label for="lblManager" class="label-6">Manager <span class="note">(Approver)</span></label>
+                  <p name="lblManager" id="lblManager" >Manager John Doe</p>
 
-                  <label for="txtSalary" class="label-6">Basic Salary</label>
-                  <input
-                    name="txtSalary"
-                    type="number"
-                    min="0"
-                    id="txtSalary"
-                  />
+                  <label for="lblBasicSalary" class="label-6">Basic Salary </label>
+                  <p name="lblBasicSalary" id="lblBasicSalary" >21,000</p>
 
                   <br />
-                  <label for="selectShift" class="label-6">Shift</label>
-                  <select name="selectShift" id="selectShift" class="select">
-                    <option value="trainee">Day Shift</option>
-                    <option value="probationary">Mid Shift</option>
-                    <option value="regular">Night Shift</option>
-                  </select>
+                  <label for="lblShift" class="label-6">Shift </label>
+                  <p name="lblShift" id="lblShift" >Day Shift</p>
 
-                  <label for="selectEmploymentStatus" class="label-6"
-                    >Employment status</label
-                  >
-                  <select
-                    name="selectEmploymentStatus"
-                    id="selectEmploymentStatus"
-                    class="select"
-                    onchange="toggleEndo();"
-                  >
-                    <option value="trainee">Trainee</option>
-                    <option value="probationary">Probationary</option>
-                    <option value="regular">Regular</option>
-                    <option value="endo">End of Contract</option>
-                  </select>
+                  <label for="lblEmploymentStatus" class="label-6">Employment Status </label>
+                  <p name="lblEmploymentStatus" id="lblEmploymentStatus" >Regular</p>
 
-                  <label id="txtLeaveLabel" class="label-6 disabled"
-                    >Leaves (Optional)</label
-                  >
+                  <label class="label-6">Leaves </label>
                   <label
-                    id="txtSickLeaveLabel"
-                    for="txtSickLeave"
-                    class="note disabled"
-                    >Sick Leaves</label
-                  >
-                  <input
-                    name="txtSickLeave"
-                    type="number"
-                    min="0"
-                    id="txtSickLeave"
-                    class="disabled"
-                  />
+                  id="lblSickLeaveLabel"
+                  for="lblSickLeave"
+                  class="note"
+                  >Sick Leaves</label
+                >
+                  <p name="lblSickLeave" id="lblSickLeave" class="" >10</p>
 
                   <label
-                    id="txtVELeaveLabel"
-                    for="txtVELeave"
-                    class="note disabled"
-                    >Vacation/Emergency Leaves</label
-                  >
-                  <input
-                    name="txtVELeave"
-                    type="number"
-                    min="0"
-                    id="txtVELeave"
-                    class="disabled"
-                  />
+                  id="lblVELabel"
+                  for="lblVE"
+                  class="note"
+                  >Vacation/Emergency Leaves</label
+                >
+                  <p name="lblVE" id="lblVE" class="" >10</p>
 
-                  <label
-                    id="dtTermDateLabel"
-                    for="dtTermDate"
-                    class="label-6 disabled"
-                    >Termination Date</label
-                  >
-                  <input
-                    name="dtTermDate"
-                    type="text"
-                    id="dtTermDate"
-                    class="terminationDatePicker disabled"
-                  />
+                  <label for="lblTerminationDate" class="label-6">Termination Date </label>
+                  <p name="lblTerminationDate" id="lblTerminationDate" >-</p>
                 </div>
 
                 <div>
-                  <label for="txtTinNo" class="label-6">Tin Number</label>
-                  <input
-                    name="txtTinNumber"
-                    type="number"
-                    id="txtTinNumber"
-                    min="0"
-                    maxlength="12"
-                  />
+                  <label for="lblTinNo" class="label-6">Tin Number </label>
+                  <p name="lblTinNo" id="lblTinNo" >000-000-000-000</p>
+                  
+                  <label for="lblPhilhealthNo" class="label-6">Philhealth Number </label>
+                  <p name="lblPhilhealthNo" id="lblPhilhealthNo" >00-000000000-0</p>
 
-                  <label for="txtPhilHealthNo" class="label-6"
-                    >Philhealth Number</label
-                  >
-                  <input
-                    name="txtPhilHealth"
-                    type="number"
-                    id="txtPhilHealth"
-                    min="0"
-                    maxlength="12"
-                  />
-
-                  <label for="txtHdmfNo" class="label-6">HDMF Number</label>
-                  <input
-                    name="txtHdmfNo"
-                    type="number"
-                    id="txtHdmfNo"
-                    min="0"
-                    maxlength="12"
-                  />
-
-                  <label for="txtSssNo" class="label-6">SSS Number</label>
-                  <input
-                    name="txtSssNo"
-                    type="number"
-                    id="txtSssNo"
-                    min="0"
-                    maxlength="10"
-                  />
-
-                  <label for="txtCardNo" class="label-6"
-                    >Credit Card Number</label
-                  >
-                  <input
-                    name="txtCardNo"
-                    type="number"
-                    min="0"
-                    id="txtCardNo"
-                  />
+                  <label for="lblHdmfNo" class="label-6">HDMF Number </label>
+                  <p name="lblHdmfNo" id="lblHdmfNo" >0000-0000-0000</p>
+                  
+                  <label for="lblSssNo" class="label-6">SSS Number </label>
+                  <p name="lblSssNo" id="lblSssNo" >00-0000000-0</p>
+                  
+                  <label for="lblCreditCard" class="label-6">Credit Card Number </label>
+                  <p name="lblCreditCard" id="lblCreditCard" >0000-0000-0000</p>
 
                   <br />
-                  <label for="txtDateEmployed" class="label-6"
-                    >Attached/Uploaded Requirements</label
-                  >
-                  <div class="modal-rd-container">
-                    <label for="optYesReq" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoSubReq"
-                        id="optYesReq"
-                        class="hidden"
-                        onclick="enableReq()"
-                      />
-                      <span class="label"></span>Yes
-                    </label>
 
-                    <label for="optNoReq" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoSubReq"
-                        id="optNoReq"
-                        class="hidden"
-                        onclick="disableReq()"
-                      />
-                      <span class="label"></span>No
-                    </label>
-                  </div>
-                  <label for="txtDateEmployed" class="note"
-                    >Requirement 1</label
-                  >
-                  <input
-                    class="fileReq disabled"
-                    type="file"
-                    name="req1"
-                    id="req1"
-                    accept="files/*"
-                  />
-                  <label for="txtDateEmployed" class="note"
-                    >Requirement 2</label
-                  >
-                  <input
-                    class="fileReq disabled"
-                    type="file"
-                    name="req2"
-                    id="req2"
-                    accept="files/*"
-                  />
-                  <label for="txtDateEmployed" class="note"
-                    >Requirement 3</label
-                  >
-                  <input
-                    class="fileReq disabled"
-                    type="file"
-                    name="req3"
-                    id="req3"
-                    accept="files/*"
-                  />
+                  <label for="lblRequirements" class="label-6">Attached/Uploaded Requirements </label>
+                  <p name="lblRequirements" id="lblRequirements" >Yes</p>
+
                 </div>
               </div>
 
               <!-- Access Tab -->
               <div id="view-access" class="tabViewIEList" style="display:none">
-                <label class="label-6">Grant Access Role</label>
-                <div class="modal-rd-container">
-                  <label for="optYesAccessRole" class="radio">
-                    <input
-                      type="radio"
-                      name="rdoAccess"
-                      id="optYesAccessRole"
-                      class="hidden"
-                      onclick="enableAccessRole();"
-                    />
-                    <span class="label"></span>Yes
-                  </label>
 
-                  <label for="optNoAccessRole" class="radio">
-                    <input
-                      type="radio"
-                      name="rdoAccess"
-                      id="optNoAccessRole"
-                      class="hidden"
-                      onclick="disableAccessRole();"
-                    />
-                    <span class="label"></span>No
-                  </label>
-                </div>
+                <label for="lblRole" class="label-6">Role</label>
+                <p name="lblRole" id="lblRole" >Employee</p>
 
-                <label
-                  for="selectRole"
-                  class="label-6 disabled"
-                  id="selectRoleLabel"
-                  >Role</label
-                >
-                <select
-                  name="selectRole"
-                  id="selectRole"
-                  class="select disabled"
-                >
-                  <option value="trainee">Employee</option>
-                  <option value="probationary">HR</option>
-                  <option value="regular">HR Admin </option>
-                </select>
+              </div>
 
-                <label
-                  for="txtPassword"
-                  class="label-6 disabled"
-                  id="txtPasswordLabel"
-                  >Password</label
-                >
-                <input
-                  name="txtPassword"
-                  type="password"
-                  id="txtPassword"
-                  class="disabled"
-                />
+              <!-- Time Records Tab -->
+              <div id="time-records" class="tabViewIEList" style="display:none">
+              
+            <!-- Time Records -->
+            <table class="tableLayout">
+              <tbody>
+                <tr>
+                  <td class="column1">Date</td>
+                  <td class="column2">Time In</td>
+                  <td class="column3">Time Out</td>
+                  <td class="column4">Total (hour/s)</td>
+                  <td class="column5">Overtime (hour/s)</td>
+                  <td class="column6">Tardiness (min/s)</td>
+                </tr>
+                <tr>
+                  <td class="column1">November 20, 2019</td>
+                  <td class="column2">09:00 AM</td>
+                  <td class="column3">05:00 PM</td>
+                  <td class="column4">8.00</td>
+                  <td class="column5">0.00</td>
+                  <td class="column6">0.00</td>
+                </tr>
+                <tr>
+                  <td class="column1">November 19, 2019</td>
+                  <td class="column2">09:00 AM</td>
+                  <td class="column3">05:00 PM</td>
+                  <td class="column4">8.00</td>
+                  <td class="column5">0.00</td>
+                  <td class="column6">0.00</td>
+                </tr>
+                <tr>
+                  <td class="column1">November 18, 2019</td>
+                  <td class="column2">09:00 AM</td>
+                  <td class="column3">05:00 PM</td>
+                  <td class="column4">8.00</td>
+                  <td class="column5">0.00</td>
+                  <td class="column6">0.00</td>
+                </tr>
+                <tr>
+                  <td class="column1">November 17, 2019</td>
+                  <td class="column2">09:00 AM</td>
+                  <td class="column3">05:00 PM</td>
+                  <td class="column4">8.00</td>
+                  <td class="column5">0.00</td>
+                  <td class="column6">0.00</td>
+                </tr>
+                <tr>
+                  <td class="column1">November 16, 2019</td>
+                  <td class="column2">09:00 AM</td>
+                  <td class="column3">05:00 PM</td>
+                  <td class="column4">8.00</td>
+                  <td class="column5">0.00</td>
+                  <td class="column6">0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="pagination-container">
+              <div class="showmore-container">
+                <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
+              </div>
+              <div class="pagination" onclick="selectPage()">
+                <a href="#">«</a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <a href="#">»</a>
+              </div>
+            </div>
               </div>
 
               <div class="modal-btn-container">

@@ -445,6 +445,7 @@
                   type="text"
                   id="txtDateFrom"
                   class="leavePicker"
+                  onchange="calc();"
                 />
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
@@ -452,9 +453,10 @@
                   type="text"
                   id="txtDateTo"
                   class="leavePicker"
+                  onchange="calc();"
                 />
                 <label class="label-6">No. of days</label>
-                <p class="text">0</p>
+                <p class="text" id="result">0</p>
               
 
                 <label for="txtAreaReason" class="label-6">Reason</label>
