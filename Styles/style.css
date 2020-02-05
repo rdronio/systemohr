@@ -297,6 +297,7 @@ iframe {
   padding: 0.6rem 1.8rem;
   letter-spacing: 1px;
   /* width: 12rem; */
+  cursor: pointer;
 }
 
 .btn-xs {
@@ -557,6 +558,11 @@ iframe {
   background: #f7dddd;
   border: 1px #971919d5 solid;
   color: #520707d5;
+}
+
+.notAvailable {
+  text-align: center;
+  margin: 2rem 0;
 }
 
 .hidden {
@@ -1002,7 +1008,8 @@ iframe {
   border-bottom: 1px solid #999;
 
   overflow-x: auto;
-  white-space: nowrap;
+
+  white-space: wrap;
   width: auto;
 }
 
@@ -1022,7 +1029,7 @@ iframe {
   height: 100%;
   font-weight: 500;
   font-size: 0.7rem;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.75rem;
   margin: 0 !important;
   min-width: 4rem;
   border-top-left-radius: 4px;
@@ -1289,7 +1296,7 @@ nav {
   box-shadow: 4px 4px 20px rgba(74, 74, 74, 0.2);
   height: 100%;
   /* for screenshot */
-  /* height: 2000px; */
+  height: 2000px;
   overflow-y: auto;
   z-index: 1;
   transition: all 0.4s ease-in;
@@ -1834,7 +1841,8 @@ nav ul li a span.fa {
   width: 65%;
 }
 
-#manage-employees .modal-add-employee .modal-content > div .profile_pic img {
+#manage-employees .modal-add-employee .modal-content > div .profile_pic img,
+#manage-employees .modal-update-employee .modal-content > div .profile_pic img {
   position: relative;
   display: inline-block;
   width: 80;
@@ -1842,12 +1850,18 @@ nav ul li a span.fa {
   z-index: 2;
 }
 
-#manage-employees .modal-add-employee .modal-content #primary-info {
+#manage-employees .modal-add-employee .modal-content #primary-info,
+#manage-employees .modal-update-employee .modal-content #primary-info-update {
   display: flex;
   flex-direction: column;
 }
 
-#manage-employees .modal-add-employee .modal-content #primary-info > div {
+#manage-employees .modal-add-employee .modal-content #primary-info > div,
+#manage-employees
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div {
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -1858,11 +1872,23 @@ nav ul li a span.fa {
   .modal-content
   #primary-info
   > div
+  > div:nth-child(1),
+#manage-employees
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div
   > div:nth-child(1) {
   margin-right: 3rem;
 }
 
-#manage-employees .modal-add-employee .modal-content #primary-info > div > div {
+#manage-employees .modal-add-employee .modal-content #primary-info > div > div,
+#manage-employees
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div
+  > div {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1872,18 +1898,35 @@ nav ul li a span.fa {
   .modal-add-employee
   .modal-content
   #primary-info
+  > div
+  > div
+  .radio,
+#manage-employees
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
   > div
   > div
   .radio {
   margin-right: 1rem;
 }
 
-#manage-employees .modal-add-employee .modal-content #hr-info {
+#manage-employees .modal-add-employee .modal-content #hr-info,
+#manage-employees .modal-update-employee .modal-content #hr-info-update {
   display: flex;
   flex-direction: row;
 }
 
-#manage-employees .modal-add-employee .modal-content #hr-info > div {
+#manage-employees
+  .modal-add-employee
+  .modal-content
+  #hr-info
+  > div
+  #manage-employees
+  .modal-update-employee
+  .modal-content
+  #hr-info-update
+  > div {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -2031,7 +2074,13 @@ nav ul li a span.fa {
   font-size: 0.8rem;
 }
 
-#employee-masterlist .modal-add-employee .modal-content > div .profile_pic img {
+#employee-masterlist .modal-add-employee .modal-content > div .profile_pic img,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  > div
+  .profile_pic
+  img {
   position: relative;
   display: inline-block;
   width: 80;
@@ -2039,12 +2088,21 @@ nav ul li a span.fa {
   z-index: 2;
 }
 
-#employee-masterlist .modal-add-employee .modal-content #primary-info {
+#employee-masterlist .modal-add-employee .modal-content #primary-info,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #primary-info-update {
   display: flex;
   flex-direction: column;
 }
 
-#employee-masterlist .modal-add-employee .modal-content #primary-info > div {
+#employee-masterlist .modal-add-employee .modal-content #primary-info > div,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div {
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -2055,6 +2113,12 @@ nav ul li a span.fa {
   .modal-content
   #primary-info
   > div
+  > div:nth-child(1),
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div
   > div:nth-child(1) {
   margin-right: 3rem;
 }
@@ -2063,6 +2127,12 @@ nav ul li a span.fa {
   .modal-add-employee
   .modal-content
   #primary-info
+  > div
+  > div,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
   > div
   > div {
   display: flex;
@@ -2076,16 +2146,29 @@ nav ul li a span.fa {
   #primary-info
   > div
   > div
+  .radio,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #primary-info-update
+  > div
+  > div
   .radio {
   margin-right: 1rem;
 }
 
-#employee-masterlist .modal-add-employee .modal-content #hr-info {
+#employee-masterlist .modal-add-employee .modal-content #hr-info,
+#employee-masterlist .modal-update-employee .modal-content #hr-info-update {
   display: flex;
   flex-direction: row;
 }
 
-#employee-masterlist .modal-add-employee .modal-content #hr-info > div {
+#employee-masterlist .modal-add-employee .modal-content #hr-info > div,
+#employee-masterlist
+  .modal-update-employee
+  .modal-content
+  #hr-info-update
+  > div {
   display: flex;
   flex-direction: column;
   flex: 1;

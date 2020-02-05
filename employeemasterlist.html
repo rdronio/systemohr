@@ -85,15 +85,17 @@
             <li>
               <a href="#"
                 ><i class="fas fa-file-alt"></i> Employee Records<span
-                class="fa fa-chevron-down"
-              ></span
-            ></a>
-            <ul class="nav child_menu">
-              <li class="current-page">
-                <a href="employeemasterlist.html">Employee Masterlist</a>
-              </li>
-              <li><a href="adminleaverecords.html">Employee Leave Records</a></li>
-            </ul>
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu">
+                <li class="current-page">
+                  <a href="employeemasterlist.html">Employee Masterlist</a>
+                </li>
+                <li>
+                  <a href="adminleaverecords.html">Employee Leave Records</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="underconstruction.html"
@@ -114,7 +116,8 @@
               </ul>
             </li>
             <li>
-              <a href="#"><i class="fas fa-chart-area"></i>Reports<span
+              <a href="#"
+                ><i class="fas fa-chart-area"></i>Reports<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
@@ -646,13 +649,13 @@
           </div>
 
           <!-- Modal Section -->
-          <!-- btnAddEmployee -->
+          <!-- Modal Add Employee: btnAddEmployee -->
           <div class="modal modal-add-employee">
             <div class="modal-content">
               <h4 id="add-employee-header">Add Employment Information</h4>
               <br />
 
-              <div id="tabIE">
+              <div class="tabIE">
                 <ul class="modal-tab-list" onclick="selectTabEI();">
                   <li class="current-tab">
                     <a onclick="openTab('primary-info')">Primary Information</a>
@@ -1117,16 +1120,14 @@
               </div>
 
               <div class="modal-btn-container">
-                <a
-                  class="btn-sm btn-primary mx-3 hidden"
-                  id="btnModalAddEmployee"
+                <a class="btn-sm btn-primary mx-3" id="btnModalAddEmployee"
                   >Add Employee</a
                 >
-                <a
+                <!-- <a
                   class="btn-sm btn-primary mx-3 hidden"
                   id="btnModalUpdateEmployee"
                   >Update Employee</a
-                >
+                > -->
                 <a
                   class="btn-sm btn-secondary mx-3"
                   onclick="closeModal(`#btnCloseAddEmployee`);"
@@ -1136,7 +1137,505 @@
             </div>
           </div>
 
-          <!-- btnViewEmployee -->
+          <!-- Modal Update Employee: btnAddEmployee -->
+          <div class="modal modal-update-employee">
+            <div class="modal-content">
+              <h4 id="add-employee-header">Update Employment Information</h4>
+              <br />
+
+              <div class="tabIE">
+                <ul class="modal-tab-list" onclick="selectTabEI();">
+                  <li class="current-tab">
+                    <a onclick="openTab('primary-info-update')"
+                      >Primary Information</a
+                    >
+                  </li>
+                  <li>
+                    <a onclick="openTab('hr-info-update')">HR Information</a>
+                  </li>
+                  <li>
+                    <a onclick="openTab('access-update')">Access</a>
+                  </li>
+                </ul>
+              </div>
+
+              <label class="note-head">Note</label>
+              <p class="note">Please complete the fields below.</p>
+              <p class="note">
+                All fields are required unless marked as 'Optional'
+              </p>
+
+              <!-- Primary Info Tab -->
+              <div id="primary-info-update" class="tabNameHrModal">
+                <div>
+                  <div>
+                    <label for="photo" class="label-6">Photo</label>
+                    <div class="profile_pic">
+                      <img
+                        src="/Images/user.png"
+                        alt="Employee Picture"
+                        class="img-circle profile_img"
+                      />
+                      <input
+                        type="file"
+                        name="photo"
+                        id="photo"
+                        accept="image/*"
+                      />
+                    </div>
+
+                    <label for="txtLastName" class="label-6">Last Name </label>
+                    <input name="txtLastName" type="text" id="txtLastName" />
+
+                    <label for="txtFirstName" class="label-6"
+                      >First Name:
+                    </label>
+                    <input name="txtFirstName" type="text" id="txtFirstName" />
+
+                    <label for="txtMiddleName" class="label-6"
+                      >Middle Name:
+                    </label>
+                    <input
+                      name="txtMiddleName"
+                      type="text"
+                      id="txtMiddleName"
+                    />
+
+                    <label for="dtPickerBirthday" class="label-6"
+                      >Birthday:
+                    </label>
+                    <input
+                      name="dtPickerBirthday"
+                      type="text"
+                      id="dtPickerBirthday"
+                      class="bdayPicker"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="label-6">Gender</label>
+                    <div class="modal-rd-container">
+                      <label for="optMale" class="radio">
+                        <input
+                          type="radio"
+                          name="rdoGender"
+                          id="optMale"
+                          class="hidden"
+                        />
+                        <span class="label"></span>Male
+                      </label>
+
+                      <label for="optFemale" class="radio">
+                        <input
+                          type="radio"
+                          name="rdoGender"
+                          id="optFemale"
+                          class="hidden"
+                        />
+                        <span class="label"></span>Female
+                      </label>
+                    </div>
+
+                    <label class="label-6">Civil Status</label>
+                    <div class="modal-rd-container">
+                      <label for="optSingle" class="radio">
+                        <input
+                          type="radio"
+                          name="rdoCivilStatus"
+                          id="optSingle"
+                          class="hidden"
+                        />
+                        <span class="label"></span>Single
+                      </label>
+
+                      <label for="optMarried" class="radio">
+                        <input
+                          type="radio"
+                          name="rdoCivilStatus"
+                          id="optMarried"
+                          class="hidden"
+                        />
+                        <span class="label"></span>Married
+                      </label>
+
+                      <label for="optWidowed" class="radio">
+                        <input
+                          type="radio"
+                          name="rdoCivilStatus"
+                          id="optWidowed"
+                          class="hidden"
+                        />
+                        <span class="label"></span>Widowed
+                      </label>
+                    </div>
+
+                    <label class="label-6">Address </label>
+                    <label for="txtHouse" class="note"
+                      >House Number, Building and Street Name</label
+                    >
+                    <input name="txtHouse" type="text" id="txtHouse" />
+
+                    <label for="selectProvince" class="note">Province</label>
+                    <input
+                      name="selectProvince"
+                      type="text"
+                      id="selectProvince"
+                    />
+                    <!-- <select name="selectProvince" id="selectProvince" class="select" onchange="getProvince()" > -->
+                    <!-- </select> -->
+
+                    <label for="selectCity" class="note"
+                      >City/Municipality</label
+                    >
+                    <input name="selectCity" type="text" id="selectCity" />
+                    <!-- <select name="selectCity" id="selectCity" class="select" onchange="getCity()"> -->
+                    <!-- </select> -->
+
+                    <label for="txtState" class="note">State</label>
+                    <input name="txtState" id="txtState" />
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label for="txtEmail" class="label-6">Email </label>
+                    <input name="txtEmail" type="text" id="txtEmail" />
+
+                    <label for="txtPhone" class="label-6">Phone </label>
+                    <input name="txtPhone" type="text" id="txtPhone" />
+                  </div>
+
+                  <div>
+                    <label for="txtEmergencyContact" class="label-6"
+                      >Emergency Contact Name:
+                    </label>
+                    <input
+                      name="txtEmergencyContact"
+                      type="text"
+                      id="txtEmergencyContact"
+                    />
+
+                    <label for="txtEmergencyContactNo" class="label-6"
+                      >Emergency Contact No.:
+                    </label>
+                    <input
+                      name="txtEmergencyContactNo"
+                      type="text"
+                      id="txtEmergencyContactNo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- HR Info Tab -->
+              <div
+                id="hr-info-update"
+                class="tabNameHrModal"
+                style="display:none"
+              >
+                <div>
+                  <label for="txtDateEmployed" class="label-6"
+                    >Date Employed</label
+                  >
+                  <input
+                    name="txtDateEmployed"
+                    type="text"
+                    id="txtDateEmployed"
+                    class="datePicker"
+                  />
+
+                  <label for="selectDepartment" class="label-6"
+                    >Department</label
+                  >
+                  <select
+                    name="selectDepartment"
+                    id="selectDepartment"
+                    class="select"
+                  >
+                  </select>
+
+                  <label for="selectPosition" class="label-6">Position</label>
+                  <select
+                    name="selectPosition"
+                    id="selectPosition"
+                    class="select"
+                  >
+                  </select>
+
+                  <label for="selectManager" class="label-6"
+                    >Manager <span class="note">(Approver)</span></label
+                  >
+                  <select
+                    name="selectManager"
+                    id="selectManager"
+                    class="select"
+                  >
+                  </select>
+
+                  <label for="txtSalary" class="label-6">Basic Salary</label>
+                  <input
+                    name="txtSalary"
+                    type="number"
+                    min="0"
+                    id="txtSalary"
+                  />
+
+                  <br />
+                  <label for="selectShift" class="label-6">Shift</label>
+                  <select name="selectShift" id="selectShift" class="select">
+                    <option value="trainee">Day Shift</option>
+                    <option value="probationary">Mid Shift</option>
+                    <option value="regular">Night Shift</option>
+                  </select>
+
+                  <label for="selectEmploymentStatus" class="label-6"
+                    >Employment status</label
+                  >
+                  <select
+                    name="selectEmploymentStatus"
+                    id="selectEmploymentStatus"
+                    class="select"
+                    onchange="toggleEndo();"
+                  >
+                    <option value="trainee">Trainee</option>
+                    <option value="probationary">Probationary</option>
+                    <option value="regular">Regular</option>
+                    <option value="endo">End of Contract</option>
+                  </select>
+
+                  <label id="txtLeaveLabel" class="label-6 disabled"
+                    >Leaves (Optional)</label
+                  >
+                  <label
+                    id="txtSickLeaveLabel"
+                    for="txtSickLeave"
+                    class="note disabled"
+                    >Sick Leaves</label
+                  >
+                  <input
+                    name="txtSickLeave"
+                    type="number"
+                    min="0"
+                    id="txtSickLeave"
+                    class="disabled"
+                  />
+
+                  <label
+                    id="txtVELeaveLabel"
+                    for="txtVELeave"
+                    class="note disabled"
+                    >Vacation/Emergency Leaves</label
+                  >
+                  <input
+                    name="txtVELeave"
+                    type="number"
+                    min="0"
+                    id="txtVELeave"
+                    class="disabled"
+                  />
+
+                  <label
+                    id="dtTermDateLabel"
+                    for="dtTermDate"
+                    class="label-6 disabled"
+                    >Termination Date</label
+                  >
+                  <input
+                    name="dtTermDate"
+                    type="text"
+                    id="dtTermDate"
+                    class="terminationDatePicker disabled"
+                  />
+                </div>
+
+                <div>
+                  <label for="txtTinNo" class="label-6">Tin Number</label>
+                  <input
+                    name="txtTinNumber"
+                    type="number"
+                    id="txtTinNumber"
+                    min="0"
+                    maxlength="12"
+                  />
+
+                  <label for="txtPhilHealthNo" class="label-6"
+                    >Philhealth Number</label
+                  >
+                  <input
+                    name="txtPhilHealth"
+                    type="number"
+                    id="txtPhilHealth"
+                    min="0"
+                    maxlength="12"
+                  />
+
+                  <label for="txtHdmfNo" class="label-6">HDMF Number</label>
+                  <input
+                    name="txtHdmfNo"
+                    type="number"
+                    id="txtHdmfNo"
+                    min="0"
+                    maxlength="12"
+                  />
+
+                  <label for="txtSssNo" class="label-6">SSS Number</label>
+                  <input
+                    name="txtSssNo"
+                    type="number"
+                    id="txtSssNo"
+                    min="0"
+                    maxlength="10"
+                  />
+
+                  <label for="txtCardNo" class="label-6"
+                    >Credit Card Number</label
+                  >
+                  <input
+                    name="txtCardNo"
+                    type="number"
+                    min="0"
+                    id="txtCardNo"
+                  />
+
+                  <br />
+                  <label for="txtDateEmployed" class="label-6"
+                    >Attached/Uploaded Requirements</label
+                  >
+                  <div class="modal-rd-container">
+                    <label for="optYesReq" class="radio">
+                      <input
+                        type="radio"
+                        name="rdoSubReq"
+                        id="optYesReq"
+                        class="hidden"
+                        onclick="enableReq()"
+                      />
+                      <span class="label"></span>Yes
+                    </label>
+
+                    <label for="optNoReq" class="radio">
+                      <input
+                        type="radio"
+                        name="rdoSubReq"
+                        id="optNoReq"
+                        class="hidden"
+                        onclick="disableReq()"
+                      />
+                      <span class="label"></span>No
+                    </label>
+                  </div>
+                  <label for="txtDateEmployed" class="note"
+                    >Requirement 1</label
+                  >
+                  <input
+                    class="fileReq disabled"
+                    type="file"
+                    name="req1"
+                    id="req1"
+                    accept="files/*"
+                  />
+                  <label for="txtDateEmployed" class="note"
+                    >Requirement 2</label
+                  >
+                  <input
+                    class="fileReq disabled"
+                    type="file"
+                    name="req2"
+                    id="req2"
+                    accept="files/*"
+                  />
+                  <label for="txtDateEmployed" class="note"
+                    >Requirement 3</label
+                  >
+                  <input
+                    class="fileReq disabled"
+                    type="file"
+                    name="req3"
+                    id="req3"
+                    accept="files/*"
+                  />
+                </div>
+              </div>
+
+              <!-- Access Tab -->
+              <div
+                id="access-update"
+                class="tabNameHrModal"
+                style="display:none"
+              >
+                <label class="label-6">Grant Access Role</label>
+                <div class="modal-rd-container">
+                  <label for="optYesAccessRole" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoAccess"
+                      id="optYesAccessRole"
+                      class="hidden"
+                      onclick="enableAccessRole();"
+                    />
+                    <span class="label"></span>Yes
+                  </label>
+
+                  <label for="optNoAccessRole" class="radio">
+                    <input
+                      type="radio"
+                      name="rdoAccess"
+                      id="optNoAccessRole"
+                      class="hidden"
+                      onclick="disableAccessRole();"
+                    />
+                    <span class="label"></span>No
+                  </label>
+                </div>
+
+                <label
+                  for="selectRole"
+                  class="label-6 disabled"
+                  id="selectRoleLabel"
+                  >Role</label
+                >
+                <select
+                  name="selectRole"
+                  id="selectRole"
+                  class="select disabled"
+                >
+                  <option value="trainee">Employee</option>
+                  <option value="probationary">HR</option>
+                  <option value="regular">HR Admin </option>
+                </select>
+
+                <label
+                  for="txtPassword"
+                  class="label-6 disabled"
+                  id="txtPasswordLabel"
+                  >Password</label
+                >
+                <input
+                  name="txtPassword"
+                  type="password"
+                  id="txtPassword"
+                  class="disabled"
+                />
+              </div>
+
+              <div class="modal-btn-container">
+                <!-- <a
+                            class="btn-sm btn-primary mx-3 hidden"
+                            id="btnModalAddEmployee"
+                            >Add Employee</a
+                          > -->
+                <a class="btn-sm btn-primary mx-3" id="btnModalUpdateEmployee"
+                  >Update Employee</a
+                >
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseUpdateEmployee`);"
+                  >Cancel</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Add Employee: btnViewEmployee -->
           <div class="modal modal-view-employee">
             <div class="modal-content">
               <h4>View Employment Information</h4>
@@ -1154,66 +1653,82 @@
                       >HR Information</a
                     >
                   </li>
-                  <li class="hidden">
+                  <li class="">
                     <a onclick="openViewEmpInfoTab('assignments')"
                       >Assignments</a
                     >
                   </li>
-                  <li class="hidden">
+                  <li class="">
                     <a onclick="openViewEmpInfoTab('perf-train')"
                       >Performance and Training</a
                     >
-                  </li >
+                  </li>
                   <li class="hidden">
                     <a onclick="openViewEmpInfoTab('view-access')">Access</a>
                   </li>
                   <li>
-                    <a onclick="openViewEmpInfoTab('leaves-OT')">Leaves & OT</a>
+                    <a onclick="openViewEmpInfoTab('leave-records')"
+                      >Leave Records</a
+                    >
+                  </li>
+                  <li>
+                    <a onclick="openViewEmpInfoTab('overtime-records')"
+                      >Overtime Records</a
+                    >
                   </li>
                   <li>
                     <a onclick="openViewEmpInfoTab('time-records')"
                       >Time Records</a
                     >
                   </li>
-                  <li class="hidden">
-                    <a onclick="openViewEmpInfoTab('contribution-tax')">Contirbution Tax</a>
+                  <li class="">
+                    <a onclick="openViewEmpInfoTab('contribution-tax')"
+                      >Contribution Tax</a
+                    >
                   </li>
-                  <li class="hidden">
+                  <li class="">
                     <a onclick="openViewEmpInfoTab('files')">Files</a>
                   </li>
                 </ul>
               </div>
 
-              
-              <div class="summary-employee-info-container hidden"> 
+              <div class="summary-employee-info-container hidden">
                 <div>
                   <div class="summary-employee-info-header">
                     <label class="label-5">Basic Employee Information </label>
                   </div>
                   <div class="summary-employee-info-content">
                     <div>
-                      <label for="txtEmpName" class="label-6">Employee ID </label>
-                      <p name="txtEmpName" id="txtEmpName" >00001</p>
+                      <label for="txtEmpName" class="label-6"
+                        >Employee ID
+                      </label>
+                      <p name="txtEmpName" id="txtEmpName">00001</p>
                     </div>
 
                     <div>
-                      <label for="txtEmpName" class="label-6">Employee Name </label>
-                      <p name="txtEmpName" id="txtEmpName" >John Doe</p>
+                      <label for="txtEmpName" class="label-6"
+                        >Employee Name
+                      </label>
+                      <p name="txtEmpName" id="txtEmpName">John Doe</p>
                     </div>
 
                     <div>
-                      <label for="txtEmpName" class="label-6">Department </label>
-                      <p name="txtEmpName" id="txtEmpName" >IT Department</p>
+                      <label for="txtEmpName" class="label-6"
+                        >Department
+                      </label>
+                      <p name="txtEmpName" id="txtEmpName">IT Department</p>
                     </div>
 
                     <div>
                       <label for="txtEmpName" class="label-6">Position </label>
-                      <p name="txtEmpName" id="txtEmpName" >Programmer</p>
+                      <p name="txtEmpName" id="txtEmpName">Programmer</p>
                     </div>
 
                     <div>
-                      <label for="txtEmpName" class="label-6">Employment Status </label>
-                      <p name="txtEmpName" id="txtEmpName" >Regular</p>
+                      <label for="txtEmpName" class="label-6"
+                        >Employment Status
+                      </label>
+                      <p name="txtEmpName" id="txtEmpName">Regular</p>
                     </div>
                   </div>
                 </div>
@@ -1232,50 +1747,50 @@
               <div id="view-primary-info" class="tabViewIEList">
                 <div>
                   <div>
+                    <label for="txtEmpName" class="label-6"
+                      >Employee Name
+                    </label>
+                    <p name="txtEmpName" id="txtEmpName">John Doe</p>
 
-                      <label for="txtEmpName" class="label-6">Employee Name </label>
-                      <p name="txtEmpName" id="txtEmpName" >John Doe</p>
+                    <label for="txtEmpBday" class="label-6">Birthday: </label>
+                    <p name="txtEmpBday" id="txtEmpBday">February 03, 1983</p>
 
+                    <label for="txtEmpGender" class="label-6">Gender: </label>
+                    <p name="txtEmpGender" id="txtEmpGender">Male</p>
 
-                      <label for="txtEmpBday" class="label-6"
-                        >Birthday:
-                      </label>
-                      <p name="txtEmpBday" id="txtEmpBday">February 03, 1983</p>
-
-                      <label for="txtEmpGender" class="label-6"
-                        >Gender:
-                      </label>
-                      <p name="txtEmpGender" id="txtEmpGender" >Male</p>
-
-                      <label for="txtEmpCivilStats" class="label-6"
-                        >Civil Status:
-                      </label>
-                      <p name="txtEmpCivilStats" id="txtEmpCivilStats">Single</p>
-
-
+                    <label for="txtEmpCivilStats" class="label-6"
+                      >Civil Status:
+                    </label>
+                    <p name="txtEmpCivilStats" id="txtEmpCivilStats">Single</p>
                   </div>
                   <div>
-                      <label for="txtEmpEmail" class="label-6"
-                      >Email:
-                      </label>
-                      <p name="txtEmpEmail" id="txtEmpEmail">sample@email.com</p>
+                    <label for="txtEmpEmail" class="label-6">Email: </label>
+                    <p name="txtEmpEmail" id="txtEmpEmail">sample@email.com</p>
 
-                      <label for="txtEmpPhone" class="label-6"
-                      >Phone:
-                      </label>
-                      <p name="txtEmpPhone" id="txtEmpPhone">09123456789</p>
+                    <label for="txtEmpPhone" class="label-6">Phone: </label>
+                    <p name="txtEmpPhone" id="txtEmpPhone">09123456789</p>
 
-                      <label for="txtEmpEmergencyContact" class="label-6"
+                    <label for="txtEmpEmergencyContact" class="label-6"
                       >Emergency Contact Name::
-                      </label>
-                      <p name="txtEmpEmergencyContact" id="txtEmpEmergencyContact">Mommy Doe</p>
+                    </label>
+                    <p
+                      name="txtEmpEmergencyContact"
+                      id="txtEmpEmergencyContact"
+                    >
+                      Mommy Doe
+                    </p>
 
-                      <label for="txtEmpEmergencyContactNo" class="label-6"
+                    <label for="txtEmpEmergencyContactNo" class="label-6"
                       >Emergency Contact No.:
-                      </label>
-                      <p name="txtEmpEmergencyContactNo" id="txtEmpEmergencyContactNo">09919119191</p>
+                    </label>
+                    <p
+                      name="txtEmpEmergencyContactNo"
+                      id="txtEmpEmergencyContactNo"
+                    >
+                      09919119191
+                    </p>
                   </div>
-                  <div>                    
+                  <div>
                     <label for="photo" class="label-6">Photo</label>
                     <div class="profile_pic">
                       <img
@@ -1288,21 +1803,25 @@
                 </div>
                 <div>
                   <div>
-                    <label class="label-6"
-                    >Address:
-                    </label>
+                    <label class="label-6">Address: </label>
                   </div>
                   <div>
-                    <div>                   
-                      <label for="txtEmpAddress" class="note">House Number, Building and Street Name</label>
-                      <p name="txtEmpAddress" id="txtEmpAddress">#222 Dahlia Street</p>
+                    <div>
+                      <label for="txtEmpAddress" class="note"
+                        >House Number, Building and Street Name</label
+                      >
+                      <p name="txtEmpAddress" id="txtEmpAddress">
+                        #222 Dahlia Street
+                      </p>
                     </div>
                     <div>
-                    <label for="txtEmpProvince" class="note">Province</label>
-                    <p name="txtEmpProvince" id="txtEmpProvince">Bulacan</p>
+                      <label for="txtEmpProvince" class="note">Province</label>
+                      <p name="txtEmpProvince" id="txtEmpProvince">Bulacan</p>
                     </div>
                     <div>
-                      <label for="txtEmpCity" class="note">City/Municipality</label>
+                      <label for="txtEmpCity" class="note"
+                        >City/Municipality</label
+                      >
                       <p name="txtEmpCity" id="txtEmpCity">Malolos</p>
                     </div>
                     <div>
@@ -1313,162 +1832,479 @@
                 </div>
               </div>
 
-
               <!-- HR Info Tab -->
               <div id="view-hr-info" class="tabViewIEList" style="display:none">
                 <div>
-                  
-                  <label for="lblDateEmployed" class="label-6">Date Employed </label>
-                  <p name="lblDateEmployed" id="lblDateEmployed" >January 06, 2020</p>
+                  <label for="lblDateEmployed" class="label-6"
+                    >Date Employed
+                  </label>
+                  <p name="lblDateEmployed" id="lblDateEmployed">
+                    January 06, 2020
+                  </p>
 
                   <label for="lblDepartment" class="label-6">Department </label>
-                  <p name="lblDepartment" id="lblDepartment" >IT Department</p>
+                  <p name="lblDepartment" id="lblDepartment">IT Department</p>
 
                   <label for="lblPosition" class="label-6">Position </label>
-                  <p name="lblPosition" id="lblPosition" >Programmer</p>
+                  <p name="lblPosition" id="lblPosition">Programmer</p>
 
-                  <label for="lblManager" class="label-6">Manager <span class="note">(Approver)</span></label>
-                  <p name="lblManager" id="lblManager" >Manager John Doe</p>
+                  <label for="lblManager" class="label-6"
+                    >Manager <span class="note">(Approver)</span></label
+                  >
+                  <p name="lblManager" id="lblManager">Manager John Doe</p>
 
-                  <label for="lblBasicSalary" class="label-6">Basic Salary </label>
-                  <p name="lblBasicSalary" id="lblBasicSalary" >21,000</p>
+                  <label for="lblBasicSalary" class="label-6"
+                    >Basic Salary
+                  </label>
+                  <p name="lblBasicSalary" id="lblBasicSalary">21,000</p>
 
                   <br />
                   <label for="lblShift" class="label-6">Shift </label>
-                  <p name="lblShift" id="lblShift" >Day Shift</p>
+                  <p name="lblShift" id="lblShift">Day Shift</p>
 
-                  <label for="lblEmploymentStatus" class="label-6">Employment Status </label>
-                  <p name="lblEmploymentStatus" id="lblEmploymentStatus" >Regular</p>
+                  <label for="lblEmploymentStatus" class="label-6"
+                    >Employment Status
+                  </label>
+                  <p name="lblEmploymentStatus" id="lblEmploymentStatus">
+                    Regular
+                  </p>
 
                   <label class="label-6">Leaves </label>
-                  <label
-                  id="lblSickLeaveLabel"
-                  for="lblSickLeave"
-                  class="note"
-                  >Sick Leaves</label
-                >
-                  <p name="lblSickLeave" id="lblSickLeave" class="" >10</p>
+                  <label id="lblSickLeaveLabel" for="lblSickLeave" class="note"
+                    >Sick Leaves</label
+                  >
+                  <p name="lblSickLeave" id="lblSickLeave" class="">10</p>
 
-                  <label
-                  id="lblVELabel"
-                  for="lblVE"
-                  class="note"
-                  >Vacation/Emergency Leaves</label
-                >
-                  <p name="lblVE" id="lblVE" class="" >10</p>
+                  <label id="lblVELabel" for="lblVE" class="note"
+                    >Vacation/Emergency Leaves</label
+                  >
+                  <p name="lblVE" id="lblVE" class="">10</p>
 
-                  <label for="lblTerminationDate" class="label-6">Termination Date </label>
-                  <p name="lblTerminationDate" id="lblTerminationDate" >-</p>
+                  <label for="lblTerminationDate" class="label-6"
+                    >Termination Date
+                  </label>
+                  <p name="lblTerminationDate" id="lblTerminationDate">-</p>
                 </div>
 
                 <div>
                   <label for="lblTinNo" class="label-6">Tin Number </label>
-                  <p name="lblTinNo" id="lblTinNo" >000-000-000-000</p>
-                  
-                  <label for="lblPhilhealthNo" class="label-6">Philhealth Number </label>
-                  <p name="lblPhilhealthNo" id="lblPhilhealthNo" >00-000000000-0</p>
+                  <p name="lblTinNo" id="lblTinNo">000-000-000-000</p>
+
+                  <label for="lblPhilhealthNo" class="label-6"
+                    >Philhealth Number
+                  </label>
+                  <p name="lblPhilhealthNo" id="lblPhilhealthNo">
+                    00-000000000-0
+                  </p>
 
                   <label for="lblHdmfNo" class="label-6">HDMF Number </label>
-                  <p name="lblHdmfNo" id="lblHdmfNo" >0000-0000-0000</p>
-                  
+                  <p name="lblHdmfNo" id="lblHdmfNo">0000-0000-0000</p>
+
                   <label for="lblSssNo" class="label-6">SSS Number </label>
-                  <p name="lblSssNo" id="lblSssNo" >00-0000000-0</p>
-                  
-                  <label for="lblCreditCard" class="label-6">Credit Card Number </label>
-                  <p name="lblCreditCard" id="lblCreditCard" >0000-0000-0000</p>
+                  <p name="lblSssNo" id="lblSssNo">00-0000000-0</p>
+
+                  <label for="lblCreditCard" class="label-6"
+                    >Credit Card Number
+                  </label>
+                  <p name="lblCreditCard" id="lblCreditCard">0000-0000-0000</p>
 
                   <br />
 
-                  <label for="lblRequirements" class="label-6">Attached/Uploaded Requirements </label>
-                  <p name="lblRequirements" id="lblRequirements" >Yes</p>
-
+                  <label for="lblRequirements" class="label-6"
+                    >Attached/Uploaded Requirements
+                  </label>
+                  <p name="lblRequirements" id="lblRequirements">Yes</p>
                 </div>
               </div>
 
               <!-- Access Tab -->
               <div id="view-access" class="tabViewIEList" style="display:none">
-
                 <label for="lblRole" class="label-6">Role</label>
-                <p name="lblRole" id="lblRole" >Employee</p>
-
+                <p name="lblRole" id="lblRole">Employee</p>
               </div>
 
+              <!-- Leave Record Tab -->
+              <div
+                id="leave-records"
+                class="tabViewIEList"
+                style="display:none"
+              >
+                <!-- Leave Records Table -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Date</td>
+                      <td class="column2">Type</td>
+                      <td class="column3">From</td>
+                      <td class="column4">To</td>
+                      <td class="column5">No. of days</td>
+                      <td class="column6">With Pay</td>
+                      <td class="column7">Reason</td>
+                      <td class="column8">Status</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">Vacation</td>
+                      <td class="column3">November 18, 2019</td>
+                      <td class="column4">November 21, 2019</td>
+                      <td class="column5">3</td>
+                      <td class="column6">Yes</td>
+                      <td class="column7">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni, ullam.
+                      </td>
+                      <td class="column8">Approved</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">Vacation</td>
+                      <td class="column3">November 18, 2019</td>
+                      <td class="column4">November 21, 2019</td>
+                      <td class="column5">3</td>
+                      <td class="column6">Yes</td>
+                      <td class="column7">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni, ullam.
+                      </td>
+                      <td class="column8">Approved</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">Vacation</td>
+                      <td class="column3">November 18, 2019</td>
+                      <td class="column4">November 21, 2019</td>
+                      <td class="column5">3</td>
+                      <td class="column6">Yes</td>
+                      <td class="column7">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni, ullam.
+                      </td>
+                      <td class="column8">Rejected</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">Vacation</td>
+                      <td class="column3">November 18, 2019</td>
+                      <td class="column4">November 21, 2019</td>
+                      <td class="column5">3</td>
+                      <td class="column6">Yes</td>
+                      <td class="column7">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni, ullam.
+                      </td>
+                      <td class="column8">Approved</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">Vacation</td>
+                      <td class="column3">November 18, 2019</td>
+                      <td class="column4">November 21, 2019</td>
+                      <td class="column5">3</td>
+                      <td class="column6">Yes</td>
+                      <td class="column7">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni, ullam.
+                      </td>
+                      <td class="column8">Approved</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Overtime  Record Tab -->
+              <div
+                id="overtime-records"
+                class="tabViewIEList"
+                style="display:none"
+              >
+                <!-- Overtime Records -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Date</td>
+                      <td class="column2">Start Time</td>
+                      <td class="column3">End Time</td>
+                      <td class="column4">Overtime (hour/s)</td>
+                      <td class="column5">Reason</td>
+                      <td class="column6">Status</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </td>
+                      <td class="column6">
+                        Approved
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Assignments Tab -->
+              <div id="assignments" class="tabViewIEList" style="display:none">
+                <h4 class="notAvailable">Not Available for Demo</h4>
+              </div>
+
+              <!-- Performance & Training Tab -->
+              <div id="perf-train" class="tabViewIEList" style="display:none">
+                <h4 class="notAvailable">Not Available for Demo</h4>
+              </div>
+
+              <!-- Contirbution Tax Tab -->
+              <div
+                id="contribution-tax"
+                class="tabViewIEList"
+                style="display:none"
+              >
+                <h4 class="notAvailable">Not Available for Demo</h4>
+              </div>
+
+              <!-- Files Tab -->
+              <div id="files" class="tabViewIEList" style="display:none">
+                <h4 class="notAvailable">Not Available for Demo</h4>
+              </div>
               <!-- Time Records Tab -->
               <div id="time-records" class="tabViewIEList" style="display:none">
-              
-            <!-- Time Records -->
-            <table class="tableLayout">
-              <tbody>
-                <tr>
-                  <td class="column1">Date</td>
-                  <td class="column2">Time In</td>
-                  <td class="column3">Time Out</td>
-                  <td class="column4">Total (hour/s)</td>
-                  <td class="column5">Overtime (hour/s)</td>
-                  <td class="column6">Tardiness (min/s)</td>
-                </tr>
-                <tr>
-                  <td class="column1">November 20, 2019</td>
-                  <td class="column2">09:00 AM</td>
-                  <td class="column3">05:00 PM</td>
-                  <td class="column4">8.00</td>
-                  <td class="column5">0.00</td>
-                  <td class="column6">0.00</td>
-                </tr>
-                <tr>
-                  <td class="column1">November 19, 2019</td>
-                  <td class="column2">09:00 AM</td>
-                  <td class="column3">05:00 PM</td>
-                  <td class="column4">8.00</td>
-                  <td class="column5">0.00</td>
-                  <td class="column6">0.00</td>
-                </tr>
-                <tr>
-                  <td class="column1">November 18, 2019</td>
-                  <td class="column2">09:00 AM</td>
-                  <td class="column3">05:00 PM</td>
-                  <td class="column4">8.00</td>
-                  <td class="column5">0.00</td>
-                  <td class="column6">0.00</td>
-                </tr>
-                <tr>
-                  <td class="column1">November 17, 2019</td>
-                  <td class="column2">09:00 AM</td>
-                  <td class="column3">05:00 PM</td>
-                  <td class="column4">8.00</td>
-                  <td class="column5">0.00</td>
-                  <td class="column6">0.00</td>
-                </tr>
-                <tr>
-                  <td class="column1">November 16, 2019</td>
-                  <td class="column2">09:00 AM</td>
-                  <td class="column3">05:00 PM</td>
-                  <td class="column4">8.00</td>
-                  <td class="column5">0.00</td>
-                  <td class="column6">0.00</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <div class="pagination-container">
-              <div class="showmore-container">
-                <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
-              </div>
-              <div class="pagination" onclick="selectPage()">
-                <a href="#">«</a>
-                <a class="active" href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#">»</a>
-              </div>
-            </div>
+                <!-- Time Records -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Date</td>
+                      <td class="column2">Time In</td>
+                      <td class="column3">Time Out</td>
+                      <td class="column4">Total (hour/s)</td>
+                      <td class="column5">Overtime (hour/s)</td>
+                      <td class="column6">Tardiness (min/s)</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">0.00</td>
+                      <td class="column6">0.00</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 19, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">0.00</td>
+                      <td class="column6">0.00</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 18, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">0.00</td>
+                      <td class="column6">0.00</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 17, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">0.00</td>
+                      <td class="column6">0.00</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 16, 2019</td>
+                      <td class="column2">09:00 AM</td>
+                      <td class="column3">05:00 PM</td>
+                      <td class="column4">8.00</td>
+                      <td class="column5">0.00</td>
+                      <td class="column6">0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
               </div>
 
               <div class="modal-btn-container">

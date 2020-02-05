@@ -48,7 +48,7 @@ function selectTab() {
 }
 
 function selectTabEI() {
-  $("#tabIE").on("click", "li", function() {
+  $(".tabIE").on("click", "li", function() {
     $(".modal-tab-list li.current-tab").removeClass("current-tab");
     $(this).addClass("current-tab");
   });
@@ -344,10 +344,13 @@ function openModal(btn_id) {
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
-    const modalViewEmployee = document.querySelector(".modal-view-employee");
-    const modalAddEmployeeHeader = document.querySelector(
-      "#add-employee-header"
+    const modalUpdateEmployee = document.querySelector(
+      ".modal-update-employee"
     );
+    const modalViewEmployee = document.querySelector(".modal-view-employee");
+    // const modalAddEmployeeHeader = document.querySelector(
+    //   "#add-employee-header"
+    // );
     const modalAddEmployeeBtn = document.querySelector("#btnModalAddEmployee");
     const modalUpdateEmployeeBtn = document.querySelector(
       "#btnModalUpdateEmployee"
@@ -366,14 +369,14 @@ function openModal(btn_id) {
       modalCreatePayroll.style.display = "flex";
     } else if (modalBtn === "#btnAddEmployee") {
       modalAddEmployee.style.display = "flex";
-      modalAddEmployeeHeader.innerHTML = "Add Employment Information";
-      modalAddEmployeeBtn.classList.remove("hidden");
-      modalUpdateEmployeeBtn.classList.add("hidden");
+      // modalAddEmployeeHeader.innerHTML = "Add Employment Information";
+      // modalAddEmployeeBtn.classList.remove("hidden");
+      // modalUpdateEmployeeBtn.classList.add("hidden");
     } else if (modalBtn === "#btnUpdateEmployee") {
-      modalAddEmployee.style.display = "flex";
-      modalAddEmployeeHeader.innerHTML = "Update Employment Information";
-      modalAddEmployeeBtn.classList.add("hidden");
-      modalUpdateEmployeeBtn.classList.remove("hidden");
+      modalUpdateEmployee.style.display = "flex";
+      // modalAddEmployeeHeader.innerHTML = "Update Employment Information";
+      // modalAddEmployeeBtn.classList.add("hidden");
+      // modalUpdateEmployeeBtn.classList.remove("hidden");
     } else if (modalBtn === "#btnViewEmployee") {
       modalViewEmployee.style.display = "flex";
     }
@@ -395,10 +398,10 @@ function closeModal(btn_id) {
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
-    const modalViewEmployee = document.querySelector(".modal-view-employee");
     const modalUpdateEmployee = document.querySelector(
       ".modal-update-employee"
     );
+    const modalViewEmployee = document.querySelector(".modal-view-employee");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -413,6 +416,8 @@ function closeModal(btn_id) {
       modalCreatePayroll.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmployee") {
       modalAddEmployee.style.display = "none";
+    } else if (modalBtn === "#btnCloseUpdateEmployee") {
+      modalUpdateEmployee.style.display = "none";
     } else if (modalBtn === "#btnCloseViewEmployee") {
       modalViewEmployee.style.display = "none";
     }
