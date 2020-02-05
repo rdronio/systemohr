@@ -332,6 +332,17 @@ function removeOptions(select_box) {
   }
 }
 
+function scrollTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function scrollTopModal() {
+  const modal = document.querySelector(".modal");
+
+  modal.scrollTop = 0;
+}
+
 function openModal(btn_id) {
   try {
     // List modal
@@ -344,17 +355,17 @@ function openModal(btn_id) {
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
-    const modalUpdateEmployee = document.querySelector(
-      ".modal-update-employee"
+    const modalAddEmployeeHeader = document.querySelector(
+      "#add-employee-header"
     );
-    const modalViewEmployee = document.querySelector(".modal-view-employee");
-    // const modalAddEmployeeHeader = document.querySelector(
-    //   "#add-employee-header"
-    // );
     const modalAddEmployeeBtn = document.querySelector("#btnModalAddEmployee");
     const modalUpdateEmployeeBtn = document.querySelector(
       "#btnModalUpdateEmployee"
     );
+    // const modalUpdateEmployee = document.querySelector(
+    //   ".modal-update-employee"
+    // );
+    const modalViewEmployee = document.querySelector(".modal-view-employee");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -369,20 +380,23 @@ function openModal(btn_id) {
       modalCreatePayroll.style.display = "flex";
     } else if (modalBtn === "#btnAddEmployee") {
       modalAddEmployee.style.display = "flex";
-      // modalAddEmployeeHeader.innerHTML = "Add Employment Information";
-      // modalAddEmployeeBtn.classList.remove("hidden");
-      // modalUpdateEmployeeBtn.classList.add("hidden");
+      modalAddEmployeeHeader.innerHTML = "Add Employment Information";
+      modalAddEmployeeBtn.classList.remove("hidden");
+      modalUpdateEmployeeBtn.classList.add("hidden");
     } else if (modalBtn === "#btnUpdateEmployee") {
-      modalUpdateEmployee.style.display = "flex";
-      // modalAddEmployeeHeader.innerHTML = "Update Employment Information";
-      // modalAddEmployeeBtn.classList.add("hidden");
-      // modalUpdateEmployeeBtn.classList.remove("hidden");
+      modalAddEmployee.style.display = "flex";
+      modalAddEmployeeHeader.innerHTML = "Update Employment Information";
+      modalAddEmployeeBtn.classList.add("hidden");
+      modalUpdateEmployeeBtn.classList.remove("hidden");
+      // defaultTabUpdate("primary-info-update");
     } else if (modalBtn === "#btnViewEmployee") {
       modalViewEmployee.style.display = "flex";
+      hideBasicInfo("view-primary-info");
     }
 
     //set tab back to primary-info
     defaultTab("primary-info");
+    scrollTopModal();
   } catch (ex) {}
 }
 
@@ -398,9 +412,9 @@ function closeModal(btn_id) {
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
-    const modalUpdateEmployee = document.querySelector(
-      ".modal-update-employee"
-    );
+    // const modalUpdateEmployee = document.querySelector(
+    //   ".modal-update-employee"
+    // );
     const modalViewEmployee = document.querySelector(".modal-view-employee");
 
     // get open modal button
@@ -416,15 +430,34 @@ function closeModal(btn_id) {
       modalCreatePayroll.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmployee") {
       modalAddEmployee.style.display = "none";
-    } else if (modalBtn === "#btnCloseUpdateEmployee") {
-      modalUpdateEmployee.style.display = "none";
-    } else if (modalBtn === "#btnCloseViewEmployee") {
+    }
+    //  else if (modalBtn === "#btnCloseUpdateEmployee") {
+    //   modalUpdateEmployee.style.display = "none";
+    // }
+    else if (modalBtn === "#btnCloseViewEmployee") {
       modalViewEmployee.style.display = "none";
     }
 
     //set tab back to primary-info
     defaultTab("primary-info");
+    // defaultTabUpdate("primary-info-update");
     defaultTabViewIE("view-primary-info");
+  } catch (ex) {}
+}
+
+function openTabHrInfo() {
+  try {
+    const modalAddEmployee = document.querySelector(".modal-add-employee");
+    modalAddEmployee.style.display = "flex";
+
+    const x = document.getElementsByClassName("tabNameHrModal");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById("hr-info").style.display = "flex";
+
+    $(".modal-tab-list li.current-tab").removeClass("current-tab");
+    $(".modal-tab-list li:nth-child(2)").addClass("current-tab");
   } catch (ex) {}
 }
 
@@ -497,10 +530,21 @@ function openViewEmpInfoTab(tabName) {
   }
   document.getElementById(tabName).style.display = "flex";
 
+  hideBasicInfo(tabName);
+
   $(".tab-list").on("click", "li", function() {
     $(".tab-list li.current-tab").removeClass("current-tab");
     $(this).addClass("current-tab");
   });
+}
+
+function hideBasicInfo(tabName) {
+  const basicInfo = document.querySelector(".summary-employee-info-container");
+  if (tabName === "view-primary-info") {
+    basicInfo.classList.add("hidden");
+  } else {
+    basicInfo.classList.remove("hidden");
+  }
 }
 
 function redirectModalToUpdateEmployee() {
@@ -518,6 +562,17 @@ function defaultTab(tabName) {
 
   $(".modal-tab-list li.current-tab").removeClass("current-tab");
   $(".modal-tab-list li:first-child").addClass("current-tab");
+}
+
+function defaultTabUpdate(tabName) {
+  var x = document.getElementsByClassName("tabNameHrModal");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "flex";
+
+  $(".modal-tab-list li.current-tab").removeClass("current-tab");
+  $(".modal-tab-list li:nth-child(1)").addClass("current-tab");
 }
 
 function defaultTabViewIE(tabName) {

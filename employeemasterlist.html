@@ -1120,14 +1120,14 @@
               </div>
 
               <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnModalAddEmployee"
+                <a class="btn-sm btn-primary mx-3 hidden" id="btnModalAddEmployee"
                   >Add Employee</a
                 >
-                <!-- <a
+                <a
                   class="btn-sm btn-primary mx-3 hidden"
                   id="btnModalUpdateEmployee"
                   >Update Employee</a
-                > -->
+                >
                 <a
                   class="btn-sm btn-secondary mx-3"
                   onclick="closeModal(`#btnCloseAddEmployee`);"
@@ -1635,7 +1635,7 @@
             </div>
           </div>
 
-          <!-- Modal Add Employee: btnViewEmployee -->
+          <!-- Modal View Employee: btnViewEmployee -->
           <div class="modal modal-view-employee">
             <div class="modal-content">
               <h4>View Employment Information</h4>
@@ -1692,7 +1692,7 @@
                 </ul>
               </div>
 
-              <div class="summary-employee-info-container hidden">
+              <div class="summary-employee-info-container ">
                 <div>
                   <div class="summary-employee-info-header">
                     <label class="label-5">Basic Employee Information </label>
