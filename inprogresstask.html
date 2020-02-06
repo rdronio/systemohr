@@ -128,7 +128,7 @@
         </nav>
 
         <!-- Project/Task -->
-        <section id="completedtask-records" class="content">
+        <section id="inprogresstask-records" class="content">
             <!-- TOP NAV  -->
             <div class="top-nav">
             <span class="menu-btn">
@@ -143,8 +143,17 @@
             </div>
 
             <div class="container">
-            <h2>Completed Task/s Records</h2>
+            <h2>In Progress Task/s Records</h2>
             <div class="card card-1">
+                <div>
+                    <a
+                        class="btn-sm btn-primary"
+                        id="btnAddEmpTask"
+                        onclick="openModal(`#btnAddEmpTask`);"
+                    >
+                        Add Task
+                    </a>
+                </div>
                 <div>
                 <label class="label-6">Filter Date</label>
                 <br />
@@ -168,21 +177,25 @@
                 <button class="btn btn-secondary">Clear</button>
                 </div>
                 <!-- <label class="norecords">No Records Found</label> -->
-                <!-- Completed Task/s Records -->
+                <!-- In Progress Task/s Records -->
                 <table class="tableLayout">
                 <tbody>
                     <tr>
                         <td class="column1">Project</td>
                         <td class="column2">Task</td>
-                        <td class="column3">Date Completed</td>
-                        <td class="column4">Notes</td>
+                        <td class="column3">Team Members</td>
+                        <td class="column4">Estimated Completion Date</td>
+                        <td class="column5">Notes</td>
+                        <td class="column6">Action</td>
                         <!-- <td class="column5">Action</td> -->
                     </tr>
                     <tr>
                         <td class="column1">Lorem, ipsum.</td>
                         <td class="column2">Website</td>
-                        <td class="column3">January 6, 2020</td>
-                        <td class="column4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore perspiciatis saepe, totam optio eaque eligendi natus facere eius.</td>
+                        <td class="column3">John Doe</td>
+                        <td class="column4">January 6, 2020</td>
+                        <td class="column5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore perspiciatis saepe, totam optio eaque eligendi natus facere eius.</td>
+                        <td class="column6"><a class="btn-table btn-secondary"  onclick="openModal(`#btnUpdateCmpltTask`);">Update</a></td>
                         <!-- <td class="column5"><a class="btn-table btn-secondary"  onclick="openModal(`#btnUpdateCmpltTask`);">Update</a></td> -->
                     </tr>
                 </tbody>
@@ -214,7 +227,7 @@
             
             <!-- Modal Section -->
             <!-- btnFileLeave -->
-            <div class="modal modal-update-completedtask">
+            <div class="modal modal-add-inprogresstask">
                 <div class="modal-content">
                     <!-- <span class="modal-close-btn" onclick="closeModal();"
                     >&times;</span

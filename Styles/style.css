@@ -1065,6 +1065,8 @@ table.tableLayout {
   position: relative;
 
   display: block;
+  overflow-x: auto;
+  /* white-space: nowrap; */
 }
 
 .tableLayout::-webkit-scrollbar {
@@ -2857,6 +2859,36 @@ nav ul li a span.fa {
   font-size: 2rem;
   color: #00aedb;
   margin: 0 0.55rem;
+}
+
+/* ========[ In Progress Task Records ]======== */
+
+#inprogresstask-records .container .card-1 div:nth-child(3) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#inprogresstask-records .container .card-1 > div:first-child a {
+  display: inline-block;
+}
+
+#inprogresstask-records .container .card-1 div:first-child {
+  position: relative;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+#inprogresstask-records .container .card-1 div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#inprogresstask-records .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#inprogresstask-records .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
 }
 
 /* ==========================[ MEDIA QUERIES ]====================== */
