@@ -983,6 +983,67 @@
     content: "Undertime (Hour/s)";
   }
 
+  /* ========[ Expense Records ]======== */
+
+  #expense-records .container .card-1 div:nth-child(1),
+  #expense-records .container .card-1 div:nth-child(1) input {
+    margin-right: 0;
+    display: block;
+  }
+
+  #expense-records .container .card-1 div:nth-child(2),
+  #expense-records .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* card-1 table */
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total (Hour/s)";
+  }
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Undertime (Hour/s)";
+  }
+
   /* ========[ Leave Modal ]======== */
   #leaverecords .modal .modal-content {
     padding: 1.25rem 1.75rem;
