@@ -789,7 +789,7 @@ iframe {
 }
 
 .showmore-container {
-  display: none;
+  display: none !important;
 }
 
 .pagination div {
@@ -1296,7 +1296,7 @@ nav {
   box-shadow: 4px 4px 20px rgba(74, 74, 74, 0.2);
   height: 100%;
   /* for screenshot */
-  height: 2000px;
+  /* height: 2000px; */
   overflow-y: auto;
   z-index: 1;
   transition: all 0.4s ease-in;
@@ -1582,6 +1582,26 @@ nav ul li a span.fa {
 
 #leaverecords .modal-content .note {
   padding-top: 0;
+}
+
+/* ========[ Undertime Records ]======== */
+
+#undertime-records .container .card-1 div:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#undertime-records .container .card-1 div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#undertime-records .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#undertime-records .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
 }
 
 /* ========[ Time Alteration Approval ]======== */

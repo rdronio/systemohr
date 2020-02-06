@@ -338,7 +338,7 @@ function scrollTop() {
 }
 
 function scrollTopModal() {
-  // document.querySelector(".modal-content").scrollTop = 0;
+  document.querySelector(".modal-content").scrollTop = 0;
 }
 
 function openModal(btn_id) {
@@ -452,7 +452,14 @@ function closeModal(btn_id) {
 function openTabHrInfo() {
   try {
     const modalAddEmployee = document.querySelector(".modal-add-employee");
+    const modalAddEmployeeBtn = document.querySelector("#btnModalAddEmployee");
+    const modalUpdateEmployeeBtn = document.querySelector(
+      "#btnModalUpdateEmployee"
+    );
+
     modalAddEmployee.style.display = "flex";
+    modalAddEmployeeBtn.classList.remove("hidden");
+    modalUpdateEmployeeBtn.classList.add("hidden");
 
     const x = document.getElementsByClassName("tabNameHrModal");
     for (i = 0; i < x.length; i++) {

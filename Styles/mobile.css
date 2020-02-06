@@ -179,7 +179,7 @@
   }
 
   .showmore-container {
-    display: block;
+    display: block !important;
     margin-bottom: 2rem;
     width: 100%;
   }
@@ -417,21 +417,11 @@
     margin-right: 0;
   }
 
-  #admin-dashboard
-  .container
-  > div
-  > div
-  .card-2
-  .label-6 {
+  #admin-dashboard .container > div > div .card-2 .label-6 {
     padding-top: 0;
   }
 
-  #admin-dashboard
-  .container
-  > div
-  > div
-  .card-2
-  .tableLayout {
+  #admin-dashboard .container > div > div .card-2 .tableLayout {
     margin-top: 0;
   }
 
@@ -479,7 +469,6 @@
     td:nth-child(4):before {
     content: "Position";
   }
- 
 
   /* ========[ Time Records ]======== */
   #time-records .container .card-1 input {
@@ -931,6 +920,67 @@
     tr
     td:nth-child(9):before {
     content: "Action";
+  }
+
+  /* ========[ undertime Records ]======== */
+
+  #undertime-records .container .card-1 div:nth-child(1),
+  #undertime-records .container .card-1 div:nth-child(1) input {
+    margin-right: 0;
+    display: block;
+  }
+
+  #undertime-records .container .card-1 div:nth-child(2),
+  #undertime-records .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* card-1 table */
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total (Hour/s)";
+  }
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Undertime (Hour/s)";
   }
 
   /* ========[ Leave Modal ]======== */
