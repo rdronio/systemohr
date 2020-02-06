@@ -84,6 +84,22 @@ function showIM() {
   card1.classList.add("hidden");
 }
 
+function showER() {
+  const card1 = document.querySelector("#expense-records .container .card-1");
+  const card2 = document.querySelector("#expense-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPE() {
+  const card1 = document.querySelector("#expense-records .container .card-1");
+  const card2 = document.querySelector("#expense-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
 function showTR() {
   const card1 = document.querySelector("#time-records .container .card-1");
   const card2 = document.querySelector("#time-records .container .card-2");
@@ -350,6 +366,9 @@ function openModal(btn_id) {
     const modalOvertimeRecord = document.querySelector(
       ".modal-overtime-application"
     );
+    const modalExpenseRecord = document.querySelector(
+      ".modal-expense-application"
+    );
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
@@ -376,6 +395,8 @@ function openModal(btn_id) {
       modalOvertimeRecord.style.display = "flex";
     } else if (modalBtn === "#btnFileLeave") {
       modalFileLeave.style.display = "flex";
+    } else if (modalBtn === "#btnAddExpense") {
+      modalExpenseRecord.style.display = "flex";
     } else if (modalBtn === "#btnCreatePayroll") {
       modalCreatePayroll.style.display = "flex";
     } else if (modalBtn === "#btnAddEmployee") {
@@ -413,6 +434,9 @@ function closeModal(btn_id) {
     const modalOvertimeRecord = document.querySelector(
       ".modal-overtime-application"
     );
+    const modalExpenseRecord = document.querySelector(
+      ".modal-expense-application"
+    );
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
@@ -430,6 +454,8 @@ function closeModal(btn_id) {
       modalOvertimeRecord.style.display = "none";
     } else if (modalBtn === "#btnCloseFileLeave") {
       modalFileLeave.style.display = "none";
+    } else if (modalBtn === "#btnCloseAddExpense") {
+      modalExpenseRecord.style.display = "none";
     } else if (modalBtn === "#btnCloseCreatePayroll") {
       modalCreatePayroll.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmployee") {

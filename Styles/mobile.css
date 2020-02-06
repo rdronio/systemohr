@@ -104,6 +104,11 @@
     left: 0;
   }
 
+  .modal-content {
+    width: 90% !important;
+    padding: 1.5rem 1.75rem 0 1.75rem !important;
+  }
+
   .modal-content .modal-btn-container {
     display: flex;
     flex-direction: column;
@@ -992,7 +997,16 @@
   }
 
   #expense-records .container .card-1 div:nth-child(2),
-  #expense-records .container .card-1 div:nth-child(2) button {
+  #expense-records .container .card-1 div:nth-child(3) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #expense-records .container .card-1 div:nth-child(3) {
+    display: block;
+  }
+
+  #expense-records .container .card-1 div:nth-child(4) .select {
     width: 100%;
     margin-right: 0;
   }
@@ -1014,7 +1028,7 @@
     tbody
     tr
     td:nth-child(2):before {
-    content: "Time In";
+    content: "Description";
   }
   #expense-records
     .container
@@ -1023,7 +1037,7 @@
     tbody
     tr
     td:nth-child(3):before {
-    content: "Time Out";
+    content: "Reason";
   }
   #expense-records
     .container
@@ -1032,7 +1046,7 @@
     tbody
     tr
     td:nth-child(4):before {
-    content: "Total (Hour/s)";
+    content: "Rate";
   }
   #expense-records
     .container
@@ -1041,9 +1055,64 @@
     tbody
     tr
     td:nth-child(5):before {
-    content: "Undertime (Hour/s)";
+    content: "Status";
   }
 
+  /* card-2 table */
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Description";
+  }
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Reason";
+  }
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Rate";
+  }
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Status";
+  }
+  #expense-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Action";
+  }
   /* ========[ Leave Modal ]======== */
   #leaverecords .modal .modal-content {
     padding: 1.25rem 1.75rem;

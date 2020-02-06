@@ -71,7 +71,7 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu">
+              <ul class="nav child_menu ">
                 <li>
                   <a href="leaverecords.html">Leave Records</a>
                 </li>
@@ -79,7 +79,7 @@
                   <a href="overtimerecords.html">Overtime Records</a>
                 </li>
                 <li class="current-page">
-                  <a href="underconstruction.html">Expense Records</a>
+                  <a href="expense.html">Expense Records</a>
                 </li>
                 <li>
                   <a href="undertime.html">Undertime Records</a>
@@ -87,16 +87,10 @@
               </ul>
             </li>
             <li>
-              <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
-              <a href="underconstruction.html"
-                ><i class="fas fa-users"></i>Team</a
-              >
+              <a href="team.html"><i class="fas fa-users"></i>Team</a>
             </li>
             <li>
-              <!-- <a href="projecttask.html"
-                ><i class="fas fa-tasks"></i>Project/Task</a
-                > -->
-              <a href="underconstruction.html"
+              <a href="projecttask.html"
                 ><i class="fas fa-tasks"></i>Project/Task</a
               >
             </li>
@@ -127,7 +121,7 @@
           </div>
         </nav>
 
-        <!-- Expense -->
+        <!-- Expense Records -->
         <section id="expense-records" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
@@ -143,8 +137,26 @@
           </div>
 
           <div class="container">
-            <h2>Expense Records</h2>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showER()">Expense Records</a>
+                </li>
+                <li>
+                  <a onclick="showPE()">Pending Expense</a>
+                </li>
+              </ul>
+            </div>
             <div class="card card-1">
+              <div>
+                <a
+                  class="btn-sm btn-primary"
+                  id="btnExpense"
+                  onclick="openModal(`#btnAddExpense`);"
+                >
+                  Add Expense
+                </a>
+              </div>
               <div>
                 <label class="label-6">Filter Date</label>
                 <br />
@@ -167,24 +179,56 @@
               <div>
                 <button class="btn btn-secondary">Clear</button>
               </div>
+
+              <div>
+              <label class="label-6 block">Show record status</label>
+              <select
+                name="showEmployeeBy"
+                id="showEmployeeBy"
+                class="select"
+                onchange=""
+              >
+                <option value="">All</option>
+                <option value="department">Approved</option>
+                <option value="position">Rejected</option>
+              </select>
+              </div>
+
               <!-- <label class="norecords">No Records Found</label> -->
-              <!-- Undertime Records -->
+              <!-- Expense Records -->
               <table class="tableLayout">
                 <tbody>
                   <tr>
                     <td class="column1">Date</td>
-                    <td class="column2">Time In</td>
-                    <td class="column3">Time Out</td>
-                    <td class="column4">Total (hour/s)</td>
-                    <td class="column5">Undertime (hour/s)</td>
+                    <td class="column2">Description</td>
+                    <td class="column3">Reason</td>
+                    <td class="column4">Rate</td>
+                    <td class="column5">Status</td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">04:00 PM</td>
-                    <td class="column4">7.00</td>
-                    <td class="column5">
-                      1.00
+                    <td class="column2">
+                      Item Description
+                    </td>
+                    <td class="column3">Lorem ipsum dolor sit amet.</td>
+                    <td class="column4">
+                      1,500.00
+                    </td>
+                    <td class="column4">
+                      Approved
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">November 21, 2019</td>
+                    <td class="column2">
+                      Item Description
+                    </td>
+                    <td class="column3">Lorem ipsum dolor sit amet.</td>
+                    <td class="column4">
+                      1,600.00
+                    </td>
+                    <td class="column4">
+                      Rejected
                     </td>
                   </tr>
                 </tbody>
@@ -210,6 +254,102 @@
                   <a href="#">10</a>
                   <a href="#">»</a>
                 </div>
+              </div>
+            </div>
+
+            <div class="card card-2 hidden">
+              <h3>Pending Expense</h3>
+              <hr />
+              <div class="container-sm">
+                <!-- Pending Time Alteration -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Date</td>
+                      <td class="column2">Description</td>
+                      <td class="column3">Reason</td>
+                      <td class="column4">Rate</td>
+                      <td class="column5">Status</td>
+                      <td class="column6">Action</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">November 20, 2019</td>
+                      <td class="column2">Item Description</td>
+                      <td class="column3">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Fuga, quod.
+                      </td>
+                      <td class="column4">
+                        1,500.00
+                      </td>
+                      <td class="column5">
+                        Pending
+                      </td>
+                      <td class="column5">
+                        <a class="btn-table btn-secondary">Cancel</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>Show More</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Section -->
+          <!-- btnExpenseApplication -->
+          <div class="modal modal-expense-application">
+            <div class="modal-content">
+              <h5>Expense Application Form</h5>
+              <hr />
+              <div class="">
+                <label for="txtDateExpense" class="label-6">Date: </label>
+                <input
+                  name="txtDateExpense"
+                  type="text"
+                  id="txtDateExpense"
+                  class="otPicker"
+                />
+                <label for="txtDescExpense" class="label-6"
+                  >Description:
+                </label>
+                <input name="txtDescExpense" type="text" id="txtDescExpense" />
+
+                <label for="txtAreaReasonOT" class="label-6">Reason</label>
+                <textarea
+                  name="txtAreaReasonOT"
+                  id="txtAreaReasonOT"
+                ></textarea>
+              </div>
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnSubmitExpense"
+                  >Submit Form</a
+                >
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseAddExpense`);"
+                  >Cancel</a
+                >
               </div>
             </div>
           </div>
