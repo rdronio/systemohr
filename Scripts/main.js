@@ -338,9 +338,7 @@ function scrollTop() {
 }
 
 function scrollTopModal() {
-  const modal = document.querySelector(".modal");
-
-  modal.scrollTop = 0;
+  // document.querySelector(".modal-content").scrollTop = 0;
 }
 
 function openModal(btn_id) {
@@ -362,6 +360,8 @@ function openModal(btn_id) {
     const modalUpdateEmployeeBtn = document.querySelector(
       "#btnModalUpdateEmployee"
     );
+    const selectDept = document.querySelector("#drpDepartment");
+    const selectDeptUpdate = document.querySelector("#drpDepartmentUpdate");
     // const modalUpdateEmployee = document.querySelector(
     //   ".modal-update-employee"
     // );
@@ -383,11 +383,15 @@ function openModal(btn_id) {
       modalAddEmployeeHeader.innerHTML = "Add Employment Information";
       modalAddEmployeeBtn.classList.remove("hidden");
       modalUpdateEmployeeBtn.classList.add("hidden");
+      selectDept.classList.remove("hidden");
+      selectDeptUpdate.classList.add("hidden");
     } else if (modalBtn === "#btnUpdateEmployee") {
       modalAddEmployee.style.display = "flex";
       modalAddEmployeeHeader.innerHTML = "Update Employment Information";
       modalAddEmployeeBtn.classList.add("hidden");
       modalUpdateEmployeeBtn.classList.remove("hidden");
+      selectDept.classList.add("hidden");
+      selectDeptUpdate.classList.remove("hidden");
       // defaultTabUpdate("primary-info-update");
     } else if (modalBtn === "#btnViewEmployee") {
       modalViewEmployee.style.display = "flex";
@@ -458,6 +462,8 @@ function openTabHrInfo() {
 
     $(".modal-tab-list li.current-tab").removeClass("current-tab");
     $(".modal-tab-list li:nth-child(2)").addClass("current-tab");
+
+    scrollTopModal();
   } catch (ex) {}
 }
 
