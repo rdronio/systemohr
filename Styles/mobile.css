@@ -983,6 +983,68 @@
     content: "Undertime (Hour/s)";
   }
 
+  /* ========[ Completed Task Records ]======== */
+
+  #completedtask-records .container .card-1 div:nth-child(1),
+  #completedtask-records .container .card-1 div:nth-child(1) input {
+    margin-right: 0;
+    display: block;
+  }
+
+  #completedtask-records .container .card-1 div:nth-child(2),
+  #completedtask-records .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* card-1 table */
+  #completedtask-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #completedtask-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #completedtask-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #completedtask-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total (Hour/s)";
+  }
+  #completedtask-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "completedtask (Hour/s)";
+  }
+
+
   /* ========[ Expense Records ]======== */
 
   #expense-records .container .card-1 div:nth-child(1),

@@ -1604,6 +1604,27 @@ nav ul li a span.fa {
   margin-right: 0.5rem;
 }
 
+/* ========[ Completed Task Records ]======== */
+
+#completedtask-records .container .card-1 div:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#completedtask-records .container .card-1 div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#completedtask-records .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#completedtask-records .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
+}
+
+
 /* ========[ expense Records ]======== */
 
 #expense-records .container .card-1 div:nth-child(1) {
