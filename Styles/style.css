@@ -1649,13 +1649,6 @@ nav ul li a span.fa {
   margin-right: 0.5rem;
 }
 
-
-/* ========[ expense Records ]======== */
-
-#expense-records .container .card-1 div:nth-child(1) {
-  display: inline-block;
->>>>>>> 1ecf0ead97ccd5efe1eb49dac7edf2d01d6b6c3f
- 
 /* ========[ Time Alteration Approval ]======== */
 #time-alteration-approval .container .card-1 > div:first-child {
   display: inline-block;
