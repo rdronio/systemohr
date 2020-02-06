@@ -1609,7 +1609,27 @@ nav ul li a span.fa {
 #expense-records .container .card-1 div:first-child {
   position: relative;
   text-align: right;
-=======
+  margin-bottom: 0.5rem;
+}
+
+#expense-records .container .card-1 > div:first-child a {
+  display: inline-block;
+}
+
+#expense-records .container .card-1 div:nth-child(2) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#expense-records .container .card-1 div:nth-child(2) input {
+  margin-right: 0.5rem;
+}
+
+#expense-records .container .card-1 div:nth-child(3) {
+  display: inline-block;
+}
+
 /* ========[ Completed Task Records ]======== */
 
 #completedtask-records .container .card-1 div:nth-child(1) {
@@ -1636,26 +1656,7 @@ nav ul li a span.fa {
 #expense-records .container .card-1 div:nth-child(1) {
   display: inline-block;
 >>>>>>> 1ecf0ead97ccd5efe1eb49dac7edf2d01d6b6c3f
-  margin-bottom: 0.5rem;
-}
-
-#expense-records .container .card-1 > div:first-child a {
-  display: inline-block;
-}
-
-#expense-records .container .card-1 div:nth-child(2) {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  margin-right: 1rem;
-}
-
-#expense-records .container .card-1 div:nth-child(2) input {
-  margin-right: 0.5rem;
-}
-
-#expense-records .container .card-1 div:nth-child(3) {
-  display: inline-block;
-}
+ 
 /* ========[ Time Alteration Approval ]======== */
 #time-alteration-approval .container .card-1 > div:first-child {
   display: inline-block;
