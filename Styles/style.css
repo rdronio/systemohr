@@ -934,6 +934,14 @@ iframe {
   margin: 1rem 0;
 }
 
+.my-4 {
+  margin: 0.5rem 0;
+}
+
+.my-5 {
+  margin: 0.3rem 0;
+}
+
 .mx-1 {
   margin: 0 3rem;
 }
@@ -942,6 +950,28 @@ iframe {
 }
 .mx-3 {
   margin: 0 1rem;
+}
+.mx-4 {
+  margin: 0 0.5rem;
+}
+.mx-5 {
+  margin: 0 0.3rem;
+}
+
+.mxy-1 {
+  margin: 3rem;
+}
+.mxy-2 {
+  margin: 2rem;
+}
+.mxy-3 {
+  margin: 1rem;
+}
+.mxy-4 {
+  margin: 0.5rem;
+}
+.mxy-5 {
+  margin: 0.3rem;
 }
 
 .tab-list {

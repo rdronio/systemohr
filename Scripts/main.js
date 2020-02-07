@@ -385,6 +385,7 @@ function openModal(btn_id) {
     //   ".modal-update-employee"
     // );
     const modalViewEmployee = document.querySelector(".modal-view-employee");
+    const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -417,6 +418,8 @@ function openModal(btn_id) {
     } else if (modalBtn === "#btnViewEmployee") {
       modalViewEmployee.style.display = "flex";
       hideBasicInfo("view-primary-info");
+    } else if (modalBtn === "#btnAddEmpTask") {
+      modalAddEmpTask.style.display = "flex";
     }
 
     //set tab back to primary-info
@@ -444,7 +447,8 @@ function closeModal(btn_id) {
     //   ".modal-update-employee"
     // );
     const modalViewEmployee = document.querySelector(".modal-view-employee");
-
+    const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
+    
     // get open modal button
     const modalBtn = btn_id;
 
@@ -464,8 +468,13 @@ function closeModal(btn_id) {
     //  else if (modalBtn === "#btnCloseUpdateEmployee") {
     //   modalUpdateEmployee.style.display = "none";
     // }
+
+    
     else if (modalBtn === "#btnCloseViewEmployee") {
       modalViewEmployee.style.display = "none";
+    } else if (modalBtn === "#btnCloseAddEmpTask") {
+      modalAddEmpTask.style.display = "none";
+      resetAddEmpProj();
     }
 
     //set tab back to primary-info
@@ -696,6 +705,41 @@ function disableAccessRole() {
   txtPasswordLabel.classList.add("disabled");
   txtPassword.classList.add("disabled");
 }
+
+function removeHidden() {
+    const inputProjectTask = document.querySelector("input.txtTaskField.hidden");
+    inputProjectTask.classList.remove("hidden");
+
+    const lastTaskField = document.querySelector("#txtTaskField_15");
+    const btnProjectTask = document.querySelector(".btnAddTask");
+
+    if (lastTaskField.classList.contains("hidden") == false) {
+      btnProjectTask.classList.add("hidden");
+    }
+}
+
+function resetAddEmpProj() {
+  const resetEmpProj = document.querySelectorAll(".txtTaskName-container .txtTaskField");
+
+  resetEmpProj.forEach(element => {
+    element.classList.add("hidden");
+  });
+  
+  
+  const firstTaskField = document.querySelector("#txtTaskField_1");
+  firstTaskField.classList.remove("hidden");
+
+
+  const lastTaskField = document.querySelector("#txtTaskField_15");
+  const btnProjectTask = document.querySelector(".btnAddTask");
+
+  if (lastTaskField.classList.contains("hidden") == true) {
+    btnProjectTask.classList.remove("hidden");
+  }
+
+
+}
+
 
 // function disableButton(formid, btnid) {
 //   $(btnid).on("click", function() {

@@ -232,75 +232,128 @@
                     <!-- <span class="modal-close-btn" onclick="closeModal();"
                     >&times;</span
                     > -->
-                    <h5>Leave Application Form</h5>
+                    <h5>Add Task Form</h5>
                     <hr />
                     <div class="">
-                    <label class="note-head">Note</label>
-                    <p class="note">Vacation has a maximum of # days leave.</p>
-                        <p class="note">Sick has a maximum of # days leave.</p>
-                        <p class="note">Emergency has a maximum of # days leave.</p>
-                        <p class="note">Sick has only # remaining days available.</p>
-                        <p class="note">Vacation/Emergency has only # remaining days available.</p>
-                    <label class="label-6">Type</label>
-                    <div class="modal-rd-container">
-                        <label for="rdVacation" class="radio">
-                        <input
-                            type="radio"
-                            name="rdType"
-                            id="rdVacation"
-                            class="hidden"
-                        />
-                        <span class="label"></span>Vacation
-                        </label>
 
-                        <label for="rdSick" class="radio">
-                        <input
-                            type="radio"
-                            name="rdType"
-                            id="rdSick"
-                            class="hidden"
-                        />
-                        <span class="label"></span>Sick
-                        </label>
-                        <label for="rdEmergency" class="radio">
-                        <input
-                            type="radio"
-                            name="rdType"
-                            id="rdEmergency"
-                            class="hidden"
-                        />
-                        <span class="label"></span>Emergency
-                        </label>
+                    <label for="txtTaskProjName" class="label-6">Project Name</label>
+                    <select 
+                        name="txtTaskProjName"
+                        id="txtTaskProjName"
+                        class="select"
+                        >
+                        <option value="projectname">HRIS Project</option>
+                    </select >
+                    
+                    <div>
+                        <label for="txtTaskName" class="label-6">Task</label>
+                        <div class="txtTaskName-parent">
+                            <div class="txtTaskName-container mx-4">
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_1"
+                                    class="txtTaskField my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_2"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_3"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_4"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_5"
+                                    class="txtTaskField hidden my-5"
+                                />
+                            </div>
+                            <div class="txtTaskName-container mx-4">
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_6"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_7"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_8"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_9"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_10"
+                                    class="txtTaskField hidden my-5"
+                                />
+                            </div>  
+                            <div class="txtTaskName-container mx-4">
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_11"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_12"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_13"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_14"
+                                    class="txtTaskField hidden my-5"
+                                />
+                                <input
+                                    name="txtTaskName"
+                                    type="text"
+                                    id="txtTaskField_15"
+                                    class="txtTaskField hidden my-5"
+                                />
+                            </div>  
+                        </div>
+                        <a class="btnAddTask btn-sm my-4" onclick="removeHidden()"> <i class="fas fa-plus-circle"></i> Add Task </a>
                     </div>
 
-                    <label for="txtDateFrom" class="label-6">From: </label>
-                    <input
-                        name="txtDateFrom"
-                        type="text"
-                        id="txtDateFrom"
-                        class="leavePicker"
-                        onchange="calc();"
-                    />
-                    <label for="txtDateTo" class="label-6">To: </label>
-                    <input
-                        name="txtDateTo"
-                        type="text"
-                        id="txtDateTo"
-                        class="leavePicker"
-                        onchange="calc();"
-                    />
-                    <label class="label-6">No. of days</label>
-                    <p class="text" id="result">0</p>
-                    
-
-                    <label for="txtAreaReason" class="label-6">Reason</label>
-                    <textarea name="txtAreaReason" id="txtAreaReason"></textarea>
                     </div>
                     <div class="modal-btn-container">
-                    <a class="btn-sm btn-primary mx-3">Request Leave</a>
+                    <a class="btn-sm btn-primary mx-3">Add Task</a>
                     <a
                         class="btn-sm btn-secondary mx-3"
-                        onclick="closeModal(`#btnCloseFileLeave`);"
+                        onclick="closeModal(`#btnCloseAddEmpTask`);"
                         >Cancel</a
                     >
                     </div>
