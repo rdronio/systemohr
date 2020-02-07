@@ -486,6 +486,22 @@ iframe {
   padding: 2rem 4rem;
 }
 
+.card-db {
+  background: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin: .5rem 0;
+  padding: 1rem 1.5rem;
+}
+
+.card-sm {
+  height: 200px;
+}
+
+.card-md {
+  height: 300px;
+}
+
 .current-page > a {
   background: #00aedb;
   color: #fff !important;
@@ -1436,16 +1452,13 @@ nav ul li a span.fa {
 #admin-dashboard .container > div {
   display: flex;
   flex-direction: row;
+  margin-top: 1.5rem;
 }
 /* #admin-dashboard .container > div > div{
   display: flex ;
   flex-direction: column ;
 
 } */
-
-#admin-dashboard .container > div .card {
-  padding: 1rem 1.5rem;
-}
 
 #admin-dashboard .container > div > div {
   display: flex;
@@ -1455,7 +1468,10 @@ nav ul li a span.fa {
   width: 25%;
 }
 #admin-dashboard .container > div > div:nth-child(2) {
-  width: 75%;
+  width: 25%;
+}
+#admin-dashboard .container > div > div:nth-child(3) {
+  width: 50%;
 }
 
 #admin-dashboard .container > div > div .card-1 {
@@ -1487,6 +1503,10 @@ nav ul li a span.fa {
 #admin-dashboard .container > div > div .card-2 {
   display: flex !important;
   flex-direction: column !important;
+}
+
+#admin-dashboard .container > div > div .card-1 > div.holidaynotice-grid {
+  grid-template-columns: 4fr 2fr !important;
 }
 
 /* ========[ Time Records ]======== */
