@@ -1563,8 +1563,8 @@ nav ul li a span.fa {
 }
 
 #admin-dashboard .container > div > div .card-1 {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
   margin-right: 1rem;
   margin-bottom: 0;
 }
