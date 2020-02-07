@@ -490,7 +490,7 @@ iframe {
   background: #ffffff;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   padding: 1rem 1.5rem;
 }
 
@@ -1208,6 +1208,94 @@ table.tableLayout .column14 {
   display: flex;
 } */
 
+/* table dashboard */
+table.tableLayoutDB {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1rem 0;
+  position: relative;
+
+  display: block;
+  overflow-y: auto;
+  /* white-space: nowrap; */
+}
+
+.tableLayoutDB::-webkit-scrollbar {
+  background: #e0e0e0 !important;
+  width: 3px !important;
+  height: 3px !important ;
+  padding: 0 2px;
+}
+
+.tableLayoutDB::-webkit-scrollbar-thumb {
+  background: #333 !important;
+  border-radius: 3px 3px !important;
+}
+
+table.tableLayoutDB * {
+  position: relative;
+}
+table.tableLayoutDB td,
+table.tableLayoutDB th {
+  border: none;
+
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+}
+
+table.tableLayoutDB tbody tr:first-child {
+  border-bottom: 2px #333 solid !important;
+  font-size: 0.65rem !important;
+  color: #333 !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+  pointer-events: none !important;
+}
+
+table.tableLayoutDB tbody tr:last-child {
+  border: 0;
+}
+
+table.tableLayoutDB tbody tr:nth-child(even) {
+  background-color: #d3dee2;
+}
+
+table.tableLayoutDB tbody tr {
+  font-size: 0.7rem;
+  color: #333;
+  line-height: 1.2;
+  font-weight: unset;
+  border-bottom: 1px solid #eee;
+  height: 1rem;
+  margin: 0.25rem 0;
+}
+
+table.tableLayoutDB tbody tr:hover {
+  color: #fff;
+  background-color: #2d9cdb;
+  cursor: pointer;
+}
+
+table.tableLayoutDB .column1,
+table.tableLayoutDB .column2,
+table.tableLayoutDB .column3,
+table.tableLayoutDB .column4,
+table.tableLayoutDB .column5,
+table.tableLayoutDB .column6,
+table.tableLayoutDB .column7,
+table.tableLayoutDB .column8,
+table.tableLayoutDB .column9,
+table.tableLayoutDB .column10,
+table.tableLayoutDB .column11,
+table.tableLayoutDB .column12,
+table.tableLayoutDB .column13,
+table.tableLayoutDB .column14 {
+  /* width: 10rem; */
+  width: 7.14%;
+}
+
 /* ========[ Main ]======== */
 .main {
   height: 100%;
@@ -1506,7 +1594,10 @@ nav ul li a span.fa {
 }
 
 #admin-dashboard .container > div > div .card-1 > div.holidaynotice-grid {
-  grid-template-columns: 4fr 2fr !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+#admin-dashboard .container > div > div .card-1 > div.holidaynotice-grid p {
+  text-align: right;
 }
 
 /* ========[ Time Records ]======== */
