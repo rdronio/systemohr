@@ -1,4 +1,10 @@
 /* SMARTPHONES PORTRAIT */
+@media only screen and (max-width: 767px) {
+  .txtTaskName-parent {
+      flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 479px) {
   /* run this code if modal pop up */
   /* html,
@@ -935,6 +941,35 @@
     tr
     td:nth-child(9):before {
     content: "Action";
+  }
+
+  /* ========[ System Preferences ]======== */
+  #systempreferences .container .card-1 > div {
+      flex-direction: column;
+  }
+
+  #systempreferences .container .card-1 > div input {
+      width: 100%;
+  }
+
+  #systempreferences .container .card-1 > div:first-child .profile_pic img {
+      width: 6rem;
+  }
+
+  #systempreferences .container .card-1 > div > div {
+      padding-right: 0;
+  }
+
+  #systempreferences .container .card-1 > .btn-container {
+      flex-direction: column;
+  }
+
+  #systempreferences .container .card-1 .btn-container button:first-child {
+      margin-right: 0;
+  }
+
+  #systempreferences .container .card-1 .btn-container button {
+      margin-bottom: 1rem;
   }
 
   /* ========[ undertime Records ]======== */
