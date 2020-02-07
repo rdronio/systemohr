@@ -1,7 +1,7 @@
 /* SMARTPHONES PORTRAIT */
 @media only screen and (max-width: 767px) {
   .txtTaskName-parent {
-      flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -945,31 +945,31 @@
 
   /* ========[ System Preferences ]======== */
   #systempreferences .container .card-1 > div {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   #systempreferences .container .card-1 > div input {
-      width: 100%;
+    width: 100%;
   }
 
   #systempreferences .container .card-1 > div:first-child .profile_pic img {
-      width: 6rem;
+    width: 6rem;
   }
 
   #systempreferences .container .card-1 > div > div {
-      padding-right: 0;
+    padding-right: 0;
   }
 
   #systempreferences .container .card-1 > .btn-container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   #systempreferences .container .card-1 .btn-container button:first-child {
-      margin-right: 0;
+    margin-right: 0;
   }
 
   #systempreferences .container .card-1 .btn-container button {
-      margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   /* ========[ undertime Records ]======== */
