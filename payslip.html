@@ -141,7 +141,7 @@
         </nav>
 
         <!-- Payslip -->
-        <section id="overtime-records" class="content">
+        <section id="payslip" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -169,30 +169,51 @@
             <h2>Payslip</h2>
             <div class="card card-1">
               <div class="container-sm">
-                <!-- Pending Time Alteration -->
+                <div>
+                  <label class="label-6 block">Pay Period</label>
+                  <label for="txtDateFrom" class="label-6">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="datePickerPayroll"
+                  />
+                  <label for="txtDateTo" class="label-6">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="datePickerPayroll"
+                  />
+                  <a class="btn-sm btn-secondary">Clear</a>
+                </div>
+                <!-- Payslip -->
                 <table class="tableLayout">
                   <tbody>
                     <tr>
-                      <td class="column1">Date</td>
-                      <td class="column2">Start Time</td>
-                      <td class="column3">End Time</td>
-                      <td class="column4">Overtime (hour/s)</td>
-                      <td class="column5">Reason</td>
-                      <td class="column6">Status</td>
-                      <td class="column7">Action</td>
+                      <td class="column1">Payroll Date</td>
+                      <td class="column2">Pay Period</td>
+                      <td class="column3">Total Earnings</td>
+                      <td class="column4">Total Deductions</td>
+                      <td class="column5">Net Pay</td>
+                      <td class="column6">Action</td>
                     </tr>
                     <tr>
-                      <td class="column1">November 20, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                      <td class="column4">8.00</td>
-                      <td class="column4">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit.
+                      <td class="column1">
+                        Dec. 14, 2019
                       </td>
-                      <td class="column4">Pending</td>
-                      <td class="column7">
-                        <a class="btn-table btn-secondary">Cancel</a>
+                      <td class="column2">
+                        Dec. 01, 2019 - Dec. 15, 2019
+                      </td>
+                      <td class="column3">20,000.00</td>
+                      <td class="column4">1,100.00</td>
+                      <td class="column5">18,900.00</td>
+                      <td class="column6">
+                        <a
+                          class="btn-table btn-secondary"
+                          onclick="openModal(`#btnViewPayslip`);"
+                          >View</a
+                        >
                       </td>
                     </tr>
                   </tbody>
@@ -223,38 +244,65 @@
           </div>
 
           <!-- Modal Section -->
-          <!-- btnOvertimeApplication -->
-          <div class="modal modal-overtime-application">
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
             <div class="modal-content">
-              <h5>Overtime Application Form</h5>
+              <h5>Payslip</h5>
               <hr />
-              <div class="">
-                <label for="txtDateOT" class="label-6">Date: </label>
-                <input
-                  name="txtDateOT"
-                  type="text"
-                  id="txtDateOT"
-                  class="otPicker"
-                />
-                <label for="txtHours" class="label-6">Hours</label>
-                <p class="text" id="txtHours">0.00</p>
-                <label for="txtOvertime" class="label-6">Overtime</label>
-                <p class="text" id="txtOvertime">0.00</p>
-                <label for="txtAreaReasonOT" class="label-6">Reason</label>
-                <textarea
-                  name="txtAreaReasonOT"
-                  id="txtAreaReasonOT"
-                ></textarea>
+
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p class="label-6" id="lblBasicSalary">0.00</p>
               </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p class="label-6" id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p class="label-6" id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p class="label-6" id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p class="label-6" id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p class="label-6" id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p class="label-6" id="lblSssGsis">20,000</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p class="label-6" id="lblPagibig">20,000</p>
+                  <label class="label-6">Philhealth</label>
+                  <p class="label-6" id="lblPhilhealth">20,000</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p class="label-6" id="lblOtherDeduction">20,000</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p class="label-6">&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p class="label-6" id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p class="label-6" id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
               <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnRequestOvertime"
-                  >Request Overtime</a
-                >
+                <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a>
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  onclick="closeModal(`#btnCloseOvertimeApplication`);"
-                  >Cancel</a
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
                 >
+                  Close
+                </a>
               </div>
             </div>
           </div>

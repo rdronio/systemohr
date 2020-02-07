@@ -554,6 +554,16 @@
     content: "Tardiness (min/s)";
   }
 
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Memo";
+  }
+
   /* card-2 table */
   #time-records
     .container
@@ -2149,6 +2159,46 @@
 
   #payroll .modal-content > div:nth-child(15) p {
     padding-right: 20%;
+  }
+
+  /*  */
+  /* ========[ Payslip ]======== */
+
+  #payslip .container .card-1 div:nth-child(1) {
+    margin-right: 0;
+  }
+  #payslip .container .card-1 div:nth-child(1) a,
+  #payslip .container .card-1 div:nth-child(1) input {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(1):before {
+    content: "Payroll Date";
+  }
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(2):before {
+    content: "Pay Period";
+  }
+
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(3):before {
+    content: "Total Earnings";
+  }
+
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(4):before {
+    content: "Total Deductions";
+  }
+
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(5):before {
+    content: "Net Pay";
+  }
+  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(6):before {
+    content: "Action";
+  }
+
+  #payslip .modal-content > div:nth-child(3) {
+    width: 100%;
   }
 
   /* ========[ Payslip Approval ]======== */

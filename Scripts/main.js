@@ -163,11 +163,11 @@ function toggleMenu() {
 $(".timepicker").each(function() {
   $(this).timepicker({
     timeFormat: "hh:mm p",
-    interval: 60,
-    minTime: "8",
-    maxTime: "5:00pm",
+    interval: 1,
+    minTime: "12:00 AM",
+    maxTime: "11:59 PM",
     defaultTime: "8",
-    startTime: "8:00",
+    startTime: "8:00 AM",
     dynamic: false,
     dropdown: true,
     scrollbar: true
@@ -386,6 +386,7 @@ function openModal(btn_id) {
     // );
     const modalViewEmployee = document.querySelector(".modal-view-employee");
     const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
+    const modalViewPayslip = document.querySelector(".modal-view-payslip");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -420,6 +421,8 @@ function openModal(btn_id) {
       hideBasicInfo("view-primary-info");
     } else if (modalBtn === "#btnAddEmpTask") {
       modalAddEmpTask.style.display = "flex";
+    } else if (modalBtn === "#btnViewPayslip") {
+      modalViewPayslip.style.display = "flex";
     }
 
     //set tab back to primary-info
@@ -448,7 +451,8 @@ function closeModal(btn_id) {
     // );
     const modalViewEmployee = document.querySelector(".modal-view-employee");
     const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
-    
+    const modalViewPayslip = document.querySelector(".modal-view-payslip");
+
     // get open modal button
     const modalBtn = btn_id;
 
@@ -468,13 +472,13 @@ function closeModal(btn_id) {
     //  else if (modalBtn === "#btnCloseUpdateEmployee") {
     //   modalUpdateEmployee.style.display = "none";
     // }
-
-    
     else if (modalBtn === "#btnCloseViewEmployee") {
       modalViewEmployee.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmpTask") {
       modalAddEmpTask.style.display = "none";
       resetAddEmpProj();
+    } else if (modalBtn === "#btnCloseViewPayslip") {
+      modalViewPayslip.style.display = "none";
     }
 
     //set tab back to primary-info
@@ -707,28 +711,28 @@ function disableAccessRole() {
 }
 
 function removeHidden() {
-    const inputProjectTask = document.querySelector("input.txtTaskField.hidden");
-    inputProjectTask.classList.remove("hidden");
+  const inputProjectTask = document.querySelector("input.txtTaskField.hidden");
+  inputProjectTask.classList.remove("hidden");
 
-    const lastTaskField = document.querySelector("#txtTaskField_15");
-    const btnProjectTask = document.querySelector(".btnAddTask");
+  const lastTaskField = document.querySelector("#txtTaskField_15");
+  const btnProjectTask = document.querySelector(".btnAddTask");
 
-    if (lastTaskField.classList.contains("hidden") == false) {
-      btnProjectTask.classList.add("hidden");
-    }
+  if (lastTaskField.classList.contains("hidden") == false) {
+    btnProjectTask.classList.add("hidden");
+  }
 }
 
 function resetAddEmpProj() {
-  const resetEmpProj = document.querySelectorAll(".txtTaskName-container .txtTaskField");
+  const resetEmpProj = document.querySelectorAll(
+    ".txtTaskName-container .txtTaskField"
+  );
 
   resetEmpProj.forEach(element => {
     element.classList.add("hidden");
   });
-  
-  
+
   const firstTaskField = document.querySelector("#txtTaskField_1");
   firstTaskField.classList.remove("hidden");
-
 
   const lastTaskField = document.querySelector("#txtTaskField_15");
   const btnProjectTask = document.querySelector(".btnAddTask");
@@ -736,10 +740,7 @@ function resetAddEmpProj() {
   if (lastTaskField.classList.contains("hidden") == true) {
     btnProjectTask.classList.remove("hidden");
   }
-
-
 }
-
 
 // function disableButton(formid, btnid) {
 //   $(btnid).on("click", function() {

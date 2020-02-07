@@ -2597,6 +2597,57 @@ nav ul li a span.fa {
   margin-top: 0;
 }
 
+/* ========[ Payslip ]======== */
+#payslip .container .card-1 > div:nth-child(1) {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#payslip .container .card-1 > div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#payslip .modal-content {
+  width: 55%;
+}
+
+#payslip .modal-content .label-6 {
+  padding: 0.4rem 0 0.4rem 0;
+}
+
+#payslip .modal-content hr {
+  margin: 0;
+}
+
+#payslip .modal-content h5 {
+  margin-bottom: 0.75rem;
+}
+#payslip .modal-content > div:nth-child(3) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+}
+
+#payslip .modal-content > div:nth-child(5) {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: .5rem;
+}
+
+#payslip .modal-content > div:nth-child(5) > div:nth-child(1),
+#payslip .modal-content > div:nth-child(5) > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+}
+
+#payslip .modal-content > div:nth-child(7) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
 /* ========[ Payslip Approval ]======== */
 #payslip-approval .container .card-1 > div:nth-child(1) {
   display: inline-block;
