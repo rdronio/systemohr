@@ -79,7 +79,7 @@ $(".timepicker").each(function() {
     interval: 1,
     minTime: "12:00 AM",
     maxTime: "11:59 PM",
-    defaultTime: "8",
+    defaultTime: "null",
     startTime: "8:00 AM",
     dynamic: false,
     dropdown: true,
@@ -312,7 +312,7 @@ function openModal(btn_id) {
     } else if (modalBtn === "#btnOvertimeApplication") {
       modalOvertimeRecord.style.display = "flex";
     } else if (modalBtn === "#btnUndertimeApplication") {
-      modalUndertimeRecord.style.display = "flex";  
+      modalUndertimeRecord.style.display = "flex";
     } else if (modalBtn === "#btnFileLeave") {
       modalFileLeave.style.display = "flex";
     } else if (modalBtn === "#btnAddExpense") {
@@ -402,8 +402,7 @@ function closeModal(btn_id) {
       resetAddEmpProj();
     } else if (modalBtn === "#btnCloseViewPayslip") {
       modalViewPayslip.style.display = "none";
-    } 
-    
+    }
 
     //set tab back to primary-info
     defaultTab("primary-info");
@@ -768,7 +767,6 @@ function showPUA() {
   card2.classList.remove("hidden");
   card1.classList.add("hidden");
 }
-
 
 function showIP() {
   const card1 = document.querySelector("#project-task .container .card-1");
