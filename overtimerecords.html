@@ -78,62 +78,47 @@
                 <li class="current-page">
                   <a href="overtimerecords.html">Overtime Records</a>
                 </li>
-              </ul>
-            </li>
-            <li class="hidden">
-              <a href="#"
-                ><i class="fas fa-tasks"></i>Approvals<span
-                  class="fa fa-chevron-down"
-                ></span
-              ></a>
-              <ul class="nav child_menu">
                 <li>
-                  <a href="leaverecords.html">Leave Records</a>
+                  <a href="expense.html">Expense Records</a>
                 </li>
                 <li>
-                  <a href="overtimerecords.html">Overtime Records</a>
-                </li>
-                <li>
-                  <!-- <a href="expense.html">Expense</a> -->
-                  <a href="underconstruction.html">Expense</a>
+                  <a href="undertime.html">Undertime Records</a>
                 </li>
               </ul>
             </li>
+
             <li>
               <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
-              <a href="underconstruction.html"><i class="fas fa-users"></i>Team</a>
+              <a href="underconstruction.html"
+                ><i class="fas fa-users"></i>Team</a
+              >
             </li>
             <li>
-              <!-- <a href="projecttask.html"
-                ><i class="fas fa-tasks"></i>Project/Task</a
-                > -->
-              <a href="underconstruction.html"
+              <a href="projecttask.html"
                 ><i class="fas fa-tasks"></i>Project/Task</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="far fa-file-alt"></i>Report<span
+                ><i class="fas fa-chart-area"></i>Report<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
               <ul class="nav child_menu hidden">
                 <li>
-                  <!-- <a href="dtrreport.html">DTR</a> -->
-                  <a href="underconstruction.html">DTR</a>
-                </li>
-                <li>
-                  <!-- <a href="birreport.html">BIR</a> -->
-                  <a href="underconstruction.html">BIR</a>
+                  <a href="payslip.html">Payslip</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="index.html"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
+              <a href="index.html"
+                ><i class="fas fa-sign-out-alt"></i>Sign Out</a
+              >
             </li>
           </ul>
-          <div class="close-menu" >
-            <a  onclick="toggleMenu()">
+
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
               <i class="fas fa-times"></i>
             </a>
           </div>
@@ -157,7 +142,7 @@
           <div class="container">
             <div id="tab">
               <ul class="tab-list" onclick="selectTab();">
-                <li class="current-tab"> 
+                <li class="current-tab">
                   <a onclick="showOR()">Overtime Records</a>
                 </li>
                 <li>
@@ -166,8 +151,8 @@
               </ul>
             </div>
             <div class="card card-1">
-              <div>               
-                 <a
+              <div>
+                <a
                   class="btn-sm btn-primary"
                   id="btnTimeAlteration"
                   onclick="openModal(`#btnOvertimeApplication`);"
@@ -334,7 +319,9 @@
 
               <div class="pagination-container">
                 <div class="showmore-container">
-                  <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
                 </div>
                 <div class="pagination" onclick="selectPage()">
                   <a href="#">«</a>
@@ -387,7 +374,9 @@
                 </table>
                 <div class="pagination-container">
                   <div class="showmore-container">
-                    <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>Show More</a>
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>Show More</a
+                    >
                   </div>
                   <div class="pagination" onclick="selectPage()">
                     <a href="#">«</a>

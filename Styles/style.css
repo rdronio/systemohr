@@ -710,10 +710,6 @@ iframe {
   overflow-y: auto;
 }
 
-.modal-content::-webkit-scrollbar {
-  /* display: none; */
-}
-
 .modal-content > div {
   display: flex;
   flex-direction: column;
@@ -1772,23 +1768,70 @@ nav ul li a span.fa {
   display: inline-block;
 }
 
-/* ========[ Completed Task Records ]======== */
+/* ========[ Project / Task Records ]======== */
 
-#completedtask-records .container .card-1 div:nth-child(1) {
+#project-task .container .card-1 div:nth-child(3) {
   display: inline-block;
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 }
 
-#completedtask-records .container .card-1 div:nth-child(1) input {
-  margin-right: 0.5rem;
-}
-
-#completedtask-records .container .card-1 div:nth-child(2) {
+#project-task .container .card-1 > div:first-child a {
   display: inline-block;
 }
 
-#completedtask-records .container .card-1 div:nth-child(2) button {
+#project-task .container .card-1 div:first-child {
+  position: relative;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+#project-task .container .card-1 div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#project-task .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#project-task .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
+}
+
+#project-task .txtTaskName-parent {
+  display: flex;
+  gap: 0.3rem;
+}
+
+#project-task .txtTaskName-container {
+  display: flex;
+  width: 12rem;
+  flex-direction: column;
+}
+
+#project-task .btnAddTask:hover {
+  color: #00aedb;
+}
+
+#project-task .modal-content > div > div {
+  flex-direction: column;
+}
+
+#project-task .container .card-2 div:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#project-task .container .card-2 div:nth-child(1) input {
+  margin-right: 0.5rem;
+}
+
+#project-task .container .card-2 div:nth-child(2) {
+  display: inline-block;
+}
+
+#project-task .container .card-2 div:nth-child(2) button {
   margin-right: 0.5rem;
 }
 
@@ -3070,51 +3113,6 @@ nav ul li a span.fa {
   font-size: 2rem;
   color: #00aedb;
   margin: 0 0.55rem;
-}
-
-/* ========[ In Progress Task Records ]======== */
-
-#inprogresstask-records .container .card-1 div:nth-child(3) {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  margin-right: 1rem;
-}
-
-#inprogresstask-records .container .card-1 > div:first-child a {
-  display: inline-block;
-}
-
-#inprogresstask-records .container .card-1 div:first-child {
-  position: relative;
-  text-align: right;
-  margin-bottom: 0.5rem;
-}
-
-#inprogresstask-records .container .card-1 div:nth-child(1) input {
-  margin-right: 0.5rem;
-}
-
-#inprogresstask-records .container .card-1 div:nth-child(2) {
-  display: inline-block;
-}
-
-#inprogresstask-records .container .card-1 div:nth-child(2) button {
-  margin-right: 0.5rem;
-}
-
-.txtTaskName-parent {
-  display: flex;
-  gap: 0.3rem;
-}
-
-.txtTaskName-container {
-  display: flex;
-  width: 12rem;
-  flex-direction: column;
-}
-
-.btnAddTask:hover {
-  color: #00aedb;
 }
 
 /* ========[ System Preferences ]======== */

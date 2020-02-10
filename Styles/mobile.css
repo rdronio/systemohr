@@ -1033,126 +1033,137 @@
     content: "Undertime (Hour/s)";
   }
 
-  /* ========[ Completed Task Records ]======== */
+  /* ========[ Project / Task Records ]======== */
 
-  #completedtask-records .container .card-1 div:nth-child(1),
-  #completedtask-records .container .card-1 div:nth-child(1) input {
+  /* In Progress */
+  #project-task .container .card-1 div:nth-child(2),
+  #project-task .container .card-1 div:nth-child(2) input {
     margin-right: 0;
     display: block;
+    margin-bottom: 0.5rem;
   }
 
-  #completedtask-records .container .card-1 div:nth-child(2),
-  #completedtask-records .container .card-1 div:nth-child(2) button {
+  #project-task .container .card-1 div:nth-child(3),
+  #project-task .container .card-1 div:nth-child(3) button {
     width: 100%;
     margin-right: 0;
   }
 
   /* card-1 table */
-  #completedtask-records
+  #project-task
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(1):before {
-    content: "Date";
+    content: "Project";
   }
-  #completedtask-records
+  #project-task
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(2):before {
-    content: "Time In";
+    content: "Task";
   }
-  #completedtask-records
+  #project-task
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(3):before {
-    content: "Time Out";
+    content: "Team Members";
   }
-  #completedtask-records
+  #project-task
     .container
     .card-1
     .tableLayout
     tbody
     tr
     td:nth-child(4):before {
-    content: "Total (Hour/s)";
+    content: "Est. Completion Date";
   }
-  #completedtask-records
+  #project-task
     .container
     .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Notes";
+  }
+  #project-task
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Action";
+  }
+
+  /* Completed Task */
+  #project-task .container .card-2 div:nth-child(1),
+  #project-task .container .card-2 div:nth-child(1) input {
+    margin-right: 0;
+    display: block;
+    width: 100%;
+  }
+
+  #project-task .container .card-2 div:nth-child(2),
+  #project-task .container .card-2 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* card-1 table */
+  #project-task
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #project-task
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Time In";
+  }
+  #project-task
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Time Out";
+  }
+  #project-task
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Total (Hour/s)";
+  }
+  #project-task
+    .container
+    .card-2
     .tableLayout
     tbody
     tr
     td:nth-child(5):before {
     content: "completedtask (Hour/s)";
-  }
-
-  /* ========[ In Progress Task Records ]======== */
-
-  #inprogresstask-records .container .card-1 div:nth-child(1),
-  #inprogresstask-records .container .card-1 div:nth-child(1) input {
-    margin-right: 0;
-    display: block;
-  }
-
-  #inprogresstask-records .container .card-1 div:nth-child(2),
-  #inprogresstask-records .container .card-1 div:nth-child(2) button {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  /* card-1 table */
-  #inprogresstask-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(1):before {
-    content: "Date";
-  }
-  #inprogresstask-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(2):before {
-    content: "Time In";
-  }
-  #inprogresstask-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(3):before {
-    content: "Time Out";
-  }
-  #inprogresstask-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(4):before {
-    content: "Total (Hour/s)";
-  }
-  #inprogresstask-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(5):before {
-    content: "inprogresstask (Hour/s)";
   }
 
   /* ========[ Expense Records ]======== */

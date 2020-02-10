@@ -60,93 +60,6 @@ function selectTabViewEI() {
   });
 }
 
-function showEM() {
-  const card1 = document.querySelector(
-    "#employee-masterlist .container .card-1"
-  );
-  const card2 = document.querySelector(
-    "#employee-masterlist .container .card-2"
-  );
-
-  card2.classList.add("hidden");
-  card1.classList.remove("hidden");
-}
-
-function showIM() {
-  const card1 = document.querySelector(
-    "#employee-masterlist .container .card-1"
-  );
-  const card2 = document.querySelector(
-    "#employee-masterlist .container .card-2"
-  );
-
-  card2.classList.remove("hidden");
-  card1.classList.add("hidden");
-}
-
-function showER() {
-  const card1 = document.querySelector("#expense-records .container .card-1");
-  const card2 = document.querySelector("#expense-records .container .card-2");
-
-  card2.classList.add("hidden");
-  card1.classList.remove("hidden");
-}
-
-function showPE() {
-  const card1 = document.querySelector("#expense-records .container .card-1");
-  const card2 = document.querySelector("#expense-records .container .card-2");
-
-  card2.classList.remove("hidden");
-  card1.classList.add("hidden");
-}
-
-function showTR() {
-  const card1 = document.querySelector("#time-records .container .card-1");
-  const card2 = document.querySelector("#time-records .container .card-2");
-
-  card2.classList.add("hidden");
-  card1.classList.remove("hidden");
-}
-function showPTA() {
-  const card1 = document.querySelector("#time-records .container .card-1");
-  const card2 = document.querySelector("#time-records .container .card-2");
-
-  card2.classList.remove("hidden");
-  card1.classList.add("hidden");
-}
-
-function showLR() {
-  const card1 = document.querySelector("#leaverecords .container .card-1");
-  const card2 = document.querySelector("#leaverecords .container .card-2");
-
-  card2.classList.add("hidden");
-  card1.classList.remove("hidden");
-}
-
-function showPLA() {
-  const card1 = document.querySelector("#leaverecords .container .card-1");
-  const card2 = document.querySelector("#leaverecords .container .card-2");
-
-  card2.classList.remove("hidden");
-  card1.classList.add("hidden");
-}
-
-function showOR() {
-  const card1 = document.querySelector("#overtime-records .container .card-1");
-  const card2 = document.querySelector("#overtime-records .container .card-2");
-
-  card2.classList.add("hidden");
-  card1.classList.remove("hidden");
-}
-
-function showPOA() {
-  const card1 = document.querySelector("#overtime-records .container .card-1");
-  const card2 = document.querySelector("#overtime-records .container .card-2");
-
-  card2.classList.remove("hidden");
-  card1.classList.add("hidden");
-}
-
 function toggleMenu() {
   const menu = document.querySelector("#nav");
   const content = document.querySelector(".content");
@@ -742,12 +655,105 @@ function resetAddEmpProj() {
   }
 }
 
-// function disableButton(formid, btnid) {
-//   $(btnid).on("click", function() {
-//     $(btnid)
-//       .val("Please wait ...")
-//       .attr("disabled", "disabled");
-//     $(formid).submit();
-//   });
-//   alert(btn_id + " __ " + form_id);
-// }
+function showEM() {
+  const card1 = document.querySelector(
+    "#employee-masterlist .container .card-1"
+  );
+  const card2 = document.querySelector(
+    "#employee-masterlist .container .card-2"
+  );
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showIM() {
+  const card1 = document.querySelector(
+    "#employee-masterlist .container .card-1"
+  );
+  const card2 = document.querySelector(
+    "#employee-masterlist .container .card-2"
+  );
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showER() {
+  const card1 = document.querySelector("#expense-records .container .card-1");
+  const card2 = document.querySelector("#expense-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPE() {
+  const card1 = document.querySelector("#expense-records .container .card-1");
+  const card2 = document.querySelector("#expense-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showTR() {
+  const card1 = document.querySelector("#time-records .container .card-1");
+  const card2 = document.querySelector("#time-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+function showPTA() {
+  const card1 = document.querySelector("#time-records .container .card-1");
+  const card2 = document.querySelector("#time-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showLR() {
+  const card1 = document.querySelector("#leaverecords .container .card-1");
+  const card2 = document.querySelector("#leaverecords .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPLA() {
+  const card1 = document.querySelector("#leaverecords .container .card-1");
+  const card2 = document.querySelector("#leaverecords .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showOR() {
+  const card1 = document.querySelector("#overtime-records .container .card-1");
+  const card2 = document.querySelector("#overtime-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPOA() {
+  const card1 = document.querySelector("#overtime-records .container .card-1");
+  const card2 = document.querySelector("#overtime-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
+function showIP() {
+  const card1 = document.querySelector("#project-task .container .card-1");
+  const card2 = document.querySelector("#project-task .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showCT() {
+  const card1 = document.querySelector("#project-task .container .card-1");
+  const card2 = document.querySelector("#project-task .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}

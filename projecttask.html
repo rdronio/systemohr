@@ -60,7 +60,7 @@
                 ><i class="fas fa-user-clock"></i>Time Records</a
               >
             </li>
-            <li class="current-page">
+            <li>
               <a href="profile.html"
                 ><i class="fas fa-address-card"></i>Profile</a
               >
@@ -93,7 +93,7 @@
                 ><i class="fas fa-users"></i>Team</a
               >
             </li>
-            <li>
+            <li class="current-page">
               <a href="projecttask.html"
                 ><i class="fas fa-tasks"></i>Project/Task</a
               >
@@ -124,8 +124,8 @@
           </div>
         </nav>
 
-        <!-- Time Records -->
-        <section id="profile" class="content">
+        <!-- Project/Task -->
+        <section id="project-task" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -140,150 +140,309 @@
           </div>
 
           <div class="container">
-            <h2>Profile</h2>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showIP()">In Progress</a>
+                </li>
+                <li>
+                  <a onclick="showCT()">Completed</a>
+                </li>
+              </ul>
+            </div>
+
             <div class="card card-1">
               <div>
-                <label for="photo" class="label-6">Photo</label>
-                <div class="profile_pic">
-                  <img
-                    src="/Images/user.png"
-                    alt="Employee Picture"
-                    class="img-circle profile_img"
-                  />
-                  <input type="file" name="photo" id="photo" accept="image/*" />
-                </div>
+                <a
+                  class="btn-sm btn-primary hidden"
+                  id="btnAddEmpTask"
+                  onclick="openModal(`#btnAddEmpTask`);"
+                >
+                  Add Task
+                </a>
               </div>
               <div>
-                <div>
-                  <label for="txtLastName" class="label-6">Last Name: </label>
-                  <input name="txtLastName" type="text" id="txtLastName" />
+                <label class="label-6">Filter Date</label>
+                <br />
+                <label for="txtDateFrom" class="label-6">From: </label>
+                <input
+                  name="txtDateFrom"
+                  type="text"
+                  id="txtDateFrom"
+                  class="datePicker"
+                />
+                <label for="txtDateTo" class="label-6">To: </label>
+                <input
+                  name="txtDateTo"
+                  type="text"
+                  id="txtDateTo"
+                  class="datePicker"
+                />
+              </div>
 
-                  <label for="txtFirstName" class="label-6">First Name: </label>
-                  <input name="txtFirstName" type="text" id="txtFirstName" />
+              <div>
+                <button class="btn btn-secondary">Clear</button>
+              </div>
+              <!-- <label class="norecords">No Records Found</label> -->
+              <!-- In Progress Task/s Records -->
+              <table class="tableLayout">
+                <tbody>
+                  <tr>
+                    <td class="column1">Project</td>
+                    <td class="column2">Task</td>
+                    <td class="column3">Team Members</td>
+                    <td class="column4">Estimated Completion Date</td>
+                    <td class="column5">Notes</td>
+                    <td class="column6">Action</td>
+                    <!-- <td class="column5">Action</td> -->
+                  </tr>
+                  <tr>
+                    <td class="column1">Lorem, ipsum.</td>
+                    <td class="column2">Website</td>
+                    <td class="column3">John Doe</td>
+                    <td class="column4">January 6, 2020</td>
+                    <td class="column5">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Tempore perspiciatis saepe, totam optio eaque eligendi
+                      natus facere eius.
+                    </td>
+                    <td class="column6">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnUpdateCmpltTask`);"
+                        >Update</a
+                      >
+                    </td>
+                    <!-- <td class="column5"><a class="btn-table btn-secondary"  onclick="openModal(`#btnUpdateCmpltTask`);">Update</a></td> -->
+                  </tr>
+                </tbody>
+              </table>
 
-                  <label for="txtMiddleName" class="label-6"
-                    >Middle Name:
-                  </label>
-                  <input name="txtMiddleName" type="text" id="txtMiddleName" />
-
-                  <label for="dtPickerBirthday" class="label-6"
-                    >Birthday:
-                  </label>
-                  <input
-                    name="dtPickerBirthday"
-                    type="text"
-                    id="dtPickerBirthday"
-                    class="bdayPicker"
-                  />
-
-                  <label class="label-6">Gender</label>
-                  <div class="modal-rd-container">
-                    <label for="optMale" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoGender"
-                        id="optMale"
-                        class="hidden"
-                      />
-                      <span class="label"></span>Male
-                    </label>
-
-                    <label for="optFemale" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoGender"
-                        id="optFemale"
-                        class="hidden"
-                      />
-                      <span class="label"></span>Female
-                    </label>
-                  </div>
-
-                  <label class="label-6">Civil Status</label>
-                  <div class="modal-rd-container">
-                    <label for="optSingle" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoCivilStatus"
-                        id="optSingle"
-                        class="hidden"
-                      />
-                      <span class="label"></span>Single
-                    </label>
-
-                    <label for="optMarried" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoCivilStatus"
-                        id="optMarried"
-                        class="hidden"
-                      />
-                      <span class="label"></span>Married
-                    </label>
-
-                    <label for="optWidowed" class="radio">
-                      <input
-                        type="radio"
-                        name="rdoCivilStatus"
-                        id="optWidowed"
-                        class="hidden"
-                      />
-                      <span class="label"></span>Widowed
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <label class="label-6">Address: </label>
-                  <label for="txtHouse" class="note"
-                    >House Number, Building and Street Name</label
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
                   >
-                  <input name="txtHouse" type="text" id="txtHouse" />
-
-                  <label for="selectProvince" class="note">Province</label>
-                  <input
-                    name="selectProvince"
-                    type="text"
-                    id="selectProvince"
-                  />
-                  <!-- <select name="selectProvince" id="selectProvince" class="select" onchange="getProvince()" > -->
-                  <!-- </select> -->
-
-                  <label for="selectCity" class="note">City/Municipality</label>
-                  <input name="selectCity" type="text" id="selectCity" />
-                  <!-- <select name="selectCity" id="selectCity" class="select" onchange="getCity()"> -->
-                  <!-- </select> -->
-
-                  <label for="txtState" class="note">State</label>
-                  <input name="txtState" id="txtState" />
-
-                  <label for="txtEmail" class="label-6">Email: </label>
-                  <input name="txtEmail" type="text" id="txtEmail" />
-
-                  <label for="txtPhone" class="label-6">Phone: </label>
-                  <input name="txtPhone" type="text" id="txtPhone" />
-
-                  <label for="txtEmergencyContact" class="label-6"
-                    >Emergency Contact Name:
-                  </label>
-                  <input
-                    name="txtEmergencyContact"
-                    type="text"
-                    id="txtEmergencyContact"
-                  />
-
-                  <label for="txtEmergencyContactNo" class="label-6"
-                    >Emergency Contact No.:
-                  </label>
-                  <input
-                    name="txtEmergencyContactNo"
-                    type="text"
-                    id="txtEmergencyContactNo"
-                  />
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
                 </div>
               </div>
-              <div class="btn-container">
-                <button class="btn btn-primary">Update Profile</button>
-                <button class="btn btn-secondary">Discard Changes</button>
+            </div>
+
+            <div class="card card-2 hidden">
+              <div>
+                <label class="label-6">Filter Date</label>
+                <br />
+                <label for="txtDateFrom" class="label-6">From: </label>
+                <input
+                  name="txtDateFrom"
+                  type="text"
+                  id="txtDateFrom"
+                  class="datePicker"
+                />
+                <label for="txtDateTo" class="label-6">To: </label>
+                <input
+                  name="txtDateTo"
+                  type="text"
+                  id="txtDateTo"
+                  class="datePicker"
+                />
+              </div>
+
+              <div>
+                <button class="btn btn-secondary">Clear</button>
+              </div>
+              <!-- <label class="norecords">No Records Found</label> -->
+              <!-- Completed Task/s Records -->
+              <table class="tableLayout">
+                <tbody>
+                  <tr>
+                    <td class="column1">Project</td>
+                    <td class="column2">Task</td>
+                    <td class="column3">Date Completed</td>
+                    <td class="column4">Notes</td>
+                    <!-- <td class="column5">Action</td> -->
+                  </tr>
+                  <tr>
+                    <td class="column1">Lorem, ipsum.</td>
+                    <td class="column2">Website</td>
+                    <td class="column3">January 6, 2020</td>
+                    <td class="column4">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Tempore perspiciatis saepe, totam optio eaque eligendi
+                      natus facere eius.
+                    </td>
+                    <!-- <td class="column5"><a class="btn-table btn-secondary"  onclick="openModal(`#btnUpdateCmpltTask`);">Update</a></td> -->
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Section -->
+          <!-- btnAddTask -->
+          <div class="modal modal-add-inprogresstask">
+            <div class="modal-content">
+              <h5>Add Task Form</h5>
+              <hr />
+              <div class="">
+                <label for="txtTaskProjName" class="label-6"
+                  >Project Name</label
+                >
+                <select
+                  name="txtTaskProjName"
+                  id="txtTaskProjName"
+                  class="select"
+                >
+                  <option value="projectname">HRIS Project</option>
+                </select>
+
+                <div>
+                  <label for="txtTaskName" class="label-6">Task</label>
+                  <div class="txtTaskName-parent">
+                    <div class="txtTaskName-container mx-4">
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_1"
+                        class="txtTaskField my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_2"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_3"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_4"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_5"
+                        class="txtTaskField hidden my-5"
+                      />
+                    </div>
+                    <div class="txtTaskName-container mx-4">
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_6"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_7"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_8"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_9"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_10"
+                        class="txtTaskField hidden my-5"
+                      />
+                    </div>
+                    <div class="txtTaskName-container mx-4">
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_11"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_12"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_13"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_14"
+                        class="txtTaskField hidden my-5"
+                      />
+                      <input
+                        name="txtTaskName"
+                        type="text"
+                        id="txtTaskField_15"
+                        class="txtTaskField hidden my-5"
+                      />
+                    </div>
+                  </div>
+                  <a class="btnAddTask btn-sm my-4" onclick="removeHidden()">
+                    <i class="fas fa-plus-circle"></i> Add Task
+                  </a>
+                </div>
+              </div>
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3">Add Task</a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseAddEmpTask`);"
+                  >Cancel</a
+                >
               </div>
             </div>
           </div>
