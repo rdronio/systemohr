@@ -140,8 +140,26 @@
           </div>
 
           <div class="container">
-            <h2>Undertime Records</h2>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showUR()">Undertime Records</a>
+                </li>
+                <li>
+                  <a onclick="showPUA()">Pending Undertime</a>
+                </li>
+              </ul>
+            </div>
             <div class="card card-1">
+              <div>
+                <a
+                  class="btn-sm btn-primary"
+                  id="btnTimeAlteration"
+                  onclick="openModal(`#btnUndertimeApplication`);"
+                >
+                  File an Undertime
+                </a>
+              </div>
               <div>
                 <label class="label-6">Filter Date</label>
                 <br />
@@ -170,10 +188,12 @@
                 <tbody>
                   <tr>
                     <td class="column1">Date</td>
-                    <td class="column2">Time In</td>
-                    <td class="column3">Time Out</td>
-                    <td class="column4">Total (hour/s)</td>
-                    <td class="column5">Undertime (hour/s)</td>
+                    <td class="column2">Start Time</td>
+                    <td class="column3">End Time</td>
+                    <td class="column4">Undertime (hour/s)</td>
+                    <td class="column5">Reason</td>
+                    <td class="column6">Status</td>
+                    <td class="column7">Remarks</td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -181,8 +201,21 @@
                     <td class="column3">04:00 PM</td>
                     <td class="column4">7.00</td>
                     <td class="column5">
-                      1.00
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, qui!
                     </td>
+                    <td class="column6">Rejected</td>
+                    <td class="column7">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, pariatur!</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">November 20, 2019</td>
+                    <td class="column2">09:00 AM</td>
+                    <td class="column3">04:00 PM</td>
+                    <td class="column4">7.00</td>
+                    <td class="column5">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, qui!
+                    </td>
+                    <td class="column6">Approved</td>
+                    <td class="column7">Not Applicable</td>
                   </tr>
                 </tbody>
               </table>
@@ -207,6 +240,100 @@
                   <a href="#">10</a>
                   <a href="#">»</a>
                 </div>
+              </div>
+            </div>
+
+            <div class="card card-2 hidden">
+                <h3>Pending Undertime</h3>
+                <hr />
+                <div class="container-sm">
+                  <!-- Pending Time Alteration -->
+                  <table class="tableLayout">
+                    <tbody>
+                      <tr>
+                        <td class="column1">Date</td>
+                        <td class="column2">Start Time</td>
+                        <td class="column3">End Time</td>
+                        <td class="column4">Undertime (hour/s)</td>
+                        <td class="column5">Reason</td>
+                        <td class="column6">Status</td>
+                        <td class="column7">Action</td>
+                      </tr>
+                      <tr>
+                        <td class="column1">November 20, 2019</td>
+                        <td class="column2">09:00 AM</td>
+                        <td class="column3">05:00 PM</td>
+                        <td class="column4">8.00</td>
+                        <td class="column4">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit.
+                        </td>
+                        <td class="column4">Pending</td>
+                        <td class="column7">
+                          <a class="btn-table btn-secondary">Cancel</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="pagination-container">
+                    <div class="showmore-container">
+                      <a class="btn-showmore" href="#"
+                        ><i class="fas fa-chevron-down"></i>Show More</a
+                      >
+                    </div>
+                    <div class="pagination" onclick="selectPage()">
+                      <a href="#">«</a>
+                      <a class="active" href="#">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                      <a href="#">»</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Section -->
+          <!-- btnOvertimeApplication -->
+          <div class="modal modal-undertime-application">
+            <div class="modal-content">
+              <h5>Undertime Application Form</h5>
+              <hr />
+              <div class="">
+                <label for="txtDateUT" class="label-6">Date: </label>
+                <input
+                  name="txtDateUT"
+                  type="text"
+                  id="txtDateUT"
+                  class="utPicker"
+                />
+                <label for="txtHours" class="label-6">Hours</label>
+                <p class="text" id="txtHours">0.00</p>
+                <label for="txtOvertime" class="label-6">Overtime</label>
+                <p class="text" id="txtOvertime">0.00</p>
+                <label for="txtAreaReasonOT" class="label-6">Reason</label>
+                <textarea
+                  name="txtAreaReasonUT"
+                  id="txtAreaReasonUT"
+                ></textarea>
+              </div>
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnRequestUndertime"
+                  >Request Undertime</a
+                >
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseUndertimeApplication`);"
+                  >Cancel</a
+                >
               </div>
             </div>
           </div>

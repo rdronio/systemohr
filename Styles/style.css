@@ -1725,23 +1725,34 @@ nav ul li a span.fa {
 
 /* ========[ Undertime Records ]======== */
 
-#undertime-records .container .card-1 div:nth-child(1) {
+#undertime-records .container .card-1 div:first-child {
+  position: relative;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+#undertime-records .container .card-1 > div:first-child a {
+  display: inline-block;
+}
+
+#undertime-records .container .card-1 div:nth-child(2) {
   display: inline-block;
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 }
 
-#undertime-records .container .card-1 div:nth-child(1) input {
+#undertime-records .container .card-1 div:nth-child(2) input {
   margin-right: 0.5rem;
 }
 
-#undertime-records .container .card-1 div:nth-child(2) {
+#undertime-records .container .card-1 div:nth-child(3) {
   display: inline-block;
 }
 
-#undertime-records .container .card-1 div:nth-child(2) button {
+#undertime-records .container .card-1 div:nth-child(3) button {
   margin-right: 0.5rem;
 }
+
 
 /* ========[ Expense Records ]======== */
 #expense-records .container .card-1 div:first-child {

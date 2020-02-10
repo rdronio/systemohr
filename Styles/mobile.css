@@ -974,14 +974,18 @@
 
   /* ========[ undertime Records ]======== */
 
-  #undertime-records .container .card-1 div:nth-child(1),
-  #undertime-records .container .card-1 div:nth-child(1) input {
+  #undertime-records .container .card-1 > div:first-child a {
+    margin-left: 0rem;
+  }
+
+  #undertime-records .container .card-1 div:nth-child(2),
+  #undertime-records .container .card-1 div:nth-child(2) input {
     margin-right: 0;
     display: block;
   }
 
-  #undertime-records .container .card-1 div:nth-child(2),
-  #undertime-records .container .card-1 div:nth-child(2) button {
+  #undertime-records .container .card-1 div:nth-child(3),
+  #undertime-records .container .card-1 div:nth-child(3) button {
     width: 100%;
     margin-right: 0;
   }
@@ -1003,7 +1007,7 @@
     tbody
     tr
     td:nth-child(2):before {
-    content: "Time In";
+    content: "Start Time";
   }
   #undertime-records
     .container
@@ -1012,7 +1016,7 @@
     tbody
     tr
     td:nth-child(3):before {
-    content: "Time Out";
+    content: "End Time";
   }
   #undertime-records
     .container
@@ -1021,7 +1025,7 @@
     tbody
     tr
     td:nth-child(4):before {
-    content: "Total (Hour/s)";
+    content: "Total";
   }
   #undertime-records
     .container
@@ -1030,7 +1034,73 @@
     tbody
     tr
     td:nth-child(5):before {
-    content: "Undertime (Hour/s)";
+    content: "Reason";
+  }
+
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Status";
+  }
+
+  /* card-2 table */
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Start Time";
+  }
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "End Time";
+  }
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Undertime";
+  }
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Reason";
+  }
+  #undertime-records
+    .container
+    .card-2
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Status";
   }
 
   /* ========[ Project / Task Records ]======== */

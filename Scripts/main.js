@@ -279,6 +279,9 @@ function openModal(btn_id) {
     const modalOvertimeRecord = document.querySelector(
       ".modal-overtime-application"
     );
+    const modalUndertimeRecord = document.querySelector(
+      ".modal-undertime-application"
+    );
     const modalExpenseRecord = document.querySelector(
       ".modal-expense-application"
     );
@@ -308,6 +311,8 @@ function openModal(btn_id) {
       modalTimeAlteration.style.display = "flex";
     } else if (modalBtn === "#btnOvertimeApplication") {
       modalOvertimeRecord.style.display = "flex";
+    } else if (modalBtn === "#btnUndertimeApplication") {
+      modalUndertimeRecord.style.display = "flex";  
     } else if (modalBtn === "#btnFileLeave") {
       modalFileLeave.style.display = "flex";
     } else if (modalBtn === "#btnAddExpense") {
@@ -353,6 +358,9 @@ function closeModal(btn_id) {
     const modalOvertimeRecord = document.querySelector(
       ".modal-overtime-application"
     );
+    const modalUndertimeRecord = document.querySelector(
+      ".modal-undertime-application"
+    );
     const modalExpenseRecord = document.querySelector(
       ".modal-expense-application"
     );
@@ -373,6 +381,8 @@ function closeModal(btn_id) {
       modalTimeAlteration.style.display = "none";
     } else if (modalBtn === "#btnCloseOvertimeApplication") {
       modalOvertimeRecord.style.display = "none";
+    } else if (modalBtn === "#btnCloseUndertimeApplication") {
+      modalUndertimeRecord.style.display = "none";
     } else if (modalBtn === "#btnCloseFileLeave") {
       modalFileLeave.style.display = "none";
     } else if (modalBtn === "#btnCloseAddExpense") {
@@ -392,7 +402,8 @@ function closeModal(btn_id) {
       resetAddEmpProj();
     } else if (modalBtn === "#btnCloseViewPayslip") {
       modalViewPayslip.style.display = "none";
-    }
+    } 
+    
 
     //set tab back to primary-info
     defaultTab("primary-info");
@@ -741,6 +752,23 @@ function showPOA() {
   card2.classList.remove("hidden");
   card1.classList.add("hidden");
 }
+
+function showUR() {
+  const card1 = document.querySelector("#undertime-records .container .card-1");
+  const card2 = document.querySelector("#undertime-records .container .card-2");
+
+  card2.classList.add("hidden");
+  card1.classList.remove("hidden");
+}
+
+function showPUA() {
+  const card1 = document.querySelector("#undertime-records .container .card-1");
+  const card2 = document.querySelector("#undertime-records .container .card-2");
+
+  card2.classList.remove("hidden");
+  card1.classList.add("hidden");
+}
+
 
 function showIP() {
   const card1 = document.querySelector("#project-task .container .card-1");
