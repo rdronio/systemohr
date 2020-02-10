@@ -85,15 +85,17 @@
             <li>
               <a href="#"
                 ><i class="fas fa-file-alt"></i> Employee Records<span
-                class="fa fa-chevron-down"
-              ></span
-            ></a>
-            <ul class="nav child_menu hidden">
-              <li>
-                <a href="employeemasterlist.html">Employee Masterlist</a>
-              </li>
-              <li><a href="adminleaverecords.html">Employee Leave Records</a></li>
-            </ul>
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu hidden">
+                <li>
+                  <a href="employeemasterlist.html">Employee Masterlist</a>
+                </li>
+                <li>
+                  <a href="adminleaverecords.html">Employee Leave Records</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="underconstruction.html"
@@ -114,7 +116,8 @@
               </ul>
             </li>
             <li>
-              <a href="#"><i class="fas fa-chart-area"></i>Reports<span
+              <a href="#"
+                ><i class="fas fa-chart-area"></i>Reports<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
@@ -218,7 +221,10 @@
                         class="fas fa-check btn-circle btn-green"
                         onclick="openModalWithPay()"
                       ></i>
-                      <i class="fas fa-times btn-circle btn-red"></i>
+                      <i
+                        class="fas fa-times btn-circle btn-red"
+                        onclick="openModalLeaveRemarks();"
+                      ></i>
                     </td>
                   </tr>
                   <tr>
@@ -238,7 +244,10 @@
                         class="fas fa-check btn-circle btn-green"
                         onclick="openModalWithPay()"
                       ></i>
-                      <i class="fas fa-times btn-circle btn-red"></i>
+                      <i
+                        class="fas fa-times btn-circle btn-red"
+                        onclick="openModalLeaveRemarks();"
+                      ></i>
                     </td>
                   </tr>
                 </tbody>
@@ -287,9 +296,9 @@
             </div>
           </div>
 
-          <!-- leave Remarks -->
+          <!-- Leave Remarks -->
           <div class="modal modal-leave-remarks">
-            <div class="modal-content">
+            <div class="modal-content-sm">
               <p class="notif notif-red">Not Enough Available Leave Credit</p>
               <label class="label-6" for="modalRemarksTA">Remarks</label>
               <textarea name="modalRemarksTA" id="modalRemarksTA"></textarea>

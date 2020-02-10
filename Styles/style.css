@@ -710,6 +710,18 @@ iframe {
   overflow-y: auto;
 }
 
+.modal-content-sm {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin: 20% auto;
+  padding: 1rem 1.5rem 0 1.5rem;
+  width: 25%;
+  -ms-overflow-style: none;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
 .modal-content > div {
   display: flex;
   flex-direction: column;
@@ -733,8 +745,16 @@ iframe {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 2rem 0 !important;
 }
+
+.modal-content-sm .modal-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem 0 !important;
+}
+
 .modal-content .modal-rd-container {
   display: flex;
   flex-direction: row;
@@ -2011,29 +2031,80 @@ nav ul li a span.fa {
   margin: auto;
 }
 
-#leave-approval .modal-content {
+/* ========[ Expense Approval ]======== */
+#expense-approval .container .card-1 > div:first-child {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#expense-approval .container .card-1 div:first-child input {
+  margin-right: 0.5rem;
+}
+
+#expense-approval .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#expense-approval .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
+}
+
+#expense-approval .tableLayout .column1,
+#expense-approval .tableLayout .column4 {
+  width: 15%;
+}
+
+#expense-approval .tableLayout .column2,
+#expense-approval .tableLayout .column3 {
   width: 25%;
-  text-align: center;
-  padding: 1rem 1.5rem 0 1.5rem;
 }
 
-#leave-approval .modal-leave-remarks .modal-content {
-  text-align: left !important;
-}
-#leave-approval .modal-leave-remarks .modal-content p {
-  margin: 0.5rem 0;
+#expense-approval .tableLayout .column5 {
+  width: 20%;
 }
 
-#leave-approval .modal-content .modal-btn-container {
-  margin: 1rem 0;
-}
-
-#leave-approval .modal-content .modal-rd-container {
+#expense-approval table.tableLayout tbody tr:not(:first-child) .column5 {
+  display: flex;
   justify-content: center;
+  margin: auto;
 }
 
-#leave-approval .modal-with-pay .modal-content hr {
-  margin-bottom: 1rem;
+/* ========[ Undertime Approval ]======== */
+#undertime-approval .container .card-1 > div:first-child {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#undertime-approval .container .card-1 div:first-child input {
+  margin-right: 0.5rem;
+}
+
+#undertime-approval .container .card-1 div:nth-child(2) {
+  display: inline-block;
+}
+
+#undertime-approval .container .card-1 div:nth-child(2) button {
+  margin-right: 0.5rem;
+}
+
+#undertime-approval .tableLayout .column1,
+#undertime-approval .tableLayout .column5,
+#undertime-approval .tableLayout .column6 {
+  width: 20%;
+}
+
+#undertime-approval .tableLayout .column2,
+#undertime-approval .tableLayout .column3,
+#undertime-approval .tableLayout .column4 {
+  width: 13.33%;
+}
+
+#undertime-approval table.tableLayout tbody tr:not(:first-child) .column6 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 /* ========[ Manage Employees ]======== */

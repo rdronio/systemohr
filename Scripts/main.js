@@ -450,16 +450,6 @@ function closeModalWithPay() {
   modalWithPay.style.display = "none";
 }
 
-function openModalLeaveRemarks() {
-  const modalLeaveRemarks = document.querySelector(".modal-leave-remarks");
-  modalLeaveRemarks.style.display = "flex";
-}
-
-function closeModalLeaveRemarks() {
-  const modalLeaveRemarks = document.querySelector(".modal-leave-remarks");
-  modalLeaveRemarks.style.display = "none";
-}
-
 function openModalConfirmation() {
   const modalConfirmation = document.querySelector(".modal-confirmation");
   modalConfirmation.style.display = "flex";
@@ -782,4 +772,51 @@ function showCT() {
 
   card2.classList.remove("hidden");
   card1.classList.add("hidden");
+}
+
+function openModalLeaveRemarks() {
+  const modalRemarks = document.querySelector(".modal-leave-remarks");
+  modalRemarks.style.display = "flex";
+}
+
+function closeModalLeaveRemarks() {
+  const modalRemarks = document.querySelector(".modal-leave-remarks");
+  modalRemarks.style.display = "none";
+}
+
+function openModalOvertimeRemarks() {
+  const modalRemarks = document.querySelector(".modal-overtime-remarks");
+  modalRemarks.style.display = "flex";
+}
+
+function closeModalOvertimeRemarks() {
+  const modalRemarks = document.querySelector(".modal-overtime-remarks");
+  modalRemarks.style.display = "none";
+}
+function openModalTimeAlterationRemarks() {
+  const modalRemarks = document.querySelector(".modal-timealteration-remarks");
+  modalRemarks.style.display = "flex";
+}
+
+function closeModalTimeAlterationRemarks() {
+  const modalRemarks = document.querySelector(".modal-timealteration-remarks");
+  modalRemarks.style.display = "none";
+}
+function openModalExpenseRemarks() {
+  const modalRemarks = document.querySelector(".modal-expense-remarks");
+  modalRemarks.style.display = "flex";
+}
+
+function closeModalExpenseRemarks() {
+  const modalRemarks = document.querySelector(".modal-expense-remarks");
+  modalRemarks.style.display = "none";
+}
+function openModalUndertimeRemarks() {
+  const modalRemarks = document.querySelector(".modal-undertime-remarks");
+  modalRemarks.style.display = "flex";
+}
+
+function closeModalUndertimeRemarks() {
+  const modalRemarks = document.querySelector(".modal-undertime-remarks");
+  modalRemarks.style.display = "none";
 }

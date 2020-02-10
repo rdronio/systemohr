@@ -110,19 +110,22 @@
     left: 0;
   }
 
-  .modal-content {
+  .modal-content,
+  .modal-content-sm {
     width: 90% !important;
     padding: 1.5rem 1.75rem 0 1.75rem !important;
   }
 
-  .modal-content .modal-btn-container {
+  .modal-content .modal-btn-container,
+  .modal-content-sm .modal-btn-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 1rem;
   }
 
-  .modal-content .modal-btn-container a {
+  .modal-content .modal-btn-container a,
+  .modal-content-sm .modal-btn-container a {
     margin: 0.5rem 0;
   }
 
@@ -1783,6 +1786,151 @@
     width: 90%;
     text-align: center;
     padding: 1rem 1.5rem 0 1.5rem;
+  }
+
+  /* ========[ Expense Approval ]======== */
+  #expense-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #expense-approval .container .card-1 > div:first-child {
+    margin-right: 0;
+  }
+
+  #expense-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #expense-approval .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #expense-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #expense-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Description";
+  }
+  #expense-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Reason";
+  }
+  #expense-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Rate";
+  }
+  #expense-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Action";
+  }
+
+  #expense-approval table.tableLayout tbody tr:not(:first-child) .column5 {
+    justify-content: start !important;
+  }
+
+  /* ========[ Undertime Approval ]======== */
+  #undertime-approval .container .card-1 input {
+    width: 100%;
+  }
+
+  #undertime-approval .container .card-1 > div:first-child {
+    margin-right: 0;
+  }
+
+  #undertime-approval .container .card-1 div:nth-child(2) {
+    width: 100%;
+  }
+
+  #undertime-approval .container .card-1 div:nth-child(2) button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Start Time";
+  }
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "End Time";
+  }
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Undertime (hour/s)";
+  }
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Reason";
+  }
+  #undertime-approval
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Action";
+  }
+
+  #undertime-approval table.tableLayout tbody tr:not(:first-child) .column6 {
+    justify-content: start !important;
   }
 
   /* ========[ Profile ]======== */
