@@ -287,6 +287,7 @@ function openModal(btn_id) {
     );
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
+    const modalMassPayroll = document.querySelector(".modal-mass-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
     const modalAddEmployeeHeader = document.querySelector(
       "#add-employee-header"
@@ -319,6 +320,8 @@ function openModal(btn_id) {
       modalExpenseRecord.style.display = "flex";
     } else if (modalBtn === "#btnCreatePayroll") {
       modalCreatePayroll.style.display = "flex";
+    } else if (modalBtn === "#btnMassGeneratePayroll") {
+      modalMassPayroll.style.display = "flex";
     } else if (modalBtn === "#btnAddEmployee") {
       modalAddEmployee.style.display = "flex";
       modalAddEmployeeHeader.innerHTML = "Add Employment Information";
@@ -366,6 +369,7 @@ function closeModal(btn_id) {
     );
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
+    const modalMassPayroll = document.querySelector(".modal-mass-payroll");
     const modalAddEmployee = document.querySelector(".modal-add-employee");
     // const modalUpdateEmployee = document.querySelector(
     //   ".modal-update-employee"
@@ -389,6 +393,8 @@ function closeModal(btn_id) {
       modalExpenseRecord.style.display = "none";
     } else if (modalBtn === "#btnCloseCreatePayroll") {
       modalCreatePayroll.style.display = "none";
+    } else if (modalBtn === "#btnCloseMassPayroll") {
+      modalMassPayroll.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmployee") {
       modalAddEmployee.style.display = "none";
     }
