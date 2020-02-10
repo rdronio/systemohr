@@ -503,6 +503,11 @@
     width: 100%;
   }
 
+  #time-records .container .card-1 div:nth-child(4) select {
+    width: 100%;
+    margin-right: 0rem;
+  }
+
   /* card-1 table */
   #time-records
     .container
@@ -567,7 +572,17 @@
     tbody
     tr
     td:nth-child(7):before {
-    content: "Memo";
+    content: "Status";
+  }
+
+  #time-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(8):before {
+    content: "Remarks";
   }
 
   /* card-2 table */
@@ -719,6 +734,16 @@
     content: "Status";
   }
 
+  #overtime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Remarks";
+  }
+
   /* card-2 table */
   #overtime-records
     .container
@@ -772,7 +797,7 @@
     tbody
     tr
     td:nth-child(6):before {
-    content: "Status";
+    content: "Action";
   }
 
   /* ========[ Leave Records ]======== */
@@ -859,6 +884,15 @@
     td:nth-child(8):before {
     content: "Status";
   }
+  #leaverecords
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(9):before {
+    content: "Remarks";
+  }
 
   /* table */
   #leaverecords
@@ -931,15 +965,6 @@
     tbody
     tr
     td:nth-child(8):before {
-    content: "Status";
-  }
-  #leaverecords
-    .container
-    .card-2
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(9):before {
     content: "Action";
   }
 
@@ -1045,6 +1070,16 @@
     tr
     td:nth-child(6):before {
     content: "Status";
+  }
+
+  #undertime-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(7):before {
+    content: "Remarks";
   }
 
   /* card-2 table */
@@ -1304,6 +1339,15 @@
     tr
     td:nth-child(5):before {
     content: "Status";
+  }
+  #expense-records
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(6):before {
+    content: "Remarks";
   }
 
   /* card-2 table */

@@ -52,81 +52,81 @@
             </div>
           </div>
 
-         <!-- / menu -->
-         <ul class="nav-list">
-          <li>
-            <a href="dashboard.html"
-              ><i class="fas fa-tachometer-alt"></i>Dashboard</a
-            >
-          </li>
-          <li>
-            <a href="timerecords.html"
-              ><i class="fas fa-user-clock"></i>Time Records</a
-            >
-          </li>
-          <li>
-            <a href="profile.html"
-              ><i class="fas fa-address-card"></i>Profile</a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><i class="fas fa-history"></i>Application<span
-                class="fa fa-chevron-down"
-              ></span
-            ></a>
-            <ul class="nav child_menu">
-              <li  class="current-page">
-                <a href="leaverecords.html">Leave Records</a>
-              </li>
-              <li>
-                <a href="overtimerecords.html">Overtime Records</a>
-              </li>
-              <li>
-                <a href="expense.html">Expense Records</a>
-              </li>
-              <li>
-                <a href="undertime.html">Undertime Records</a>
-              </li>
-            </ul>
-          </li>
+          <!-- / menu -->
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html"
+                ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="timerecords.html"
+                ><i class="fas fa-user-clock"></i>Time Records</a
+              >
+            </li>
+            <li>
+              <a href="profile.html"
+                ><i class="fas fa-address-card"></i>Profile</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-history"></i>Application<span
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu">
+                <li class="current-page">
+                  <a href="leaverecords.html">Leave Records</a>
+                </li>
+                <li>
+                  <a href="overtimerecords.html">Overtime Records</a>
+                </li>
+                <li>
+                  <a href="expense.html">Expense Records</a>
+                </li>
+                <li>
+                  <a href="undertime.html">Undertime Records</a>
+                </li>
+              </ul>
+            </li>
 
-          <li>
-            <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
-            <a href="underconstruction.html"
-              ><i class="fas fa-users"></i>Team</a
-            >
-          </li>
-          <li>
-            <a href="projecttask.html"
-              ><i class="fas fa-tasks"></i>Project/Task</a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><i class="fas fa-chart-area"></i>Report<span
-                class="fa fa-chevron-down"
-              ></span
-            ></a>
-            <ul class="nav child_menu hidden">
-              <li>
-                <a href="payslip.html">Payslip</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="index.html"
-              ><i class="fas fa-sign-out-alt"></i>Sign Out</a
-            >
-          </li>
-        </ul>
+            <li>
+              <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
+              <a href="underconstruction.html"
+                ><i class="fas fa-users"></i>Team</a
+              >
+            </li>
+            <li>
+              <a href="projecttask.html"
+                ><i class="fas fa-tasks"></i>Project/Task</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chart-area"></i>Report<span
+                  class="fa fa-chevron-down"
+                ></span
+              ></a>
+              <ul class="nav child_menu hidden">
+                <li>
+                  <a href="payslip.html">Payslip</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="index.html"
+                ><i class="fas fa-sign-out-alt"></i>Sign Out</a
+              >
+            </li>
+          </ul>
 
-        <div class="close-menu">
-          <a onclick="toggleMenu()">
-            <i class="fas fa-times"></i>
-          </a>
-        </div>
-      </nav>
+          <div class="close-menu">
+            <a onclick="toggleMenu()">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
+        </nav>
 
         <!-- Leave Records -->
         <section id="leaverecords" class="content">
@@ -146,11 +146,11 @@
           <div class="container">
             <div id="tab">
               <ul class="tab-list" onclick="selectTab();">
-                <li class="current-tab"> 
+                <li class="current-tab">
                   <a onclick="showLR();">Leave Records</a>
                 </li>
                 <li>
-                  <a  onclick="showPLA();">Pending Leaves</a>
+                  <a onclick="showPLA();">Pending Leaves</a>
                 </li>
               </ul>
             </div>
@@ -175,7 +175,6 @@
                 </div>
 
                 <div class="">
-
                   <a
                     class="btn-sm btn-primary"
                     id="btnFileLeave"
@@ -286,7 +285,9 @@
               </table>
               <div class="pagination-container">
                 <div class="showmore-container">
-                  <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
                 </div>
                 <div class="pagination" onclick="selectPage()">
                   <a href="#">«</a>
@@ -318,7 +319,6 @@
                       <td class="column5">No. of days</td>
                       <td class="column6">With Pay</td>
                       <td class="column7">Reason</td>
-                      <td class="column8">Status</td>
                       <td class="column8">Action</td>
                     </tr>
                     <tr>
@@ -332,8 +332,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Magni, ullam.
                       </td>
-                      <td class="column8">Pending</td>
-                      <td class="column9">                    
+                      <td class="column8">
                         <a class="btn-table btn-secondary">
                           Cancel
                         </a>
@@ -350,18 +349,19 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Magni, ullam.
                       </td>
-                      <td class="column8">Pending</td>
-                      <td class="column9">                    
+                      <td class="column8">
                         <a class="btn-table btn-secondary">
-                        Cancel
+                          Cancel
                         </a>
                       </td>
-                    </tr>              
+                    </tr>
                   </tbody>
                 </table>
                 <div class="pagination-container">
                   <div class="showmore-container">
-                    <a class="btn-showmore" href="#"><i class="fas fa-chevron-down"></i>More Results</a>
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
                   </div>
                   <div class="pagination" onclick="selectPage()">
                     <a href="#">«</a>
@@ -394,10 +394,12 @@
               <div class="">
                 <label class="note-head">Note</label>
                 <p class="note">Vacation has a maximum of # days leave.</p>
-                  <p class="note">Sick has a maximum of # days leave.</p>
-                  <p class="note">Emergency has a maximum of # days leave.</p>
-                  <p class="note">Sick has only # remaining days available.</p>
-                  <p class="note">Vacation/Emergency has only # remaining days available.</p>
+                <p class="note">Sick has a maximum of # days leave.</p>
+                <p class="note">Emergency has a maximum of # days leave.</p>
+                <p class="note">Sick has only # remaining days available.</p>
+                <p class="note">
+                  Vacation/Emergency has only # remaining days available.
+                </p>
                 <label class="label-6">Type</label>
                 <div class="modal-rd-container">
                   <label for="rdVacation" class="radio">
@@ -448,7 +450,6 @@
                 />
                 <label class="label-6">No. of days</label>
                 <p class="text" id="result">0</p>
-              
 
                 <label for="txtAreaReason" class="label-6">Reason</label>
                 <textarea name="txtAreaReason" id="txtAreaReason"></textarea>
