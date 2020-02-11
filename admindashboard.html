@@ -176,7 +176,20 @@
             <h2>Admin Dashboard</h2>
             <div>
               <div>
-                <div class="card-db card-1 card-sm">
+                <div class="card-db card-1 card-md">
+                  <p class="reminders">Holiday Notice</p>
+
+                  <div class="holidaynotice-grid">
+                    <label class="label-6">Bulacan Day</label>
+                    <p id="holiday1">January 1, 2020</p>
+                    <label class="label-6">Pampanga Day</label>
+                    <p id="holiday2">January 1, 2020</p>
+                    <label class="label-6">New Year</label>
+                    <p id="holiday3">January 1, 2020</p>
+                  </div>
+                </div>
+
+                <div class="card-db card-1 card-md">
                   <p class="reminders">Reminders:</p>
 
                   <div>
@@ -188,6 +201,10 @@
                     <p id="lblPOA">0</p>
                     <label class="label-6">Time Alterations Approvals: </label>
                     <p id="lblPTAA">0</p>
+                    <label class="label-6">Expense Approvals: </label>
+                    <p id="lblEA">0</p>
+                    <label class="label-6">Undertime Approvals: </label>
+                    <p id="lblUA">0</p>
                   </div>
                 </div>
 
@@ -224,66 +241,6 @@
                   </table>
                 </div>
 
-                <div class="card-db card-1 card-md hidden">
-                  <p class="tardiness-merit">Tardiness Merit / Emp</p>
-
-                  <table class="tableLayoutDB">
-                    <tbody>
-                      <tr>
-                        <td class="column1">Name</td>
-                        <td class="column2">Department</td>
-                        <td class="column3">Position</td>
-                      </tr>
-                      <tr>
-                        <td class="column1">John Doe</td>
-                        <td class="column2">IT</td>
-                        <td class="column3">Programmer</td>
-                      </tr>
-                      <tr>
-                        <td class="column1">John Doe</td>
-                        <td class="column2">IT</td>
-                        <td class="column3">Programmer</td>
-                      </tr>
-                      <tr>
-                        <td class="column1">John Doe</td>
-                        <td class="column2">IT</td>
-                        <td class="column3">Programmer</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="card-db card-1 card-md hidden">
-                  <p class="">Not Available for Demo</p>
-
-                  <table class="tableLayoutDB">
-                    <tbody>
-                      <tr>
-                        <td class="column1">Name</td>
-                        <td class="column2">Department</td>
-                        <td class="column3">Position</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="card-db card hidden"></div>
-              </div>
-
-              <div>
-                <div class="card-db card-1 card-sm">
-                  <p class="reminders">Holiday Notice</p>
-
-                  <div class="holidaynotice-grid">
-                    <label class="label-6">Bulacan Day</label>
-                    <p id="holiday1">January 1, 2020</p>
-                    <label class="label-6">Pampanga Day</label>
-                    <p id="holiday2">January 1, 2020</p>
-                    <label class="label-6">New Year</label>
-                    <p id="holiday3">January 1, 2020</p>
-                  </div>
-                </div>
-
                 <div class="card-db card-1 card-md">
                   <p class="evaluation-notice">Evaluation Notice</p>
                   <hr />
@@ -308,8 +265,6 @@
                     </tbody>
                   </table>
                 </div>
-
-                <div class="card-db card hidden"></div>
               </div>
 
               <div>
@@ -416,74 +371,76 @@
                 <div class="card-db card card-2 card-lg">
                   <h3>List of Regular Employees</h3>
                   <hr />
+                  <label class="label-6">Total:</label>
+                  <h4>10</h4>
                   <!-- Daily Time Record -->
                   <table class="tableLayoutDB">
                     <tbody>
                       <tr>
-                        <td class="column1">Time In</td>
-                        <td class="column2">Time Out</td>
-                        <td class="column3">Employee Name</td>
-                        <td class="column3">Position</td>
+                        <td class="column1">Employee ID</td>
+                        <td class="column2">Employee Name</td>
+                        <td class="column3">Department</td>
+                        <td class="column4">Position</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                       <tr>
-                        <td class="column1">09:00 AM</td>
-                        <td class="column2">05:00 PM</td>
-                        <td class="column3">John Doe</td>
-                        <td class="column3">Programmer</td>
+                        <td class="column1">00001</td>
+                        <td class="column2">John Doe</td>
+                        <td class="column3">IT Department</td>
+                        <td class="column4">Programmer</td>
                       </tr>
                     </tbody>
                   </table>
