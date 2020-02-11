@@ -421,18 +421,51 @@
 
   #admin-dashboard .container > div > div:nth-child(1) {
     width: 100%;
+    flex-direction: column;
   }
 
   #admin-dashboard .container > div > div:nth-child(2) {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #admin-dashboard .container > div > div .card-2 > div:nth-child(3) {
+    flex-direction: column;
+  }
+
+  #admin-dashboard .container > div > div .card-2 > div:nth-child(3) > div {
+    width: 100%;
+  }
+
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    > div:nth-child(3)
+    > div:nth-child(2) {
+    align-items: flex-start;
+  }
+
+  #admin-dashboard
+    .container
+    > div
+    > div
+    .card-2
+    > div:nth-child(3)
+    > div:nth-child(2)
+    input {
     width: 100%;
   }
 
   #admin-dashboard .container > div > div .card-1 {
     margin-right: 0;
+    width: 100%;
   }
 
-  #admin-dashboard .container > div > div .card-2 .label-6 {
-    padding-top: 0;
+  #admin-dashboard .container > div > div .card-2 {
+    margin-right: 0;
+    width: 100%;
   }
 
   #admin-dashboard .container > div > div .card-2 .tableLayout {
