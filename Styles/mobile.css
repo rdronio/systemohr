@@ -484,6 +484,110 @@
     content: "Position";
   }
 
+   /* ========[ Payroll Dashboard ]======== */
+   #payroll-dashboard .container > div {
+    flex-direction: column;
+  }
+
+  #payroll-dashboard .container > div > div:nth-child(1) {
+    width: 100%;
+  }
+
+  #payroll-dashboard .container > div > div:nth-child(2) {
+    width: 100%;
+  }
+
+  #payroll-dashboard .container > div > div .card-1 {
+    margin-right: 0;
+  }
+
+  #payroll-dashboard .container .card-1 > div:nth-child(3) select {
+    margin-left: 0rem;
+    width: 100%;
+  }
+
+  #payroll-dashboard .container .card-1 > div:nth-child(4) {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  #payroll-dashboard .container .card-1 > div:nth-child(4) input {
+    margin-bottom: 0.5rem;
+  }
+
+  #payroll-dashboard .container .card-1 > div:nth-child(4) a {
+    display: block;
+    width: 100%;
+  }
+
+  #payroll-dashboard .container .card-1 > div:nth-child(5) input {
+    margin-left: 0rem;
+    width: 100%;
+  }
+
+  #payroll-dashboard .container > div > div .card-2 .label-6 {
+    padding-top: 0;
+  }
+
+  #payroll-dashboard .container > div > div .card-2 .tableLayout {
+    margin-top: 0;
+  }
+
+  #payroll-dashboard
+    .container
+    > 
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Pay Period";
+  }
+  #payroll-dashboard
+    .container
+    > 
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee";
+  }
+  #payroll-dashboard
+    .container
+    > 
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Position";
+  }
+  #payroll-dashboard
+    .container
+    > 
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Net Pay";
+  }
+
+  #payroll-dashboard
+    .container
+    > 
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "Status";
+  }
+
+  
+
+
   /* ========[ Time Records ]======== */
   #time-records .container .card-1 input {
     width: 100%;

@@ -576,6 +576,12 @@ iframe {
   color: #520707d5;
 }
 
+.notif-orange {
+  background: #f7dddd;
+  border: 1px #ca780cd5 solid;
+  color: #ca5a10d7;
+}
+
 .notAvailable {
   text-align: center;
   margin: 2rem 0;
@@ -3233,6 +3239,50 @@ nav ul li a span.fa {
 
 #systempreferences .container .card-1 > .btn-container button:first-child {
   margin-right: 1rem;
+}
+
+/* ========[ Payroll Dashboard ]======== */
+#payroll-dashboard .container .card-1 > div:first-child{ 
+  text-align: center;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(2) {
+  position: relative;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(2) a{
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(3) label {
+  display: block;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(3) select {
+  display: block;
+  margin-left: 2rem;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(4) {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(4) input {
+  margin-right: 0.5rem;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(5) label {
+  display: block;
+}
+
+#payroll-dashboard .container .card-1 > div:nth-child(5) input {
+  display: block;
+  margin-left: 2rem;
 }
 
 /* ==========================[ MEDIA QUERIES ]====================== */
