@@ -534,26 +534,26 @@
     margin-right: 0;
   }
 
-  #payroll-dashboard .container .card-1 > div:nth-child(3) select {
+  #payroll-dashboard .container .card-2 > div:nth-child(3) select {
     margin-left: 0rem;
     width: 100%;
   }
 
-  #payroll-dashboard .container .card-1 > div:nth-child(4) {
+  #payroll-dashboard .container .card-2 > div:nth-child(4) {
     margin-bottom: 0.5rem;
     margin-right: 0;
   }
 
-  #payroll-dashboard .container .card-1 > div:nth-child(4) input {
+  #payroll-dashboard .container .card-2 > div:nth-child(4) input {
     margin-bottom: 0.5rem;
   }
 
-  #payroll-dashboard .container .card-1 > div:nth-child(4) a {
+  #payroll-dashboard .container .card-2 > div:nth-child(4) a {
     display: block;
     width: 100%;
   }
 
-  #payroll-dashboard .container .card-1 > div:nth-child(5) input {
+  #payroll-dashboard .container .card-2 > div:nth-child(5) input {
     margin-left: 0rem;
     width: 100%;
   }
@@ -568,8 +568,8 @@
 
   #payroll-dashboard
     .container
-    > 
-    .card-1
+    > div > div >
+    .card-2
     .tableLayout
     tbody
     tr
@@ -578,8 +578,8 @@
   }
   #payroll-dashboard
     .container
-    > 
-    .card-1
+    > div > div >
+    .card-2
     .tableLayout
     tbody
     tr
@@ -588,8 +588,8 @@
   }
   #payroll-dashboard
     .container
-    > 
-    .card-1
+    > div > div >
+    .card-2
     .tableLayout
     tbody
     tr
@@ -598,8 +598,8 @@
   }
   #payroll-dashboard
     .container
-    > 
-    .card-1
+    > div > div >
+    .card-2
     .tableLayout
     tbody
     tr
@@ -609,18 +609,15 @@
 
   #payroll-dashboard
     .container
-    > 
-    .card-1
+    > div > div >
+    .card-2
     .tableLayout
     tbody
     tr
     td:nth-child(5):before {
     content: "Status";
   }
-
   
-
-
   /* ========[ Time Records ]======== */
   #time-records .container .card-1 input {
     width: 100%;
