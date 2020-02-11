@@ -437,51 +437,46 @@
 
               <div>
                 <label class="label-6 block">Pay Period</label>
-                <label for="txtDateFromModal" class="label-6">From: </label>
+                <label for="txtDateFromModal2" class="label-6">From: </label>
                 <input
-                  name="txtDateFromModal"
+                  name="txtDateFromModal2"
                   type="text"
-                  id="txtDateFromModal"
+                  id="txtDateFromModal2"
                   class="datePickerPayroll"
                 />
-                <label for="txtDateToModal" class="label-6">To: </label>
+                <label for="txtDateToModal2" class="label-6">To: </label>
                 <input
-                  name="txtDateToModal"
+                  name="txtDateToModal2"
                   type="text"
-                  id="txtDateToModal"
+                  id="txtDateToModal2"
                   class="datePickerPayroll"
                 />
               </div>
 
               <div>
-                <label for="showEmployeeByModal" class="label-6 block"
-                  >Show Employee by</label
+                <label for="showEmployeeByCategoryModal2" class="label-6 block"
+                  >Select Department</label
                 >
                 <select
-                  name="showEmployeeByModal"
-                  id="showEmployeeByModal"
-                  class="select"
-                  onchange="getEmployeeByModal()"
-                >
-                  <option value="">--Please choose an option--</option>
-                  <option value="department">Department</option>
-                  <option value="position">Position</option>
-                </select>
-                <select
-                  name="showEmployeeByCategoryModal"
-                  id="showEmployeeByCategoryModal"
+                  name="showEmployeeByCategoryModal2"
+                  id="showEmployeeByCategoryModal2"
                   class="select"
                 >
+                  <option value="all">All</option>
+                  <option value="all">IT Department</option>
+                  <option value="all">Marketing Department</option>
+                  <option value="all">Sales Department</option>
+                  <option value="all">HR Department</option>
                 </select>
               </div>
 
               <div>
-                <label for="drpDownEmployee" class="label-6 block"
+                <label for="drpDownEmployee2" class="label-6 block"
                   >Employee</label
                 >
                 <select
-                  name="drpDownEmployee"
-                  id="drpDownEmployee"
+                  name="drpDownEmployee2"
+                  id="drpDownEmployee2"
                   class="select block"
                 >
                 </select>
@@ -489,11 +484,11 @@
 
               <div class="modal-btn-container">
                 <a class="btn-sm btn-green mx-3" id="btnComputeModal"
-                  >Compute</a
+                  >View Payroll</a
                 >
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  id="btnClearModal"
+                  id="btnClearModal2"
                   onclick="reset(`payroll`)"
                   >Clear</a
                 >

@@ -2765,6 +2765,16 @@ nav ul li a span.fa {
   width: 55%;
 }
 
+#payroll .modal-content .label-6 {
+  padding: 0.4rem 0 0.4rem 0;
+  font-weight: 600;
+}
+
+#payroll .modal-content p {
+  font-size: 0.8rem;
+  padding: 0.4rem 0 0.4rem 0;
+}
+
 #payroll .modal-content > div:nth-child(3) {
   display: block;
 }
@@ -2798,14 +2808,10 @@ nav ul li a span.fa {
   grid-template-columns: 1fr 1fr;
   width: 50%;
 }
-#payroll .modal-content > div:nth-child(11) label {
-  margin-top: 0;
-  font-weight: 700;
-}
+
 #payroll .modal-content > div:nth-child(11) p {
   text-align: right;
   padding-right: 60%;
-  font-weight: 700;
 }
 
 #payroll .modal-content > *:nth-child(12) {
@@ -2846,7 +2852,6 @@ nav ul li a span.fa {
 #payroll .modal-content > div:nth-child(15) > label,
 #payroll .modal-content > div:nth-child(15) > p {
   margin-top: 0;
-  font-weight: 700;
 }
 
 #payroll .modal-content > *:nth-child(16) {
@@ -3260,7 +3265,7 @@ nav ul li a span.fa {
 }
 
 /* ========[ Payroll Dashboard ]======== */
-#payroll-dashboard .container .card-1 > div:first-child{ 
+#payroll-dashboard .container .card-1 > div:first-child {
   text-align: center;
 }
 
@@ -3270,7 +3275,7 @@ nav ul li a span.fa {
   margin-bottom: 0.5rem;
 }
 
-#payroll-dashboard .container .card-1 > div:nth-child(2) a{
+#payroll-dashboard .container .card-1 > div:nth-child(2) a {
   margin-left: 0.5rem;
   display: inline-block;
 }
