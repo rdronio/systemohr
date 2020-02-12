@@ -835,6 +835,62 @@
     content: "Action";
   }
 
+  /* ========[ Holiday Notice ]======== */
+  #holiday-notice .container .card-1 input {
+    width: 100%;
+  }
+
+  #holiday-notice .container .card-1 > div:first-child a {
+    margin-left: 0;
+  }
+
+  #holiday-notice .container .card-1 div:nth-child(2),
+  #holiday-notice .container .card-1 div:nth-child(2) input {
+    margin-right: 0;
+  }
+
+  #holiday-notice .container .card-1 div:nth-child(3),
+  #holiday-notice .container .card-1 div:nth-child(3) a {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  #holiday-notice .container .card-1 div:nth-child(4) select {
+    width: 100%;
+    margin-right: 0rem;
+  }
+
+  /* card-1 table */
+  #holiday-notice
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Date";
+  }
+  #holiday-notice
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Description";
+  }
+  #holiday-notice
+    .container
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Action";
+  }
+
   /* ========[ Overtime Records ]======== */
 
   #overtime-records .container .card-1 > div:first-child a {
