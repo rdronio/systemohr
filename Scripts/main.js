@@ -285,6 +285,14 @@ function openModal(btn_id) {
     const modalExpenseRecord = document.querySelector(
       ".modal-expense-application"
     );
+
+    const modalAddHoliday = document.querySelector(
+      ".modal-add-holiday"
+    );
+    const modalEditHoliday = document.querySelector(
+      ".modal-edit-holiday"
+    );
+
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalMassPayroll = document.querySelector(".modal-mass-payroll");
@@ -344,6 +352,10 @@ function openModal(btn_id) {
       modalAddEmpTask.style.display = "flex";
     } else if (modalBtn === "#btnViewPayslip") {
       modalViewPayslip.style.display = "flex";
+    } else if (modalBtn === "#btnAddHoliday") {
+      modalAddHoliday.style.display = "flex";
+    } else if (modalBtn === "#btnEditHoliday") {
+      modalEditHoliday.style.display = "flex";
     }
 
     //set tab back to primary-info
@@ -366,6 +378,12 @@ function closeModal(btn_id) {
     );
     const modalExpenseRecord = document.querySelector(
       ".modal-expense-application"
+    );
+    const modalAddHoliday = document.querySelector(
+      ".modal-add-holiday"
+    );
+    const modalEditHoliday = document.querySelector(
+      ".modal-edit-holiday"
     );
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
@@ -397,6 +415,10 @@ function closeModal(btn_id) {
       modalMassPayroll.style.display = "none";
     } else if (modalBtn === "#btnCloseAddEmployee") {
       modalAddEmployee.style.display = "none";
+    } else if (modalBtn === "#btnCloseAddHoliday") {
+      modalAddHoliday.style.display = "none";
+    } else if (modalBtn === "#btnCloseEditHoliday") {
+      modalEditHoliday.style.display = "none";
     }
     //  else if (modalBtn === "#btnCloseUpdateEmployee") {
     //   modalUpdateEmployee.style.display = "none";

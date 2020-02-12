@@ -1406,7 +1406,7 @@ table.tableLayout-md .column1,
 table.tableLayout-md .column2,
 table.tableLayout-md .column3,
 table.tableLayout-md .column4,
-table.tableLayout-md .column5,
+table.table.tableLayout-md tbody tr:not(:first-child) > td:first-child .column5,
 table.tableLayout-md .column6,
 table.tableLayout-md .column7,
 table.tableLayout-md .column8,
@@ -1418,10 +1418,6 @@ table.tableLayout-md .column13,
 table.tableLayout-md .column14 {
   /* width: 10rem; */
   width: 7.14%;
-}
-
-table.tableLayout-md tbody tr:not(:first-child) > td:first-child {
-  font-weight: 500 !important;
 }
 
 table.tableLayout-md tbody tr > td {
@@ -1796,6 +1792,39 @@ nav ul li a span.fa {
 }
 
 #time-records .modal-content > div > .modal-chk-container label {
+  margin-right: 1.5rem;
+}
+
+/* ========[ Holiday Notice ]======== */
+#holiday-notice .container .card-1 div:first-child {
+  position: relative;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+#holiday-notice .container .card-1 div:first-child a {
+  margin-left: 0.5rem;
+}
+
+#holiday-notice .container .card-1 div:nth-child(2) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+#holiday-notice .container .card-1 div:nth-child(2) input {
+  margin-right: 0.5rem;
+}
+
+#holiday-notice .container .card-1 div:nth-child(3) {
+  display: inline-block;
+}
+
+#holiday-notice .container .card-1 div:nth-child(3) a {
+  margin-right: 0.5rem;
+}
+
+#holiday-notice .modal-content > div > .modal-chk-container label {
   margin-right: 1.5rem;
 }
 
