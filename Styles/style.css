@@ -1333,6 +1333,101 @@ table.tableLayoutDB .column14 {
   width: 7.14%;
 }
 
+/* ======[ tableLayoutHoliday ] ======= */
+
+table.tableLayout-md {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+  position: relative;
+
+  display: block;
+  overflow-y: auto;
+  /* white-space: nowrap; */
+}
+
+.tableLayout-md::-webkit-scrollbar {
+  background: #e0e0e0 !important;
+  width: 3px !important;
+  height: 3px !important ;
+  padding: 0 2px;
+}
+
+.tableLayout-md::-webkit-scrollbar-thumb {
+  background: #333 !important;
+  border-radius: 3px 3px !important;
+}
+
+table.tableLayout-md * {
+  position: relative;
+}
+table.tableLayout-md td,
+table.tableLayout-md th {
+  border: none;
+
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+}
+
+table.tableLayout-md tbody tr:first-child {
+  /* border-bottom: 2px #333 solid !important; */
+  font-size: 0.65rem !important;
+  color: #333 !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+  pointer-events: none !important;
+}
+
+table.tableLayout-md tbody tr:last-child {
+  border: 0;
+}
+
+/* table.tableLayout-md tbody tr:nth-child(even) {
+  background-color: #d3dee2;
+} */
+
+table.tableLayout-md tbody tr {
+  font-size: 0.7rem;
+  color: #333;
+  line-height: 1.2;
+  font-weight: unset;
+  /* border-bottom: 1px solid #eee; */
+  height: 1rem;
+  margin: 0.25rem 0;
+}
+
+table.tableLayout-md tbody tr:hover {
+  cursor: default;
+}
+
+table.tableLayout-md .column1,
+table.tableLayout-md .column2,
+table.tableLayout-md .column3,
+table.tableLayout-md .column4,
+table.tableLayout-md .column5,
+table.tableLayout-md .column6,
+table.tableLayout-md .column7,
+table.tableLayout-md .column8,
+table.tableLayout-md .column9,
+table.tableLayout-md .column10,
+table.tableLayout-md .column11,
+table.tableLayout-md .column12,
+table.tableLayout-md .column13,
+table.tableLayout-md .column14 {
+  /* width: 10rem; */
+  width: 7.14%;
+}
+
+table.tableLayout-md tbody tr:not(:first-child) > td:first-child {
+  font-weight: 500 !important;
+}
+
+table.tableLayout-md tbody tr > td {
+  padding: 0.8rem 0 0.4rem 0;
+}
+
 /* ========[ Main ]======== */
 .main {
   height: 100%;
