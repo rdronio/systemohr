@@ -546,6 +546,7 @@
 
   #payroll-dashboard .container .card-2 > div:nth-child(4) input {
     margin-bottom: 0.5rem;
+    width: 100%;
   }
 
   #payroll-dashboard .container .card-2 > div:nth-child(4) a {
@@ -558,7 +559,12 @@
     width: 100%;
   }
 
+  #payroll-dashboard .container > div > div .card-2 {
+    margin-right: 0;
+  }
+
   #payroll-dashboard .container > div > div .card-2 .label-6 {
+    display: block;
     padding-top: 0;
   }
 
@@ -616,6 +622,39 @@
     tr
     td:nth-child(5):before {
     content: "Status";
+  }
+
+  #payroll-dashboard 
+  .container 
+  > div > div 
+  .card-1 
+  .tableLayout
+  tbody
+  tr
+  td:nth-child(1):before {
+    content: "Name";
+  }
+
+  #payroll-dashboard 
+  .container 
+  > div > div 
+  .card-1 
+  .tableLayout
+  tbody
+  tr
+  td:nth-child(2):before {
+    content: "Tardiness Count";
+  }
+
+  #payroll-dashboard 
+  .container 
+  > div > div 
+  .card-1 
+  .tableLayout
+  tbody
+  tr
+  td:nth-child(3):before {
+    content: "Position";
   }
   
   /* ========[ Time Records ]======== */
