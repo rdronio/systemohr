@@ -2901,92 +2901,96 @@ nav ul li a span.fa {
   font-weight: 500 !important;
 }
 
-#payroll .modal-content > div:nth-child(3) {
-  display: block;
-}
-
-#payroll .modal-content > div:nth-child(3) input {
-  margin-right: 0.75rem;
+#payroll .modal-content > div:nth-child(3) select {
+  margin-left: 2rem;
 }
 
 #payroll .modal-content > div:nth-child(4) {
   display: block;
 }
 
-#payroll .modal-content > div:nth-child(4) select {
-  margin-right: 0.8rem;
+#payroll .modal-content > div:nth-child(4) input {
+  margin-right: 0.75rem;
 }
 
-#payroll .modal-content > div:nth-child(4) select:nth-child(2) {
-  margin-left: 2rem;
+#payroll .modal-content > div:nth-child(5) {
+  display: block;
+}
+
+#payroll .modal-content > div:nth-child(5) select {
+  margin-right: 0.8rem;
 }
 
 #payroll .modal-content > div:nth-child(5) select:nth-child(2) {
   margin-left: 2rem;
 }
 
-#payroll .modal-content > *:nth-child(10) {
+#payroll .modal-content > div:nth-child(6) select:nth-child(2) {
+  margin-left: 2rem;
+}
+
+#payroll .modal-content > *:nth-child(11) {
   margin: 0.75rem 0 0;
 }
 
-#payroll .modal-content > div:nth-child(11) {
+#payroll .modal-content > div:nth-child(12) {
   display: flex;
   flex-direction: row;
 }
-#payroll .modal-content > div:nth-child(11) > div {
+#payroll .modal-content > div:nth-child(12) > div {
   display: flex;
   flex-direction: row;
   width: 50%;
 }
-#payroll .modal-content > div:nth-child(11) > div input {
+#payroll .modal-content > div:nth-child(12) > div input {
 }
 
-#payroll .modal-content > div:nth-child(11) p {
+#payroll .modal-content > div:nth-child(12) p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > *:nth-child(12) {
+#payroll .modal-content > *:nth-child(13) {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-#payroll .modal-content > div:nth-child(13) {
+#payroll .modal-content > div:nth-child(14) {
   display: flex;
   flex-direction: row;
 }
 
-#payroll .modal-content > div:nth-child(13) > div:nth-child(1),
-#payroll .modal-content > div:nth-child(13) > div:nth-child(2) {
+#payroll .modal-content > div:nth-child(14) > div:nth-child(1),
+#payroll .modal-content > div:nth-child(14) > div:nth-child(2) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 50%;
 }
 
-#payroll .modal-content > div:nth-child(13) > div:nth-child(1) p,
-#payroll .modal-content > div:nth-child(13) > div:nth-child(2) p,
-#payroll .modal-content > div:nth-child(13) > div:nth-child(3) p {
+#payroll .modal-content > div:nth-child(14) > div:nth-child(1) p,
+#payroll .modal-content > div:nth-child(14) > div:nth-child(2) p,
+#payroll .modal-content > div:nth-child(14) > div:nth-child(3) p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > div:nth-child(15) {
+#payroll .modal-content > div:nth-child(16) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
 }
 
-#payroll .modal-content > div:nth-child(15) p {
+#payroll .modal-content > div:nth-child(16) p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > div:nth-child(15) > label,
-#payroll .modal-content > div:nth-child(15) > p {
+#payroll .modal-content > div:nth-child(16) > label,
+#payroll .modal-content > div:nth-child(16) > p {
   margin-top: 0;
 }
 
-#payroll .modal-content > *:nth-child(16) {
+#payroll .modal-content > *:nth-child(17) {
   margin-top: 0;
 }
 

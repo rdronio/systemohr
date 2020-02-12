@@ -267,9 +267,23 @@
             <div class="modal-content">
               <h5>Generate Payroll</h5>
               <hr />
-
               <div>
                 <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreq"
+                  id="drpDownPayFreq"
+                  class="select block"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="label-6 block">Pay Period</label>
                 <label for="txtDateFromModal" class="label-6">From: </label>
                 <input
                   name="txtDateFromModal"
