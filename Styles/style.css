@@ -645,6 +645,21 @@ iframe {
   padding: 0.8rem 0 0.4rem 0;
 }
 
+.bg-circle {
+  text-align: center !important;
+  border-radius: 50% !important;
+  transition: transform 80ms ease-in !important;
+  width: 25px !important;
+  height: 25px !important;
+  background: #333 !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 7px auto 0 auto !important;
+}
+
 .logo .logo-link {
   display: flex;
   flex-direction: column;
@@ -1598,7 +1613,7 @@ nav ul li a span.fa {
   margin-top: 0.5rem;
 }
 
-#admin-dashboard
+/* #admin-dashboard
   .container
   > div
   > div:nth-child(1)
@@ -1611,7 +1626,7 @@ nav ul li a span.fa {
   padding: 7px 0 0 0;
   text-align: center;
   margin: 2px 0;
-}
+} */
 
 #admin-dashboard .container > div > div .card-1 > p {
   font-size: 0.8rem;
@@ -3368,7 +3383,6 @@ nav ul li a span.fa {
 #payroll-dashboard .container > div > div .card-1 > div.tardinessnotice-grid p {
   text-align: right;
 }
-
 
 #payroll-dashboard .container .card-2 > div:first-child {
   text-align: center;
