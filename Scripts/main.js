@@ -98,14 +98,14 @@ $(".bdayPicker").each(function() {
 });
 
 // datePicker Payroll
-$(".datePickerPayroll").each(function() {
-  //Create jQueryUI datepicker
-  $(this).datepicker({
-    changeMonth: true,
-    changeYear: true,
-    yearRange: "-10:+10"
-  });
-});
+// $(".datePickerPayroll").each(function() {
+//   //Create jQueryUI datepicker
+//   $(this).datepicker({
+//     changeMonth: true,
+//     changeYear: true,
+//     yearRange: "-10:+10"
+//   });
+// });
 
 // Date Picker
 $(".datePicker").each(function() {
@@ -149,6 +149,67 @@ $(".terminationDatePicker").each(function() {
     yearRange: "-10:+10",
     beforeShowDay: $.datepicker.noWeekends
   });
+});
+
+$(".startDatePicker").each(function() {
+  $(this).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "-10:+10",
+
+    onSelect: function(date) {
+      let selectedDate = new Date(date);
+      let payFreq = document.querySelector("#drpDownPayFreq").value;
+      let endDate = new Date(date);
+      // endDate.setDate(selectedDate.getDate() + 3);
+
+      if (payFreq === "weekly") {
+        endDate.setDate(selectedDate.getDate() + 7);
+        $(".endDatePicker").datepicker("setDate", endDate);
+      } else if (payFreq === "twoWeeks") {
+        endDate.setDate(selectedDate.getDate() + 14);
+        $(".endDatePicker").datepicker("setDate", endDate);
+      } else if (payFreq === "monthly") {
+        endDate.setMonth(selectedDate.getMonth() + 1);
+        $(".endDatePicker").datepicker("setDate", endDate);
+      } else {
+        endDate.setDate(selectedDate.getDate());
+        $(".endDatePicker").datepicker("option", "minDate", selectedDate);
+      }
+    }
+  });
+});
+
+// $(".startDatePicker").each(function() {
+
+//   alert(endDate);
+
+//   $(this).datepicker({
+//     dateFormat: "yy-mm-dd",
+//     changeMonth: true,
+//     changeYear: true,
+//     yearRange: "-10:+10",
+
+//     onSelect: function(date) {
+//       let selectedDate = new Date(date);
+//       let msecs;
+//       // let msecsInADay = 86400000; //1 day
+//       // let endDate = new Date(selectedDate.getTime() + msecsInADay);
+
+//       // let endDate = new Date(selectedDate.getTime() + msecsInADay);
+
+//       //Set Minimum Date of EndDatePicker After Selected Date of StartDatePicker
+//       // $(".endDatePicker").datepicker("option", "minDate", endDate);
+//       // $(".endDatePicker").datepicker("option", "maxDate", "+2y");
+
+//       //Set Date based on frequency After Selected Date of StartDatePicker
+//       $(".endDatePicker").datepicker(endDate);
+//     }
+//   });
+// });
+
+$(".endDatePicker").each(function() {
+  $(this).datepicker({});
 });
 
 function calcBusinessDays(dDate1, dDate2) {
@@ -286,12 +347,8 @@ function openModal(btn_id) {
       ".modal-expense-application"
     );
 
-    const modalAddHoliday = document.querySelector(
-      ".modal-add-holiday"
-    );
-    const modalEditHoliday = document.querySelector(
-      ".modal-edit-holiday"
-    );
+    const modalAddHoliday = document.querySelector(".modal-add-holiday");
+    const modalEditHoliday = document.querySelector(".modal-edit-holiday");
 
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
@@ -379,12 +436,8 @@ function closeModal(btn_id) {
     const modalExpenseRecord = document.querySelector(
       ".modal-expense-application"
     );
-    const modalAddHoliday = document.querySelector(
-      ".modal-add-holiday"
-    );
-    const modalEditHoliday = document.querySelector(
-      ".modal-edit-holiday"
-    );
+    const modalAddHoliday = document.querySelector(".modal-add-holiday");
+    const modalEditHoliday = document.querySelector(".modal-edit-holiday");
     const modalFileLeave = document.querySelector(".modal-file-leave");
     const modalCreatePayroll = document.querySelector(".modal-create-payroll");
     const modalMassPayroll = document.querySelector(".modal-mass-payroll");
