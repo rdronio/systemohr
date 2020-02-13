@@ -144,14 +144,14 @@
                   name="txtDateFrom"
                   type="text"
                   id="txtDateFrom"
-                  class="datePickerPayroll"
+                  class="startDatePicker"
                 />
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
                   name="txtDateTo"
                   type="text"
                   id="txtDateTo"
-                  class="datePickerPayroll"
+                  class="endDatePicker"
                 />
                 <a class="btn-sm btn-secondary">Clear</a>
               </div>
@@ -270,9 +270,10 @@
               <div>
                 <label class="label-6 block">Pay Frequency</label>
                 <select
-                  name="drpDownPayFreq"
-                  id="drpDownPayFreq"
-                  class="select block"
+                  name="drpDownPayFreqModal"
+                  id="drpDownPayFreqModal"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 >
                   <option value="">--Please choose an option--</option>
                   <option value="weekly">Weekly</option>
@@ -290,13 +291,15 @@
                   type="text"
                   id="txtDateFromModal"
                   class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
                 <label for="txtDateToModal" class="label-6">To: </label>
                 <input
                   name="txtDateToModal"
                   type="text"
                   id="txtDateToModal"
-                  class="endDatePicker "
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
               </div>
 
@@ -458,6 +461,21 @@
             <div class="modal-content">
               <h5>Generate Payroll</h5>
               <hr />
+              <div>
+                <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreqModal2"
+                  id="drpDownPayFreqModal2"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
 
               <div>
                 <label class="label-6 block">Pay Period</label>
@@ -466,14 +484,16 @@
                   name="txtDateFromModal2"
                   type="text"
                   id="txtDateFromModal2"
-                  class="datePickerPayroll"
+                  class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
                 />
                 <label for="txtDateToModal2" class="label-6">To: </label>
                 <input
                   name="txtDateToModal2"
                   type="text"
                   id="txtDateToModal2"
-                  class="datePickerPayroll"
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
                 />
               </div>
 
@@ -577,22 +597,23 @@
 
               <hr />
               <div>
-                <div>
-                  <label for="drpDownEmployee2" class="label-6 block"
-                    >Employee</label
-                  >
-                  <select
-                    name="drpDownEmployee2"
-                    id="drpDownEmployee2"
-                    class="select block"
-                  >
-                  </select>
-                </div>
+                <label for="drpDownEmployee2" class="label-6 block"
+                  >Employee</label
+                >
+                <select
+                  name="drpDownEmployee2"
+                  id="drpDownEmployee2"
+                  class="select block"
+                >
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                </select>
 
-                <div>
-                  <label class="label-6">Basic Salary</label>
-                  <p class="label-6" id="lblBasicSalary">0.00</p>
-                </div>
+                <label class="label-6">Basic Salary</label>
+                <p class="label-6" id="lblBasicSalary">0.00</p>
               </div>
               <hr />
 

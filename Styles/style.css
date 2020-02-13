@@ -308,7 +308,7 @@ iframe {
   letter-spacing: 1px;
   border-radius: 120px;
   text-align: center;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .btn-sm {
@@ -318,7 +318,8 @@ iframe {
   padding: 0.6rem 2rem;
   letter-spacing: 1px;
   text-align: center;
-  cursor: pointer;
+  cursor: pointer !important;
+  /* box-shadow: 4px 4px 20px rgba(74, 74, 74, 0.4); */
 }
 
 .btn-md {
@@ -329,7 +330,7 @@ iframe {
   letter-spacing: 1px;
   border-radius: 120px;
   text-align: center;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .btn-table {
@@ -2958,13 +2959,26 @@ nav ul li a span.fa {
   margin-left: 2rem;
 }
 
+#payroll .modal-content > div:nth-child(7) {
+  margin: 1rem 0 !important;
+}
+
 #payroll .modal-content > *:nth-child(11) {
   margin: 0.75rem 0 0;
 }
 
 #payroll .modal-content > div:nth-child(12) {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 0.45fr 1.55fr 1fr 1fr;
+  margin-right: 0;
+  margin: 0.25rem 0;
+}
+#payroll .modal-content > div:nth-child(12) select {
+  width: 9rem;
+  padding: 0;
+
+  justify-self: right;
+  margin-right: 38%;
 }
 #payroll .modal-content > div:nth-child(12) > div {
   display: flex;

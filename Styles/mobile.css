@@ -517,8 +517,8 @@
     content: "Position";
   }
 
-   /* ========[ Payroll Dashboard ]======== */
-   #payroll-dashboard .container > div {
+  /* ========[ Payroll Dashboard ]======== */
+  #payroll-dashboard .container > div {
     flex-direction: column;
   }
 
@@ -574,8 +574,9 @@
 
   #payroll-dashboard
     .container
-    > div > div >
-    .card-2
+    > div
+    > div
+    > .card-2
     .tableLayout
     tbody
     tr
@@ -584,8 +585,9 @@
   }
   #payroll-dashboard
     .container
-    > div > div >
-    .card-2
+    > div
+    > div
+    > .card-2
     .tableLayout
     tbody
     tr
@@ -594,8 +596,9 @@
   }
   #payroll-dashboard
     .container
-    > div > div >
-    .card-2
+    > div
+    > div
+    > .card-2
     .tableLayout
     tbody
     tr
@@ -604,8 +607,9 @@
   }
   #payroll-dashboard
     .container
-    > div > div >
-    .card-2
+    > div
+    > div
+    > .card-2
     .tableLayout
     tbody
     tr
@@ -615,8 +619,9 @@
 
   #payroll-dashboard
     .container
-    > div > div >
-    .card-2
+    > div
+    > div
+    > .card-2
     .tableLayout
     tbody
     tr
@@ -624,39 +629,42 @@
     content: "Status";
   }
 
-  #payroll-dashboard 
-  .container 
-  > div > div 
-  .card-1 
-  .tableLayout
-  tbody
-  tr
-  td:nth-child(1):before {
+  #payroll-dashboard
+    .container
+    > div
+    > div
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
     content: "Name";
   }
 
-  #payroll-dashboard 
-  .container 
-  > div > div 
-  .card-1 
-  .tableLayout
-  tbody
-  tr
-  td:nth-child(2):before {
+  #payroll-dashboard
+    .container
+    > div
+    > div
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
     content: "Tardiness Count";
   }
 
-  #payroll-dashboard 
-  .container 
-  > div > div 
-  .card-1 
-  .tableLayout
-  tbody
-  tr
-  td:nth-child(3):before {
+  #payroll-dashboard
+    .container
+    > div
+    > div
+    .card-1
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
     content: "Position";
   }
-  
+
   /* ========[ Time Records ]======== */
   #time-records .container .card-1 input {
     width: 100%;
@@ -2675,6 +2683,18 @@
 
   #payroll .modal-content > div:nth-child(11) p {
     padding-right: 15%;
+  }
+
+  #payroll .modal-content > div:nth-child(12) {
+    grid-template-columns: 0.45fr 1.55fr;
+  }
+
+  #payroll .modal-content > div:nth-child(12) select {
+    margin-right: 0%;
+  }
+
+  #payroll .modal-content > div:nth-child(12) p {
+    padding-right: 0%;
   }
 
   #payroll .modal-content > div:nth-child(13) {
