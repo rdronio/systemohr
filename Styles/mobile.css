@@ -749,26 +749,6 @@
     content: "Tardiness (min/s)";
   }
 
-  #time-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(7):before {
-    content: "Status";
-  }
-
-  #time-records
-    .container
-    .card-1
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(8):before {
-    content: "Remarks";
-  }
-
   /* card-2 table */
   #time-records
     .container
@@ -786,7 +766,7 @@
     tbody
     tr
     td:nth-child(2):before {
-    content: "Time In";
+    content: "Type";
   }
   #time-records
     .container
@@ -795,7 +775,7 @@
     tbody
     tr
     td:nth-child(3):before {
-    content: "Time Out";
+    content: "Time";
   }
   #time-records
     .container
@@ -804,43 +784,7 @@
     tbody
     tr
     td:nth-child(4):before {
-    content: "New Time In";
-  }
-  #time-records
-    .container
-    .card-2
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(5):before {
-    content: "New Time Out";
-  }
-  #time-records
-    .container
-    .card-2
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(6):before {
-    content: "Reason";
-  }
-  #time-records
-    .container
-    .card-2
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(7):before {
-    content: "Status";
-  }
-  #time-records
-    .container
-    .card-2
-    .tableLayout
-    tbody
-    tr
-    td:nth-child(8):before {
-    content: "Action";
+    content: "Reports";
   }
 
   /* ========[ Holiday Notice ]======== */

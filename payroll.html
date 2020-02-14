@@ -131,7 +131,7 @@
             <div class="card card-1">
               <div class="">
                 <a
-                  class="btn-xs btn-alt hidden"
+                  class="btn-xs btn-alt"
                   id="btnMassGeneratePayroll"
                   onclick="openModal(`#btnMassGeneratePayroll`)"
                 >
@@ -566,130 +566,95 @@
               </div>
 
               <div class="hidden">
-                <label class="label-6">With Deductions</label>
-                <div class="modal-rd-container">
-                  <label for="optYesModal2" class="radio">
-                    <input
-                      type="radio"
-                      name="rdo"
-                      id="optYesModal2"
-                      class="hidden"
-                    />
-                    <span class="label"></span>Yes
-                  </label>
-
-                  <label for="optNoModal2" class="radio">
-                    <input
-                      type="radio"
-                      name="rdo"
-                      id="optNoModal2"
-                      class="hidden"
-                    />
-                    <span class="label"></span>No
-                  </label>
-                </div>
-              </div>
-
-              <div class="hidden">
-                <label class="label-6">Type</label>
-                <div class="modal-rd-container">
-                  <label for="optDailyModal2" class="radio">
-                    <input
-                      type="radio"
-                      name="rdo"
-                      id="optDailyModal2"
-                      class="hidden"
-                    />
-                    <span class="label"></span>Daily
-                  </label>
-
-                  <label for="optMonthlyModal2" class="radio">
-                    <input
-                      type="radio"
-                      name="rdo"
-                      id="optMonthlyModal2"
-                      class="hidden"
-                    />
-                    <span class="label"></span>Monthly
-                  </label>
-                </div>
-              </div>
-
-              <div class="hidden">
-                <label class="label-6">Absent (days)</label>
-                <input
-                  name="txtAbsentModal2"
-                  type="text"
-                  id="txtAbsentModal2"
-                />
-                <label class="label-6">Overtime (hours)</label>
-                <input
-                  name="txtOvertimeModal2"
-                  type="text"
-                  id="txtOvertimeModal2"
-                />
-                <label class="label-6">Late (minutes)</label>
-                <input name="txtLateModal2" type="text" id="txtLateModal2" />
-              </div>
-
-              <hr />
-              <div>
-                <label for="drpDownEmployee2" class="label-6 block"
-                  >Employee</label
+                <label for="searchEmployee" class="label-6 block"
+                  >Search Employee ID/Name</label
                 >
-                <select
-                  name="drpDownEmployee2"
-                  id="drpDownEmployee2"
-                  class="select block"
-                >
-                  <option value="">John Doe</option>
-                  <option value="">John Doe</option>
-                  <option value="">John Doe</option>
-                  <option value="">John Doe</option>
-                  <option value="">John Doe</option>
-                </select>
-
-                <label class="label-6">Basic Salary</label>
-                <p class="label-6" id="lblBasicSalary">0.00</p>
+                <input type="" value="" id="searchEmployee" />
               </div>
-              <hr />
 
-              <div>
-                <div>
-                  <label class="label-6">Total Hours</label>
-                  <p class="label-6" id="lblTotalHours">0.00</p>
-                  <label class="label-6">Absent</label>
-                  <p class="label-6" id="lblAbsent">0.00</p>
-                  <label class="label-6">Tardiness</label>
-                  <p class="label-6" id="lblTardiness">0.00</p>
-                  <label class="label-6">Overtime</label>
-                  <p class="label-6" id="lblOvertime">0.00</p>
-                  <label class="label-6">Leave</label>
-                  <p class="label-6" id="lblLeave">0</p>
+              <table class="tableLayout">
+                <tbody>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">Department</td>
+                    <td class="column3">Pay Period</td>
+                    <td class="column4">Total Earnings</td>
+                    <td class="column5">Total Deductions</td>
+                    <td class="column6">Net Pay</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
                 </div>
-
-                <div>
-                  <label class="label-6">SSS/GSIS</label>
-                  <p class="label-6" id="lblSssGsis">400</p>
-                  <label class="label-6">Pag-ibig</label>
-                  <p class="label-6" id="lblPagibig">400</p>
-                  <label class="label-6">Philhealth</label>
-                  <p class="label-6" id="lblPhilhealth">400</p>
-                  <label class="label-6">Other Deductions</label>
-                  <p class="label-6" id="lblOtherDeduction">500</p>
-                  <label class="label-6">&nbsp;</label>
-                  <p class="label-6">&nbsp;</p>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
                 </div>
               </div>
-
-              <hr />
-              <div>
-                <label class="label-6">Gross Pay</label>
-                <p class="label-6" id="lblGrossPay">20,000</p>
-                <label class="label-6">Net Pay</label>
-                <p class="label-6" id="lblNetPay">20,000</p>
-              </div>
-              <hr />
 
               <div class="modal-btn-container">
                 <a class="btn-sm btn-primary mx-3" id="btnCreatePayrollModal">
