@@ -1187,6 +1187,29 @@ function showCT() {
     console.log(e);
   }
 }
+function showP() {
+  try {
+    const card1 = document.querySelector("#payroll .container .card-1");
+    const card2 = document.querySelector("#payroll .container .card-2");
+
+    card2.classList.add("hidden");
+    card1.classList.remove("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function showPPA() {
+  try {
+    const card1 = document.querySelector("#payroll .container .card-1");
+    const card2 = document.querySelector("#payroll .container .card-2");
+
+    card2.classList.remove("hidden");
+    card1.classList.add("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 function openModalLeaveRemarks() {
   try {

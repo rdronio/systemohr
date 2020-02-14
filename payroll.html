@@ -54,9 +54,20 @@
 
           <!-- / menu -->
           <ul class="nav-list">
+            <li>
+              <a href="payrolldashboard.html"
+                ><i class="fas fa-tachometer-alt"></i>Payroll Dashboard</a
+              >
+            </li>
             <li class="current-page">
               <a href="payroll.html"
                 ><i class="fas fa-file-invoice"></i>Payroll</a
+              >
+            </li>
+            <li>
+              <!-- <a href="memoannouncements.html" -->
+              <a href="payrollunderconstruction.html"
+                ><i class="far fa-bell"></i>Memo / Notice</a
               >
             </li>
             <li>
@@ -73,20 +84,9 @@
                   <a href="payrollunderconstruction.html">Payroll Report</a>
                 </li>
                 <li>
-                  <a href="payrollunderconstruction.html">Government Report</a>
+                  <a href="payrollunderconstruction.html">Payslips</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <!-- <a href="memoannouncements.html" -->
-              <a href="payrollunderconstruction.html"
-                ><i class="far fa-bell"></i>Memo / Notice</a
-              >
-            </li>
-            <li>
-              <a href="importtimerecords.html"
-                ><i class="fas fa-download"></i>Import Time Records</a
-              >
             </li>
             <li>
               <a href="index.html"
@@ -118,7 +118,16 @@
           </div>
 
           <div class="container">
-            <h2>Payroll</h2>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showP()">Payroll</a>
+                </li>
+                <li>
+                  <a onclick="showPPA()">Pending Payroll Approval</a>
+                </li>
+              </ul>
+            </div>
             <div class="card card-1">
               <div class="">
                 <a
@@ -231,6 +240,55 @@
                   <a href="#">9</a>
                   <a href="#">10</a>
                   <a href="#">»</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-2 hidden">
+              <div class="container-sm">
+                <!-- Pending Payroll Approval  -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Pay Period</td>
+                      <td class="column2">Employee</td>
+                      <td class="column3">Position</td>
+                      <td class="column4">Net Pay</td>
+                      <td class="column5">Action</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">
+                        December 1, 2019 - December 15, 2019
+                      </td>
+                      <td class="column2">John Doe</td>
+                      <td class="column3">Web Developer</td>
+                      <td class="column4">20,000.00</td>
+                      <td class="column5">
+                        <a class="btn-table btn-secondary">Delete</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
                 </div>
               </div>
             </div>
