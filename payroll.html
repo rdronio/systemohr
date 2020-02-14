@@ -122,7 +122,7 @@
             <div class="card card-1">
               <div class="">
                 <a
-                  class="btn-xs btn-alt"
+                  class="btn-xs btn-alt hidden"
                   id="btnMassGeneratePayroll"
                   onclick="openModal(`#btnMassGeneratePayroll`)"
                 >
@@ -193,34 +193,7 @@
                     <td class="column2">Employee</td>
                     <td class="column3">Position</td>
                     <td class="column4">Net Pay</td>
-                    <td class="column5">Status</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
+                    <td class="column5">Action</td>
                   </tr>
                   <tr>
                     <td class="column1">
@@ -230,9 +203,11 @@
                     <td class="column3">Web Developer</td>
                     <td class="column4">20,000.00</td>
                     <td class="column5">
-                      <div class="btn-circle-container">
-                        <i class="btn-secondary btn">Print</i>
-                      </div>
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnViewPayslip`);"
+                        >View</a
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -333,7 +308,11 @@
                   name="drpDownEmployee"
                   id="drpDownEmployee"
                   class="select block"
+                  onchange="hidePayslipInfo();"
                 >
+                  <option>Select Employee</option>
+                  <option>All</option>
+                  <option>John Doe</option>
                 </select>
               </div>
 
@@ -663,6 +642,93 @@
                   onclick="closeModal(`#btnCloseMassPayroll`);"
                 >
                   Cancel
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
+            <div class="modal-content">
+              <h5>Payslip</h5>
+              <hr />
+              <div>
+                <div>
+                  <label class="label-6">Payroll Date</label>
+                  <p id="lblPayrollDate">Dec. 14, 2019</p>
+                  <label class="label-6">Pay Period</label>
+                  <p id="lblPayPeriod">Dec. 01, 2019 - Dec. 15, 2019</p>
+                  <label class="label-6">Name</label>
+                  <p id="lblName">John Doe</p>
+                  <label class="label-6">Position</label>
+                  <p id="lblPosition">Programmer</p>
+                  <label class="label-6">Department</label>
+                  <p id="lblDepartment">IT Department</p>
+                </div>
+                <div>
+                  <label class="label-6">TIN Number</label>
+                  <p id="lblTinNo">000-000-000-000</p>
+                  <label class="label-6">Philhealth Number</label>
+                  <p id="lblPhilHealth">00-000000000-0</p>
+                  <label class="label-6">HDMF Number</label>
+                  <p id="lblHDMF">0000-0000-0000</p>
+                  <label class="label-6">SSS/GSIS Number</label>
+                  <p id="lblSssGsis">00-0000000-0</p>
+                </div>
+              </div>
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p id="lblOtherDeduction">400</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
+                >
+                  Close
                 </a>
               </div>
             </div>

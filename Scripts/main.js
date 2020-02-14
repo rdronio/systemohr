@@ -286,6 +286,61 @@ function generatePayPeriod(
   }
 }
 
+function hidePayslipInfo() {
+  try {
+    const drpEmployee = document.querySelector("#drpDownEmployee");
+    const emp = drpEmployee.options[drpEmployee.selectedIndex].value;
+
+    const child7 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(7)"
+    );
+    const child11 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(11)"
+    );
+    const child12 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(12)"
+    );
+    const child13 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(13)"
+    );
+    const child14 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(14)"
+    );
+    const child15 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(15)"
+    );
+    const child16 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(16)"
+    );
+    const child17 = document.querySelector(
+      "#payroll .modal-content > *:nth-child(17)"
+    );
+
+    console.log();
+    if (emp === "All") {
+      child7.classList.add("hidden");
+      child11.classList.add("hidden");
+      child12.classList.add("hidden");
+      child13.classList.add("hidden");
+      child14.classList.add("hidden");
+      child15.classList.add("hidden");
+      child16.classList.add("hidden");
+      child17.classList.add("hidden");
+    } else {
+      child7.classList.remove("hidden");
+      child11.classList.remove("hidden");
+      child12.classList.remove("hidden");
+      child13.classList.remove("hidden");
+      child14.classList.remove("hidden");
+      child15.classList.remove("hidden");
+      child16.classList.remove("hidden");
+      child17.classList.remove("hidden");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 function calcBusinessDays(dDate1, dDate2) {
   try {
     // input given as Date objects

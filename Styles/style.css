@@ -2920,121 +2920,220 @@ nav ul li a span.fa {
   width: 55%;
 }
 
-#payroll .modal-content .label-6 {
+#payroll .modal-create-payroll .modal-content .label-6 {
   padding: 0.4rem 0 0.4rem 0;
   font-weight: 600;
 }
 
-#payroll .modal-content p {
+#payroll .modal-create-payroll .modal-content p {
   font-size: 0.8rem;
   padding: 0.4rem 0 0.4rem 0;
   font-weight: 500 !important;
 }
 
-#payroll .modal-content > div:nth-child(3) select {
+#payroll .modal-create-payroll .modal-content > div:nth-child(3) select {
   margin-left: 2rem;
 }
 
-#payroll .modal-content > div:nth-child(4) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(4) {
   display: block;
 }
 
-#payroll .modal-content > div:nth-child(4) input {
+#payroll .modal-create-payroll .modal-content > div:nth-child(4) input {
   margin-right: 0.75rem;
 }
 
-#payroll .modal-content > div:nth-child(5) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(5) {
   display: block;
 }
 
-#payroll .modal-content > div:nth-child(5) select {
+#payroll .modal-create-payroll .modal-content > div:nth-child(5) select {
   margin-right: 0.8rem;
 }
 
-#payroll .modal-content > div:nth-child(5) select:nth-child(2) {
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(5)
+  select:nth-child(2) {
   margin-left: 2rem;
 }
 
-#payroll .modal-content > div:nth-child(6) select:nth-child(2) {
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(6)
+  select:nth-child(2) {
   margin-left: 2rem;
 }
 
-#payroll .modal-content > div:nth-child(7) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(7) {
   margin: 1rem 0 !important;
 }
 
-#payroll .modal-content > *:nth-child(11) {
+#payroll .modal-create-payroll .modal-content > *:nth-child(11) {
   margin: 0.75rem 0 0;
 }
 
-#payroll .modal-content > div:nth-child(12) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(12) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+/* #payroll  .modal-create-payroll .modal-content > div:nth-child(12) {
   display: grid;
   grid-template-columns: 0.45fr 1.55fr 1fr 1fr;
   margin-right: 0;
   margin: 0.25rem 0;
-}
-#payroll .modal-content > div:nth-child(12) select {
+} */
+#payroll .modal-create-payroll .modal-content > div:nth-child(12) select {
   width: 9rem;
   padding: 0;
 
   justify-self: right;
   margin-right: 38%;
 }
-#payroll .modal-content > div:nth-child(12) > div {
+#payroll .modal-create-payroll .modal-content > div:nth-child(12) > div {
   display: flex;
   flex-direction: row;
   width: 50%;
 }
-#payroll .modal-content > div:nth-child(12) > div input {
+#payroll .modal-create-payroll .modal-content > div:nth-child(12) > div input {
 }
 
-#payroll .modal-content > div:nth-child(12) p {
+#payroll .modal-create-payroll .modal-content > div:nth-child(12) p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > *:nth-child(13) {
+#payroll .modal-create-payroll .modal-content > *:nth-child(13) {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-#payroll .modal-content > div:nth-child(14) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(14) {
   display: flex;
   flex-direction: row;
 }
 
-#payroll .modal-content > div:nth-child(14) > div:nth-child(1),
-#payroll .modal-content > div:nth-child(14) > div:nth-child(2) {
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(14)
+  > div:nth-child(1),
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(14)
+  > div:nth-child(2) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 50%;
 }
 
-#payroll .modal-content > div:nth-child(14) > div:nth-child(1) p,
-#payroll .modal-content > div:nth-child(14) > div:nth-child(2) p,
-#payroll .modal-content > div:nth-child(14) > div:nth-child(3) p {
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(14)
+  > div:nth-child(1)
+  p,
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(14)
+  > div:nth-child(2)
+  p,
+#payroll
+  .modal-create-payroll
+  .modal-content
+  > div:nth-child(14)
+  > div:nth-child(3)
+  p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > div:nth-child(16) {
+#payroll .modal-create-payroll .modal-content > div:nth-child(16) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
 }
 
-#payroll .modal-content > div:nth-child(16) p {
+#payroll .modal-create-payroll .modal-content > div:nth-child(16) p {
   text-align: right;
   padding-right: 60%;
 }
 
-#payroll .modal-content > div:nth-child(16) > label,
-#payroll .modal-content > div:nth-child(16) > p {
+#payroll .modal-create-payroll .modal-content > div:nth-child(16) > label,
+#payroll .modal-create-payroll .modal-content > div:nth-child(16) > p {
   margin-top: 0;
 }
 
-#payroll .modal-content > *:nth-child(17) {
+#payroll .modal-create-payroll .modal-content > *:nth-child(17) {
   margin-top: 0;
+}
+
+/* view payslip */
+#payroll .modal-view-payslip .modal-content p {
+  font-size: 0.8rem;
+  padding: 0.4rem 0 0.4rem 0;
+}
+
+#payroll .modal-view-payslip .modal-content .label-6 {
+  padding: 0.4rem 0 0.4rem 0;
+  font-weight: 600;
+}
+
+#payroll .modal-view-payslip .modal-content hr {
+  margin: 0;
+}
+
+#payroll .modal-view-payslip .modal-content h5 {
+  margin-bottom: 0.75rem;
+}
+#payroll .modal-view-payslip .modal-content > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+#payroll .modal-view-payslip .modal-content > div:nth-child(3) > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#payroll .modal-view-payslip .modal-content > div:nth-child(3) > div p {
+  padding: 0 0 0.4rem 0;
+}
+#payroll .modal-view-payslip .modal-content > div:nth-child(5) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+}
+
+#payroll .modal-view-payslip .modal-content > div:nth-child(7) {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+#payroll
+  .modal-view-payslip
+  .modal-content
+  > div:nth-child(7)
+  > div:nth-child(1),
+#payroll
+  .modal-view-payslip
+  .modal-content
+  > div:nth-child(7)
+  > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+}
+
+#payroll .modal-view-payslip .modal-content > div:nth-child(9) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
 }
 
 /* ========[ Payslip ]======== */
