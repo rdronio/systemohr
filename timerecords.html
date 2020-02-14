@@ -152,7 +152,7 @@
                   <a onclick="showTR()">Time Records</a>
                 </li>
                 <li>
-                  <a onclick="showPTA()">Pending Time Alteration</a>
+                  <a onclick="showPTA()">Time Alteration</a>
                 </li>
               </ul>
             </div>
@@ -189,20 +189,6 @@
                 <a class="btn btn-secondary">Clear</a>
               </div>
 
-              <div>
-                <label class="label-6 block">Show record status</label>
-                <select
-                  name="showEmployeeBy"
-                  id="showEmployeeBy"
-                  class="select"
-                  onchange=""
-                >
-                  <option value="">All</option>
-                  <option value="department">Approved</option>
-                  <option value="position">Rejected</option>
-                </select>
-              </div>
-
               <!-- Time Records -->
               <table class="tableLayout">
                 <tbody>
@@ -213,8 +199,6 @@
                     <td class="column4">Total (hour/s)</td>
                     <td class="column5">Overtime (hour/s)</td>
                     <td class="column6">Tardiness (min/s)</td>
-                    <td class="column7">Status</td>
-                    <td class="column8">Remarks</td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -223,11 +207,6 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
-                    <td class="column7">Rejected</td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nihil, sed!
-                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -236,11 +215,6 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
-                    <td class="column7">Rejected</td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nihil, sed!
-                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -249,11 +223,6 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
-                    <td class="column7">Rejected</td>
-                    <td class="column8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nihil, sed!
-                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -262,10 +231,6 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
-                    <td class="column7">Approved</td>
-                    <td class="column8">
-                      Not Applicable
-                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -296,6 +261,20 @@
             <div class="card card-2 hidden">
               <div class="container-sm">
                 <!-- Pending Time Alteration -->
+                <div>
+                  <label class="label-6 block">Show record status</label>
+                  <select
+                    name="showEmployeeBy"
+                    id="showEmployeeBy"
+                    class="select"
+                    onchange=""
+                  >
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                  </select>
+                </div>
                 <table class="tableLayout">
                   <tbody>
                     <tr>
@@ -303,7 +282,6 @@
                       <td class="column2">Type</td>
                       <td class="column3">Time</td>
                       <td class="column4">Reason</td>
-                      <td class="column5">Action</td>
                     </tr>
                     <tr>
                       <td class="column1">November 18, 2019</td>
@@ -312,9 +290,6 @@
                       <td class="column4">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit.
-                      </td>
-                      <td class="column5">
-                        <a class="btn-table btn-secondary">Cancel </a>
                       </td>
                     </tr>
                   </tbody>
@@ -522,4 +497,4 @@
     </form>
     <script src="Scripts/main.js"></script>
   </body>
-</html>
+</html> 
