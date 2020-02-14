@@ -54,9 +54,20 @@
 
           <!-- / menu -->
           <ul class="nav-list">
+            <li>
+              <a href="payrolldashboard.html"
+                ><i class="fas fa-tachometer-alt"></i>Payroll Dashboard</a
+              >
+            </li>
             <li class="current-page">
               <a href="payroll.html"
                 ><i class="fas fa-file-invoice"></i>Payroll</a
+              >
+            </li>
+            <li>
+              <!-- <a href="memoannouncements.html" -->
+              <a href="payrollunderconstruction.html"
+                ><i class="far fa-bell"></i>Memo / Notice</a
               >
             </li>
             <li>
@@ -73,20 +84,9 @@
                   <a href="payrollunderconstruction.html">Payroll Report</a>
                 </li>
                 <li>
-                  <a href="payrollunderconstruction.html">Government Report</a>
+                  <a href="payrollunderconstruction.html">Payslips</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <!-- <a href="memoannouncements.html" -->
-              <a href="payrollunderconstruction.html"
-                ><i class="far fa-bell"></i>Memo / Notice</a
-              >
-            </li>
-            <li>
-              <a href="importtimerecords.html"
-                ><i class="fas fa-download"></i>Import Time Records</a
-              >
             </li>
             <li>
               <a href="index.html"
@@ -118,11 +118,20 @@
           </div>
 
           <div class="container">
-            <h2>Payroll</h2>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showP()">Payroll</a>
+                </li>
+                <li>
+                  <a onclick="showPPA()">Pending Payroll Approval</a>
+                </li>
+              </ul>
+            </div>
             <div class="card card-1">
               <div class="">
                 <a
-                  class="btn-xs btn-alt"
+                  class="btn-xs btn-alt hidden"
                   id="btnMassGeneratePayroll"
                   onclick="openModal(`#btnMassGeneratePayroll`)"
                 >
@@ -144,14 +153,14 @@
                   name="txtDateFrom"
                   type="text"
                   id="txtDateFrom"
-                  class="datePickerPayroll"
+                  class="startDatePicker"
                 />
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
                   name="txtDateTo"
                   type="text"
                   id="txtDateTo"
-                  class="datePickerPayroll"
+                  class="endDatePicker"
                 />
                 <a class="btn-sm btn-secondary">Clear</a>
               </div>
@@ -193,34 +202,7 @@
                     <td class="column2">Employee</td>
                     <td class="column3">Position</td>
                     <td class="column4">Net Pay</td>
-                    <td class="column5">Status</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">
-                      December 1, 2019 - December 15, 2019
-                    </td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">Web Developer</td>
-                    <td class="column4">20,000.00</td>
-                    <td class="column5">Pending Approval</td>
+                    <td class="column5">Action</td>
                   </tr>
                   <tr>
                     <td class="column1">
@@ -230,9 +212,11 @@
                     <td class="column3">Web Developer</td>
                     <td class="column4">20,000.00</td>
                     <td class="column5">
-                      <div class="btn-circle-container">
-                        <i class="btn-secondary btn">Print</i>
-                      </div>
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnViewPayslip`);"
+                        >View</a
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -259,6 +243,55 @@
                 </div>
               </div>
             </div>
+
+            <div class="card card-2 hidden">
+              <div class="container-sm">
+                <!-- Pending Payroll Approval  -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Pay Period</td>
+                      <td class="column2">Employee</td>
+                      <td class="column3">Position</td>
+                      <td class="column4">Net Pay</td>
+                      <td class="column5">Action</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">
+                        December 1, 2019 - December 15, 2019
+                      </td>
+                      <td class="column2">John Doe</td>
+                      <td class="column3">Web Developer</td>
+                      <td class="column4">20,000.00</td>
+                      <td class="column5">
+                        <a class="btn-table btn-secondary">Delete</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Modal Section -->
@@ -267,22 +300,39 @@
             <div class="modal-content">
               <h5>Generate Payroll</h5>
               <hr />
-
               <div>
                 <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreqModal"
+                  id="drpDownPayFreqModal"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="label-6 block">Pay Period</label>
                 <label for="txtDateFromModal" class="label-6">From: </label>
                 <input
                   name="txtDateFromModal"
                   type="text"
                   id="txtDateFromModal"
-                  class="datePickerPayroll"
+                  class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
                 <label for="txtDateToModal" class="label-6">To: </label>
                 <input
                   name="txtDateToModal"
                   type="text"
                   id="txtDateToModal"
-                  class="datePickerPayroll"
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
               </div>
 
@@ -316,7 +366,11 @@
                   name="drpDownEmployee"
                   id="drpDownEmployee"
                   class="select block"
+                  onchange="hidePayslipInfo();"
                 >
+                  <option>Select Employee</option>
+                  <option>All</option>
+                  <option>John Doe</option>
                 </select>
               </div>
 
@@ -335,13 +389,13 @@
               <div class="hidden">
                 <label class="label-6">With Deductions</label>
                 <div class="modal-rd-container">
-                  <label for="opt1" class="radio">
-                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                  <label for="optYes" class="radio">
+                    <input type="radio" name="rdo" id="optYes" class="hidden" />
                     <span class="label"></span>Yes
                   </label>
 
-                  <label for="opt2" class="radio">
-                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                  <label for="optNo" class="radio">
+                    <input type="radio" name="rdo" id="optNo" class="hidden" />
                     <span class="label"></span>No
                   </label>
                 </div>
@@ -350,13 +404,23 @@
               <div class="hidden">
                 <label class="label-6">Type</label>
                 <div class="modal-rd-container">
-                  <label for="opt1" class="radio">
-                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                  <label for="optDaily" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optDaily"
+                      class="hidden"
+                    />
                     <span class="label"></span>Daily
                   </label>
 
-                  <label for="opt2" class="radio">
-                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                  <label for="optMonthly" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optMonthly"
+                      class="hidden"
+                    />
                     <span class="label"></span>Monthly
                   </label>
                 </div>
@@ -434,6 +498,21 @@
             <div class="modal-content">
               <h5>Generate Payroll</h5>
               <hr />
+              <div>
+                <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreqModal2"
+                  id="drpDownPayFreqModal2"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
 
               <div>
                 <label class="label-6 block">Pay Period</label>
@@ -442,14 +521,16 @@
                   name="txtDateFromModal2"
                   type="text"
                   id="txtDateFromModal2"
-                  class="datePickerPayroll"
+                  class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
                 />
                 <label for="txtDateToModal2" class="label-6">To: </label>
                 <input
                   name="txtDateToModal2"
                   type="text"
                   id="txtDateToModal2"
-                  class="datePickerPayroll"
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
                 />
               </div>
 
@@ -487,13 +568,23 @@
               <div class="hidden">
                 <label class="label-6">With Deductions</label>
                 <div class="modal-rd-container">
-                  <label for="opt1" class="radio">
-                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                  <label for="optYesModal2" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optYesModal2"
+                      class="hidden"
+                    />
                     <span class="label"></span>Yes
                   </label>
 
-                  <label for="opt2" class="radio">
-                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                  <label for="optNoModal2" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optNoModal2"
+                      class="hidden"
+                    />
                     <span class="label"></span>No
                   </label>
                 </div>
@@ -502,13 +593,23 @@
               <div class="hidden">
                 <label class="label-6">Type</label>
                 <div class="modal-rd-container">
-                  <label for="opt1" class="radio">
-                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                  <label for="optDailyModal2" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optDailyModal2"
+                      class="hidden"
+                    />
                     <span class="label"></span>Daily
                   </label>
 
-                  <label for="opt2" class="radio">
-                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                  <label for="optMonthlyModal2" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optMonthlyModal2"
+                      class="hidden"
+                    />
                     <span class="label"></span>Monthly
                   </label>
                 </div>
@@ -516,31 +617,40 @@
 
               <div class="hidden">
                 <label class="label-6">Absent (days)</label>
-                <input name="txtAbsent" type="text" id="txtAbsent" />
+                <input
+                  name="txtAbsentModal2"
+                  type="text"
+                  id="txtAbsentModal2"
+                />
                 <label class="label-6">Overtime (hours)</label>
-                <input name="txtOvertime" type="text" id="txtOvertime" />
+                <input
+                  name="txtOvertimeModal2"
+                  type="text"
+                  id="txtOvertimeModal2"
+                />
                 <label class="label-6">Late (minutes)</label>
-                <input name="txtLate" type="text" id="txtLate" />
+                <input name="txtLateModal2" type="text" id="txtLateModal2" />
               </div>
 
               <hr />
               <div>
-                <div>
-                  <label for="drpDownEmployee2" class="label-6 block"
-                    >Employee</label
-                  >
-                  <select
-                    name="drpDownEmployee2"
-                    id="drpDownEmployee2"
-                    class="select block"
-                  >
-                  </select>
-                </div>
+                <label for="drpDownEmployee2" class="label-6 block"
+                  >Employee</label
+                >
+                <select
+                  name="drpDownEmployee2"
+                  id="drpDownEmployee2"
+                  class="select block"
+                >
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                  <option value="">John Doe</option>
+                </select>
 
-                <div>
-                  <label class="label-6">Basic Salary</label>
-                  <p class="label-6" id="lblBasicSalary">0.00</p>
-                </div>
+                <label class="label-6">Basic Salary</label>
+                <p class="label-6" id="lblBasicSalary">0.00</p>
               </div>
               <hr />
 
@@ -590,6 +700,93 @@
                   onclick="closeModal(`#btnCloseMassPayroll`);"
                 >
                   Cancel
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
+            <div class="modal-content">
+              <h5>Payslip</h5>
+              <hr />
+              <div>
+                <div>
+                  <label class="label-6">Payroll Date</label>
+                  <p id="lblPayrollDate">Dec. 14, 2019</p>
+                  <label class="label-6">Pay Period</label>
+                  <p id="lblPayPeriod">Dec. 01, 2019 - Dec. 15, 2019</p>
+                  <label class="label-6">Name</label>
+                  <p id="lblName">John Doe</p>
+                  <label class="label-6">Position</label>
+                  <p id="lblPosition">Programmer</p>
+                  <label class="label-6">Department</label>
+                  <p id="lblDepartment">IT Department</p>
+                </div>
+                <div>
+                  <label class="label-6">TIN Number</label>
+                  <p id="lblTinNo">000-000-000-000</p>
+                  <label class="label-6">Philhealth Number</label>
+                  <p id="lblPhilHealth">00-000000000-0</p>
+                  <label class="label-6">HDMF Number</label>
+                  <p id="lblHDMF">0000-0000-0000</p>
+                  <label class="label-6">SSS/GSIS Number</label>
+                  <p id="lblSssGsis">00-0000000-0</p>
+                </div>
+              </div>
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p id="lblOtherDeduction">400</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
+                >
+                  Close
                 </a>
               </div>
             </div>
