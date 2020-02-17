@@ -420,6 +420,63 @@ iframe {
   background: #8d0c2c;
 }
 
+.btn-dropdown {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  margin-top: -4px;
+  outline: none;
+  padding: 5px 0;
+  position: absolute;
+  top: 24%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  margin-left: 0.5rem !important;
+  /* height: 100px; */
+  /* overflow: visible; */
+}
+
+.btn-dropdown > a {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  line-height: 23px;
+  outline: 0;
+  padding: 3px 16px;
+  text-decoration: inherit;
+  white-space: nowrap;
+  font-size: 0.7rem;
+  z-index: 10;
+}
+
+.btn-tools {
+  background: #00b159;
+  color: #fff !important;
+}
+.btn-tools:hover {
+  background: #55cb90;
+}
+.btn-tools:active {
+  background: #00763b;
+}
+
+.btn-tools-container {
+  margin-top: 0.5rem;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  /* overflow: visible; */
+  /* height: 3rem; */
+  z-index: 10;
+  /* align-items: center !important; */
+  /* text-align: right !important;
+  padding-left: auto; */
+}
+.btn-tools-container > div {
+  margin: 0 !important;
+}
+
 /* .btn-circle-container {
   display: flex;
   justify-content: space-evenly;
@@ -835,11 +892,12 @@ iframe {
 }
 
 .pagination-container {
-  text-align: right;
+  text-align: right !important;
 }
 
 .pagination {
   display: inline-block;
+  margin-left: auto;
 }
 
 .showmore-container {
@@ -2503,6 +2561,106 @@ nav ul li a span.fa {
 
 #dtr-report .container .card-1 div:nth-child(2) select {
   margin-right: 0.5rem;
+}
+
+#dtr-report .modal-content {
+  width: 60%;
+}
+
+#dtr-report .modal-content p {
+  font-size: 0.8rem;
+}
+#dtr-report .modal-view-dtr .modal-content > div .profile_pic img {
+  position: relative;
+  display: inline-block;
+  width: 80;
+  height: 80px;
+  z-index: 2;
+}
+
+#dtr-report .modal-view-dtr .modal-content .summary-employee-info-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #999;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  > div:nth-child(2) {
+  width: 15%;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  > div:nth-child(2)
+  .profile_pic {
+  margin: auto;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  div
+  .summary-employee-info-header {
+  margin: 0;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  div
+  .summary-employee-info-header
+  label {
+  padding: 0;
+}
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  div
+  .summary-employee-info-content {
+  display: flex;
+  flex-direction: row;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  div
+  .summary-employee-info-content
+  > div {
+  margin-right: 2.5rem;
+}
+
+#dtr-report
+  .modal-view-dtr
+  .modal-content
+  .summary-employee-info-container
+  div
+  .summary-employee-info-content
+  > div
+  label {
+  display: block;
+  padding: 0.4rem 0 0.4rem 0;
 }
 
 /* ========[ Employee Leave Records ]======== */
