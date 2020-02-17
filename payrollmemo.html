@@ -15,17 +15,15 @@
       href="Styles/mobile.css"
     />
     <link rel="stylesheet" href="Styles/jquery/jquery-ui-custom.css" />
-    <link rel="stylesheet" href="Styles/jquery/jquery.timepicker.css" />
 
     <!-- JavaScript -->
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/jquery-ui.min.js"></script>
-    <script src="Scripts/jquery.timepicker.min.js"></script>
 
-    <title>HRIS, Payroll & Time Keeping System.</title>
+    <title>HRIS, Payroll & Time Keeping System</title>
   </head>
   <body>
-    <form action="#" autocomplete="off">
+    <form id="payrollmemo" action="#" autocomplete="off">
       <!-- main -->
       <div class="main">
         <!-- nav -->
@@ -33,7 +31,7 @@
           <div class="logo">
             <a href="home.html" class="logo-link">
               <h1>LOGO HERE</h1>
-              <p>HRIS, Payroll & Time Keeping System.</p>
+              <p>HRIS, Payroll & Time Keeping System</p>
             </a>
           </div>
 
@@ -49,7 +47,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome</span>
-              <h2>John Doe</h2>
+              <h2>HR</h2>
               <p>&nbsp;</p>
             </div>
           </div>
@@ -57,62 +55,36 @@
           <!-- / menu -->
           <ul class="nav-list">
             <li>
-              <a href="dashboard.html"
-                ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+              <a href="payrolldashboard.html"
+                ><i class="fas fa-tachometer-alt"></i>Payroll Dashboard</a
               >
             </li>
             <li class="current-page">
-              <a href="timerecords.html"
-                ><i class="fas fa-user-clock"></i>Time Records</a
+              <a href="payroll.html"
+                ><i class="fas fa-file-invoice"></i>Payroll</a
               >
             </li>
             <li>
-              <a href="profile.html"
-                ><i class="fas fa-address-card"></i>Profile</a
+              <!-- <a href="memoannouncements.html" -->
+              <a href="payrollunderconstruction.html"
+                ><i class="far fa-bell"></i>Memo / Notice</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-history"></i>Application<span
+                ><i class="fas fa-chart-area"></i>Reports<span
                   class="fa fa-chevron-down"
                 ></span
               ></a>
               <ul class="nav child_menu hidden">
                 <li>
-                  <a href="leaverecords.html">Leave Records</a>
+                  <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
                 <li>
-                  <a href="overtimerecords.html">Overtime Records</a>
+                  <a href="payrollunderconstruction.html">Payroll Report</a>
                 </li>
                 <li>
-                  <a href="expense.html">Expense Records</a>
-                </li>
-                <li>
-                  <a href="undertime.html">Undertime Records</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <!-- <a href="team.html"><i class="fas fa-users"></i>Team</a> -->
-              <a href="underconstruction.html"
-                ><i class="fas fa-users"></i>Team</a
-              >
-            </li>
-            <li>
-              <a href="projecttask.html"
-                ><i class="fas fa-tasks"></i>Project/Task</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chart-area"></i>Report<span
-                  class="fa fa-chevron-down"
-                ></span
-              ></a>
-              <ul class="nav child_menu hidden">
-                <li>
-                  <a href="payslip.html">Payslip</a>
+                  <a href="payrollunderconstruction.html">Payslips</a>
                 </li>
               </ul>
             </li>
@@ -130,8 +102,8 @@
           </div>
         </nav>
 
-        <!-- Time Records -->
-        <section id="time-records" class="content">
+        <!-- Payroll -->
+        <section id="payrollmemo" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -146,95 +118,84 @@
           </div>
 
           <div class="container">
-            <div id="tab">
-              <ul class="tab-list" onclick="selectTab();">
-                <li class="current-tab">
-                  <a onclick="showTR()">Time Records</a>
-                </li>
-                <li>
-                  <a onclick="showPTA()">Time Alteration</a>
-                </li>
-              </ul>
-            </div>
             <div class="card card-1">
-              <div>
+              <div class="">
                 <a
-                  class="btn-sm btn-primary"
-                  onclick="openModal(`#btnTimeAlteration`);"
-                  >Time Alteration
+                  class="btn-xs btn-alt"
+                  id="btnMassGeneratePayroll"
+                  onclick="openModal(`#btnAddPayrollMemo`)"
+                >
+                  Compose
                 </a>
               </div>
+
               <div>
-                <label class="label-6">Filter Date</label>
-                <br />
+                <label class="label-6 block">Filter Date:</label>
                 <label for="txtDateFrom" class="label-6">From: </label>
                 <input
                   name="txtDateFrom"
                   type="text"
                   id="txtDateFrom"
-                  class="datePicker"
+                  class="startDatePicker"
                 />
-                <a class="icon"><i class="far fa-calendar-alt"></i></a>
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
                   name="txtDateTo"
                   type="text"
                   id="txtDateTo"
-                  class="datePicker"
+                  class="endDatePicker"
                 />
-                <a class="icon"><i class="far fa-calendar-alt"></i></a>
+                <a class="btn-sm btn-secondary">Clear</a>
               </div>
 
               <div>
-                <a class="btn btn-secondary">Clear</a>
+                <label for="showEmployeeBy" class="label-6 block"
+                  >Type</label
+                >
+                <select
+                  name="payrollmemoType"
+                  id="payrollmemoType"
+                  class="select"
+                  onchange="getEmployeeBy()"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="memo">Memo</option>
+                  <option value="notice">Notice</option>
+                </select>
               </div>
 
-              <!-- Time Records -->
+              <div>
+                <label for="searchEmployee" class="label-6 block"
+                  >Search Memo/Notice</label
+                >
+                <input type="" value="" id="searchEmployee" />
+              </div>
+
+              <!-- Payroll -->
               <table class="tableLayout">
                 <tbody>
                   <tr>
                     <td class="column1">Date</td>
-                    <td class="column2">Time In</td>
-                    <td class="column3">Time Out</td>
-                    <td class="column4">Total (hour/s)</td>
-                    <td class="column5">Overtime (hour/s)</td>
-                    <td class="column6">Tardiness (min/s)</td>
+                    <td class="column2">Subject</td>
+                    <td class="column3">Type</td>
+                    <td class="column4">Action</td>
                   </tr>
                   <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">0.00</td>
-                    <td class="column6">0.00</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">0.00</td>
-                    <td class="column6">0.00</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">0.00</td>
-                    <td class="column6">0.00</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">November 20, 2019</td>
-                    <td class="column2">09:00 AM</td>
-                    <td class="column3">05:00 PM</td>
-                    <td class="column4">8.00</td>
-                    <td class="column5">0.00</td>
-                    <td class="column6">0.00</td>
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">Memo 1</td>
+                    <td class="column3">Memo</td>
+                    <td class="column4">
+                        <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnViewMemoNotice`);"
+                        >View</a
+                      >
+                    </td>
                   </tr>
                 </tbody>
               </table>
-
               <div class="pagination-container">
                 <div class="showmore-container">
                   <a class="btn-showmore" href="#"
@@ -257,124 +218,270 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="card card-2 hidden">
-              <div class="container-sm">
-                <!-- Pending Time Alteration -->
+          <!-- Modal Section -->
+          <!-- btnMassGeneratePayroll -->
+          <div class="modal modal-payrollmemo">
+            <div class="modal-content">
+              <h5>Compose</h5>
+              <hr />
+              <div>
+              <div>
+              <div>
+                <label class="label-6 block">Subject</label>
+                <input
+                  name="txtMemoSubject"
+                  type="text"
+                  id="txtMemoSubject"
+                />
+              </div>
+
+              <div>
+                <label class="label-6 block">Description</label>
+                <textarea name="txtMemoDesc" id="txtMemoDesc"></textarea>
+              </div>
+              <div>
+                <label class="label-6 block">Attach Files</label>
+                <input type="file" name="photo" id="photo" accept="image/*" />
+              </div>
+            </div>
+
+              <div>
                 <div>
-                  <label class="label-6 block">Show record status</label>
-                  <select
-                    name="showEmployeeBy"
-                    id="showEmployeeBy"
-                    class="select"
-                    onchange=""
-                  >
-                    <option value="all">All</option>
-                    <option value="pending">Pending</option>
-                    <option value="approved">Approved</option>
-                    <option value="rejected">Rejected</option>
-                  </select>
+                    <label class="label-6 block">Recipient</label>
+                    <div class="modal-rd-container">
+                        <label for="optAll" class="radio">
+                        <input
+                            type="radio"
+                            name="memoRecipient"
+                            id="optAll"
+                            class="hidden"
+                        />
+                        <span class="label"></span>All
+                        </label>
+
+                        <label for="optCustom" class="radio">
+                        <input
+                            type="radio"
+                            name="memoRecipient"
+                            id="optCustom"
+                            class="hidden"
+                        />
+                        <span class="label"></span>Custom
+                        </label>
+                    </div>
                 </div>
-                <table class="tableLayout">
-                  <tbody>
-                    <tr>
-                      <td class="column1">Date</td>
-                      <td class="column2">Type</td>
-                      <td class="column3">Time</td>
-                      <td class="column4">Reason</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 18, 2019</td>
-                      <td class="column2">Time-in</td>
-                      <td class="column3">08:20:00</td>
-                      <td class="column4">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="pagination-container">
-                  <div class="showmore-container">
-                    <a class="btn-showmore" href="#"
-                      ><i class="fas fa-chevron-down"></i>More Results</a
+                
+
+                <div>
+                    <label class="label-6 block">Type</label>
+                    <select
+                    name="drpDownMemoType"
+                    id="drpDownMemoType"
+                    class="select block drpDownType"
                     >
-                  </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
-                  </div>
+                    <option value="">--Please choose an option--</option>
+                    <option value="memo">Memo</option>
+                    <option value="notice">Notice</option>
+                    </select>
                 </div>
+
+                <div>
+                    <label for="showEmployeeByCategoryModal2" class="label-6 block"
+                    >Select Department</label
+                    >
+                    <select
+                    name="showEmployeeByCategoryModal2"
+                    id="showEmployeeByCategoryModal2"
+                    class="select"
+                    >
+                    <option value="all">All</option>
+                    <option value="all">IT Department</option>
+                    <option value="all">Marketing Department</option>
+                    <option value="all">Sales Department</option>
+                    <option value="all">HR Department</option>
+                    </select>
+
+                    <select
+                    name="showEmployeeByModal"
+                    id="showEmployeeByModal"
+                    class="select hidden"
+                    >
+                    <option value="">--Please choose an option--</option>
+                    <option value="department">Programmer</option>
+                    <option value="position">Marketing</option>
+                    </select>
+                </div>
+
+                
+                </div>
+            </div>
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-green mx-3" id="btnComputeModal"
+                  >Compute</a
+                >
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  id="btnClearModal2"
+                  onclick="reset(`payroll`)"
+                  >Clear</a
+                >
+              </div>
+
+              <div class="hidden">
+                <label for="searchEmployee" class="label-6 block"
+                  >Search Employee ID/Name</label
+                >
+                <input type="" value="" id="searchEmployee" />
+              </div>
+
+              <table class="tableLayout">
+                <tbody>
+                  <tr>
+                    <td class="column1">Employee ID</td>
+                    <td class="column2">Employee</td>
+                    <td class="column3">Department</td>
+                    <td class="column4">Position</td>
+                    <td class="column5">Email</td>
+                    <td class="column6">ACtion</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">0001</td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">
+                      Programming
+                    </td>
+                    <td class="column4">Back End</td>
+                    <td class="column5">john.doe@gmail.com</td>
+                    <td class="column6">        <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnDeleteMemoRec`);"
+                        >Delete</a
+                      ></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
+              </div>
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnCreatePayrollModal">
+                  Mass Generate
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnClosePayrollMemo`);"
+                >
+                  Cancel
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Modal Section -->
-          <!-- btnTimeAlteration -->
-          <div class="modal modal-time-alteration">
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
             <div class="modal-content">
-              <!-- <span class="modal-close-btn" onclick="closeModal();"
-                >&times;</span
-              > -->
-              <h5>Time Alteration Form</h5>
+              <h5>Payslip</h5>
               <hr />
-              <div class="">
-                <label for="txtDate" class="label-6">Date: </label>
-                <input
-                  name="txtDate"
-                  type="text"
-                  id="txtDate"
-                  class="datePicker"
-                />
-
-                <div class="modal-chk-container">
-                  <label for="chkIn" class="label-6">
-                    <input type="checkbox" name="chkInOut" id="chkIn" />In
-                  </label>
-
-                  <label for="chkOut" class="label-6">
-                    <input type="checkbox" name="chkInOut" id="chkOut" />Out
-                  </label>
+              <div>
+                <div>
+                  <label class="label-6">Payroll Date</label>
+                  <p id="lblPayrollDate">Dec. 14, 2019</p>
+                  <label class="label-6">Pay Period</label>
+                  <p id="lblPayPeriod">Dec. 01, 2019 - Dec. 15, 2019</p>
+                  <label class="label-6">Name</label>
+                  <p id="lblName">John Doe</p>
+                  <label class="label-6">Position</label>
+                  <p id="lblPosition">Programmer</p>
+                  <label class="label-6">Department</label>
+                  <p id="lblDepartment">IT Department</p>
                 </div>
-                <!-- <label class="label-6">Time In</label>
-                <input name="txtTimeIn" type="checkbox" id="txtTimeInNew"  class=""/>
-                <label class="label-6">Time Out</label>
-                <input name="txtTimeOut" type="checkbox" id="txtTimeOutNew"  class=""/> -->
-
-                <label for="txtTime" class="label-6">Time</label>
-                <!-- <input type="time" id="txtTime" name="txtTime" min="09:00" max="18:00" required> -->
-                <input
-                  type="text"
-                  id="txtTime"  
-                  name="txtTime"
-                  class="timepicker"
-                />
-
-                <label for="txtAreaReasonTA" class="label-6">Reason</label>
-                <textarea
-                  name="txtAreaReasonTA"
-                  id="txtAreaReasonTA"
-                ></textarea>
+                <div>
+                  <label class="label-6">TIN Number</label>
+                  <p id="lblTinNo">000-000-000-000</p>
+                  <label class="label-6">Philhealth Number</label>
+                  <p id="lblPhilHealth">00-000000000-0</p>
+                  <label class="label-6">HDMF Number</label>
+                  <p id="lblHDMF">0000-0000-0000</p>
+                  <label class="label-6">SSS/GSIS Number</label>
+                  <p id="lblSssGsis">00-0000000-0</p>
+                </div>
               </div>
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p id="lblOtherDeduction">400</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
               <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnAlterTime"
-                  >Alter Time</a
-                >
+                <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a>
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  onclick="closeModal(`#btnCloseTimeAlteration`);"
-                  >Cancel</a
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
                 >
+                  Close
+                </a>
               </div>
             </div>
           </div>
@@ -497,4 +604,4 @@
     </form>
     <script src="Scripts/main.js"></script>
   </body>
-</html> 
+</html>
