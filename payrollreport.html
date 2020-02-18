@@ -23,7 +23,7 @@
     <title>HRIS, Payroll & Time Keeping System</title>
   </head>
   <body>
-    <form id="payrollmemo" action="#" autocomplete="off">
+    <form id="payroll-report" action="#" autocomplete="off">
       <!-- main -->
       <div class="main">
         <!-- nav -->
@@ -47,7 +47,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome</span>
-              <h2>HR</h2>
+              <h2>HR Payroll</h2>
               <p>&nbsp;</p>
             </div>
           </div>
@@ -59,14 +59,13 @@
                 ><i class="fas fa-tachometer-alt"></i>Payroll Dashboard</a
               >
             </li>
-            <li class="current-page">
+            <li>
               <a href="payroll.html"
                 ><i class="fas fa-file-invoice"></i>Payroll</a
               >
             </li>
             <li>
-              <!-- <a href="memoannouncements.html" -->
-              <a href="payrollunderconstruction.html"
+              <a href="memonotice.html"
                 ><i class="far fa-bell"></i>Memo / Notice</a
               >
             </li>
@@ -76,15 +75,15 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu hidden">
+              <ul class="nav child_menu">
                 <li>
                   <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
-                <li>
-                  <a href="payrollunderconstruction.html">Payroll Report</a>
+                <li class="current-page">
+                  <a href="payrollreport.html">Payroll Report</a>
                 </li>
                 <li>
-                  <a href="payrollunderconstruction.html">Payslips</a>
+                  <a href="payrollpayslip.html">Payslips</a>
                 </li>
               </ul>
             </li>
@@ -102,8 +101,8 @@
           </div>
         </nav>
 
-        <!-- Payroll -->
-        <section id="payrollmemo" class="content">
+        <!-- Payroll Report -->
+        <section id="payroll-report" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -118,20 +117,36 @@
           </div>
 
           <div class="container">
-            <h3> Memo/Notice </h3>
+            <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab">
+                  <a onclick="showP()">Payroll</a>
+                </li>
+                <li>
+                  <a onclick="showPPA()">Pending Payroll Approval</a>
+                </li>
+              </ul>
+            </div>
             <div class="card card-1">
               <div class="">
                 <a
                   class="btn-xs btn-alt"
                   id="btnMassGeneratePayroll"
-                  onclick="openModal(`#btnAddPayrollMemo`)"
+                  onclick="openModal(`#btnMassGeneratePayroll`)"
                 >
-                  Compose
+                  Mass Generate Payroll
+                </a>
+                <a
+                  class="btn-xs btn-alt"
+                  id="btnCreatePayroll"
+                  onclick="openModal(`#btnCreatePayroll`);"
+                >
+                  Create Payroll
                 </a>
               </div>
 
               <div>
-                <label class="label-6 block">Filter Date:</label>
+                <label class="label-6 block">Pay Period</label>
                 <label for="txtDateFrom" class="label-6">From: </label>
                 <input
                   name="txtDateFrom"
@@ -151,23 +166,29 @@
 
               <div>
                 <label for="showEmployeeBy" class="label-6 block"
-                  >Type</label
+                  >Show Employee by</label
                 >
                 <select
-                  name="payrollmemoType"
-                  id="payrollmemoType"
+                  name="showEmployeeBy"
+                  id="showEmployeeBy"
                   class="select"
                   onchange="getEmployeeBy()"
                 >
                   <option value="">--Please choose an option--</option>
-                  <option value="memo">Memo</option>
-                  <option value="notice">Notice</option>
+                  <option value="department">Department</option>
+                  <option value="position">Position</option>
+                </select>
+                <select
+                  name="showEmployeeByCategory"
+                  id="showEmployeeByCategory"
+                  class="select"
+                >
                 </select>
               </div>
 
               <div>
                 <label for="searchEmployee" class="label-6 block"
-                  >Search Memo/Notice</label
+                  >Search Employee ID/Name</label
                 >
                 <input type="" value="" id="searchEmployee" />
               </div>
@@ -176,21 +197,23 @@
               <table class="tableLayout">
                 <tbody>
                   <tr>
-                    <td class="column1">Date</td>
-                    <td class="column2">Subject</td>
-                    <td class="column3">Type</td>
-                    <td class="column4">Action</td>
+                    <td class="column1">Pay Period</td>
+                    <td class="column2">Employee</td>
+                    <td class="column3">Position</td>
+                    <td class="column4">Net Pay</td>
+                    <td class="column5">Action</td>
                   </tr>
                   <tr>
                     <td class="column1">
                       December 1, 2019 - December 15, 2019
                     </td>
-                    <td class="column2">Memo 1</td>
-                    <td class="column3">Memo</td>
-                    <td class="column4">
-                        <a
+                    <td class="column2">John Doe</td>
+                    <td class="column3">Web Developer</td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">
+                      <a
                         class="btn-table btn-secondary"
-                        onclick="openModal(`#btnViewMemoNotice`);"
+                        onclick="openModal(`#btnViewPayslip`);"
                         >View</a
                       >
                     </td>
@@ -219,105 +242,315 @@
                 </div>
               </div>
             </div>
+
+            <div class="card card-2 hidden">
+              <div class="container-sm">
+                <!-- Pending Payroll Approval  -->
+                <table class="tableLayout">
+                  <tbody>
+                    <tr>
+                      <td class="column1">Pay Period</td>
+                      <td class="column2">Employee</td>
+                      <td class="column3">Position</td>
+                      <td class="column4">Net Pay</td>
+                      <td class="column5">Action</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">
+                        December 1, 2019 - December 15, 2019
+                      </td>
+                      <td class="column2">John Doe</td>
+                      <td class="column3">Web Developer</td>
+                      <td class="column4">20,000.00</td>
+                      <td class="column5">
+                        <a class="btn-table btn-secondary">Delete</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination-container">
+                  <div class="showmore-container">
+                    <a class="btn-showmore" href="#"
+                      ><i class="fas fa-chevron-down"></i>More Results</a
+                    >
+                  </div>
+                  <div class="pagination" onclick="selectPage()">
+                    <a href="#">«</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">»</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Modal Section -->
-          <!-- btnMassGeneratePayroll -->
-          <div class="modal modal-payrollmemo">
+          <!-- btnCreatePayroll -->
+          <div class="modal modal-create-payroll">
             <div class="modal-content">
-              <h5>Compose</h5>
+              <h5>Generate Payroll</h5>
               <hr />
               <div>
+                <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreqModal"
+                  id="drpDownPayFreqModal"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
+
               <div>
-              <div>
-                <label class="label-6 block">Subject</label>
+                <label class="label-6 block">Pay Period</label>
+                <label for="txtDateFromModal" class="label-6">From: </label>
                 <input
-                  name="txtMemoSubject"
+                  name="txtDateFromModal"
                   type="text"
-                  id="txtMemoSubject"
+                  id="txtDateFromModal"
+                  class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
+                />
+                <label for="txtDateToModal" class="label-6">To: </label>
+                <input
+                  name="txtDateToModal"
+                  type="text"
+                  id="txtDateToModal"
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
               </div>
 
               <div>
-                <label class="label-6 block">Description</label>
-                <textarea name="txtMemoDesc" id="txtMemoDesc"></textarea>
+                <label for="showEmployeeByModal" class="label-6 block"
+                  >Show Employee by</label
+                >
+                <select
+                  name="showEmployeeByModal"
+                  id="showEmployeeByModal"
+                  class="select"
+                  onchange="getEmployeeByModal()"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="department">Department</option>
+                  <option value="position">Position</option>
+                </select>
+                <select
+                  name="showEmployeeByCategoryModal"
+                  id="showEmployeeByCategoryModal"
+                  class="select"
+                >
+                </select>
               </div>
+
               <div>
-                <label class="label-6 block">Attach Files</label>
-                <input type="file" name="photo" id="photo" accept="image/*" />
+                <label for="drpDownEmployee" class="label-6 block"
+                  >Employee</label
+                >
+                <select
+                  name="drpDownEmployee"
+                  id="drpDownEmployee"
+                  class="select block"
+                  onchange="hidePayslipInfo();"
+                >
+                  <option>Select Employee</option>
+                  <option>All</option>
+                  <option>John Doe</option>
+                </select>
+              </div>
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-green mx-3" id="btnComputeModal"
+                  >Compute</a
+                >
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  id="btnClearModal"
+                  onclick="reset(`payroll`)"
+                  >Clear</a
+                >
+              </div>
+
+              <div class="hidden">
+                <label class="label-6">With Deductions</label>
+                <div class="modal-rd-container">
+                  <label for="optYes" class="radio">
+                    <input type="radio" name="rdo" id="optYes" class="hidden" />
+                    <span class="label"></span>Yes
+                  </label>
+
+                  <label for="optNo" class="radio">
+                    <input type="radio" name="rdo" id="optNo" class="hidden" />
+                    <span class="label"></span>No
+                  </label>
+                </div>
+              </div>
+
+              <div class="hidden">
+                <label class="label-6">Type</label>
+                <div class="modal-rd-container">
+                  <label for="optDaily" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optDaily"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Daily
+                  </label>
+
+                  <label for="optMonthly" class="radio">
+                    <input
+                      type="radio"
+                      name="rdo"
+                      id="optMonthly"
+                      class="hidden"
+                    />
+                    <span class="label"></span>Monthly
+                  </label>
+                </div>
+              </div>
+
+              <div class="hidden">
+                <label class="label-6">Absent (days)</label>
+                <input name="txtAbsent" type="text" id="txtAbsent" />
+                <label class="label-6">Overtime (hours)</label>
+                <input name="txtOvertime" type="text" id="txtOvertime" />
+                <label class="label-6">Late (minutes)</label>
+                <input name="txtLate" type="text" id="txtLate" />
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p class="label-6" id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p class="label-6" id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p class="label-6" id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p class="label-6" id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p class="label-6" id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p class="label-6" id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p class="label-6" id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p class="label-6" id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p class="label-6" id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p class="label-6" id="lblOtherDeduction">500</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p class="label-6">&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p class="label-6" id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p class="label-6" id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnCreatePayrollModal">
+                  Create Payroll
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseCreatePayroll`);"
+                >
+                  Cancel
+                </a>
               </div>
             </div>
+          </div>
+
+          <!-- btnMassGeneratePayroll -->
+          <div class="modal modal-mass-payroll">
+            <div class="modal-content">
+              <h5>Generate Payroll</h5>
+              <hr />
+              <div>
+                <label class="label-6 block">Pay Frequency</label>
+                <select
+                  name="drpDownPayFreqModal2"
+                  id="drpDownPayFreqModal2"
+                  class="select block drpDownPayFreq"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="twoWeeks">Every 2 weeks</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
 
               <div>
-                <div>
-                    <label class="label-6 block">Recipient</label>
-                    <div class="modal-rd-container">
-                        <label for="optAll" class="radio">
-                        <input
-                            type="radio"
-                            name="memoRecipient"
-                            id="optAll"
-                            class="hidden"
-                        />
-                        <span class="label"></span>All
-                        </label>
+                <label class="label-6 block">Pay Period</label>
+                <label for="txtDateFromModal2" class="label-6">From: </label>
+                <input
+                  name="txtDateFromModal2"
+                  type="text"
+                  id="txtDateFromModal2"
+                  class="startDatePicker"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
+                />
+                <label for="txtDateToModal2" class="label-6">To: </label>
+                <input
+                  name="txtDateToModal2"
+                  type="text"
+                  id="txtDateToModal2"
+                  class="endDatePicker disabled"
+                  onchange="generatePayPeriod(`#drpDownPayFreqModal2`,`#txtDateFromModal2`,`#txtDateToModal2`,`payroll`);"
+                />
+              </div>
 
-                        <label for="optCustom" class="radio">
-                        <input
-                            type="radio"
-                            name="memoRecipient"
-                            id="optCustom"
-                            class="hidden"
-                        />
-                        <span class="label"></span>Custom
-                        </label>
-                    </div>
-                </div>
-                
+              <div>
+                <label for="showEmployeeByCategoryModal2" class="label-6 block"
+                  >Select Department</label
+                >
+                <select
+                  name="showEmployeeByCategoryModal2"
+                  id="showEmployeeByCategoryModal2"
+                  class="select"
+                >
+                  <option value="all">All</option>
+                  <option value="all">IT Department</option>
+                  <option value="all">Marketing Department</option>
+                  <option value="all">Sales Department</option>
+                  <option value="all">HR Department</option>
+                </select>
+              </div>
 
-                <div>
-                    <label class="label-6 block">Type</label>
-                    <select
-                    name="drpDownMemoType"
-                    id="drpDownMemoType"
-                    class="select block drpDownType"
-                    >
-                    <option value="">--Please choose an option--</option>
-                    <option value="memo">Memo</option>
-                    <option value="notice">Notice</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="showEmployeeByCategoryModal2" class="label-6 block"
-                    >Select Department</label
-                    >
-                    <select
-                    name="showEmployeeByCategoryModal2"
-                    id="showEmployeeByCategoryModal2"
-                    class="select"
-                    >
-                    <option value="all">All</option>
-                    <option value="all">IT Department</option>
-                    <option value="all">Marketing Department</option>
-                    <option value="all">Sales Department</option>
-                    <option value="all">HR Department</option>
-                    </select>
-
-                    <select
-                    name="showEmpPositionByModal"
-                    id="showEmpPositionByModal"
-                    class="select"
-                    >
-                    <option value="">--Please choose an option--</option>
-                    <option value="department">Programmer</option>
-                    <option value="position">Marketing</option>
-                    </select>
-                </div>
-
-                
-                </div>
-            </div>
+              <div></div>
 
               <div class="modal-btn-container">
                 <a class="btn-sm btn-green mx-3" id="btnComputeModal"
@@ -341,26 +574,62 @@
               <table class="tableLayout">
                 <tbody>
                   <tr>
-                    <td class="column1">Employee ID</td>
-                    <td class="column2">Employee</td>
-                    <td class="column3">Department</td>
-                    <td class="column4">Position</td>
-                    <td class="column5">Email</td>
-                    <td class="column6">ACtion</td>
+                    <td class="column1">Employee</td>
+                    <td class="column2">Department</td>
+                    <td class="column3">Pay Period</td>
+                    <td class="column4">Total Earnings</td>
+                    <td class="column5">Total Deductions</td>
+                    <td class="column6">Net Pay</td>
                   </tr>
                   <tr>
-                    <td class="column1">0001</td>
-                    <td class="column2">John Doe</td>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
                     <td class="column3">
-                      Programming
+                      Dec. 01, 2019 - Dec. 15, 2019
                     </td>
-                    <td class="column4">Back End</td>
-                    <td class="column5">john.doe@gmail.com</td>
-                    <td class="column6">        <a
-                        class="btn-table btn-secondary"
-                        onclick="openModal(`#btnDeleteMemoRec`);"
-                        >Delete</a
-                      ></td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">Employee</td>
+                    <td class="column2">IT Department</td>
+                    <td class="column3">
+                      Dec. 01, 2019 - Dec. 15, 2019
+                    </td>
+                    <td class="column4">20,000.00</td>
+                    <td class="column5">1,100.00</td>
+                    <td class="column6">18,900.00</td>
                   </tr>
                 </tbody>
               </table>
@@ -392,7 +661,7 @@
                 </a>
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  onclick="closeModal(`#btnClosePayrollMemo`);"
+                  onclick="closeModal(`#btnCloseMassPayroll`);"
                 >
                   Cancel
                 </a>

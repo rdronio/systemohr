@@ -16,24 +16,18 @@
     />
     <link rel="stylesheet" href="Styles/jquery/jquery-ui-custom.css" />
 
-    <!-- JavaScript -->
-    <script src="Scripts/jquery-3.4.1.min.js"></script>
-    <script src="Scripts/jquery-ui.min.js"></script>
-
-    <title>HRIS & Payroll w/ Time Keeping System</title>
+    <title>HRIS, Payroll & Time Keeping System</title>
   </head>
   <body>
     <form action="#" autocomplete="off">
       <!-- main -->
-      <div class="main ">
+      <div class="main">
         <!-- nav -->
         <nav id="nav">
           <div class="logo">
             <a href="home.html" class="logo-link">
               <h1>LOGO HERE</h1>
-              <p>
-                HRIS & Payroll w/ Time Keeping System
-              </p>
+              <p>HRIS, Payroll & Time Keeping System</p>
             </a>
           </div>
 
@@ -42,7 +36,7 @@
             <div class="profile_pic">
               <a href="#"
                 ><img
-                  src="/Images/user.png"
+                  src="/images/user.png"
                   alt="..."
                   class="img-circle profile_img"
               /></a>
@@ -78,13 +72,13 @@
                 ></span
               ></a>
               <ul class="nav child_menu">
-                <li class="current-page">
+                <li>
                   <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
                 <li>
                   <a href="payrollreport.html">Payroll Report</a>
                 </li>
-                <li>
+                <li class="current-page">
                   <a href="payrollpayslip.html">Payslips</a>
                 </li>
               </ul>
@@ -103,8 +97,8 @@
           </div>
         </nav>
 
-        <!-- Generate DTR Report -->
-        <section id="dtr-report" class="content">
+        <!-- Payroll Payslip -->
+        <section id="payroll-payslip" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -119,243 +113,72 @@
           </div>
 
           <div class="container">
-            <h2>Generate DTR Report</h2>
+            <!-- <div id="tab">
+              <ul class="tab-list" onclick="selectTab();">
+                <li class="current-tab"> 
+                  <a onclick="showOR()">Overtime Records</a>
+                </li>
+                <li>
+                  <a onclick="showPOA()">Pending Overtime</a>
+                </li>
+              </ul>
+            </div> -->
+            <h2>Payroll Payslip Report</h2>
             <div class="card card-1">
-              <div class="btn-tools-container">
+              <div class="container-sm">
                 <div>
-                  <a
-                    class="btn-table btn-tools"
-                    id="btnExportModal"
-                    onclick="toggleDropDown();"
-                    ><i class="fas fa-file-download"></i> Export
-                  </a>
-                  <div class="btn-dropdown hidden">
-                    <a class="" id="btnExportToExcelModal">Export to excel </a>
-                    <a class="" id="btnExportToLogModal">Export to log </a>
-                    <a class="" id="btnExportToTextModal">Export to text </a>
-                  </div>
+                  <label class="label-6 block">Pay Period</label>
+                  <label for="txtDateFrom" class="label-6">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="datePickerPayroll"
+                  />
+                  <label for="txtDateTo" class="label-6">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="datePickerPayroll"
+                  />
+                  <a class="btn-sm btn-secondary">Clear</a>
                 </div>
-                <a class="btn-table btn-tools" id="btnPrint"
-                  ><i class="fas fa-print"></i>
-                  Print
-                </a>
-              </div>
-              <div>
-                <label class="label-6">DTR Period</label>
-                <br />
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
-              </div>
-
-              <div>
-                <label for="showEmployeeBy" class="label-6 block"
-                  >Show Employee by</label
-                >
-                <select
-                  name="showEmployeeBy"
-                  id="showEmployeeBy"
-                  class="select"
-                  onchange="getEmployeeBy()"
-                >
-                  <option value="">--Please choose an option--</option>
-                  <option value="department">Department</option>
-                  <option value="position">Position</option>
-                </select>
-                <select
-                  name="showEmployeeByCategory"
-                  id="showEmployeeByCategory"
-                  class="select"
-                >
-                </select>
-              </div>
-
-              <div>
-                <label for="searchEmployee" class="label-6 block"
-                  >Employee</label
-                >
-                <select
-                  name="drpDownEmployee"
-                  id="drpDownEmployee"
-                  class="select block"
-                  onchange="hidePayslipInfo();"
-                >
-                  <option>Select Employee</option>
-                  <option>John Doe</option>
-                </select>
-              </div>
-
-              <div class="btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnGenerateDTR">
-                  Generate DTR
-                </a>
-
-                <a class="btn-sm btn-secondary mx-3" id="btnClearDTR">
-                  Clear
-                </a>
-              </div>
-
-              <!-- DTR -->
-              <table class="tableLayout print">
-                <tbody>
-                  <tr>
-                    <td class="column1">Employee Id</td>
-                    <td class="column2">Employee Name</td>
-                    <td class="column3">Department</td>
-                    <td class="column4">Position</td>
-                    <td class="column5">Action</td>
-                  </tr>
-                  <tr>
-                    <td class="column1">000001</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">IT Department</td>
-                    <td class="column4">Programmer</td>
-                    <td class="column5">
-                      <a
-                        class="btn-table btn-secondary"
-                        onclick="openModalViewDTR();"
-                        >View</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="pagination-container">
-                <div class="showmore-container">
-                  <a class="btn-showmore" href="#"
-                    ><i class="fas fa-chevron-down"></i>More Results</a
-                  >
-                </div>
-                <div class="pagination" onclick="selectPage()">
-                  <a href="#">«</a>
-                  <a class="active" href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#">»</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Modal View Employee: btnViewEmployee -->
-          <div class="modal modal-view-dtr">
-            <div class="modal-content">
-              <h4>Daily Time Records</h4>
-              <hr />
-
-              <div class="summary-employee-info-container ">
-                <div>
-                  <div class="summary-employee-info-header">
-                    <label class="label-5">Basic Employee Information </label>
-                  </div>
-                  <div class="summary-employee-info-content">
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employee ID
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">00001</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employee Name
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">John Doe</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Department
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">IT Department</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6">Position </label>
-                      <p name="txtEmpName" id="txtEmpName">Programmer</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employment Status
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">Regular</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="profile_pic">
-                    <img
-                      src="/Images/user.png"
-                      alt="Employee Picture"
-                      class="img-circle profile_img"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Time Records Tab -->
-              <div id="time-records">
-                <!-- Time Records -->
+                <!-- Payslip -->
                 <table class="tableLayout">
                   <tbody>
                     <tr>
-                      <td class="column1">Date</td>
-                      <td class="column2">Time In</td>
-                      <td class="column3">Time Out</td>
+                      <td class="column1">Payroll Date</td>
+                      <td class="column2">Pay Period</td>
+                      <td class="column3">Total Earnings</td>
+                      <td class="column4">Total Deductions</td>
+                      <td class="column5">Net Pay</td>
+                      <td class="column6">Action</td>
                     </tr>
                     <tr>
-                      <td class="column1">November 20, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 19, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 18, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 17, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 16, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
+                      <td class="column1">
+                        Dec. 14, 2019
+                      </td>
+                      <td class="column2">
+                        Dec. 01, 2019 - Dec. 15, 2019
+                      </td>
+                      <td class="column3">20,000.00</td>
+                      <td class="column4">1,100.00</td>
+                      <td class="column5">18,900.00</td>
+                      <td class="column6">
+                        <a
+                          class="btn-table btn-secondary"
+                          onclick="openModal(`#btnViewPayslip`);"
+                          >View</a
+                        >
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-
                 <div class="pagination-container">
                   <div class="showmore-container">
                     <a class="btn-showmore" href="#"
-                      ><i class="fas fa-chevron-down"></i>More Results</a
+                      ><i class="fas fa-chevron-down"></i>Show More</a
                     >
                   </div>
                   <div class="pagination" onclick="selectPage()">
@@ -374,18 +197,98 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Modal Section -->
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
+            <div class="modal-content">
+              <h5>Payslip</h5>
+              <hr />
+              <div>
+                <div>
+                  <label class="label-6">Payroll Date</label>
+                  <p id="lblPayrollDate">Dec. 14, 2019</p>
+                  <label class="label-6">Pay Period</label>
+                  <p id="lblPayPeriod">Dec. 01, 2019 - Dec. 15, 2019</p>
+                  <label class="label-6">Name</label>
+                  <p id="lblName">John Doe</p>
+                  <label class="label-6">Position</label>
+                  <p id="lblPosition">Programmer</p>
+                  <label class="label-6">Department</label>
+                  <p id="lblDepartment">IT Department</p>
+                </div>
+                <div>
+                  <label class="label-6">TIN Number</label>
+                  <p id="lblTinNo">000-000-000-000</p>
+                  <label class="label-6">Philhealth Number</label>
+                  <p id="lblPhilHealth">00-000000000-0</p>
+                  <label class="label-6">HDMF Number</label>
+                  <p id="lblHDMF">0000-0000-0000</p>
+                  <label class="label-6">SSS/GSIS Number</label>
+                  <p id="lblSssGsis">00-0000000-0</p>
+                </div>
+              </div>
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p id="lblOtherDeduction">400</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p id="lblNetPay">20,000</p>
+              </div>
+              <hr />
 
               <div class="modal-btn-container">
+                <!-- <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a> -->
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  onclick="closeModalViewDTR();"
-                  >Close</a
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
                 >
+                  Close
+                </a>
               </div>
             </div>
           </div>
 
-          <footer id="footer">
+          <section id="footer">
             <a href="https://systemoph.com/">
               <svg
                 class="systemologo"
@@ -497,10 +400,15 @@
               </svg>
               <p>Copyright &copy; 2019 SysteMoPH - All Rights Reserved.</p>
             </a>
-          </footer>
+          </section>
         </section>
       </div>
     </form>
+
+    <!-- JavaScript -->
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+
     <script src="Scripts/main.js"></script>
   </body>
 </html>

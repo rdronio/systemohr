@@ -20,20 +20,18 @@
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/jquery-ui.min.js"></script>
 
-    <title>HRIS & Payroll w/ Time Keeping System</title>
+    <title>HRIS, Payroll & Time Keeping System</title>
   </head>
   <body>
-    <form action="#" autocomplete="off">
+    <form id="memonotice" action="#" autocomplete="off">
       <!-- main -->
-      <div class="main ">
+      <div class="main">
         <!-- nav -->
         <nav id="nav">
           <div class="logo">
             <a href="home.html" class="logo-link">
               <h1>LOGO HERE</h1>
-              <p>
-                HRIS & Payroll w/ Time Keeping System
-              </p>
+              <p>HRIS, Payroll & Time Keeping System</p>
             </a>
           </div>
 
@@ -66,7 +64,7 @@
                 ><i class="fas fa-file-invoice"></i>Payroll</a
               >
             </li>
-            <li>
+            <li class="current-page">
               <a href="memonotice.html"
                 ><i class="far fa-bell"></i>Memo / Notice</a
               >
@@ -77,8 +75,8 @@
                   class="fa fa-chevron-down"
                 ></span
               ></a>
-              <ul class="nav child_menu">
-                <li class="current-page">
+              <ul class="nav child_menu hidden">
+                <li>
                   <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
                 <li>
@@ -103,8 +101,8 @@
           </div>
         </nav>
 
-        <!-- Generate DTR Report -->
-        <section id="dtr-report" class="content">
+        <!-- Memo / Notice -->
+        <section id="memonotice" class="content">
           <!-- TOP NAV  -->
           <div class="top-nav">
             <span class="menu-btn">
@@ -119,114 +117,77 @@
           </div>
 
           <div class="container">
-            <h2>Generate DTR Report</h2>
+            <h3>Memo / Notice</h3>
             <div class="card card-1">
-              <div class="btn-tools-container">
-                <div>
-                  <a
-                    class="btn-table btn-tools"
-                    id="btnExportModal"
-                    onclick="toggleDropDown();"
-                    ><i class="fas fa-file-download"></i> Export
-                  </a>
-                  <div class="btn-dropdown hidden">
-                    <a class="" id="btnExportToExcelModal">Export to excel </a>
-                    <a class="" id="btnExportToLogModal">Export to log </a>
-                    <a class="" id="btnExportToTextModal">Export to text </a>
-                  </div>
-                </div>
-                <a class="btn-table btn-tools" id="btnPrint"
-                  ><i class="fas fa-print"></i>
-                  Print
+              <div class="">
+                <a
+                  class="btn-xs btn-alt"
+                  id="btnMassGeneratePayroll"
+                  onclick="openModal(`#btnAddPayrollMemo`)"
+                >
+                  Compose
                 </a>
               </div>
+
               <div>
-                <label class="label-6">DTR Period</label>
-                <br />
+                <label class="label-6 block">Filter Date</label>
                 <label for="txtDateFrom" class="label-6">From: </label>
                 <input
                   name="txtDateFrom"
                   type="text"
                   id="txtDateFrom"
-                  class="datePicker"
+                  class="startDatePicker"
                 />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
                 <label for="txtDateTo" class="label-6">To: </label>
                 <input
                   name="txtDateTo"
                   type="text"
                   id="txtDateTo"
-                  class="datePicker"
+                  class="endDatePicker"
                 />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                <a class="btn-sm btn-secondary">Clear</a>
               </div>
 
               <div>
-                <label for="showEmployeeBy" class="label-6 block"
-                  >Show Employee by</label
-                >
+                <label for="showEmployeeBy" class="label-6 block">Type</label>
                 <select
-                  name="showEmployeeBy"
-                  id="showEmployeeBy"
+                  name="payrollmemoType"
+                  id="payrollmemoType"
                   class="select"
                   onchange="getEmployeeBy()"
                 >
                   <option value="">--Please choose an option--</option>
-                  <option value="department">Department</option>
-                  <option value="position">Position</option>
-                </select>
-                <select
-                  name="showEmployeeByCategory"
-                  id="showEmployeeByCategory"
-                  class="select"
-                >
+                  <option value="memo">Memo</option>
+                  <option value="notice">Notice</option>
                 </select>
               </div>
 
               <div>
                 <label for="searchEmployee" class="label-6 block"
-                  >Employee</label
+                  >Search Memo/Notice</label
                 >
-                <select
-                  name="drpDownEmployee"
-                  id="drpDownEmployee"
-                  class="select block"
-                  onchange="hidePayslipInfo();"
-                >
-                  <option>Select Employee</option>
-                  <option>John Doe</option>
-                </select>
+                <input type="" value="" id="searchEmployee" />
               </div>
 
-              <div class="btn-container">
-                <a class="btn-sm btn-primary mx-3" id="btnGenerateDTR">
-                  Generate DTR
-                </a>
-
-                <a class="btn-sm btn-secondary mx-3" id="btnClearDTR">
-                  Clear
-                </a>
-              </div>
-
-              <!-- DTR -->
-              <table class="tableLayout print">
+              <!-- Memo / Notice -->
+              <table class="tableLayout">
                 <tbody>
                   <tr>
-                    <td class="column1">Employee Id</td>
-                    <td class="column2">Employee Name</td>
-                    <td class="column3">Department</td>
-                    <td class="column4">Position</td>
-                    <td class="column5">Action</td>
+                    <td class="column1">Date</td>
+                    <td class="column2">Subject</td>
+                    <td class="column3">Type</td>
+                    <td class="column4">Action</td>
                   </tr>
                   <tr>
-                    <td class="column1">000001</td>
-                    <td class="column2">John Doe</td>
-                    <td class="column3">IT Department</td>
-                    <td class="column4">Programmer</td>
-                    <td class="column5">
+                    <td class="column1">
+                      December 1, 2019 - December 15, 2019
+                    </td>
+                    <td class="column2">Memo 1</td>
+                    <td class="column3">Memo</td>
+                    <td class="column4">
                       <a
                         class="btn-table btn-secondary"
-                        onclick="openModalViewDTR();"
+                        onclick="openModal(`#btnViewMemoNotice`);"
                         >View</a
                       >
                     </td>
@@ -257,135 +218,313 @@
             </div>
           </div>
 
-          <!-- Modal View Employee: btnViewEmployee -->
-          <div class="modal modal-view-dtr">
+          <!-- Modal Section -->
+          <!-- btnPayrollMemo -->
+          <div class="modal modal-payrollmemo">
             <div class="modal-content">
-              <h4>Daily Time Records</h4>
+              <h5>Compose</h5>
               <hr />
-
-              <div class="summary-employee-info-container ">
+              <div>
                 <div>
-                  <div class="summary-employee-info-header">
-                    <label class="label-5">Basic Employee Information </label>
+                  <div>
+                    <label class="label-6 block">Subject</label>
+                    <input
+                      name="txtMemoSubject"
+                      type="text"
+                      id="txtMemoSubject"
+                    />
                   </div>
-                  <div class="summary-employee-info-content">
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employee ID
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">00001</p>
-                    </div>
 
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employee Name
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">John Doe</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Department
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">IT Department</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6">Position </label>
-                      <p name="txtEmpName" id="txtEmpName">Programmer</p>
-                    </div>
-
-                    <div>
-                      <label for="txtEmpName" class="label-6"
-                        >Employment Status
-                      </label>
-                      <p name="txtEmpName" id="txtEmpName">Regular</p>
-                    </div>
+                  <div>
+                    <label class="label-6 block">Description</label>
+                    <textarea name="txtMemoDesc" id="txtMemoDesc"></textarea>
                   </div>
-                </div>
-                <div>
-                  <div class="profile_pic">
-                    <img
-                      src="/Images/user.png"
-                      alt="Employee Picture"
-                      class="img-circle profile_img"
+                  <div>
+                    <label class="label-6 block">Attach Files</label>
+                    <input
+                      type="file"
+                      name="photo"
+                      id="photo"
+                      accept="image/*"
                     />
                   </div>
                 </div>
-              </div>
 
-              <!-- Time Records Tab -->
-              <div id="time-records">
-                <!-- Time Records -->
-                <table class="tableLayout">
-                  <tbody>
-                    <tr>
-                      <td class="column1">Date</td>
-                      <td class="column2">Time In</td>
-                      <td class="column3">Time Out</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 20, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 19, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 18, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 17, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td class="column1">November 16, 2019</td>
-                      <td class="column2">09:00 AM</td>
-                      <td class="column3">05:00 PM</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="pagination-container">
-                  <div class="showmore-container">
-                    <a class="btn-showmore" href="#"
-                      ><i class="fas fa-chevron-down"></i>More Results</a
+                <div>
+                  <div>
+                    <label class="label-6 block">Type</label>
+                    <select
+                      name="drpDownMemoType"
+                      id="drpDownMemoType"
+                      class="select block drpDownType"
                     >
+                      <option value="">--Please choose an option--</option>
+                      <option value="memo">Memo</option>
+                      <option value="notice">Notice</option>
+                    </select>
                   </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
+                  <div>
+                    <label class="label-6 block">Recipient</label>
+                    <div class="modal-rd-container">
+                      <label
+                        for="optAll"
+                        class="radio"
+                        onclick="toggleMemoRecipient()"
+                      >
+                        <input
+                          type="radio"
+                          name="memoRecipient"
+                          id="optAll"
+                          value="All"
+                          class="hidden"
+                        />
+                        <span class="label"></span>All
+                      </label>
+
+                      <label
+                        for="optCustom"
+                        class="radio"
+                        onclick="toggleMemoRecipient()"
+                      >
+                        <input
+                          type="radio"
+                          name="memoRecipient"
+                          id="optCustom"
+                          class="hidden"
+                          value="Custom"
+                        />
+                        <span class="label"></span>Custom
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="selectDepartmentModal hidden">
+                    <label for="selectDepartmentModal" class="label-6 block"
+                      >Select Department</label
+                    >
+                    <select
+                      name="selectDepartmentModal"
+                      id="selectDepartmentModal"
+                      class="select"
+                    >
+                      <option value="all">All</option>
+                      <option value="all">IT Department</option>
+                      <option value="all">Marketing Department</option>
+                      <option value="all">Sales Department</option>
+                      <option value="all">HR Department</option>
+                    </select>
+                  </div>
+
+                  <div class="showEmployeeByModal hidden">
+                    <label for="showEmployeeByModal" class="label-6 block"
+                      >Show Employee by</label
+                    >
+                    <select
+                      name="showEmployeeByModal"
+                      id="showEmployeeByModal"
+                      class="select"
+                      onchange="getEmployeeByModal()"
+                    >
+                      <option value="">--Please choose an option--</option>
+                      <option value="department">Department</option>
+                      <option value="position">Position</option>
+                    </select>
+                    <select
+                      name="showEmployeeByCategoryModal"
+                      id="showEmployeeByCategoryModal"
+                      class="select"
+                    >
+                    </select>
+                  </div>
+
+                  <div class="drpDownEmployeeModal hidden">
+                    <label for="drpDownEmployeeModal" class="label-6 block"
+                      >Employee</label
+                    >
+                    <select
+                      name="drpDownEmployeeModal"
+                      id="drpDownEmployeeModal"
+                      class="select block"
+                    >
+                      <option>Select Employee</option>
+                      <option>All</option>
+                      <option>John Doe</option>
+                    </select>
                   </div>
                 </div>
               </div>
 
               <div class="modal-btn-container">
+                <a class="btn-sm btn-green mx-3" id="btnComputeModal"
+                  >Add Recipient/s</a
+                >
                 <a
                   class="btn-sm btn-secondary mx-3"
-                  onclick="closeModalViewDTR();"
-                  >Close</a
+                  id="btnClearModal2"
+                  onclick="reset(`memonotice`)"
+                  >Clear</a
                 >
+              </div>
+
+              <div class="hidden">
+                <label for="searchEmployeeModal" class="label-6 block"
+                  >Search Employee ID/Name</label
+                >
+                <input type="" value="" id="searchEmployeeModal" />
+              </div>
+
+              <table class="tableLayout">
+                <tbody>
+                  <tr>
+                    <td class="column1">Employee ID</td>
+                    <td class="column2">Employee</td>
+                    <td class="column3">Department</td>
+                    <td class="column4">Position</td>
+                    <td class="column5">Email</td>
+                    <td class="column6">ACtion</td>
+                  </tr>
+                  <tr>
+                    <td class="column1">0001</td>
+                    <td class="column2">John Doe</td>
+                    <td class="column3">
+                      Programming
+                    </td>
+                    <td class="column4">Back End</td>
+                    <td class="column5">john.doe@gmail.com</td>
+                    <td class="column6">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnDeleteMemoRec`);"
+                        >Delete</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
+              </div>
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnCreatePayrollModal">
+                  Mass Generate
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnClosePayrollMemo`);"
+                >
+                  Cancel
+                </a>
               </div>
             </div>
           </div>
 
-          <footer id="footer">
+          <!-- btnViewPayslip -->
+          <div class="modal modal-view-payslip">
+            <div class="modal-content">
+              <h5>Payslip</h5>
+              <hr />
+              <div>
+                <div>
+                  <label class="label-6">Payroll Date</label>
+                  <p id="lblPayrollDate">Dec. 14, 2019</p>
+                  <label class="label-6">Pay Period</label>
+                  <p id="lblPayPeriod">Dec. 01, 2019 - Dec. 15, 2019</p>
+                  <label class="label-6">Name</label>
+                  <p id="lblName">John Doe</p>
+                  <label class="label-6">Position</label>
+                  <p id="lblPosition">Programmer</p>
+                  <label class="label-6">Department</label>
+                  <p id="lblDepartment">IT Department</p>
+                </div>
+                <div>
+                  <label class="label-6">TIN Number</label>
+                  <p id="lblTinNo">000-000-000-000</p>
+                  <label class="label-6">Philhealth Number</label>
+                  <p id="lblPhilHealth">00-000000000-0</p>
+                  <label class="label-6">HDMF Number</label>
+                  <p id="lblHDMF">0000-0000-0000</p>
+                  <label class="label-6">SSS/GSIS Number</label>
+                  <p id="lblSssGsis">00-0000000-0</p>
+                </div>
+              </div>
+              <hr />
+              <div>
+                <label class="label-6">Basic Salary</label>
+                <p id="lblBasicSalary">0.00</p>
+              </div>
+              <hr />
+
+              <div>
+                <div>
+                  <label class="label-6">Total Hours</label>
+                  <p id="lblTotalHours">0.00</p>
+                  <label class="label-6">Absent</label>
+                  <p id="lblAbsent">0.00</p>
+                  <label class="label-6">Tardiness</label>
+                  <p id="lblTardiness">0.00</p>
+                  <label class="label-6">Overtime</label>
+                  <p id="lblOvertime">0.00</p>
+                  <label class="label-6">Leave</label>
+                  <p id="lblLeave">0</p>
+                </div>
+
+                <div>
+                  <label class="label-6">SSS/GSIS</label>
+                  <p id="lblSssGsis">400</p>
+                  <label class="label-6">Pag-ibig</label>
+                  <p id="lblPagibig">400</p>
+                  <label class="label-6">Philhealth</label>
+                  <p id="lblPhilhealth">400</p>
+                  <label class="label-6">Other Deductions</label>
+                  <p id="lblOtherDeduction">400</p>
+                  <label class="label-6">&nbsp;</label>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+
+              <hr />
+              <div>
+                <label class="label-6">Gross Pay</label>
+                <p id="lblGrossPay">20,000</p>
+                <label class="label-6">Net Pay</label>
+                <p id="lblNetPay">20,000</p>
+              </div>
+              <hr />
+
+              <div class="modal-btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnPrintPayslip">
+                  Print
+                </a>
+                <a
+                  class="btn-sm btn-secondary mx-3"
+                  onclick="closeModal(`#btnCloseViewPayslip`);"
+                >
+                  Close
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <section id="footer">
             <a href="https://systemoph.com/">
               <svg
                 class="systemologo"
@@ -497,7 +636,7 @@
               </svg>
               <p>Copyright &copy; 2019 SysteMoPH - All Rights Reserved.</p>
             </a>
-          </footer>
+          </section>
         </section>
       </div>
     </form>

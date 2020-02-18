@@ -3023,79 +3023,84 @@ nav ul li a span.fa {
 }
 
 /* ========[ Payroll Memo ]======== */
-#payrollmemo .container .card-1 > div:first-child {
+#memonotice .container .card-1 > div:first-child {
   position: relative;
   text-align: right;
   margin-bottom: 0.5rem;
 }
 
-#payrollmemo .container .card-1 > div:first-child a {
+#memonotice .container .card-1 > div:first-child a {
   margin-left: 0.5rem;
   display: inline-block;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(2) {
+#memonotice .container .card-1 > div:nth-child(2) {
   display: block;
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(2) input {
+#memonotice .container .card-1 > div:nth-child(2) input {
   margin-right: 0.5rem;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(3) {
+#memonotice .container .card-1 > div:nth-child(3) {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(3) select {
+#memonotice .container .card-1 > div:nth-child(3) select {
   margin-right: 0.5rem;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(3) select:nth-child(2) {
+#memonotice .container .card-1 > div:nth-child(3) select:nth-child(2) {
   margin-left: 2rem;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(4) input {
+#memonotice .container .card-1 > div:nth-child(4) input {
   display: block;
 }
 
-#payrollmemo .container .card-1 > div:nth-child(4) input:nth-child(2) {
+#memonotice .container .card-1 > div:nth-child(4) input:nth-child(2) {
   margin-left: 2rem;
 }
 
-#payrollmemo .tableLayout .column1 {
+#memonotice .tableLayout .column1 {
   width: 17%;
 }
 
-#payrollmemo .tableLayout .column2 {
+#memonotice .tableLayout .column2 {
   width: 12%;
 }
-#payrollmemo .tableLayout .column3,
-#payrollmemo .tableLayout .column4 {
+#memonotice .tableLayout .column3,
+#memonotice .tableLayout .column4 {
   width: 8%;
 }
 
-#payrollmemo .tableLayout .column5 {
+#memonotice .tableLayout .column5 {
   width: 8%;
 }
 
-#payrollmemo .modal-content {
+#memonotice .modal-content {
   width: 50%;
 }
 
-#payrollmemo .modal-content > div:first-of-type {
+#memonotice .modal-content > div:first-of-type {
   flex-direction: row !important;
 }
 
-#payrollmemo .modal-content > div:first-of-type > div {
-  flex-direction: column !important;
-  flex: 1;
+#memonotice .modal-content > div:first-of-type *:not(.label) {
+  width: 85%;
 }
 
-#payrollmemo .modal-content > div:first-of-type > div:first-of-type textarea {
-  width: 90% !important;
+#memonotice .modal-content .showEmployeeByModal .select:nth-child(2) {
+  margin-bottom: 0.5rem;
+}
+
+#memonotice .modal-content > div:first-of-type > div {
+  flex-direction: column !important;
+  flex: 1;
+  /* justify-content: space-between; */
 }
 
 /* ========[ Payroll]======== */
@@ -3244,14 +3249,7 @@ nav ul li a span.fa {
   margin-right: 0;
   margin: 0.25rem 0;
 } */
-#payroll .modal-create-payroll .modal-content > div:nth-child(12) select {
-  width: 9rem;
-  padding: 0;
 
-  justify-self: right;
-  margin-right: 38%;
-  border: 1px solid red;
-}
 #payroll .modal-create-payroll .modal-content > div:nth-child(12) > div {
   display: flex;
   flex-direction: row;

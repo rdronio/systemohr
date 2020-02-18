@@ -37,6 +37,11 @@ $(document).ready(function() {
     $(".btn-dropdown").on("click", function() {
       this.classList.add("hidden");
     });
+
+    // $(".modal-rd-container").on("click", function() {
+    //   $("#radio_1").prop("checked", true);
+    //   if
+    // });
   } catch (e) {
     console.log(e);
   }
@@ -1334,6 +1339,27 @@ function toggleDropDown() {
   try {
     const drpdown = document.querySelector(".btn-dropdown");
     drpdown.classList.toggle("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleMemoRecipient() {
+  try {
+    const div1 = document.querySelector(".selectDepartmentModal");
+    const div2 = document.querySelector(".showEmployeeByModal");
+    const div3 = document.querySelector(".drpDownEmployeeModal");
+    let radioValue = $("input[name='memoRecipient']:checked").val();
+
+    if (radioValue === "All") {
+      div1.classList.remove("hidden");
+      div2.classList.add("hidden");
+      div3.classList.add("hidden");
+    } else if (radioValue === "Custom") {
+      div1.classList.add("hidden");
+      div2.classList.remove("hidden");
+      div3.classList.remove("hidden");
+    }
   } catch (e) {
     console.log(e);
   }
