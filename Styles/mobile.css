@@ -74,6 +74,7 @@
   .btn-xs {
     font-size: 0.6rem;
     font-weight: 600;
+    padding: 0.5rem 0.75rem;
   }
 
   .btn-sm {
@@ -84,6 +85,10 @@
     font-size: 0.8rem;
     font-weight: 500;
     padding: 0.7rem 1.75rem;
+  }
+
+  .btn-table {
+    padding: 0.3rem 0.75rem;
   }
 
   .btn-circle-container {
@@ -2578,7 +2583,26 @@
   }
 
   #payroll .container .card-1 .tableLayout tbody tr td:nth-child(5):before {
-    content: "Status";
+    content: "Action";
+  }
+
+  #payroll .container .card-2 .tableLayout tbody tr td:nth-child(1):before {
+    content: "Pay Period";
+  }
+  #payroll .container .card-2 .tableLayout tbody tr td:nth-child(2):before {
+    content: "Employee";
+  }
+
+  #payroll .container .card-2 .tableLayout tbody tr td:nth-child(3):before {
+    content: "Position";
+  }
+
+  #payroll .container .card-2 .tableLayout tbody tr td:nth-child(4):before {
+    content: "Net Pay";
+  }
+
+  #payroll .container .card-2 .tableLayout tbody tr td:nth-child(5):before {
+    content: "Action";
   }
 
   #payroll .modal-content {
@@ -2586,80 +2610,137 @@
     width: 90%;
   }
 
-  #payroll .modal-content div:nth-child(3) {
-    margin-right: 0;
-  }
-
-  #payroll .modal-content div:nth-child(3) button,
-  #payroll .modal-content div:nth-child(3) input {
+  #payroll .modal-create-payroll .modal-content > div:nth-child(3) select,
+  #payroll .modal-mass-payroll .modal-content > div:nth-child(3) select {
     width: 100%;
-    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 0.5rem;
   }
 
-  #payroll .modal-content div:nth-child(4) select {
-    width: 100%;
-    margin: 0 0 0.5rem;
-  }
-  #payroll .modal-content div:nth-child(4) select:nth-child(2) {
-    margin-left: 0;
-  }
-
-  #payroll .modal-content div:nth-child(5) {
+  #payroll .modal-create-payroll .modal-content > div:nth-child(4) {
     margin-bottom: 0.5rem;
   }
-  #payroll .modal-content > div:nth-child(5) select:nth-child(2) {
+
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(4)
+    label:first-child {
+    padding: 0.4rem 0 0 0;
+  }
+
+  #payroll .modal-create-payroll .modal-content > div:nth-child(4) input,
+  #payroll .modal-mass-payroll .modal-content > div:nth-child(4) input {
+    margin-right: 0rem;
+    width: 100%;
+  }
+
+  #payroll .modal-create-payroll .modal-content > div:nth-child(5) select,
+  #payroll .modal-mass-payroll .modal-content > div:nth-child(5) select {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(5)
+    select:nth-child(2),
+  #payroll
+    .modal-mass-payroll
+    .modal-content
+    > div:nth-child(5)
+    select:nth-child(2) {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(5)
+    select:nth-child(2),
+  #payroll
+    .modal-mass-payroll
+    .modal-content
+    > div:nth-child(5)
+    select:nth-child(2) {
     margin-left: 0;
     width: 100%;
   }
 
-  #payroll .modal-content div:nth-child(6) {
-    margin-bottom: 1.25rem;
-  }
-
-  #payroll .modal-content > div:nth-child(10) {
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(6)
+    select:nth-child(2),
+  #payroll
+    .modal-mass-payroll
+    .modal-content
+    > div:nth-child(6)
+    select:nth-child(2) {
+    margin-left: 0;
     width: 100%;
   }
 
-  #payroll .modal-content > div:nth-child(11) {
-    width: 100%;
-  }
-
-  #payroll .modal-content > div:nth-child(11) p {
-    padding-right: 15%;
-  }
-
-  #payroll .modal-content > div:nth-child(12) {
-    grid-template-columns: 0.45fr 1.55fr;
-  }
-
-  #payroll .modal-content > div:nth-child(12) select {
-    margin-right: 0%;
-  }
-
-  #payroll .modal-content > div:nth-child(12) p {
-    padding-right: 0%;
-  }
-
-  #payroll .modal-content > div:nth-child(13) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  #payroll .modal-content > div:nth-child(13) > div:nth-child(1),
-  #payroll .modal-content > div:nth-child(13) > div:nth-child(2) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-
-  #payroll .modal-content > div:nth-child(13) > div:nth-child(1) p,
-  #payroll .modal-content > div:nth-child(13) > div:nth-child(2) p {
+  #payroll .modal-create-payroll .modal-content > div:nth-child(12) p {
+    text-align: right;
     padding-right: 20%;
   }
 
-  #payroll .modal-content > div:nth-child(15) p {
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(14)
+    > div:nth-child(1)
+    p,
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(14)
+    > div:nth-child(2)
+    p,
+  #payroll
+    .modal-create-payroll
+    .modal-content
+    > div:nth-child(14)
+    > div:nth-child(3)
+    p {
+    text-align: right;
     padding-right: 20%;
+  }
+
+  #payroll .modal-create-payroll .modal-content > div:nth-child(16) p {
+    text-align: right;
+    padding-right: 20%;
+  }
+
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(1):before {
+    content: "Employee";
+  }
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(2):before {
+    content: "Department";
+  }
+
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(3):before {
+    content: "Pay Period";
+  }
+
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(4):before {
+    content: "Total Earnings";
+  }
+
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(5):before {
+    content: "Total Deductions";
+  }
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(6):before {
+    content: "Net Pay";
+  }
+
+  #payroll .showmore-container {
+    margin: 0;
   }
 
   /*  */

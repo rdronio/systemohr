@@ -122,8 +122,27 @@
           <div class="container">
             <h2>Generate DTR Report</h2>
             <div class="card card-1">
+              <div class="btn-tools-container">
+                <div>
+                  <a
+                    class="btn-table btn-tools"
+                    id="btnExportModal"
+                    onclick="toggleDropDown();"
+                    ><i class="fas fa-file-download"></i> Export
+                  </a>
+                  <div class="btn-dropdown hidden">
+                    <a class="" id="btnExportToExcelModal">Export to excel </a>
+                    <a class="" id="btnExportToLogModal">Export to log </a>
+                    <a class="" id="btnExportToTextModal">Export to text </a>
+                  </div>
+                </div>
+                <a class="btn-table btn-tools" id="btnPrint"
+                  ><i class="fas fa-print"></i>
+                  Print
+                </a>
+              </div>
               <div>
-                <label class="label-6">Filter Date</label>
+                <label class="label-6">DTR Period</label>
                 <br />
                 <label for="txtDateFrom" class="label-6">From: </label>
                 <input
@@ -182,7 +201,7 @@
 
               <div class="btn-container">
                 <a class="btn-sm btn-primary mx-3" id="btnGenerateDTR">
-                  View DTR
+                  Generate DTR
                 </a>
 
                 <a class="btn-sm btn-secondary mx-3" id="btnClearDTR">
@@ -215,29 +234,26 @@
                   </tr>
                 </tbody>
               </table>
-
-              <div class="btn-container">
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportText"
-                  onclick=""
-                >
-                  Export to text file
-                </button>
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportLog"
-                  onclick=""
-                >
-                  Export to log file
-                </button>
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportExcel"
-                  onclick=""
-                >
-                  Export to Excel
-                </button>
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
               </div>
             </div>
           </div>
@@ -247,25 +263,6 @@
             <div class="modal-content">
               <h4>Daily Time Records</h4>
               <hr />
-              <div class="btn-tools-container">
-                <div>
-                  <a
-                    class="btn-table btn-tools"
-                    id="btnExport"
-                    onclick="toggleDropDown();"
-                    ><i class="fas fa-file-download"></i> Export
-                  </a>
-                  <div class="btn-dropdown hidden">
-                    <a class="" id="btnExportToExcel">Export to excel </a>
-                    <a class="" id="btnExportToLog">Export to log </a>
-                    <a class="" id="btnExportToText">Export to text </a>
-                  </div>
-                </div>
-                <a class="btn-table btn-tools" id="btnPrint"
-                  ><i class="fas fa-print"></i>
-                  Print
-                </a>
-              </div>
 
               <div class="summary-employee-info-container ">
                 <div>
@@ -380,7 +377,6 @@
               </div>
 
               <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3">Print DTR</a>
                 <a
                   class="btn-sm btn-secondary mx-3"
                   onclick="closeModalViewDTR();"

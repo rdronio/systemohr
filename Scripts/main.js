@@ -33,6 +33,10 @@ $(document).ready(function() {
       $(".nav-list li.current-page").removeClass("current-page");
       $(this).addClass("current-page");
     });
+
+    $(".btn-dropdown").on("click", function() {
+      this.classList.add("hidden");
+    });
   } catch (e) {
     console.log(e);
   }
@@ -1329,7 +1333,6 @@ function closeModalViewDTR() {
 function toggleDropDown() {
   try {
     const drpdown = document.querySelector(".btn-dropdown");
-
     drpdown.classList.toggle("hidden");
   } catch (e) {
     console.log(e);
