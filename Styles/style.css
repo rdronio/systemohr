@@ -497,6 +497,16 @@ iframe {
   flex-direction: row;
 }
 
+.datePeriod {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 25rem;
+}
+
+.datePeriod input {
+  margin-right: 0.75rem !important;
+}
+
 .btn-circle {
   text-align: center;
   border-radius: 50%;
@@ -2553,20 +2563,39 @@ nav ul li a span.fa {
 }
 
 /* ========[ Generate DTR Report]======== */
-#dtr-report .container .card-1 div:nth-child(1) {
+#dtr-report .container .card-1 > div:nth-child(1) {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-#dtr-report .container .card-1 div:nth-child(1) input {
+#dtr-report .container .card-1 > div:nth-child(1) input {
   margin-right: 0.5rem;
 }
 
-#dtr-report .container .card-1 div:nth-child(2) {
-  display: inline-block;
+#dtr-report .container .card-1 > div:nth-child(2) {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
 }
 
-#dtr-report .container .card-1 div:nth-child(2) select {
+#dtr-report .container .card-1 > div:nth-child(2) input {
+  margin-right: 0.5rem;
+}
+
+#dtr-report .container .card-1 > div:nth-child(4) {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+#dtr-report .container .card-1 > div:nth-child(4) select {
+  margin-right: 0.5rem;
+}
+
+#dtr-report .container .card-1 > div:nth-child(5) {
+  margin-bottom: 0.5rem;
+}
+
+#dtr-report .container .card-1 > div:nth-child(5) select {
   margin-right: 0.5rem;
 }
 
@@ -3093,7 +3122,7 @@ nav ul li a span.fa {
   width: 85%;
 }
 
-#memonotice .modal-content .showEmployeeByModal .select:nth-child(2) {
+#memonotice .modal-content .div2 .select:nth-child(2) {
   margin-bottom: 0.5rem;
 }
 
@@ -3104,12 +3133,12 @@ nav ul li a span.fa {
 }
 
 #memonotice .modal-content p {
-    font-size: 0.8rem;
-    padding: 0 0 0.4rem 0;
+  font-size: 0.8rem;
+  padding: 0 0 0.4rem 0;
 }
 
 #memonotice .modal-content .label-6 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 /* ========[ Payroll]======== */

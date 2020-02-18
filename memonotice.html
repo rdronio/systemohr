@@ -269,11 +269,11 @@
                       <label
                         for="optAll"
                         class="radio"
-                        onclick="toggleMemoRecipient()"
+                        onclick="toggleEmployeeSelection()"
                       >
                         <input
                           type="radio"
-                          name="memoRecipient"
+                          name="employeeSelection"
                           id="optAll"
                           value="All"
                           class="hidden"
@@ -284,11 +284,11 @@
                       <label
                         for="optCustom"
                         class="radio"
-                        onclick="toggleMemoRecipient()"
+                        onclick="toggleEmployeeSelection()"
                       >
                         <input
                           type="radio"
-                          name="memoRecipient"
+                          name="employeeSelection"
                           id="optCustom"
                           class="hidden"
                           value="Custom"
@@ -298,7 +298,7 @@
                     </div>
                   </div>
 
-                  <div class="selectDepartmentModal hidden">
+                  <div class="div1 hidden">
                     <label for="selectDepartmentModal" class="label-6 block"
                       >Select Department</label
                     >
@@ -315,7 +315,7 @@
                     </select>
                   </div>
 
-                  <div class="showEmployeeByModal hidden">
+                  <div class="div2 hidden">
                     <label for="showEmployeeByModal" class="label-6 block"
                       >Show Employee by</label
                     >
@@ -337,19 +337,15 @@
                     </select>
                   </div>
 
-                  <div class="drpDownEmployeeModal hidden">
+                  <div class="div3 hidden">
                     <label for="drpDownEmployeeModal" class="label-6 block"
                       >Employee</label
                     >
-                    <select
-                      name="drpDownEmployeeModal"
-                      id="drpDownEmployeeModal"
-                      class="select block"
-                    >
-                      <option>Select Employee</option>
-                      <option>All</option>
+                    <input  type="text" list="drpDownEmployeeModal"  class="select block"/>
+                    <datalist id="drpDownEmployeeModal">
                       <option>John Doe</option>
-                    </select>
+                      <option>John Michael</option>
+                    </datalist>
                   </div>
                 </div>
               </div>

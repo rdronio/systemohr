@@ -1350,12 +1350,12 @@ function toggleDropDown() {
   }
 }
 
-function toggleMemoRecipient() {
+function toggleEmployeeSelection() {
   try {
-    const div1 = document.querySelector(".selectDepartmentModal");
-    const div2 = document.querySelector(".showEmployeeByModal");
-    const div3 = document.querySelector(".drpDownEmployeeModal");
-    let radioValue = $("input[name='memoRecipient']:checked").val();
+    const div1 = document.querySelector(".div1");
+    const div2 = document.querySelector(".div2");
+    const div3 = document.querySelector(".div3");
+    let radioValue = $("input[name='employeeSelection']:checked").val();
 
     if (radioValue === "All") {
       div1.classList.remove("hidden");

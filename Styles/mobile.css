@@ -35,6 +35,16 @@
     font-size: 0.7rem;
   }
 
+  input {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .select {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
   /* ========[ Nav ]======== */
   nav {
     /* background: #fff; */
@@ -100,11 +110,16 @@
   }
 
   .btn-container {
-    flex-direction: column;
+    flex-direction: column !important;
+  }
+  .btn-container a {
+    width: 100% !important;
+    margin: 0 !important;
   }
 
-  .btn-container button {
-    margin: 0.5rem 0;
+  .btn-container a:first-child {
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .close-nav {
@@ -113,6 +128,16 @@
     height: 2rem;
     width: 2rem;
     left: 0;
+  }
+
+  .datePeriod {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .datePeriod input {
+    margin-right: 0 !important;
   }
 
   .modal-content,
@@ -281,11 +306,6 @@
 
   .container {
     margin: 0.5rem 0.5rem;
-  }
-
-  .container .card-1 input {
-    width: 100%;
-    margin-right: 0;
   }
 
   .card {
@@ -1172,18 +1192,6 @@
 
   #systempreferences .container .card-1 > div > div {
     padding-right: 0;
-  }
-
-  #systempreferences .container .card-1 > .btn-container {
-    flex-direction: column;
-  }
-
-  #systempreferences .container .card-1 .btn-container button:first-child {
-    margin-right: 0;
-  }
-
-  #systempreferences .container .card-1 .btn-container button {
-    margin-bottom: 1rem;
   }
 
   /* ========[ undertime Records ]======== */
@@ -2460,7 +2468,7 @@
   }
 
   #dtr-report .container .card-1 div:nth-child(2) > div {
-    display: none;
+    /* display: none; */
   }
 
   #dtr-report .container .card-1 div:nth-child(3) input {
