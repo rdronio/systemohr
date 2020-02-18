@@ -3103,6 +3103,15 @@ nav ul li a span.fa {
   /* justify-content: space-between; */
 }
 
+#memonotice .modal-content p {
+    font-size: 0.8rem;
+    padding: 0 0 0.4rem 0;
+}
+
+#memonotice .modal-content .label-6 {
+    font-weight: 600;
+}
+
 /* ========[ Payroll]======== */
 #payroll .container .card-1 > div:first-child {
   position: relative;

@@ -2807,8 +2807,6 @@
     width: 100%;
   }
 
-
-
   .modal-payrollmemo
     .modal-content
     .tableLayout
@@ -2861,6 +2859,47 @@
     tr
     td:nth-child(6):before {
     content: "Action";
+  }
+
+  .modal-viewpayrollmemo
+    > .modal-content
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(1):before {
+    content: "Employee ID";
+  }
+  .modal-viewpayrollmemo
+    > .modal-content
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(2):before {
+    content: "Employee Name";
+  }
+  .modal-viewpayrollmemo
+    > .modal-content
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(3):before {
+    content: "Department";
+  }
+  .modal-viewpayrollmemo
+    > .modal-content
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(4):before {
+    content: "Position";
+  }
+  .modal-viewpayrollmemo
+    > .modal-content
+    .tableLayout
+    tbody
+    tr
+    td:nth-child(5):before {
+    content: "E-mail";
   }
 
   /* ========[ Payslip ]======== */

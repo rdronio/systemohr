@@ -540,6 +540,7 @@ function openModal(btn_id) {
     const modalViewEmployee = document.querySelector(".modal-view-employee");
     const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
     const modalViewPayslip = document.querySelector(".modal-view-payslip");
+    const modalViewMemo = document.querySelector(".modal-viewpayrollmemo");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -586,6 +587,8 @@ function openModal(btn_id) {
       modalEditHoliday.style.display = "flex";
     } else if (modalBtn === "#btnAddPayrollMemo") {
       modalPayrollMemo.style.display = "flex";
+    } else if (modalBtn === "#btnViewMemoNotice") {
+      modalViewMemo.style.display = "flex";
     }
 
     //set tab back to primary-info
@@ -624,6 +627,7 @@ function closeModal(btn_id) {
     const modalAddEmpTask = document.querySelector(".modal-add-inprogresstask");
     const modalViewPayslip = document.querySelector(".modal-view-payslip");
     const modalPayrollMemo = document.querySelector(".modal-payrollmemo");
+    const modalViewMemo = document.querySelector(".modal-viewpayrollmemo");
 
     // get open modal button
     const modalBtn = btn_id;
@@ -663,6 +667,8 @@ function closeModal(btn_id) {
       modalViewPayslip.style.display = "none";
     } else if (modalBtn === "#btnClosePayrollMemo") {
       modalPayrollMemo.style.display = "none";
+    } else if (modalBtn === "#btnCloseViewMemo") {
+      modalViewMemo.style.display = "none";
     }
 
     //set tab back to primary-info
