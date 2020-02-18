@@ -1307,3 +1307,31 @@ function closeModalUndertimeRemarks() {
     console.log(e);
   }
 }
+
+function openModalViewDTR() {
+  try {
+    const modal = document.querySelector(".modal-view-dtr");
+    modal.style.display = "flex";
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function closeModalViewDTR() {
+  try {
+    const modal = document.querySelector(".modal-view-dtr");
+    modal.style.display = "none";
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleDropDown() {
+  try {
+    const drpdown = document.querySelector(".btn-dropdown");
+
+    drpdown.classList.toggle("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
