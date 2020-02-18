@@ -2662,7 +2662,91 @@
     padding-right: 20%;
   }
 
-  /*  */
+  /*============= Payroll Memo/Notice ============*/
+  #payrollmemo .modal-content > div:first-of-type {
+    flex-direction: column !important;
+  }
+
+  #payrollmemo .modal-content > div:first-of-type > div:first-of-type input,
+  #payrollmemo .modal-content > div:first-of-type > div:first-of-type textarea {
+    width: 100% !important; 
+  }
+
+  #payrollmemo .modal-content > div:first-of-type > div:nth-of-type(2) select{
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #payrollmemo .container .card-1 div:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  #payrollmemo .container .card-1 div:nth-child(2) a,
+  #payrollmemo .container .card-1 div:nth-child(2) input {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+    #payrollmemo .container .card-1 > div:nth-child(3) {
+        width: 100%;
+    }
+
+  #payrollmemo .container .card-1 div:nth-child(3) select:nth-child(2) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #payrollmemo .container .card-1 div:nth-child(4) {
+    margin-bottom: 0.5rem;
+  }
+  
+  #payrollmemo .container .card-1 div:nth-child(4) input:nth-child(2) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #payrollmemo .container .card-1 .tableLayout tbody tr td:nth-child(1):before {
+    content: "Date";
+  }
+  #payrollmemo .container .card-1 .tableLayout tbody tr td:nth-child(2):before {
+    content: "Subject";
+  }
+
+  #payrollmemo .container .card-1 .tableLayout tbody tr td:nth-child(3):before {
+    content: "Type";
+  }
+
+  #payrollmemo .container .card-1 .tableLayout tbody tr td:nth-child(4):before {
+    content: "Action";
+  }
+
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(1):before {
+      content:"Employee ID";
+  }
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(2):before {
+      content:"Employee Name";
+  }
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(3):before {
+      content:"Department";
+  }
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(4):before {
+      content:"Position";
+  }
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(5):before {
+      content:"E-mail";
+  }
+
+  .modal-payrollmemo .modal-content .tableLayout tbody tr td:nth-child(6):before {
+      content:"Action";
+  }
+
   /* ========[ Payslip ]======== */
 
   #payslip .container .card-1 div:nth-child(1) {
