@@ -350,7 +350,11 @@ iframe {
 
 .btn-alt {
   color: #333;
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
+
+  border: 1px solid rgba(60, 64, 67, 0.302);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
 .btn-alt:hover {
@@ -364,6 +368,9 @@ iframe {
 .btn-primary {
   background: #00aedb;
   color: #fff !important;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
 .btn-primary:hover {
@@ -377,6 +384,9 @@ iframe {
 .btn-secondary {
   background: #333333;
   color: #fff !important;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 .btn-secondary:hover {
   background: #777777;
@@ -388,6 +398,9 @@ iframe {
 .btn-green {
   background: #00b159;
   color: #fff !important;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 .btn-green:hover {
   background: #55cb90;
@@ -399,6 +412,9 @@ iframe {
 .btn-alt-green {
   color: #00b159;
   border: 1px solid #00b159;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
 .btn-alt-green:hover {
@@ -412,6 +428,9 @@ iframe {
 .btn-red {
   background: #d41243;
   color: #fff !important;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 .btn-red:hover {
   background: #e26181;
@@ -464,6 +483,9 @@ iframe {
 .btn-tools {
   background: #00b159;
   color: #fff !important;
+
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 .btn-tools:hover {
   background: #55cb90;
@@ -999,14 +1021,33 @@ iframe {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 
+  display: flex;
+  flex-direction: row;
+
   margin-right: auto;
-  max-width: 720px;
+  max-width: 500px;
   position: relative;
   -webkit-transition: background 100ms ease-in, width 100ms ease-out;
   transition: background 100ms ease-in, width 100ms ease-out;
 }
+.search-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0 5px;
+  line-height: 0;
+}
+.search-container > div {
+  height: 40px;
+  padding: 0;
+  margin-left: 56px;
+  margin-right: 49px;
+  overflow: hidden;
+}
 
 .search-filter-container {
+  background: #fff;
   margin: -2px 0 0 0;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -1024,6 +1065,36 @@ iframe {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
+
+  max-width: 500px;
+  min-width: 334px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.search-filter-container > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  /* line-height: 20px; */
+  margin-bottom: 10px;
+  padding: 0;
+  width: 100%;
+}
+
+.search-filter-container label {
+  font-weight: 500;
+  font-size: 0.7rem;
+  padding: 0 0 0.4rem 0;
+}
+.search-filter-container > .btn-filter-container {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  margin-bottom: 0;
+}
+.search-filter-container > .btn-filter-container a:nth-child(2) {
+  margin: 0 8px 0 0;
 }
 
 .search {
