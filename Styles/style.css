@@ -431,7 +431,7 @@ iframe {
 
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  z-index: 2;
   margin-top: 1%;
   margin-left: 0.5rem !important;
   /* height: 100px; */
@@ -502,7 +502,24 @@ iframe {
   grid-template-columns: 1fr 1fr;
   width: 25rem;
 }
+.datePeriod .item-1 {
+  order: 1;
+}
+.datePeriod .item-2 {
+  order: 3;
+}
+.datePeriod .item-3 {
+  order: 2;
+}
+.datePeriod .item-4 {
+  order: 4;
+}
 
+.datePeriod .label-6 {
+  font-weight: 400 !important;
+  font-size: 0.7rem !important;
+  padding: 0.4rem 0 0.4rem 0 !important;
+}
 .datePeriod input {
   margin-right: 0.75rem !important;
 }
@@ -782,7 +799,7 @@ iframe {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 3; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */

@@ -38,10 +38,15 @@ $(document).ready(function() {
       this.classList.add("hidden");
     });
 
-    // $(".modal-rd-container").on("click", function() {
-    //   $("#radio_1").prop("checked", true);
-    //   if
-    // });
+    $(document).click(function(e) {
+      e.stopPropagation();
+      let container = $(".btn-tools-container");
+
+      //check if the clicked area is dropDown or not
+      if (container.has(e.target).length === 0) {
+        $(".btn-dropdown").addClass("hidden");
+      }
+    });
   } catch (e) {
     console.log(e);
   }
