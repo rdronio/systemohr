@@ -3080,16 +3080,6 @@ nav ul li a span.fa {
   display: inline-block;
 }
 
-#memonotice .container .card-1 > div:nth-child(2) {
-  display: block;
-  margin-bottom: 0.5rem;
-  margin-right: 1rem;
-}
-
-#memonotice .container .card-1 > div:nth-child(2) input {
-  margin-right: 0.5rem;
-}
-
 #memonotice .container .card-1 > div:nth-child(3) {
   display: inline-block;
   margin-bottom: 0.5rem;
@@ -3099,32 +3089,8 @@ nav ul li a span.fa {
   margin-right: 0.5rem;
 }
 
-#memonotice .container .card-1 > div:nth-child(3) select:nth-child(2) {
-  margin-left: 2rem;
-}
-
 #memonotice .container .card-1 > div:nth-child(4) input {
   display: block;
-}
-
-#memonotice .container .card-1 > div:nth-child(4) input:nth-child(2) {
-  margin-left: 2rem;
-}
-
-#memonotice .tableLayout .column1 {
-  width: 17%;
-}
-
-#memonotice .tableLayout .column2 {
-  width: 12%;
-}
-#memonotice .tableLayout .column3,
-#memonotice .tableLayout .column4 {
-  width: 8%;
-}
-
-#memonotice .tableLayout .column5 {
-  width: 8%;
 }
 
 #memonotice .modal-content {

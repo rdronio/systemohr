@@ -280,7 +280,7 @@
   }
 
   .tab-list li a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .tab-list li a:active {
@@ -2901,17 +2901,13 @@
   }
 
   #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(3):before {
-    content: "Pay Period";
-  }
-
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(4):before {
     content: "Total Earnings";
   }
 
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(5):before {
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(4):before {
     content: "Total Deductions";
   }
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(6):before {
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(5):before {
     content: "Net Pay";
   }
 
