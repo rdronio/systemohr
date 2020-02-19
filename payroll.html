@@ -144,53 +144,59 @@
                   Create Payroll
                 </a>
               </div>
-
-              <div>
-                <label class="label-6 block">Pay Period</label>
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="startDatePicker"
-                />
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="endDatePicker"
-                />
-                <a class="btn-sm btn-secondary">Clear</a>
+              <div class="search-container">
+                <button></button>
+                <div>
+                  <input
+                    type=""
+                    value=""
+                    placeholder="Search Employee"
+                    id="searchEmployee"
+                  />
+                </div>
+                <button></button>
               </div>
+              <div class="search-filter-container">
+                <div>
+                  <label class="label-6 block">Pay Period</label>
+                  <label for="txtDateFrom" class="label-6">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="startDatePicker"
+                  />
+                  <label for="txtDateTo" class="label-6">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="endDatePicker"
+                  />
+                  <a class="btn-sm btn-secondary">Clear</a>
+                </div>
 
-              <div>
-                <label for="showEmployeeBy" class="label-6 block"
-                  >Show Employee by</label
-                >
-                <select
-                  name="showEmployeeBy"
-                  id="showEmployeeBy"
-                  class="select"
-                  onchange="getEmployeeBy()"
-                >
-                  <option value="">--Please choose an option--</option>
-                  <option value="department">Department</option>
-                  <option value="position">Position</option>
-                </select>
-                <select
-                  name="showEmployeeByCategory"
-                  id="showEmployeeByCategory"
-                  class="select"
-                >
-                </select>
-              </div>
-
-              <div>
-                <label for="searchEmployee" class="label-6 block"
-                  >Search Employee ID/Name</label
-                >
-                <input type="" value="" id="searchEmployee" />
+                <div>
+                  <label for="showEmployeeBy" class="label-6 block"
+                    >Show Employee by</label
+                  >
+                  <select
+                    name="showEmployeeBy"
+                    id="showEmployeeBy"
+                    class="select"
+                    onchange="getEmployeeBy()"
+                  >
+                    <option value="">--Please choose an option--</option>
+                    <option value="department">Department</option>
+                    <option value="position">Position</option>
+                  </select>
+                  <select
+                    name="showEmployeeByCategory"
+                    id="showEmployeeByCategory"
+                    class="select"
+                  >
+                  </select>
+                </div>
               </div>
 
               <!-- Payroll -->
