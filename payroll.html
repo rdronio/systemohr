@@ -144,8 +144,10 @@
                   Create Payroll
                 </a>
               </div>
+              <div class="search-main-container">
               <div class="search-container">
-                <button class="" aria-label="Search Mail" role="button">
+                <button class="btn-search tooltip" aria-label="Search Mail">
+                  <span class="tooltiptext">Search</span>
                   <svg
                     focusable="false"
                     height="24px"
@@ -161,13 +163,27 @@
                 </button>
                 <div>
                   <input
-                    type=""
-                    value=""
+                    class="txtSearch"
+                    type="text"
+                    list="txtSearch"
+                    class="select block"
                     placeholder="Search Employee"
-                    id="searchEmployee"
+                    onkeypress="checkSearchInput();"
+                    onchange="checkSearchInput();"
                   />
+                  <datalist id="txtSearch">
+                    <option>John Doe</option>
+                    <option>John Doe Daddy</option>
+                    <option>John Doe Mommy</option>
+                  </datalist>
                 </div>
-                <button class="gb_qf" aria-label="Clear search" type="button">
+                <button
+                  aria-label="Clear search"
+                  type="button"
+                  data-tooltip="Clear search"
+                  onclick="clearSearch();"
+                  class="btn-clear-search hidden"
+                >
                   <svg
                     focusable="false"
                     height="24px"
@@ -182,13 +198,11 @@
                   </svg>
                 </button>
                 <button
-                  class="gb_tf"
                   type="button"
-                  gh="sda"
-                  role="button"
                   data-tooltip="Show search options"
                   aria-label="Advanced search options"
-                  style=""
+                  class="showSearchOptions"
+                  onclick="toggleSearchFilter();"
                 >
                   <svg
                     focusable="false"
@@ -202,31 +216,32 @@
                   </svg>
                 </button>
               </div>
-              <div class="search-filter-container">
+              <div class="search-filter-container hidden">
                 <div>
                   <label class="block">Pay Period</label>
                   <div class="datePeriod">
-                    <label for="txtDateFrom" class="item-1">From: </label>
+                    <label for="txtDateFrom">From: </label>
                     <input
                       name="txtDateFrom"
                       type="text"
                       id="txtDateFrom"
-                      class="startDatePicker item-2"
+                      class="startDatePicker"
                     />
-                    <label for="txtDateTo" class="item-3">To: </label>
+                    <label for="txtDateTo">To: </label>
                     <input
                       name="txtDateTo"
                       type="text"
                       id="txtDateTo"
-                      class="endDatePicker item-4"
+                      class="endDatePicker"
                     />
                   </div>
                 </div>
 
-                <div>
+                <div class="showEmployeeBy">
                   <label for="showEmployeeBy" class="label-6 block"
                     >Show Employee by</label
                   >
+
                   <select
                     name="showEmployeeBy"
                     id="showEmployeeBy"
@@ -250,11 +265,15 @@
                     Search
                   </a>
 
-                  <a class="btn-sm btn-secondary " id="btnClearMemoNotice">
+                  <a
+                    class="btn-sm btn-secondary hidden "
+                    id="btnClearMemoNotice"
+                  >
                     Clear
                   </a>
                 </div>
               </div>
+              </div>  
 
               <!-- Payroll -->
               <table class="tableLayout">
@@ -515,7 +534,7 @@
 
               <div>
                 <label class="label-6 block">Pay Period</label>
-                <label for="txtDateFromModal" class="label-6">From: </label>
+                <label for="txtDateFromModal" class="label-6">From</label>
                 <input
                   name="txtDateFromModal"
                   type="text"
@@ -523,7 +542,7 @@
                   class="startDatePicker"
                   onchange="generatePayPeriod(`#drpDownPayFreqModal`,`#txtDateFromModal`,`#txtDateToModal`,`payroll`);"
                 />
-                <label for="txtDateToModal" class="label-6">To: </label>
+                <label for="txtDateToModal" class="label-6">To</label>
                 <input
                   name="txtDateToModal"
                   type="text"

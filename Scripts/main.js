@@ -47,6 +47,16 @@ $(document).ready(function() {
         $(".btn-dropdown").addClass("hidden");
       }
     });
+
+    $(document).click(function(e) {
+      e.stopPropagation();
+      let container = $(".search-main-container");
+
+      //check if the clicked area is dropDown or not
+      if (container.has(e.target).length === 0) {
+        $(".search-filter-container").addClass("hidden");
+      }
+    });
   } catch (e) {
     console.log(e);
   }
@@ -1371,6 +1381,44 @@ function toggleEmployeeSelection() {
       div2.classList.remove("hidden");
       div3.classList.remove("hidden");
     }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function checkSearchInput() {
+  try {
+    const txtSearch = document.querySelector(".txtSearch").value;
+    const btnClearSearch = document.querySelector(".btn-clear-search");
+
+    if (txtSearch === "") {
+      btnClearSearch.classList.add("hidden");
+    } else {
+      btnClearSearch.classList.remove("hidden");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function clearSearch() {
+  try {
+    const btnClearSearch = document.querySelector(".btn-clear-search");
+
+    btnClearSearch.classList.add("hidden");
+    reset(`payroll`);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleSearchFilter() {
+  try {
+    const container = document.querySelector(".search-filter-container");
+    const showSearchOptions = document.querySelector(".showSearchOptions");
+
+    container.classList.toggle("hidden");
+    showSearchOptions.classList.toggle("rotate");
   } catch (e) {
     console.log(e);
   }

@@ -27,6 +27,8 @@ html {
   background: #fff !important;
   width: 10px !important;
   padding: 0 2px;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -146,6 +148,10 @@ input {
   font-weight: 400;
 
   -webkit-tap-highlight-color: transparent;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 input[type="checkbox"] {
@@ -517,24 +523,6 @@ iframe {
 .d-flex {
   display: flex;
   flex-direction: row;
-}
-
-.datePeriod {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 25rem;
-}
-.datePeriod .item-1 {
-  order: 1;
-}
-.datePeriod .item-2 {
-  order: 3;
-}
-.datePeriod .item-3 {
-  order: 2;
-}
-.datePeriod .item-4 {
-  order: 4;
 }
 
 .datePeriod .label-6 {
@@ -1024,11 +1012,37 @@ iframe {
   display: flex;
   flex-direction: row;
 
+  height: 2.5rem;
   margin-right: auto;
   max-width: 500px;
   position: relative;
   -webkit-transition: background 100ms ease-in, width 100ms ease-out;
   transition: background 100ms ease-in, width 100ms ease-out;
+
+  padding: 0 0.2rem;
+}
+
+.search-container input {
+  background: none;
+  border: none;
+  cursor: text !important;
+  outline: none;
+
+  outline: none;
+  padding: 0.5rem;
+  transition: 0.3s;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.search-container input:focus {
+  border-color: transparent !important;
+  box-shadow: none;
 }
 .search-container button {
   background: none;
@@ -1038,17 +1052,35 @@ iframe {
   padding: 0 5px;
   line-height: 0;
 }
+
+.search-container button svg {
+  border-radius: 50%;
+  color: #333;
+  height: 32px;
+  width: 32px;
+  padding: 5px;
+}
+.search-container button:hover svg {
+  background-color: rgba(60, 64, 67, 0.12);
+}
+.search-container button:focus svg,
+.search-container button:active svg {
+  outline: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
 .search-container > div {
   height: 40px;
+  width: 100%;
   padding: 0;
-  margin-left: 56px;
-  margin-right: 49px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .search-filter-container {
   background: #fff;
-  margin: -2px 0 0 0;
+  margin: 1px 0 0 0;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
   letter-spacing: 0.2px;
@@ -1078,7 +1110,7 @@ iframe {
   display: flex;
   flex-direction: column;
   /* line-height: 20px; */
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 0;
   width: 100%;
 }
@@ -1088,6 +1120,40 @@ iframe {
   font-size: 0.7rem;
   padding: 0 0 0.4rem 0;
 }
+
+.search-filter-container input,
+.search-filter-container select {
+  width: 100%;
+}
+
+.search-filter-container .datePeriod {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+}
+.search-filter-container .datePeriod *:nth-child(1) {
+  order: 1;
+}
+.search-filter-container .datePeriod *:nth-child(2) {
+  order: 3;
+}
+.search-filter-container .datePeriod *:nth-child(3) {
+  order: 2;
+}
+.search-filter-container .datePeriod *:nth-child(4) {
+  order: 4;
+}
+
+.search-filter-container .showEmployeeBy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+}
+
+.search-filter-container .showEmployeeBy *:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
 .search-filter-container > .btn-filter-container {
   -webkit-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -1152,6 +1218,46 @@ iframe {
 .text {
   font-weight: 400;
   font-size: 0.7rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  width: 120px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 4;
+  top: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .py-1 {
@@ -1327,6 +1433,10 @@ iframe {
 
 .modal-tab-list::-webkit-scrollbar-thumb {
   display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 .warning {
