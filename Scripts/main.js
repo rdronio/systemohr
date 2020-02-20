@@ -38,10 +38,25 @@ $(document).ready(function() {
       this.classList.add("hidden");
     });
 
-    // $(".modal-rd-container").on("click", function() {
-    //   $("#radio_1").prop("checked", true);
-    //   if
-    // });
+    $(document).click(function(e) {
+      e.stopPropagation();
+      let container = $(".btn-tools-container");
+
+      //check if the clicked area is dropDown or not
+      if (container.has(e.target).length === 0) {
+        $(".btn-dropdown").addClass("hidden");
+      }
+    });
+
+    $(document).click(function(e) {
+      e.stopPropagation();
+      let container = $(".search-main-container");
+
+      //check if the clicked area is dropDown or not
+      if (container.has(e.target).length === 0) {
+        $(".search-filter-container").addClass("hidden");
+      }
+    });
   } catch (e) {
     console.log(e);
   }
@@ -1350,12 +1365,12 @@ function toggleDropDown() {
   }
 }
 
-function toggleMemoRecipient() {
+function toggleEmployeeSelection() {
   try {
-    const div1 = document.querySelector(".selectDepartmentModal");
-    const div2 = document.querySelector(".showEmployeeByModal");
-    const div3 = document.querySelector(".drpDownEmployeeModal");
-    let radioValue = $("input[name='memoRecipient']:checked").val();
+    const div1 = document.querySelector(".div1");
+    const div2 = document.querySelector(".div2");
+    const div3 = document.querySelector(".div3");
+    let radioValue = $("input[name='employeeSelection']:checked").val();
 
     if (radioValue === "All") {
       div1.classList.remove("hidden");
@@ -1366,6 +1381,44 @@ function toggleMemoRecipient() {
       div2.classList.remove("hidden");
       div3.classList.remove("hidden");
     }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function checkSearchInput() {
+  try {
+    const txtSearch = document.querySelector(".txtSearch").value;
+    const btnClearSearch = document.querySelector(".btn-clear-search");
+
+    if (txtSearch === "") {
+      btnClearSearch.classList.add("hidden");
+    } else {
+      btnClearSearch.classList.remove("hidden");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function clearSearch() {
+  try {
+    const btnClearSearch = document.querySelector(".btn-clear-search");
+
+    btnClearSearch.classList.add("hidden");
+    reset(`payroll`);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleSearchFilter() {
+  try {
+    const container = document.querySelector(".search-filter-container");
+    const showSearchOptions = document.querySelector(".showSearchOptions");
+
+    container.classList.toggle("hidden");
+    showSearchOptions.classList.toggle("rotate");
   } catch (e) {
     console.log(e);
   }

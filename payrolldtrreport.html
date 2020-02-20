@@ -49,7 +49,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome</span>
-              <h2>HR Admin</h2>
+              <h2>HR Payroll</h2>
               <p>&nbsp;</p>
             </div>
           </div>
@@ -67,8 +67,7 @@
               >
             </li>
             <li>
-              <!-- <a href="memoannouncements.html" -->
-              <a href="payrollunderconstruction.html"
+              <a href="memonotice.html"
                 ><i class="far fa-bell"></i>Memo / Notice</a
               >
             </li>
@@ -83,10 +82,10 @@
                   <a href="generatedtrreport.html">Generate DTR Report</a>
                 </li>
                 <li>
-                  <a href="payrollunderconstruction.html">Payroll Report</a>
+                  <a href="payrollreport.html">Payroll Report</a>
                 </li>
                 <li>
-                  <a href="payrollunderconstruction.html">Payslips</a>
+                  <a href="payrollpayslip.html">Payslips</a>
                 </li>
               </ul>
             </li>
@@ -122,28 +121,100 @@
           <div class="container">
             <h2>Generate DTR Report</h2>
             <div class="card card-1">
+              <div class="btn-tools-container">
+                <div>
+                  <a
+                    class="btn-table btn-tools"
+                    id="btnExportModal"
+                    onclick="toggleDropDown();"
+                    ><i class="fas fa-file-download"></i> Export
+                  </a>
+                  <div class="btn-dropdown hidden">
+                    <a class="" id="btnExportToExcelModal">Export to excel </a>
+                    <a class="" id="btnExportToLogModal">Export to log </a>
+                    <a class="" id="btnExportToTextModal">Export to text </a>
+                  </div>
+                </div>
+                <a class="btn-table btn-tools" id="btnPrint"
+                  ><i class="fas fa-print"></i>
+                  Print
+                </a>
+              </div>
               <div>
-                <label class="label-6">Filter Date</label>
-                <br />
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                <label class="label-6">DTR Period</label>
+                <div class="datePeriod">
+                  <label for="txtDateFrom" class="label-6 item-1">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="datePicker  item-2"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                  <label for="txtDateTo" class="label-6  item-3">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="datePicker  item-4"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                </div>
               </div>
 
               <div>
+                <label class="label-6 block">Employee Selection</label>
+                <div class="modal-rd-container">
+                  <label
+                    for="optAll"
+                    class="radio"
+                    onclick="toggleEmployeeSelection()"
+                  >
+                    <input
+                      type="radio"
+                      name="employeeSelection"
+                      id="optAll"
+                      value="All"
+                      class="hidden"
+                    />
+                    <span class="label"></span>All
+                  </label>
+
+                  <label
+                    for="optCustom"
+                    class="radio"
+                    onclick="toggleEmployeeSelection()"
+                  >
+                    <input
+                      type="radio"
+                      name="employeeSelection"
+                      id="optCustom"
+                      class="hidden"
+                      value="Custom"
+                    />
+                    <span class="label"></span>Custom
+                  </label>
+                </div>
+              </div>
+
+              <div class="div1 hidden">
+                <label for="selectDepartment" class="label-6 block"
+                  >Select Department</label
+                >
+                <select
+                  name="selectDepartment"
+                  id="selectDepartment"
+                  class="select"
+                >
+                  <option value="all">All</option>
+                  <option value="all">IT Department</option>
+                  <option value="all">Marketing Department</option>
+                  <option value="all">Sales Department</option>
+                  <option value="all">HR Department</option>
+                </select>
+              </div>
+
+              <div class="div2 hidden">
                 <label for="showEmployeeBy" class="label-6 block"
                   >Show Employee by</label
                 >
@@ -151,7 +222,7 @@
                   name="showEmployeeBy"
                   id="showEmployeeBy"
                   class="select"
-                  onchange="getEmployeeBy()"
+                  onchange="getEmployeeByModal()"
                 >
                   <option value="">--Please choose an option--</option>
                   <option value="department">Department</option>
@@ -159,30 +230,30 @@
                 </select>
                 <select
                   name="showEmployeeByCategory"
-                  id="showEmployeeByCategory"
+                  id="showEmployeeByCategor"
                   class="select"
                 >
                 </select>
               </div>
 
-              <div>
-                <label for="searchEmployee" class="label-6 block"
-                  >Employee</label
+              <div class="div3 hidden">
+                <label for="drpDownEmployee" class="label-6 block"
+                  >Select Employee</label
                 >
-                <select
-                  name="drpDownEmployee"
-                  id="drpDownEmployee"
+                <input
+                  type="text"
+                  list="drpDownEmployee"
                   class="select block"
-                  onchange="hidePayslipInfo();"
-                >
-                  <option>Select Employee</option>
+                />
+                <datalist id="drpDownEmployee">
                   <option>John Doe</option>
-                </select>
+                  <option>John Michael</option>
+                </datalist>
               </div>
 
               <div class="btn-container">
                 <a class="btn-sm btn-primary mx-3" id="btnGenerateDTR">
-                  View DTR
+                  Generate DTR
                 </a>
 
                 <a class="btn-sm btn-secondary mx-3" id="btnClearDTR">
@@ -215,29 +286,26 @@
                   </tr>
                 </tbody>
               </table>
-
-              <div class="btn-container">
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportText"
-                  onclick=""
-                >
-                  Export to text file
-                </button>
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportLog"
-                  onclick=""
-                >
-                  Export to log file
-                </button>
-                <button
-                  class="btn-sm btn-alt-green mx-3"
-                  id="btnExportExcel"
-                  onclick=""
-                >
-                  Export to Excel
-                </button>
+              <div class="pagination-container">
+                <div class="showmore-container">
+                  <a class="btn-showmore" href="#"
+                    ><i class="fas fa-chevron-down"></i>More Results</a
+                  >
+                </div>
+                <div class="pagination" onclick="selectPage()">
+                  <a href="#">«</a>
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#">»</a>
+                </div>
               </div>
             </div>
           </div>
@@ -247,14 +315,6 @@
             <div class="modal-content">
               <h4>Daily Time Records</h4>
               <hr />
-              <div class="tools-container">
-                <a class="btn-table btn-green" id="btnExport">
-                  Export
-                </a>
-                <a class="btn-table btn-green" id="btnPrint">
-                  Print
-                </a>
-              </div>
 
               <div class="summary-employee-info-container ">
                 <div>
@@ -369,7 +429,6 @@
               </div>
 
               <div class="modal-btn-container">
-                <a class="btn-sm btn-primary mx-3">Print DTR</a>
                 <a
                   class="btn-sm btn-secondary mx-3"
                   onclick="closeModalViewDTR();"

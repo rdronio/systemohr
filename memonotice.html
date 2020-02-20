@@ -131,21 +131,24 @@
 
               <div>
                 <label class="label-6 block">Filter Date</label>
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="startDatePicker"
-                />
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="endDatePicker"
-                />
-                <a class="btn-sm btn-secondary">Clear</a>
+                <div class="datePeriod">
+                  <label for="txtDateFrom" class="label-6 item-1">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="datePicker  item-2"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                  <label for="txtDateTo" class="label-6  item-3">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="datePicker  item-4"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                </div>
               </div>
 
               <div>
@@ -169,6 +172,16 @@
                 <input type="" value="" id="searchEmployee" />
               </div>
 
+              <div class="btn-container">
+                <a class="btn-sm btn-primary mx-3" id="btnSearchMemoNotice">
+                  Search
+                </a>
+
+                <a class="btn-sm btn-secondary mx-3" id="btnClearMemoNotice">
+                  Clear
+                </a>
+              </div>
+
               <!-- Memo / Notice -->
               <table class="tableLayout">
                 <tbody>
@@ -180,7 +193,7 @@
                   </tr>
                   <tr>
                     <td class="column1">
-                      December 1, 2019 - December 15, 2019
+                      December 1, 2019
                     </td>
                     <td class="column2">Memo 1</td>
                     <td class="column3">Memo</td>
@@ -298,26 +311,26 @@
                       <label
                         for="optAll"
                         class="radio"
-                        onclick="toggleMemoRecipient()"
+                        onclick="toggleEmployeeSelection()"
                       >
                         <input
                           type="radio"
-                          name="memoRecipient"
+                          name="employeeSelection"
                           id="optAll"
                           value="All"
                           class="hidden"
                         />
-                        <span class="label"></span>All
+                        <span class="label"></span>By Group
                       </label>
 
                       <label
                         for="optCustom"
                         class="radio"
-                        onclick="toggleMemoRecipient()"
+                        onclick="toggleEmployeeSelection()"
                       >
                         <input
                           type="radio"
-                          name="memoRecipient"
+                          name="employeeSelection"
                           id="optCustom"
                           class="hidden"
                           value="Custom"
@@ -327,7 +340,7 @@
                     </div>
                   </div>
 
-                  <div class="selectDepartmentModal hidden">
+                  <div class="div1 hidden">
                     <label for="selectDepartmentModal" class="label-6 block"
                       >Select Department</label
                     >
@@ -344,7 +357,7 @@
                     </select>
                   </div>
 
-                  <div class="showEmployeeByModal hidden">
+                  <div class="div2 hidden">
                     <label for="showEmployeeByModal" class="label-6 block"
                       >Show Employee by</label
                     >
@@ -366,19 +379,19 @@
                     </select>
                   </div>
 
-                  <div class="drpDownEmployeeModal hidden">
+                  <div class="div3 hidden">
                     <label for="drpDownEmployeeModal" class="label-6 block"
                       >Employee</label
                     >
-                    <select
-                      name="drpDownEmployeeModal"
-                      id="drpDownEmployeeModal"
+                    <input
+                      type="text"
+                      list="drpDownEmployeeModal"
                       class="select block"
-                    >
-                      <option>Select Employee</option>
-                      <option>All</option>
+                    />
+                    <datalist id="drpDownEmployeeModal">
                       <option>John Doe</option>
-                    </select>
+                      <option>John Michael</option>
+                    </datalist>
                   </div>
                 </div> -->
               </div>
@@ -469,7 +482,7 @@
 
           <div class="modal modal-viewpayrollmemo">
             <div class="modal-content">
-              <h5>Memo/Notice</h5>
+              <h5>View Memo/Notice</h5>
               <hr />
               <div>
                 <div>
@@ -480,11 +493,14 @@
 
                   <div>
                     <label class="label-6 block">Description</label>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum nam beatae possimus.</p>
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Laborum nam beatae possimus.
+                    </p>
                   </div>
                   <div>
-                    <label class="label-6 block">Attach Files</label>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <label class="label-6 block">Attached File</label>
+                    <a href="#" class="btn-table btn-tools">Download</a>
                   </div>
                 </div>
 
@@ -499,17 +515,16 @@
                   </div>
 
                   <div class="selectDepartmentModal hidden">
-                    <p>Department</label>
+                    <p>Department</p>
                   </div>
 
                   <div class="showEmployeeByModal hidden">
                     <label for="showEmployeeByModal" class="label-6 block"
                       >Show Employee by</label
                     >
-                    <p>Department</label>
+                    <p>Department</p>
                     <p>Position</p>
                   </div>
-
                 </div>
               </div>
 
@@ -584,7 +599,6 @@
               </div>
             </div>
           </div>
-
 
           <section id="footer">
             <a href="https://systemoph.com/">

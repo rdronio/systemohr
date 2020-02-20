@@ -142,26 +142,79 @@
               </div>
               <div>
                 <label class="label-6">DTR Period</label>
-                <br />
-                <label for="txtDateFrom" class="label-6">From: </label>
-                <input
-                  name="txtDateFrom"
-                  type="text"
-                  id="txtDateFrom"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
-                <label for="txtDateTo" class="label-6">To: </label>
-                <input
-                  name="txtDateTo"
-                  type="text"
-                  id="txtDateTo"
-                  class="datePicker"
-                />
-                <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                <div class="datePeriod">
+                  <label for="txtDateFrom" class="label-6 item-1">From: </label>
+                  <input
+                    name="txtDateFrom"
+                    type="text"
+                    id="txtDateFrom"
+                    class="datePicker  item-2"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                  <label for="txtDateTo" class="label-6  item-3">To: </label>
+                  <input
+                    name="txtDateTo"
+                    type="text"
+                    id="txtDateTo"
+                    class="datePicker  item-4"
+                  />
+                  <!-- <a class="icon"><i class="far fa-calendar-alt"></i></a> -->
+                </div>
               </div>
 
               <div>
+                <label class="label-6 block">Employee Selection</label>
+                <div class="modal-rd-container">
+                  <label
+                    for="optAll"
+                    class="radio"
+                    onclick="toggleEmployeeSelection()"
+                  >
+                    <input
+                      type="radio"
+                      name="employeeSelection"
+                      id="optAll"
+                      value="All"
+                      class="hidden"
+                    />
+                    <span class="label"></span>All
+                  </label>
+
+                  <label
+                    for="optCustom"
+                    class="radio"
+                    onclick="toggleEmployeeSelection()"
+                  >
+                    <input
+                      type="radio"
+                      name="employeeSelection"
+                      id="optCustom"
+                      class="hidden"
+                      value="Custom"
+                    />
+                    <span class="label"></span>Custom
+                  </label>
+                </div>
+              </div>
+
+              <div class="div1 hidden">
+                <label for="selectDepartment" class="label-6 block"
+                  >Select Department</label
+                >
+                <select
+                  name="selectDepartment"
+                  id="selectDepartment"
+                  class="select"
+                >
+                  <option value="all">All</option>
+                  <option value="all">IT Department</option>
+                  <option value="all">Marketing Department</option>
+                  <option value="all">Sales Department</option>
+                  <option value="all">HR Department</option>
+                </select>
+              </div>
+
+              <div class="div2 hidden">
                 <label for="showEmployeeBy" class="label-6 block"
                   >Show Employee by</label
                 >
@@ -169,7 +222,7 @@
                   name="showEmployeeBy"
                   id="showEmployeeBy"
                   class="select"
-                  onchange="getEmployeeBy()"
+                  onchange="getEmployeeByModal()"
                 >
                   <option value="">--Please choose an option--</option>
                   <option value="department">Department</option>
@@ -177,25 +230,25 @@
                 </select>
                 <select
                   name="showEmployeeByCategory"
-                  id="showEmployeeByCategory"
+                  id="showEmployeeByCategor"
                   class="select"
                 >
                 </select>
               </div>
 
-              <div>
-                <label for="searchEmployee" class="label-6 block"
-                  >Employee</label
+              <div class="div3 hidden">
+                <label for="drpDownEmployee" class="label-6 block"
+                  >Select Employee</label
                 >
-                <select
-                  name="drpDownEmployee"
-                  id="drpDownEmployee"
+                <input
+                  type="text"
+                  list="drpDownEmployee"
                   class="select block"
-                  onchange="hidePayslipInfo();"
-                >
-                  <option>Select Employee</option>
+                />
+                <datalist id="drpDownEmployee">
                   <option>John Doe</option>
-                </select>
+                  <option>John Michael</option>
+                </datalist>
               </div>
 
               <div class="btn-container">

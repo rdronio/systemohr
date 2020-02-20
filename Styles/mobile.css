@@ -35,6 +35,16 @@
     font-size: 0.7rem;
   }
 
+  input {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .select {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
   /* ========[ Nav ]======== */
   nav {
     /* background: #fff; */
@@ -100,11 +110,16 @@
   }
 
   .btn-container {
-    flex-direction: column;
+    flex-direction: column !important;
+  }
+  .btn-container a {
+    width: 100% !important;
+    margin: 0 !important;
   }
 
-  .btn-container button {
-    margin: 0.5rem 0;
+  .btn-container a:first-child {
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .close-nav {
@@ -113,6 +128,28 @@
     height: 2rem;
     width: 2rem;
     left: 0;
+  }
+
+  .datePeriod {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .datePeriod .item-1 {
+    order: 1;
+  }
+  .datePeriod .item-2 {
+    order: 2;
+  }
+  .datePeriod .item-3 {
+    order: 3;
+  }
+  .datePeriod .item-4 {
+    order: 4;
+  }
+
+  .datePeriod input {
+    margin-right: 0 !important;
   }
 
   .modal-content,
@@ -243,7 +280,7 @@
   }
 
   .tab-list li a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .tab-list li a:active {
@@ -281,11 +318,6 @@
 
   .container {
     margin: 0.5rem 0.5rem;
-  }
-
-  .container .card-1 input {
-    width: 100%;
-    margin-right: 0;
   }
 
   .card {
@@ -411,7 +443,6 @@
   }
 
   #home .container .card-2 .container-lg {
-    flex-direction: column;
     padding: 1rem 0;
   }
 
@@ -1172,18 +1203,6 @@
 
   #systempreferences .container .card-1 > div > div {
     padding-right: 0;
-  }
-
-  #systempreferences .container .card-1 > .btn-container {
-    flex-direction: column;
-  }
-
-  #systempreferences .container .card-1 .btn-container button:first-child {
-    margin-right: 0;
-  }
-
-  #systempreferences .container .card-1 .btn-container button {
-    margin-bottom: 1rem;
   }
 
   /* ========[ undertime Records ]======== */
@@ -2460,7 +2479,7 @@
   }
 
   #dtr-report .container .card-1 div:nth-child(2) > div {
-    display: none;
+    /* display: none; */
   }
 
   #dtr-report .container .card-1 div:nth-child(3) input {
@@ -2476,6 +2495,162 @@
   #dtr-report .container .card-1 .btn-container button {
     margin: 0.25rem 0;
   }
+
+  #dtr-report .container .card-1 .tableLayout tbody tr td:nth-child(1):before {
+    content: "Employee ID";
+  }
+  #dtr-report .container .card-1 .tableLayout tbody tr td:nth-child(2):before {
+    content: "Employee Name";
+  }
+  #dtr-report .container .card-1 .tableLayout tbody tr td:nth-child(3):before {
+    content: "Department";
+  }
+  #dtr-report .container .card-1 .tableLayout tbody tr td:nth-child(4):before {
+    content: "Position";
+  }
+  #dtr-report .container .card-1 .tableLayout tbody tr td:nth-child(5):before {
+    content: "Action";
+  }
+
+  #dtr-report .modal-content label {
+    color: #333;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+  #dtr-report .modal-content p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  #dtr-report .modal-view-dtr .modal-content .summary-employee-info-container {
+    display: grid;
+    flex-direction: row;
+    border: 1px solid #999;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.9rem;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    > div:nth-child(1) {
+    width: 100%;
+    order: 2;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    > div:nth-child(2) {
+    order: 1;
+    width: 100%;
+  }
+
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-header
+    label {
+    font-size: 0.8rem;
+  }
+
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div {
+    margin-bottom: 0.5rem;
+  }
+
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div:nth-child(1) {
+    order: 1;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div:nth-child(2) {
+    order: 3;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div:nth-child(3) {
+    order: 2;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div:nth-child(4) {
+    order: 4;
+  }
+  #dtr-report
+    .modal-view-dtr
+    .modal-content
+    .summary-employee-info-container
+    div
+    .summary-employee-info-content
+    > div:nth-child(5) {
+    order: 5;
+  }
+
+  #dtr-report .modal-view-dtr .tableLayout tbody tr td:nth-child(1):before {
+    content: "Date";
+  }
+  #dtr-report .modal-view-dtr .tableLayout tbody tr td:nth-child(2):before {
+    content: "Time In";
+  }
+
+  #dtr-report .modal-view-dtr .tableLayout tbody tr td:nth-child(3):before {
+    content: "Time Out";
+  }
+
   /* ========[ Import Time Record ]======== */
   #import-time-records .container .card-1 a {
     display: block;
@@ -2725,17 +2900,13 @@
   }
 
   #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(3):before {
-    content: "Pay Period";
-  }
-
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(4):before {
     content: "Total Earnings";
   }
 
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(5):before {
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(4):before {
     content: "Total Deductions";
   }
-  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(6):before {
+  #payroll .modal-mass-payroll .tableLayout tbody tr td:nth-child(5):before {
     content: "Net Pay";
   }
 
