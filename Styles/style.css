@@ -1011,6 +1011,7 @@ iframe {
 
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   height: 2.5rem;
   margin-right: auto;
@@ -1048,7 +1049,7 @@ iframe {
   border-color: transparent !important;
   box-shadow: none;
 }
-.search-container button {
+.search-container a {
   background: none;
   border: none;
   cursor: pointer;
@@ -1057,18 +1058,18 @@ iframe {
   line-height: 0;
 }
 
-.search-container button svg {
+.search-container a svg {
   border-radius: 50%;
   color: #333;
   height: 32px;
   width: 32px;
   padding: 5px;
 }
-.search-container button:hover svg {
+.search-container a:hover svg {
   background-color: rgba(60, 64, 67, 0.12);
 }
-.search-container button:focus svg,
-.search-container button:active svg {
+.search-container a:focus svg,
+.search-container a:active svg {
   outline: none;
   -webkit-border-radius: 50%;
   border-radius: 50%;

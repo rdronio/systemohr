@@ -51,10 +51,12 @@ $(document).ready(function() {
     $(document).click(function(e) {
       e.stopPropagation();
       let container = $(".search-main-container");
+      const showSearchOptions = document.querySelector(".showSearchOptions");
 
       //check if the clicked area is dropDown or not
       if (container.has(e.target).length === 0) {
         $(".search-filter-container").addClass("hidden");
+        showSearchOptions.classList.remove("rotate");
       }
     });
   } catch (e) {
