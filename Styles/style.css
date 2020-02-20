@@ -463,7 +463,7 @@ iframe {
   /* overflow: visible; */
 }
 
-.btn-dropdown > a {
+.btn-dropdown > button {
   color: inherit;
   cursor: pointer;
   display: block;
@@ -477,12 +477,12 @@ iframe {
   font-weight: 400;
 }
 
-.btn-dropdown > a:hover {
+.btn-dropdown > button:hover {
   background: #55cb90;
   color: #fff;
 }
 
-.btn-dropdown > a:active {
+.btn-dropdown > button:active {
   background: #00763b;
 }
 
