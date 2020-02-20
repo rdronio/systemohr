@@ -2915,28 +2915,6 @@
     margin-bottom: 0.5rem;
   }
 
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(1):before {
-    content: "Payroll Date";
-  }
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(2):before {
-    content: "Pay Period";
-  }
-
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(3):before {
-    content: "Total Earnings";
-  }
-
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(4):before {
-    content: "Total Deductions";
-  }
-
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(5):before {
-    content: "Net Pay";
-  }
-  #payslip .container .card-1 .tableLayout tbody tr td:nth-child(6):before {
-    content: "Action";
-  }
-
   #payslip .modal-content > div:nth-child(3) {
     width: 100%;
   }

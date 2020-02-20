@@ -3089,9 +3089,9 @@ nav ul li a span.fa {
   flex-direction: row !important;
 }
 
-#memonotice .modal-content > div:first-of-type *:not(.label) {
-  width: 85%;
-}
+/* #memonotice .modal-content > div:first-of-type *:not(.label) {
+  width: 100%;
+} */
 
 #memonotice .modal-content .showEmployeeByModal .select:nth-child(2) {
   margin-bottom: 0.5rem;
@@ -3104,12 +3104,12 @@ nav ul li a span.fa {
 }
 
 #memonotice .modal-content p {
-    font-size: 0.8rem;
-    padding: 0 0 0.4rem 0;
+  font-size: 0.8rem;
+  padding: 0 0 0.4rem 0;
 }
 
 #memonotice .modal-content .label-6 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 /* ========[ Payroll]======== */
