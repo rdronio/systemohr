@@ -2974,9 +2974,9 @@
     content: "Action";
   }
 
-  #memonotice .modal-content > div:first-of-type *:not(.label) {
+  /* #memonotice .modal-content > div:first-of-type *:not(.label) {
     width: 100%;
-  }
+  } */
 
   .modal-payrollmemo
     .modal-content
