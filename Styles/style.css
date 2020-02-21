@@ -952,7 +952,8 @@ iframe {
 .pagination div {
   display: inline;
 }
-.pagination a {
+
+.pagination a span {
   color: #333;
   float: left;
   padding: 0.5rem 0.75rem;
@@ -965,13 +966,13 @@ iframe {
   margin: 0 2x !important;
 }
 
-.pagination a.active {
+.pagination a span.active {
   border-radius: 5px;
   background-color: #00aedb;
   color: white;
 }
 
-.pagination a:hover:not(.active) {
+.pagination a span:hover:not(.active) {
   background-color: #ddd;
 }
 
