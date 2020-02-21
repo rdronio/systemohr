@@ -50,6 +50,20 @@ $(document).ready(function() {
 
     $(document).click(function(e) {
       e.stopPropagation();
+      let containerRec = $(".searchRec-main-container");
+      const showSearchRecOptions = document.querySelector(
+        ".showSearchRecOptions"
+      );
+
+      //check if the clicked area is dropDown or not
+      if (containerRec.has(e.target).length === 0) {
+        $(".searchRec-filter-container").addClass("hidden");
+        showSearchRecOptions.classList.remove("rotate");
+      }
+    });
+
+    $(document).click(function(e) {
+      e.stopPropagation();
       let container = $(".search-main-container");
       const showSearchOptions = document.querySelector(".showSearchOptions");
 
@@ -1388,6 +1402,27 @@ function toggleEmployeeSelection() {
   }
 }
 
+function toggleEmployeeSelection3() {
+  try {
+    const div7 = document.querySelector(".div7");
+    const div8 = document.querySelector(".div8");
+    const div9 = document.querySelector(".div9");
+    let radioValue = $("input[name='employeeSelection3']:checked").val();
+
+    if (radioValue === "All") {
+      div7.classList.remove("hidden");
+      div8.classList.add("hidden");
+      div9.classList.add("hidden");
+    } else if (radioValue === "Custom") {
+      div7.classList.add("hidden");
+      div8.classList.remove("hidden");
+      div9.classList.remove("hidden");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 function checkSearchInput() {
   try {
     const txtSearch = document.querySelector(".txtSearch").value;
@@ -1421,6 +1456,32 @@ function toggleSearchFilter() {
 
     container.classList.toggle("hidden");
     showSearchOptions.classList.toggle("rotate");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleSearchRecFilter() {
+  try {
+    const container = document.querySelector(".searchRec-filter-container");
+    const showSearchRecOptions = document.querySelector(
+      ".showSearchRecOptions"
+    );
+
+    container.classList.toggle("hidden");
+    showSearchRecOptions.classList.toggle("rotate");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleSearchRecFilter3() {
+  try {
+    const container3 = document.querySelector(".sr-f-3");
+    const showSearchRecOptions3 = document.querySelector(".sr-o-3");
+
+    container3.classList.toggle("hidden");
+    showSearchRecOptions3.classList.toggle("rotate");
   } catch (e) {
     console.log(e);
   }
