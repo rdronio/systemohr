@@ -85,16 +85,16 @@ $(document).ready(function() {
 //   });
 // }
 
-function selectPage() {
-  try {
-    $(".pagination-container").on("click", "a", function() {
-      $(".pagination a.active").removeClass("active");
-      $(this).addClass("active");
-    });
-  } catch (e) {
-    console.log(e);
-  }
-}
+// function selectPage() {
+//   try {
+//     $(".pagination-container").on("click", "a", function() {
+//       $(".pagination a.active").removeClass("active");
+//       $(this).addClass("active");
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
 function selectTab() {
   try {
