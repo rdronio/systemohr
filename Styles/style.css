@@ -359,8 +359,8 @@ iframe {
   /* border: 1px solid #333; */
 
   border: 1px solid rgba(60, 64, 67, 0.302);
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 
 .btn-alt:hover {
@@ -375,8 +375,8 @@ iframe {
   background: #00aedb;
   color: #fff !important;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 
 .btn-primary:hover {
@@ -391,8 +391,8 @@ iframe {
   background: #333333;
   color: #fff !important;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 .btn-secondary:hover {
   background: #777777;
@@ -405,8 +405,8 @@ iframe {
   background: #00b159;
   color: #fff !important;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 .btn-green:hover {
   background: #55cb90;
@@ -419,8 +419,8 @@ iframe {
   color: #00b159;
   border: 1px solid #00b159;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 
 .btn-alt-green:hover {
@@ -435,8 +435,8 @@ iframe {
   background: #d41243;
   color: #fff !important;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 .btn-red:hover {
   background: #e26181;
@@ -448,7 +448,7 @@ iframe {
 .btn-dropdown {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   margin-top: -4px;
   outline: none;
   padding: 5px 0;
@@ -491,8 +491,8 @@ iframe {
   background: #00b159;
   color: #fff !important;
 
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.1);
 }
 .btn-tools:hover {
   background: #55cb90;
@@ -583,7 +583,7 @@ iframe {
 
 .card {
   background: #ffffff;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin: 2rem 0;
   padding: 2rem 4rem;
@@ -591,7 +591,7 @@ iframe {
 
 .card-db {
   background: #ffffff;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin: 0.5rem 0;
   padding: 1rem 1.5rem;
@@ -799,7 +799,7 @@ iframe {
   display: none;
   background: #fff;
   padding: 0.5rem 0.8rem;
-  box-shadow: 3px 1px 3px 0px rgba(83, 83, 83, 0.15);
+  box-shadow: 3px 1px 3px 0px rgba(83, 83, 83, 0.1);
 }
 
 .close-menu a i {
@@ -824,7 +824,7 @@ iframe {
 .modal-content {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
   margin: 20% auto;
   padding: 2rem 3rem 0 3rem;
   /* padding: 2rem 3rem; */
@@ -837,7 +837,7 @@ iframe {
 .modal-content-sm {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
   margin: 20% auto;
   padding: 1rem 1.5rem 0 1.5rem;
   width: 25%;
@@ -1024,7 +1024,7 @@ iframe {
   padding: 0 0.2rem;
 
   border: 1px solid rgba(60, 64, 67, 0.302);
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
     0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
@@ -1098,11 +1098,11 @@ iframe {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 24px;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   max-width: 500px;
   min-width: 334px;
@@ -1810,7 +1810,7 @@ table.tableLayoutRec td {
 #login {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 768px;
   max-width: 100%;
@@ -1910,7 +1910,7 @@ table.tableLayoutRec td {
   background: rgba(255, 255, 255, 0.5);
   height: 100%;
   z-index: 1;
-  box-shadow: inset 8px 1px 15px 0px rgba(255, 255, 255, 0.22);
+  box-shadow: inset 8px 1px 15px 0px rgba(255, 255, 255, 0.1);
 }
 
 /* ========[ Nav ]======== */
@@ -1920,7 +1920,7 @@ nav {
   left: 0;
   width: 14rem;
   background: #fff;
-  box-shadow: 4px 4px 20px rgba(74, 74, 74, 0.2);
+  box-shadow: 4px 4px 20px rgba(74, 74, 74, 0.1);
   height: 100%;
   /* for screenshot */
   /* height: 2000px; */
