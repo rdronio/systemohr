@@ -1155,6 +1155,37 @@ function showEM() {
   }
 }
 
+function showPayrollIM() {
+  try {
+    const card1 = document.querySelector(
+      "#payroll-add-employee .container .card-1"
+    );
+    const card2 = document.querySelector(
+      "#payroll-add-employee .container .card-2"
+    );
+
+    card2.classList.remove("hidden");
+    card1.classList.add("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
+function showPayrollEM() {
+  try {
+    const card1 = document.querySelector(
+      "#payroll-add-employee .container .card-1"
+    );
+    const card2 = document.querySelector(
+      "#payroll-add-employee .container .card-2"
+    );
+
+    card2.classList.add("hidden");
+    card1.classList.remove("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 function showIM() {
   try {
     const card1 = document.querySelector(
@@ -1528,12 +1559,38 @@ function checkSearchInput() {
   }
 }
 
-function clearSearch() {
+function checkSearchInput2() {
+  try {
+    const txtSearch = document.querySelector(".txtSearch2").value;
+    const btnClearSearch = document.querySelector(".btn-clear-search2");
+
+    if (txtSearch === "") {
+      btnClearSearch.classList.add("hidden");
+    } else {
+      btnClearSearch.classList.remove("hidden");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function clearSearch(formID) {
   try {
     const btnClearSearch = document.querySelector(".btn-clear-search");
 
     btnClearSearch.classList.add("hidden");
-    reset(`payroll`);
+    reset(formID);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function clearSearch2(formID) {
+  try {
+    const btnClearSearch = document.querySelector(".btn-clear-search2");
+
+    btnClearSearch.classList.add("hidden");
+    reset(formID);
   } catch (e) {
     console.log(e);
   }
@@ -1543,6 +1600,18 @@ function toggleSearchFilter() {
   try {
     const container = document.querySelector(".search-filter-container");
     const showSearchOptions = document.querySelector(".showSearchOptions");
+
+    container.classList.toggle("hidden");
+    showSearchOptions.classList.toggle("rotate");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function toggleSearchFilter2() {
+  try {
+    const container = document.querySelector(".sr-f-2");
+    const showSearchOptions = document.querySelector(".showSearchOptions2");
 
     container.classList.toggle("hidden");
     showSearchOptions.classList.toggle("rotate");

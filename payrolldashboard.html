@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <form id="manage-employee" action="#" autocomplete="off">
+    <form id="payroll-dashboard" action="#" autocomplete="off">
       <!-- main -->
       <div class="main ">
         <!-- nav -->
@@ -65,6 +65,11 @@
             <li>
               <a href="payroll.html"
                 ><i class="fas fa-file-invoice"></i>Payroll</a
+              >
+            </li>
+            <li>
+              <a href="payrolladdemployee.html"
+                ><i class="fas fa-file-alt"></i>Employee Masterlist</a
               >
             </li>
             <li>
@@ -126,6 +131,7 @@
                 <div class="card-db card-1 card-md">
                   <h5 class="card-header">Tardiness Notice</h5>
                   <hr />
+                  <!-- <label class="norecords">No Records Found</label> -->
                   <table class="tableLayout">
                     <tbody>
                       <tr>
@@ -161,49 +167,141 @@
                       Send
                     </a>
                   </div>
-                  <div>
-                    <label for="txtPaymentFreq" class="label-6"
-                      >Payment Frequency
-                    </label>
-                    <select
-                      name="txtPaymentFreq"
-                      id="txtPaymentFreq"
-                      class="select"
-                    >
-                      <option value="weekly"> Weekly </option>
-                      <option value="everyTwoWeeks"> Every 2 weeks </option>
-                      <option value="monthly"> Monthly </option>
-                      <option value="custom"> Custom </option>
-                    </select>
-                  </div>
 
-                  <div>
-                    <label class="label-6 block">Pay Period</label>
-                    <label for="txtDateFrom" class="label-6">From: </label>
-                    <input
-                      name="txtDateFrom"
-                      type="text"
-                      id="txtDateFrom"
-                      class="datePickerPayroll"
-                    />
-                    <label for="txtDateTo" class="label-6">To: </label>
-                    <input
-                      name="txtDateTo"
-                      type="text"
-                      id="txtDateTo"
-                      class="datePickerPayroll"
-                    />
-                    <a class="btn-sm btn-secondary">Clear</a>
-                  </div>
+                  <div class="search-main-container">
+                    <div class="search-container">
+                      <a class="btn-search tooltip" aria-label="Search Mail">
+                        <span class="tooltiptext">Search</span>
+                        <svg
+                          focusable="false"
+                          height="24px"
+                          viewBox="0 0 24 24"
+                          width="24px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z"
+                          ></path>
+                          <path d="M0,0h24v24H0V0z" fill="none"></path>
+                        </svg>
+                      </a>
+                      <div>
+                        <input
+                          class="txtSearch"
+                          type="text"
+                          list="txtSearch"
+                          class="select block"
+                          placeholder="Search Employee"
+                          onkeypress="checkSearchInput();"
+                          onchange="checkSearchInput();"
+                        />
+                        <datalist id="txtSearch">
+                          <option>John Doe</option>
+                          <option>John Doe Daddy</option>
+                          <option>John Doe Mommy</option>
+                        </datalist>
+                      </div>
+                      <a
+                        aria-label="Clear search"
+                        type="button"
+                        data-tooltip="Clear search"
+                        onclick="clearSearch(`payroll-dashboard`);"
+                        class="btn-clear-search tooltip hidden"
+                      >
+                        <span class="tooltiptext">Clear search</span>
+                        <svg
+                          focusable="false"
+                          height="24px"
+                          viewBox="0 0 24 24"
+                          width="24px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                          ></path>
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                      </a>
+                      <a
+                        type="button"
+                        data-tooltip="Show search options"
+                        aria-label="Advanced search options"
+                        class="showSearchOptions"
+                        onclick="toggleSearchFilter();"
+                      >
+                        <svg
+                          focusable="false"
+                          height="24px"
+                          viewBox="0 0 24 24"
+                          width="24px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="search-filter-container hidden">
+                      <div>
+                        <label class="block">Pay Period</label>
+                        <div class="datePeriod">
+                          <label for="txtDateFrom">From: </label>
+                          <input
+                            name="txtDateFrom"
+                            type="text"
+                            id="txtDateFrom"
+                            class="startDatePicker"
+                          />
+                          <label for="txtDateTo">To: </label>
+                          <input
+                            name="txtDateTo"
+                            type="text"
+                            id="txtDateTo"
+                            class="endDatePicker"
+                          />
+                        </div>
+                      </div>
 
-                  <div>
-                    <label for="searchEmployee" class="label-6 block"
-                      >Search Employee ID/Name</label
-                    >
-                    <input type="" value="" id="searchEmployee" />
+                      <div class="showEmployeeBy">
+                        <label for="showEmployeeBy" class="label-6 block"
+                          >Show Employee by</label
+                        >
+
+                        <select
+                          name="showEmployeeBy"
+                          id="showEmployeeBy"
+                          class="select"
+                          onchange="getEmployeeBy()"
+                        >
+                          <option value="">--Please choose an option--</option>
+                          <option value="department">Department</option>
+                          <option value="position">Position</option>
+                        </select>
+                        <select
+                          name="showEmployeeByCategory"
+                          id="showEmployeeByCategory"
+                          class="select"
+                        >
+                        </select>
+                      </div>
+
+                      <div class="btn-filter-container">
+                        <a class="btn-sm btn-primary " id="btnSearchPayroll">
+                          Search
+                        </a>
+
+                        <a
+                          class="btn-sm btn-secondary hidden "
+                          id="btnClearMemoNotice"
+                        >
+                          Clear
+                        </a>
+                      </div>
+                    </div>
                   </div>
 
                   <!-- Payroll -->
+                  <!-- <label class="norecords">No Records Found</label> -->
                   <table class="tableLayout">
                     <tbody>
                       <tr>
