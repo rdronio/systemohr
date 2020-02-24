@@ -461,19 +461,19 @@
                     ><i class="fas fa-chevron-down"></i>More Results</a
                   >
                 </div>
-                <div class="pagination" onclick="selectPage()">
-                  <a href="#">«</a>
-                  <a class="active" href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#">»</a>
+                <div class="pagination">
+                  <a href="#"><span>«</span></a>
+                  <a href="#"><span class="active">1</span></a>
+                  <a href="#"><span>2</span></a>
+                  <a href="#"><span>3</span></a>
+                  <a href="#"><span>4</span></a>
+                  <a href="#"><span>5</span></a>
+                  <a href="#"><span>6</span></a>
+                  <a href="#"><span>7</span></a>
+                  <a href="#"><span>8</span></a>
+                  <a href="#"><span>9</span></a>
+                  <a href="#"><span>10</span></a>
+                  <a href="#"><span>»</span></a>
                 </div>
               </div>
             </div>
@@ -615,19 +615,19 @@
                     ><i class="fas fa-chevron-down"></i>More Results</a
                   >
                 </div>
-                <div class="pagination" onclick="selectPage()">
-                  <a href="#">«</a>
-                  <a class="active" href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#">»</a>
+                <div class="pagination">
+                  <a href="#"><span>«</span></a>
+                  <a href="#"><span class="active">1</span></a>
+                  <a href="#"><span>2</span></a>
+                  <a href="#"><span>3</span></a>
+                  <a href="#"><span>4</span></a>
+                  <a href="#"><span>5</span></a>
+                  <a href="#"><span>6</span></a>
+                  <a href="#"><span>7</span></a>
+                  <a href="#"><span>8</span></a>
+                  <a href="#"><span>9</span></a>
+                  <a href="#"><span>10</span></a>
+                  <a href="#"><span>»</span></a>
                 </div>
               </div>
 
@@ -967,7 +967,7 @@
                 </div>
 
                 <div>
-                  <label for="txtTinNo" class="label-6">Tin Number</label>
+                  <label for="txtTinNumber" class="label-6">Tin Number</label>
                   <input
                     name="txtTinNumber"
                     type="number"
@@ -1184,7 +1184,7 @@
               <div id="primary-info-update" class="tabNameHrModal">
                 <div>
                   <div>
-                    <label for="photo" class="label-6">Photo</label>
+                    <label for="photo2" class="label-6">Photo</label>
                     <div class="profile_pic">
                       <img
                         src="/Images/user.png"
@@ -1193,36 +1193,40 @@
                       />
                       <input
                         type="file"
-                        name="photo"
-                        id="photo"
+                        name="photo2"
+                        id="photo2"
                         accept="image/*"
                       />
                     </div>
 
-                    <label for="txtLastName" class="label-6">Last Name </label>
-                    <input name="txtLastName" type="text" id="txtLastName" />
+                    <label for="txtLastName2" class="label-6">Last Name </label>
+                    <input name="txtLastName2" type="text" id="txtLastName2" />
 
-                    <label for="txtFirstName" class="label-6"
+                    <label for="txtFirstName2" class="label-6"
                       >First Name:
                     </label>
-                    <input name="txtFirstName" type="text" id="txtFirstName" />
+                    <input
+                      name="txtFirstName2"
+                      type="text"
+                      id="txtFirstName2"
+                    />
 
-                    <label for="txtMiddleName" class="label-6"
+                    <label for="txtMiddleName2" class="label-6"
                       >Middle Name:
                     </label>
                     <input
-                      name="txtMiddleName"
+                      name="txtMiddleName2"
                       type="text"
-                      id="txtMiddleName"
+                      id="txtMiddleName2"
                     />
 
-                    <label for="dtPickerBirthday" class="label-6"
+                    <label for="dtPickerBirthday2" class="label-6"
                       >Birthday:
                     </label>
                     <input
-                      name="dtPickerBirthday"
+                      name="dtPickerBirthday2"
                       type="text"
-                      id="dtPickerBirthday"
+                      id="dtPickerBirthday2"
                       class="bdayPicker"
                     />
                   </div>
@@ -1230,21 +1234,21 @@
                   <div>
                     <label class="label-6">Gender</label>
                     <div class="modal-rd-container">
-                      <label for="optMale" class="radio">
+                      <label for="optMale2" class="radio">
                         <input
                           type="radio"
-                          name="rdoGender"
-                          id="optMale"
+                          name="rdoGender2"
+                          id="optMale2"
                           class="hidden"
                         />
                         <span class="label"></span>Male
                       </label>
 
-                      <label for="optFemale" class="radio">
+                      <label for="optFemale2" class="radio">
                         <input
                           type="radio"
-                          name="rdoGender"
-                          id="optFemale"
+                          name="rdoGender2"
+                          id="optFemale2"
                           class="hidden"
                         />
                         <span class="label"></span>Female
@@ -1253,31 +1257,31 @@
 
                     <label class="label-6">Civil Status</label>
                     <div class="modal-rd-container">
-                      <label for="optSingle" class="radio">
+                      <label for="optSingle2" class="radio">
                         <input
                           type="radio"
-                          name="rdoCivilStatus"
-                          id="optSingle"
+                          name="rdoCivilStatus2"
+                          id="optSingle2"
                           class="hidden"
                         />
                         <span class="label"></span>Single
                       </label>
 
-                      <label for="optMarried" class="radio">
+                      <label for="optMarried2" class="radio">
                         <input
                           type="radio"
-                          name="rdoCivilStatus"
-                          id="optMarried"
+                          name="rdoCivilStatus2"
+                          id="optMarried2"
                           class="hidden"
                         />
                         <span class="label"></span>Married
                       </label>
 
-                      <label for="optWidowed" class="radio">
+                      <label for="optWidowed2" class="radio">
                         <input
                           type="radio"
-                          name="rdoCivilStatus"
-                          id="optWidowed"
+                          name="rdoCivilStatus2"
+                          id="optWidowed2"
                           class="hidden"
                         />
                         <span class="label"></span>Widowed
@@ -1285,57 +1289,57 @@
                     </div>
 
                     <label class="label-6">Address </label>
-                    <label for="txtHouse" class="note"
+                    <label for="txtHouse2" class="note"
                       >House Number, Building and Street Name</label
                     >
-                    <input name="txtHouse" type="text" id="txtHouse" />
+                    <input name="txtHouse2" type="text" id="txtHouse2" />
 
-                    <label for="selectProvince" class="note">Province</label>
+                    <label for="selectProvince2" class="note">Province</label>
                     <input
-                      name="selectProvince"
+                      name="selectProvince2"
                       type="text"
-                      id="selectProvince"
+                      id="selectProvince2"
                     />
                     <!-- <select name="selectProvince" id="selectProvince" class="select" onchange="getProvince()" > -->
                     <!-- </select> -->
 
-                    <label for="selectCity" class="note"
+                    <label for="selectCity2" class="note"
                       >City/Municipality</label
                     >
-                    <input name="selectCity" type="text" id="selectCity" />
+                    <input name="selectCity2" type="text" id="selectCity2" />
                     <!-- <select name="selectCity" id="selectCity" class="select" onchange="getCity()"> -->
                     <!-- </select> -->
 
-                    <label for="txtState" class="note">State</label>
-                    <input name="txtState" id="txtState" />
+                    <label for="txtState2" class="note">State</label>
+                    <input name="txtState2" id="txtState2" />
                   </div>
                 </div>
                 <div>
                   <div>
-                    <label for="txtEmail" class="label-6">Email </label>
-                    <input name="txtEmail" type="text" id="txtEmail" />
+                    <label for="txtEmail2" class="label-6">Email </label>
+                    <input name="txtEmail2" type="text" id="txtEmail2" />
 
-                    <label for="txtPhone" class="label-6">Phone </label>
-                    <input name="txtPhone" type="text" id="txtPhone" />
+                    <label for="txtPhone2" class="label-6">Phone </label>
+                    <input name="txtPhone2" type="text" id="txtPhone2" />
                   </div>
 
                   <div>
-                    <label for="txtEmergencyContact" class="label-6"
+                    <label for="txtEmergencyContact2" class="label-6"
                       >Emergency Contact Name:
                     </label>
                     <input
-                      name="txtEmergencyContact"
+                      name="txtEmergencyContact2"
                       type="text"
-                      id="txtEmergencyContact"
+                      id="txtEmergencyContact2"
                     />
 
-                    <label for="txtEmergencyContactNo" class="label-6"
+                    <label for="txtEmergencyContactNo2" class="label-6"
                       >Emergency Contact No.:
                     </label>
                     <input
-                      name="txtEmergencyContactNo"
+                      name="txtEmergencyContactNo2"
                       type="text"
-                      id="txtEmergencyContactNo"
+                      id="txtEmergencyContactNo2"
                     />
                   </div>
                 </div>
@@ -1348,68 +1352,68 @@
                 style="display:none"
               >
                 <div>
-                  <label for="txtDateEmployed" class="label-6"
+                  <label for="txtDateEmployed2" class="label-6"
                     >Date Employed</label
                   >
                   <input
-                    name="txtDateEmployed"
+                    name="txtDateEmployed2"
                     type="text"
-                    id="txtDateEmployed"
+                    id="txtDateEmployed2"
                     class="datePicker"
                   />
 
-                  <label for="selectDepartment" class="label-6"
+                  <label for="selectDepartment2" class="label-6"
                     >Department</label
                   >
                   <select
-                    name="selectDepartment"
-                    id="selectDepartment"
+                    name="selectDepartment2"
+                    id="selectDepartment2"
                     class="select"
                   >
                   </select>
 
-                  <label for="selectPosition" class="label-6">Position</label>
+                  <label for="selectPosition2" class="label-6">Position</label>
                   <select
-                    name="selectPosition"
-                    id="selectPosition"
+                    name="selectPosition2"
+                    id="selectPosition2"
                     class="select"
                   >
                   </select>
 
-                  <label for="selectManager" class="label-6"
+                  <label for="selectManager2" class="label-6"
                     >Manager <span class="note">(Approver)</span></label
                   >
                   <select
-                    name="selectManager"
-                    id="selectManager"
+                    name="selectManager2"
+                    id="selectManager2"
                     class="select"
                   >
                   </select>
 
-                  <label for="txtSalary" class="label-6">Basic Salary</label>
+                  <label for="txtSalary2" class="label-6">Basic Salary</label>
                   <input
-                    name="txtSalary"
+                    name="txtSalary2"
                     type="number"
                     min="0"
-                    id="txtSalary"
+                    id="txtSalary2"
                   />
 
                   <br />
-                  <label for="selectShift" class="label-6">Shift</label>
-                  <select name="selectShift" id="selectShift" class="select">
+                  <label for="selectShift2" class="label-6">Shift</label>
+                  <select name="selectShift2" id="selectShift2" class="select">
                     <option value="trainee">Day Shift</option>
                     <option value="probationary">Mid Shift</option>
                     <option value="regular">Night Shift</option>
                   </select>
 
-                  <label for="selectEmploymentStatus" class="label-6"
+                  <label for="selectEmploymentStatus2" class="label-6"
                     >Employment status</label
                   >
                   <select
-                    name="selectEmploymentStatus"
-                    id="selectEmploymentStatus"
+                    name="selectEmploymentStatus2"
+                    id="selectEmploymentStatus2"
                     class="select"
-                    onchange="toggleEndo();"
+                    onchange="toggleEndo2();"
                   >
                     <option value="trainee">Trainee</option>
                     <option value="probationary">Probationary</option>
@@ -1417,145 +1421,145 @@
                     <option value="endo">End of Contract</option>
                   </select>
 
-                  <label id="txtLeaveLabel" class="label-6 disabled"
+                  <label id="txtLeaveLabel2" class="label-6 disabled"
                     >Leaves (Optional)</label
                   >
                   <label
-                    id="txtSickLeaveLabel"
-                    for="txtSickLeave"
+                    id="txtSickLeaveLabel2"
+                    for="txtSickLeave2"
                     class="note disabled"
                     >Sick Leaves</label
                   >
                   <input
-                    name="txtSickLeave"
+                    name="txtSickLeave2"
                     type="number"
                     min="0"
-                    id="txtSickLeave"
+                    id="txtSickLeave2"
                     class="disabled"
                   />
 
                   <label
-                    id="txtVELeaveLabel"
-                    for="txtVELeave"
+                    id="txtVELeaveLabel2"
+                    for="txtVELeave2"
                     class="note disabled"
                     >Vacation/Emergency Leaves</label
                   >
                   <input
-                    name="txtVELeave"
+                    name="txtVELeave2"
                     type="number"
                     min="0"
-                    id="txtVELeave"
+                    id="txtVELeave2"
                     class="disabled"
                   />
 
                   <label
-                    id="dtTermDateLabel"
-                    for="dtTermDate"
+                    id="dtTermDateLabel2"
+                    for="dtTermDate2"
                     class="label-6 disabled"
                     >Termination Date</label
                   >
                   <input
-                    name="dtTermDate"
+                    name="dtTermDate2"
                     type="text"
-                    id="dtTermDate"
+                    id="dtTermDate2"
                     class="terminationDatePicker disabled"
                   />
                 </div>
 
                 <div>
-                  <label for="txtTinNo" class="label-6">Tin Number</label>
+                  <label for="txtTinNumber2" class="label-6">Tin Number</label>
                   <input
-                    name="txtTinNumber"
+                    name="txtTinNumber2"
                     type="number"
-                    id="txtTinNumber"
+                    id="txtTinNumber2"
                     min="0"
                     maxlength="12"
                   />
 
-                  <label for="txtPhilHealthNo" class="label-6"
+                  <label for="txtPhilHealthNo2" class="label-6"
                     >Philhealth Number</label
                   >
                   <input
-                    name="txtPhilHealth"
+                    name="txtPhilHealthNo2"
                     type="number"
-                    id="txtPhilHealth"
+                    id="txtPhilHealthNo2"
                     min="0"
                     maxlength="12"
                   />
 
-                  <label for="txtHdmfNo" class="label-6">HDMF Number</label>
+                  <label for="txtHdmfNo2" class="label-6">HDMF Number</label>
                   <input
-                    name="txtHdmfNo"
+                    name="txtHdmfNo2"
                     type="number"
-                    id="txtHdmfNo"
+                    id="txtHdmfNo2"
                     min="0"
                     maxlength="12"
                   />
 
-                  <label for="txtSssNo" class="label-6">SSS Number</label>
+                  <label for="txtSssNo2" class="label-6">SSS Number</label>
                   <input
-                    name="txtSssNo"
+                    name="txtSssNo2"
                     type="number"
-                    id="txtSssNo"
+                    id="txtSssNo2"
                     min="0"
                     maxlength="10"
                   />
 
-                  <label for="txtCardNo" class="label-6"
+                  <label for="txtCardNo2" class="label-6"
                     >Credit Card Number</label
                   >
                   <input
-                    name="txtCardNo"
+                    name="txtCardNo2"
                     type="number"
                     min="0"
-                    id="txtCardNo"
+                    id="txtCardNo2"
                   />
 
                   <br />
-                  <label for="txtDateEmployed" class="label-6"
+                  <label for="txtDateEmployed2" class="label-6"
                     >Attached/Uploaded Requirements</label
                   >
                   <div class="modal-rd-container">
-                    <label for="optYesReq" class="radio">
+                    <label for="optYesReq2" class="radio">
                       <input
                         type="radio"
-                        name="rdoSubReq"
-                        id="optYesReq"
+                        name="rdoSubReq2"
+                        id="optYesReq2"
                         class="hidden"
-                        onclick="enableReq()"
+                        onclick="enableReq2()"
                       />
                       <span class="label"></span>Yes
                     </label>
 
-                    <label for="optNoReq" class="radio">
+                    <label for="optNoReq2" class="radio">
                       <input
                         type="radio"
-                        name="rdoSubReq"
-                        id="optNoReq"
+                        name="rdoSubReq2"
+                        id="optNoReq2"
                         class="hidden"
-                        onclick="disableReq()"
+                        onclick="disableReq2()"
                       />
                       <span class="label"></span>No
                     </label>
                   </div>
-                  <label for="txtDateEmployed" class="note"
+                  <label for="txtDateEmployed2" class="note"
                     >Requirement 1</label
                   >
                   <input
                     class="fileReq disabled"
                     type="file"
-                    name="req1"
-                    id="req1"
+                    name="req1_2"
+                    id="req1_2"
                     accept="files/*"
                   />
-                  <label for="txtDateEmployed" class="note"
+                  <label for="txtDateEmployed2" class="note"
                     >Requirement 2</label
                   >
                   <input
                     class="fileReq disabled"
                     type="file"
-                    name="req2"
-                    id="req2"
+                    name="req2_2"
+                    id="req2_2"
                     accept="files/*"
                   />
                   <label for="txtDateEmployed" class="note"
@@ -1564,8 +1568,8 @@
                   <input
                     class="fileReq disabled"
                     type="file"
-                    name="req3"
-                    id="req3"
+                    name="req3_2"
+                    id="req3_2"
                     accept="files/*"
                   />
                 </div>
@@ -1579,38 +1583,38 @@
               >
                 <label class="label-6">Grant Access Role</label>
                 <div class="modal-rd-container">
-                  <label for="optYesAccessRole" class="radio">
+                  <label for="optYesAccessRole2" class="radio">
                     <input
                       type="radio"
                       name="rdoAccess"
-                      id="optYesAccessRole"
+                      id="optYesAccessRole2"
                       class="hidden"
-                      onclick="enableAccessRole();"
+                      onclick="enableAccessRole2();"
                     />
                     <span class="label"></span>Yes
                   </label>
 
-                  <label for="optNoAccessRole" class="radio">
+                  <label for="optNoAccessRole2" class="radio">
                     <input
                       type="radio"
                       name="rdoAccess"
-                      id="optNoAccessRole"
+                      id="optNoAccessRole2"
                       class="hidden"
-                      onclick="disableAccessRole();"
+                      onclick="disableAccessRole2();"
                     />
                     <span class="label"></span>No
                   </label>
                 </div>
 
                 <label
-                  for="selectRole"
+                  for="selectRole2"
                   class="label-6 disabled"
-                  id="selectRoleLabel"
+                  id="selectRoleLabel2"
                   >Role</label
                 >
                 <select
-                  name="selectRole"
-                  id="selectRole"
+                  name="selectRole2"
+                  id="selectRole2"
                   class="select disabled"
                 >
                   <option value="trainee">Employee</option>
@@ -1619,15 +1623,15 @@
                 </select>
 
                 <label
-                  for="txtPassword"
+                  for="txtPassword2"
                   class="label-6 disabled"
-                  id="txtPasswordLabel"
+                  id="txtPasswordLabel2"
                   >Password</label
                 >
                 <input
-                  name="txtPassword"
+                  name="txtPassword2"
                   type="password"
-                  id="txtPassword"
+                  id="txtPassword2"
                   class="disabled"
                 />
               </div>
@@ -2030,19 +2034,19 @@
                       ><i class="fas fa-chevron-down"></i>More Results</a
                     >
                   </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
+                  <div class="pagination">
+                    <a href="#"><span>«</span></a>
+                    <a href="#"><span class="active">1</span></a>
+                    <a href="#"><span>2</span></a>
+                    <a href="#"><span>3</span></a>
+                    <a href="#"><span>4</span></a>
+                    <a href="#"><span>5</span></a>
+                    <a href="#"><span>6</span></a>
+                    <a href="#"><span>7</span></a>
+                    <a href="#"><span>8</span></a>
+                    <a href="#"><span>9</span></a>
+                    <a href="#"><span>10</span></a>
+                    <a href="#"><span>»</span></a>
                   </div>
                 </div>
               </div>
@@ -2203,19 +2207,19 @@
                       ><i class="fas fa-chevron-down"></i>More Results</a
                     >
                   </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
+                  <div class="pagination">
+                    <a href="#"><span>«</span></a>
+                    <a href="#"><span class="active">1</span></a>
+                    <a href="#"><span>2</span></a>
+                    <a href="#"><span>3</span></a>
+                    <a href="#"><span>4</span></a>
+                    <a href="#"><span>5</span></a>
+                    <a href="#"><span>6</span></a>
+                    <a href="#"><span>7</span></a>
+                    <a href="#"><span>8</span></a>
+                    <a href="#"><span>9</span></a>
+                    <a href="#"><span>10</span></a>
+                    <a href="#"><span>»</span></a>
                   </div>
                 </div>
               </div>
@@ -2305,19 +2309,19 @@
                       ><i class="fas fa-chevron-down"></i>More Results</a
                     >
                   </div>
-                  <div class="pagination" onclick="selectPage()">
-                    <a href="#">«</a>
-                    <a class="active" href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">»</a>
+                  <div class="pagination">
+                    <a href="#"><span>«</span></a>
+                    <a href="#"><span class="active">1</span></a>
+                    <a href="#"><span>2</span></a>
+                    <a href="#"><span>3</span></a>
+                    <a href="#"><span>4</span></a>
+                    <a href="#"><span>5</span></a>
+                    <a href="#"><span>6</span></a>
+                    <a href="#"><span>7</span></a>
+                    <a href="#"><span>8</span></a>
+                    <a href="#"><span>9</span></a>
+                    <a href="#"><span>10</span></a>
+                    <a href="#"><span>»</span></a>
                   </div>
                 </div>
               </div>

@@ -239,8 +239,7 @@ $(".terminationDatePicker").each(function() {
     $(this).datepicker({
       changeMonth: true,
       changeYear: true,
-      yearRange: "-10:+10",
-      beforeShowDay: $.datepicker.noWeekends
+      yearRange: "-10:+10"
     });
   } catch (e) {
     console.log(e);
@@ -950,6 +949,41 @@ function toggleEndo() {
     console.log(e);
   }
 }
+function toggleEndo2() {
+  try {
+    const selectEmploymentStatus = $("#selectEmploymentStatus2")
+      .find(":selected")
+      .text();
+    const lblLeave = document.querySelector("#txtLeaveLabel2");
+    const lblSickLeave = document.querySelector("#txtSickLeaveLabel2");
+    const txtSickLeave = document.querySelector("#txtSickLeave2");
+    const lblVELeave = document.querySelector("#txtVELeaveLabel2");
+    const txtVELeave = document.querySelector("#txtVELeave2");
+    const dtTermDateLabel = document.querySelector("#dtTermDateLabel2");
+    const dtTermDate = document.querySelector("#dtTermDate2");
+
+    lblLeave.classList.add("disabled");
+    lblSickLeave.classList.add("disabled");
+    txtSickLeave.classList.add("disabled");
+    lblVELeave.classList.add("disabled");
+    txtVELeave.classList.add("disabled");
+    dtTermDateLabel.classList.add("disabled");
+    dtTermDate.classList.add("disabled");
+
+    if (selectEmploymentStatus === "Regular") {
+      lblLeave.classList.remove("disabled");
+      lblSickLeave.classList.remove("disabled");
+      txtSickLeave.classList.remove("disabled");
+      lblVELeave.classList.remove("disabled");
+      txtVELeave.classList.remove("disabled");
+    } else if (selectEmploymentStatus === "End of Contract") {
+      dtTermDateLabel.classList.remove("disabled");
+      dtTermDate.classList.remove("disabled");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 function enableReq() {
   try {
@@ -969,6 +1003,32 @@ function disableReq() {
     const req1 = document.querySelector("#req1");
     const req2 = document.querySelector("#req2");
     const req3 = document.querySelector("#req3");
+    req1.classList.add("disabled");
+    req2.classList.add("disabled");
+    req3.classList.add("disabled");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function enableReq2() {
+  try {
+    const req1 = document.querySelector("#req1_2");
+    const req2 = document.querySelector("#req2_2");
+    const req3 = document.querySelector("#req3_2");
+    req1.classList.remove("disabled");
+    req2.classList.remove("disabled");
+    req3.classList.remove("disabled");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function disableReq2() {
+  try {
+    const req1 = document.querySelector("#req1_2");
+    const req2 = document.querySelector("#req2_2");
+    const req3 = document.querySelector("#req3_2");
     req1.classList.add("disabled");
     req2.classList.add("disabled");
     req3.classList.add("disabled");
@@ -998,6 +1058,36 @@ function disableAccessRole() {
     const selectRole = document.querySelector("#selectRole");
     const txtPasswordLabel = document.querySelector("#txtPasswordLabel");
     const txtPassword = document.querySelector("#txtPassword");
+    selectRoleLabel.classList.add("disabled");
+    selectRole.classList.add("disabled");
+    txtPasswordLabel.classList.add("disabled");
+    txtPassword.classList.add("disabled");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function enableAccessRole2() {
+  try {
+    const selectRoleLabel = document.querySelector("#selectRoleLabel2");
+    const selectRole = document.querySelector("#selectRole2");
+    const txtPasswordLabel = document.querySelector("#txtPasswordLabel2");
+    const txtPassword = document.querySelector("#txtPassword2");
+    selectRoleLabel.classList.remove("disabled");
+    selectRole.classList.remove("disabled");
+    txtPasswordLabel.classList.remove("disabled");
+    txtPassword.classList.remove("disabled");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function disableAccessRole2() {
+  try {
+    const selectRoleLabel = document.querySelector("#selectRoleLabel2");
+    const selectRole = document.querySelector("#selectRole2");
+    const txtPasswordLabel = document.querySelector("#txtPasswordLabel2");
+    const txtPassword = document.querySelector("#txtPassword2");
     selectRoleLabel.classList.add("disabled");
     selectRole.classList.add("disabled");
     txtPasswordLabel.classList.add("disabled");

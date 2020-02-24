@@ -583,7 +583,7 @@ iframe {
 
 .card {
   background: #ffffff;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin: 2rem 0;
   padding: 2rem 4rem;
@@ -591,7 +591,7 @@ iframe {
 
 .card-db {
   background: #ffffff;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin: 0.5rem 0;
   padding: 1rem 1.5rem;
@@ -1234,6 +1234,7 @@ iframe {
   /* padding: 0 0.2rem; */
   background: #333333;
 }
+
 .searchRec-container a:hover {
   background-color: rgba(60, 64, 67, 0.12);
 }
@@ -3196,9 +3197,9 @@ nav ul li a span.fa {
   margin-top: 1rem;
 }
 
-#employee-masterlist .container .card-1 div:nth-child(2) a {
+/* #employee-masterlist .container .card-1 div:nth-child(2) a {
   margin-left: 0.5rem;
-}
+} */
 
 #employee-masterlist .container .card-1 div:nth-child(3) {
   display: block;

@@ -212,12 +212,18 @@
         const lblInvalid = document.querySelector("#lblInvalid");
         const username = document.querySelector("#txtUsername").value;
 
-        if (username === "hradmin") {
+        if (username === "sudo") {
+          window.location.replace(
+            "https://systemohr.netlify.com/sudodashboard.html"
+          );
+        } else if (username === "hradmin") {
           window.location.replace(
             "https://systemohr.netlify.com/admindashboard.html"
           );
         } else if (username === "hrpayroll") {
-          window.location.replace("https://systemohr.netlify.com/payroll.html");
+          window.location.replace(
+            "https://systemohr.netlify.com/payrolldashboard.html"
+          );
         } else if (username === "employee") {
           window.location.replace(
             "https://systemohr.netlify.com/dashboard.html"
