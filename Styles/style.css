@@ -3685,7 +3685,7 @@ nav ul li a span.fa {
   flex-direction: row;
   border: 1px solid #999;
   margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
 }
 
 #payroll-add-employee
@@ -4813,45 +4813,57 @@ nav ul li a span.fa {
   text-align: right;
 }
 
-#payroll-dashboard .container .card-2 > div:first-child {
-  text-align: center;
+#payroll-dashboard .container > div > div .card-1 .tableLayout-md {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#payroll-dashboard .container > div > div .card-1 .tableLayout-md .column1,
+#payroll-dashboard .container > div > div .card-1 .tableLayout-md .column2,
+#payroll-dashboard .container > div > div .card-1 .tableLayout-md .column3 {
+  width: 33.33%;
 }
 
 #payroll-dashboard .container .card-2 > div:nth-child(2) {
+  text-align: center;
+}
+
+#payroll-dashboard .container .card-2 > div:nth-child(3) {
   position: relative;
   text-align: right;
   margin-bottom: 0.5rem;
 }
 
-#payroll-dashboard .container .card-2 > div:nth-child(2) a {
+#payroll-dashboard .container .card-2 > div:nth-child(3) a {
   margin-left: 0.5rem;
   display: inline-block;
 }
 
-#payroll-dashboard .container .card-2 > div:nth-child(3) label {
+#payroll-dashboard .container .card-2 > div:nth-child(4) label {
   display: block;
 }
 
-/* #payroll-dashboard .container .card-2 > div:nth-child(3) select {
+/* #payroll-dashboard .container .card-2 > div:nth-child(4) select {
   display: block;
   margin-left: 2rem;
 } */
 
-#payroll-dashboard .container .card-2 > div:nth-child(4) {
+#payroll-dashboard .container .card-2 > div:nth-child(5) {
   display: block;
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 }
 
-#payroll-dashboard .container .card-2 > div:nth-child(4) input {
+#payroll-dashboard .container .card-2 > div:nth-child(5) input {
   margin-right: 0.5rem;
 }
 
-#payroll-dashboard .container .card-2 > div:nth-child(5) label {
+#payroll-dashboard .container .card-2 > div:nth-child(6) label {
   display: block;
 }
 
-#payroll-dashboard .container .card-2 > div:nth-child(5) input {
+#payroll-dashboard .container .card-2 > div:nth-child(6) input {
   display: block;
   margin-left: 2rem;
 }
