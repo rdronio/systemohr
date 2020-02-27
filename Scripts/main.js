@@ -1599,7 +1599,7 @@ function clearSearch2(formID) {
 function toggleSearchFilter() {
   try {
     const container = document.querySelector(".search-filter-container");
-    const showSearchOptions = document.querySelector(".showSearchOptions");
+    const showSearchOptions = document.querySelector(".showSearchOptions svg");
 
     container.classList.toggle("hidden");
     showSearchOptions.classList.toggle("rotate");

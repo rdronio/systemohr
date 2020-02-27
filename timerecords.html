@@ -25,7 +25,7 @@
     <title>HRIS, Payroll & Time Keeping System.</title>
   </head>
   <body>
-    <form action="#" autocomplete="off">
+    <form id="time-records" action="#" autocomplete="off">
       <!-- main -->
       <div class="main">
         <!-- nav -->
@@ -158,11 +158,11 @@
             </div>
             <div class="card card-1">
               <div>
-                <a
+                <!-- <a
                   class="btn-sm btn-primary"
                   onclick="openModal(`#btnTimeAlteration`);"
                   >Time Alteration
-                </a>
+                </a> -->
               </div>
               <div>
                 <label class="label-6">Filter Date</label>
@@ -189,6 +189,123 @@
                 <a class="btn btn-secondary">Clear</a>
               </div>
 
+              <div class="search-main-container">
+                <div class="search-container">
+                  <a class="btn-search tooltip" aria-label="Search Mail">
+                    <span class="tooltiptext">Search</span>
+                    <svg
+                      focusable="false"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z"
+                      ></path>
+                      <path d="M0,0h24v24H0V0z" fill="none"></path>
+                    </svg>
+                  </a>
+                  <div >
+                    <input
+                      class="txtSearch"
+                      type="text"
+                      list="txtSearch"
+                      class="select block"
+                      placeholder="Search Date"
+                      onkeypress="checkSearchInput();"
+                      onchange="checkSearchInput();"
+                    />
+                    <ul id="txtSearch" class="datalist-data">
+                      <li>Nov. 20, 2019</li>
+                      <li>Nov. 21, 2019</li>
+                      <li>Nov. 21, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                      <li>Nov. 23, 2019</li>
+                    </datalist>
+                  </div>
+                  <a
+                    aria-label="Clear search"
+                    type="button"
+                    data-tooltip="Clear search"
+                    onclick="clearSearch(`time-records`);"
+                    class="btn-clear-search tooltip hidden"
+                  >
+                    <span class="tooltiptext">Clear search</span>
+                    <svg
+                      focusable="false"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      ></path>
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  </a>
+                  <a
+                    type="button"
+                    data-tooltip="Show search options"
+                    aria-label="Advanced search options"
+                    class="showSearchOptions"
+                    onclick="toggleSearchFilter();"
+                  >
+                    <svg
+                      focusable="false"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M7 10l5 5 5-5z"></path>
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  </a>
+                </div>
+                <div class="search-filter-container hidden">
+                  <div>
+                    <label class="block">Filter Date</label>
+                    <div class="datePeriod">
+                      <label for="txtDateFrom">From: </label>
+                      <input
+                        name="txtDateFrom"
+                        type="text"
+                        id="txtDateFrom"
+                        class="startDatePicker"
+                      />
+                      <label for="txtDateTo">To: </label>
+                      <input
+                        name="txtDateTo"
+                        type="text"
+                        id="txtDateTo"
+                        class="endDatePicker"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="btn-filter-container">
+                    <a class="btn-sm btn-primary " id="btnSearchPayroll">
+                      Search
+                    </a>
+
+                    <a
+                      class="btn-sm btn-secondary hidden "
+                      id="btnClearMemoNotice"
+                    >
+                      Clear
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               <!-- Time Records -->
               <table class="tableLayout">
                 <tbody>
@@ -199,6 +316,7 @@
                     <td class="column4">Total (hour/s)</td>
                     <td class="column5">Overtime (hour/s)</td>
                     <td class="column6">Tardiness (min/s)</td>
+                    <td class="column7">Action</td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -207,6 +325,13 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -215,6 +340,13 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -223,6 +355,13 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
                   </tr>
                   <tr>
                     <td class="column1">November 20, 2019</td>
@@ -231,6 +370,43 @@
                     <td class="column4">8.00</td>
                     <td class="column5">0.00</td>
                     <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">November 20, 2019</td>
+                    <td class="column2">09:00 AM</td>
+                    <td class="column3">05:00 PM</td>
+                    <td class="column4">8.00</td>
+                    <td class="column5">0.00</td>
+                    <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="column1">November 20, 2019</td>
+                    <td class="column2">09:00 AM</td>
+                    <td class="column3">05:00 PM</td>
+                    <td class="column4">8.00</td>
+                    <td class="column5">0.00</td>
+                    <td class="column6">0.00</td>
+                    <td class="column7">
+                      <a
+                        class="btn-table btn-secondary"
+                        onclick="openModal(`#btnTimeAlteration`);"
+                        >Alter Time</a
+                      >
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -352,13 +528,20 @@
                 <input name="txtTimeOut" type="checkbox" id="txtTimeOutNew"  class=""/> -->
 
                 <label for="txtTime" class="label-6">Time</label>
-                <!-- <input type="time" id="txtTime" name="txtTime" min="09:00" max="18:00" required> -->
                 <input
+                  type="time"
+                  id="txtTime"
+                  name="txtTime"
+                  min="09:00"
+                  max="18:00"
+                  required
+                />
+                <!-- <input
                   type="text"
                   id="txtTime"
                   name="txtTime"
                   class="timepicker"
-                />
+                /> -->
 
                 <label for="txtAreaReasonTA" class="label-6">Reason</label>
                 <textarea
