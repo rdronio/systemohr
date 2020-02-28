@@ -59,6 +59,7 @@ $(document).ready(function() {
       if (containerRec.has(e.target).length === 0) {
         $(".searchRec-filter-container").addClass("hidden");
         showSearchRecOptions.classList.remove("rotate");
+        hideDataList();
       }
     });
 
@@ -71,6 +72,7 @@ $(document).ready(function() {
       if (container.has(e.target).length === 0) {
         $(".search-filter-container").addClass("hidden");
         showSearchOptions.classList.remove("rotate");
+        hideDataList();
       }
     });
   } catch (e) {
@@ -1551,8 +1553,10 @@ function checkSearchInput() {
 
     if (txtSearch === "") {
       btnClearSearch.classList.add("hidden");
+      hideDataList();
     } else {
       btnClearSearch.classList.remove("hidden");
+      showDataList();
     }
   } catch (e) {
     console.log(e);
@@ -1641,6 +1645,26 @@ function toggleSearchRecFilter3() {
 
     container3.classList.toggle("hidden");
     showSearchRecOptions3.classList.toggle("rotate");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function showDataList() {
+  try {
+    const datalist = document.querySelector(".datalist-data");
+
+    datalist.classList.remove("hidden");
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function hideDataList() {
+  try {
+    const datalist = document.querySelector(".datalist-data");
+
+    datalist.classList.add("hidden");
   } catch (e) {
     console.log(e);
   }

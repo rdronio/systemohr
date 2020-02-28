@@ -526,34 +526,92 @@ iframe {
   flex-direction: row;
 }
 
+.datalist-data::-webkit-scrollbar {
+  background: #fff !important;
+  width: 5px !important;
+  padding: 0 2px;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+.datalist-data::-webkit-scrollbar-thumb {
+  background: #333 !important;
+  border-radius: 10px 10px !important;
+}
+
 .datalist-data {
-  background: #fff;
+  background: #f1f3f4 !important;
+  border: 1px solid rgba(60, 64, 67, 0.302);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  cursor: default;
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  border: 0;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.28);
-  padding-bottom: 4px;
-  overflow: scroll;
+  align-items: center;
 
-  position: relative;
+  max-height: 300px;
+  width: 500px;
+  padding: 0;
+  margin-right: auto;
+
+  -webkit-transition: background 100ms ease-in, width 100ms ease-out;
+  transition: background 100ms ease-in, width 100ms ease-out;
+
+  position: absolute;
+  top: 40px;
+  left: 0;
   text-align: left;
-  margin-top: -1px;
   z-index: 3;
-  cursor: default;
   -webkit-user-select: none;
+
+  overflow-y: hidden;
 }
 
 .datalist-data li {
   display: flex;
+  align-items: left;
+  justify-content: left;
+  padding: 0.3rem 0 !important;
+  position: relative !important;
+  height: 100%;
+  width: 100%;
+}
+
+.datalist-data li:hover {
+  background: #e5e6e7;
+}
+
+.datalist-data li div {
+  display: flex;
   align-items: center;
-  min-width: 0;
+}
+
+.datalist-data li div:nth-child(1) {
+  background: transparent;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  color: #333;
+  padding: 5px;
+}
+
+.datalist-data li div:nth-child(2) span {
+  background: transparent;
+  border: none;
+  cursor: default !important;
+  outline: none;
+  outline: none;
   padding: 0;
-  display: block;
+  transition: 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .datePeriod .label-6 {
